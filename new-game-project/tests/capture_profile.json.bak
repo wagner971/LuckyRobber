@@ -1,0 +1,27 @@
+{
+	"bonuses": [],
+	"failures": 0,
+	"objectives": {
+		"apartment": [
+			true,
+			true,
+			false
+		],
+		"house": [
+			false,
+			false,
+			false
+		]
+	},
+	"records": {},
+	"schema_version": 2,
+	"successes": 1,
+	"trophies": [],
+	"upgrades": {
+		"capacity": 1,
+		"carry": 1,
+		"grip": 1,
+		"strength": 3
+	},
+	"wallet": 340
+}

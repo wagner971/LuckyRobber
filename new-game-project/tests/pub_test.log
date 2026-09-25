@@ -1,0 +1,62 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Unique Pub inventory: $21,000 / 44 cargo
+PASS: Museum finale protects the entire new chapter
+PASS: Pub Hall stays locked before Viking Hall objectives
+PASS: Viking Hall completion opens Pub Hall
+PASS: New tier has safe upgrade caps
+PASS: Full clear requires both speed upgrades
+PASS: Distinct thematic loot: pub_billiards
+PASS: Pub loot uses bounded idle economy: pub_billiards
+PASS: Distinct thematic loot: pub_clock
+PASS: Pub loot uses bounded idle economy: pub_clock
+PASS: Distinct thematic loot: pub_settee
+PASS: Pub loot uses bounded idle economy: pub_settee
+PASS: Distinct thematic loot: pub_gramophone
+PASS: Pub loot uses bounded idle economy: pub_gramophone
+PASS: Distinct thematic loot: pub_radio
+PASS: Pub loot uses bounded idle economy: pub_radio
+PASS: Distinct thematic loot: pub_darts
+PASS: Pub loot uses bounded idle economy: pub_darts
+PASS: Distinct thematic loot: pub_tankard
+PASS: Pub loot uses bounded idle economy: pub_tankard
+PASS: Distinct thematic loot: pub_register
+PASS: Pub loot uses bounded idle economy: pub_register
+PASS: Distinct thematic loot: pub_beer_engine
+PASS: Pub loot uses bounded idle economy: pub_beer_engine
+PASS: Distinct thematic loot: pub_sign
+PASS: Pub loot uses bounded idle economy: pub_sign
+PASS: Open central pub aisle
+PASS: Visible model: pub_billiards
+PASS: Visible model: pub_clock
+PASS: Visible model: pub_settee
+PASS: Visible model: pub_gramophone
+PASS: Visible model: pub_radio
+PASS: Visible model: pub_darts
+PASS: Visible model: pub_tankard
+PASS: Visible model: pub_register
+PASS: Visible model: pub_beer_engine
+PASS: Visible model: pub_sign
+MEASURE pub_full_clear_speed_20 66.80s / 85s | $21000 | cargo 44
+PASS: Physical full clear at speed level 20
+PASS: Hall time and payout at speed level 20
+PASS: Escaped tankard becomes collection trophy
+PASS: Open central pub aisle
+PASS: Visible model: pub_billiards
+PASS: Visible model: pub_clock
+PASS: Visible model: pub_settee
+PASS: Visible model: pub_gramophone
+PASS: Visible model: pub_radio
+PASS: Visible model: pub_darts
+PASS: Visible model: pub_tankard
+PASS: Visible model: pub_register
+PASS: Visible model: pub_beer_engine
+PASS: Visible model: pub_sign
+MEASURE pub_full_clear_speed_13 68.77s / 85s | $21000 | cargo 44
+PASS: Physical full clear at speed level 13
+PASS: Hall time and payout at speed level 13
+PASS: Escaped tankard becomes collection trophy
+MEASURE pub_special_short_route 15.82s / 35s | $6000 | cargo 14
+PASS: Short 35-second Special Job has a valuable escape route
+PASS: Short route banks register, beer engine and sign
+PUB CHECKS 57 FAILURES 1

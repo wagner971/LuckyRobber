@@ -1,0 +1,252 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+[   0% ] _update_scan_actions | Started Scanning actions... (4 steps)
+[   0% ] _update_scan_actions | upgrades_shop.png
+[  20% ] _update_scan_actions | upgrades_shop_720x1280.png
+[  40% ] _update_scan_actions | upgrades_shop_carry.png
+[  60% ] _update_scan_actions | upgrades_shop_van.png
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started (Re)Importing Assets (4 steps)
+[   0% ] reimport | Preparing files to reimport...
+[  20% ] reimport | Preparing files to reimport...
+[  40% ] reimport | Preparing files to reimport...
+[  60% ] reimport | Preparing files to reimport...
+[   0% ] reimport | Executing pre-reimport operations...
+[   0% ] reimport | upgrades_shop.png
+[  20% ] reimport | upgrades_shop_720x1280.png
+[  40% ] reimport | upgrades_shop_carry.png
+[  60% ] reimport | upgrades_shop_van.png
+[  80% ] reimport | Finalizing Asset Import...
+[ DONE ] reimport
+
+[   0% ] reimport | Started (Re)Importing Assets (4 steps)
+[   0% ] reimport | Executing post-reimport operations...
+[ DONE ] reimport
+
+[   0% ] savepack | Started Packing (102 steps)
+[   1% ] savepack | Storing File: res://.godot/imported/Meshy_AI_Cash_Bundle_0820173211_texture.obj-bcc6adeccba2e2ee9d92869e809032b1.mesh
+[   1% ] savepack | Storing File: res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.obj.import
+[   1% ] savepack | Storing File: res://.godot/imported/Meshy_AI_Cash_Bundle_0820173211_texture.png-c94cfb533eddd159a1bba545fbd19bc6.s3tc.ctex
+[   1% ] savepack | Storing File: res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.png.import
+[   2% ] savepack | Storing File: res://.godot/imported/box.png-865085619aa4415f529e2c73361787cf.ctex
+[   2% ] savepack | Storing File: res://assets/hud/box.png.import
+[   3% ] savepack | Storing File: res://.godot/imported/cash.png-319259cae107de31bcf2f10d387e30f4.ctex
+[   3% ] savepack | Storing File: res://assets/hud/cash.png.import
+[   4% ] savepack | Storing File: res://.godot/imported/clock.png-91b1537a1f5b81fc948c1756f5246d7a.ctex
+[   4% ] savepack | Storing File: res://assets/hud/clock.png.import
+[   5% ] savepack | Storing File: res://.godot/imported/drop.svg-baf386ab076566b83ae487991775457b.ctex
+[   5% ] savepack | Storing File: res://assets/hud/drop.svg.import
+[   6% ] savepack | Storing File: res://.godot/imported/escape.svg-8ee5346f9412600e19037510d68716d2.ctex
+[   6% ] savepack | Storing File: res://assets/hud/escape.svg.import
+[   7% ] savepack | Storing File: res://.godot/imported/hand.svg-562e7706dd2196b5f53334b7e9a47229.ctex
+[   7% ] savepack | Storing File: res://assets/hud/hand.svg.import
+[   8% ] savepack | Storing File: res://.godot/imported/lock.svg-56c83ced34ad29634247e951a117a946.ctex
+[   8% ] savepack | Storing File: res://assets/hud/lock.svg.import
+[   9% ] savepack | Storing File: res://.godot/imported/noise.png-888b9962022ca43a5936c41b4f22b0e6.ctex
+[   9% ] savepack | Storing File: res://assets/hud/noise.png.import
+[  10% ] savepack | Storing File: res://.godot/imported/pause.svg-cafaede2d08f7c48163eaa4d860173ab.ctex
+[  10% ] savepack | Storing File: res://assets/hud/pause.svg.import
+[  11% ] savepack | Storing File: res://.godot/imported/play.svg-5bd33ce86360c0caa92a5736cd6df463.ctex
+[  11% ] savepack | Storing File: res://assets/hud/play.svg.import
+[  12% ] savepack | Storing File: res://.godot/imported/strength.png-f2db8b23988d09470919741e592742d7.ctex
+[  12% ] savepack | Storing File: res://assets/hud/strength.png.import
+[  13% ] savepack | Storing File: res://.godot/imported/warning.png-64f195f22ba29cb0af6aaa12b22eb213.ctex
+[  13% ] savepack | Storing File: res://assets/hud/warning.png.import
+[  14% ] savepack | Storing File: res://.godot/imported/alarm_trigger.wav-da4784e23d185f03388ca7d01a9979f1.sample
+[  14% ] savepack | Storing File: res://assets/sfx/alarm_trigger.wav.import
+[  15% ] savepack | Storing File: res://.godot/imported/blocked.wav-1f4685e8c2a7bd4702c9e916f7dcc0eb.sample
+[  15% ] savepack | Storing File: res://assets/sfx/blocked.wav.import
+[  16% ] savepack | Storing File: res://.godot/imported/busted.wav-135e87537d51d09148fccae2a76fb542.sample
+[  16% ] savepack | Storing File: res://assets/sfx/busted.wav.import
+[  17% ] savepack | Storing File: res://.godot/imported/cash_burst.wav-adf8e5bf0baa2d287e05a773dee3b2a8.sample
+[  17% ] savepack | Storing File: res://assets/sfx/cash_burst.wav.import
+[  18% ] savepack | Storing File: res://.godot/imported/cash_collect.wav-b2d5fb9767cafcbf4873d7bc4df0562b.sample
+[  18% ] savepack | Storing File: res://assets/sfx/cash_collect.wav.import
+[  19% ] savepack | Storing File: res://.godot/imported/drop.wav-6bed34ba4859060013cfe9233e94d33c.sample
+[  19% ] savepack | Storing File: res://assets/sfx/drop.wav.import
+[  20% ] savepack | Storing File: res://.godot/imported/escape_success.wav-c81bd2371840942a2e5544b9e076041e.sample
+[  20% ] savepack | Storing File: res://assets/sfx/escape_success.wav.import
+[  21% ] savepack | Storing File: res://.godot/imported/impact_heavy_1.wav-70bd26f0e297c4d8981e449bf0f4cffc.sample
+[  21% ] savepack | Storing File: res://assets/sfx/impact_heavy_1.wav.import
+[  22% ] savepack | Storing File: res://.godot/imported/impact_heavy_2.wav-55f4f4f94c839be1d894e505a8cc1211.sample
+[  22% ] savepack | Storing File: res://assets/sfx/impact_heavy_2.wav.import
+[  23% ] savepack | Storing File: res://.godot/imported/impact_light_1.wav-38961eea3d85c298be863f9493824231.sample
+[  23% ] savepack | Storing File: res://assets/sfx/impact_light_1.wav.import
+[  24% ] savepack | Storing File: res://.godot/imported/impact_light_2.wav-b4b2838dce645d72487534686bfecc68.sample
+[  24% ] savepack | Storing File: res://assets/sfx/impact_light_2.wav.import
+[  25% ] savepack | Storing File: res://.godot/imported/impact_medium_1.wav-0de9b065154f7c48e9d709370134eadc.sample
+[  25% ] savepack | Storing File: res://assets/sfx/impact_medium_1.wav.import
+[  26% ] savepack | Storing File: res://.godot/imported/impact_medium_2.wav-33cd5f80a33ba987e1d834dd01120141.sample
+[  26% ] savepack | Storing File: res://assets/sfx/impact_medium_2.wav.import
+[  27% ] savepack | Storing File: res://.godot/imported/impact_very_heavy_1.wav-95b449b4907a394309db9b6a0dfb7752.sample
+[  27% ] savepack | Storing File: res://assets/sfx/impact_very_heavy_1.wav.import
+[  28% ] savepack | Storing File: res://.godot/imported/impact_very_heavy_2.wav-3479eab7dc1fb5cceb80d399e237a6d9.sample
+[  28% ] savepack | Storing File: res://assets/sfx/impact_very_heavy_2.wav.import
+[  29% ] savepack | Storing File: res://.godot/imported/noise_tick.wav-b89dfc291edcec2c42b4808fe06a1ea6.sample
+[  29% ] savepack | Storing File: res://assets/sfx/noise_tick.wav.import
+[  30% ] savepack | Storing File: res://.godot/imported/noise_warning.wav-4bb6026dca640c89d9404acdb7e63875.sample
+[  30% ] savepack | Storing File: res://assets/sfx/noise_warning.wav.import
+[  31% ] savepack | Storing File: res://.godot/imported/pickup_heavy_1.wav-7d8421d2dee0efe1bc0df29627b2f1dc.sample
+[  31% ] savepack | Storing File: res://assets/sfx/pickup_heavy_1.wav.import
+[  32% ] savepack | Storing File: res://.godot/imported/pickup_heavy_2.wav-b1ab5a2f4b7f9e0a0bfd75c0d22f0f4d.sample
+[  32% ] savepack | Storing File: res://assets/sfx/pickup_heavy_2.wav.import
+[  33% ] savepack | Storing File: res://.godot/imported/pickup_heavy_3.wav-53e4dba636fb66688202f6a4d72cc658.sample
+[  33% ] savepack | Storing File: res://assets/sfx/pickup_heavy_3.wav.import
+[  33% ] savepack | Storing File: res://.godot/imported/pickup_light_1.wav-4e7dbbb188ce8eaa9eac2345fbff6635.sample
+[  33% ] savepack | Storing File: res://assets/sfx/pickup_light_1.wav.import
+[  33% ] savepack | Storing File: res://.godot/imported/pickup_light_2.wav-191f452f9c0eac7fea8ab4f303034fd9.sample
+[  33% ] savepack | Storing File: res://assets/sfx/pickup_light_2.wav.import
+[  34% ] savepack | Storing File: res://.godot/imported/pickup_light_3.wav-355c468335072c71f75edd075ac836d1.sample
+[  34% ] savepack | Storing File: res://assets/sfx/pickup_light_3.wav.import
+[  35% ] savepack | Storing File: res://.godot/imported/special_reveal.wav-512fe6131744a6998a5cf97ea8502112.sample
+[  35% ] savepack | Storing File: res://assets/sfx/special_reveal.wav.import
+[  36% ] savepack | Storing File: res://.godot/imported/strength_unlock.wav-4b1638291169ffd047f2855ba2da76a7.sample
+[  36% ] savepack | Storing File: res://assets/sfx/strength_unlock.wav.import
+[  37% ] savepack | Storing File: res://.godot/imported/timer_tick.wav-252b9c7adf7a8c9fd2a5fce16a9962d5.sample
+[  37% ] savepack | Storing File: res://assets/sfx/timer_tick.wav.import
+[  38% ] savepack | Storing File: res://.godot/imported/upgrade_purchase.wav-2744cf7389962285ad22207c9bb8c0d8.sample
+[  38% ] savepack | Storing File: res://assets/sfx/upgrade_purchase.wav.import
+[  39% ] savepack | Storing File: res://assets/shaders/camera_toon.gdshader
+[  40% ] savepack | Storing File: res://assets/shaders/jobs_hero.gdshader
+[  41% ] savepack | Storing File: res://.godot/imported/arcade_machine.svg-6dd49d23611aee468080b6eb5da25d07.ctex
+[  41% ] savepack | Storing File: res://assets/ui/jobs/icons/arcade_machine.svg.import
+[  42% ] savepack | Storing File: res://.godot/imported/cash.svg-b0fb2c01bb743dcae11206f9f8361055.ctex
+[  42% ] savepack | Storing File: res://assets/ui/jobs/icons/cash.svg.import
+[  43% ] savepack | Storing File: res://.godot/imported/crown.svg-3bd80e0871d621686bef9b888be69b75.ctex
+[  43% ] savepack | Storing File: res://assets/ui/jobs/icons/crown.svg.import
+[  44% ] savepack | Storing File: res://.godot/imported/dracula_coffin.svg-7a8f76a1feb7c68ded0b4d83a40c8963.ctex
+[  44% ] savepack | Storing File: res://assets/ui/jobs/icons/dracula_coffin.svg.import
+[  45% ] savepack | Storing File: res://.godot/imported/fridge.svg-651e2655b2d33a1fd9085f95f1a8648e.ctex
+[  45% ] savepack | Storing File: res://assets/ui/jobs/icons/fridge.svg.import
+[  46% ] savepack | Storing File: res://.godot/imported/large_statue.svg-bf5396ac7a2303cbbe74cee1e4a9cae5.ctex
+[  46% ] savepack | Storing File: res://assets/ui/jobs/icons/large_statue.svg.import
+[  47% ] savepack | Storing File: res://.godot/imported/museum_artifact.svg-0d283571b6d598f51fb93ffef5acebba.ctex
+[  47% ] savepack | Storing File: res://assets/ui/jobs/icons/museum_artifact.svg.import
+[  48% ] savepack | Storing File: res://.godot/imported/piano.svg-2672be6029b95fa03bb39d6147953117.ctex
+[  48% ] savepack | Storing File: res://assets/ui/jobs/icons/piano.svg.import
+[  49% ] savepack | Storing File: res://.godot/imported/sarcophagus.svg-106c7e538e98e7fc76b1c357cc9e23d7.ctex
+[  49% ] savepack | Storing File: res://assets/ui/jobs/icons/sarcophagus.svg.import
+[  50% ] savepack | Storing File: res://.godot/imported/small_safe.svg-c58828ca4aa20e369b81f4f2c08917c1.ctex
+[  50% ] savepack | Storing File: res://assets/ui/jobs/icons/small_safe.svg.import
+[  51% ] savepack | Storing File: res://.godot/imported/sofa.svg-4fa6159a2b5f583b8ec48135445eff99.ctex
+[  51% ] savepack | Storing File: res://assets/ui/jobs/icons/sofa.svg.import
+[  52% ] savepack | Storing File: res://.godot/imported/toilet.svg-36766c57b00fd59ecca3646627df02c5.ctex
+[  52% ] savepack | Storing File: res://assets/ui/jobs/icons/toilet.svg.import
+[  53% ] savepack | Storing File: res://.godot/imported/vending_machine.svg-31400aac1438c316fc61446a23c91e6b.ctex
+[  53% ] savepack | Storing File: res://assets/ui/jobs/icons/vending_machine.svg.import
+[  54% ] savepack | Storing File: res://.godot/imported/apartment.png-7fffb889d597ab6ac60a4d14698316da.ctex
+[  54% ] savepack | Storing File: res://assets/ui/jobs/apartment.png.import
+[  55% ] savepack | Storing File: res://.godot/imported/castle.png-52ac9ffc18134d4afb8ae46f375c447c.ctex
+[  55% ] savepack | Storing File: res://assets/ui/jobs/castle.png.import
+[  56% ] savepack | Storing File: res://.godot/imported/electronics.png-04b21e5953bbea3f389500f7bc0e89f0.ctex
+[  56% ] savepack | Storing File: res://assets/ui/jobs/electronics.png.import
+[  57% ] savepack | Storing File: res://.godot/imported/house.png-438158ff1f7161cea06dee40db3be20d.ctex
+[  57% ] savepack | Storing File: res://assets/ui/jobs/house.png.import
+[  58% ] savepack | Storing File: res://.godot/imported/mansion.png-847fc4145dc0888fad3818805940abb1.ctex
+[  58% ] savepack | Storing File: res://assets/ui/jobs/mansion.png.import
+[  59% ] savepack | Storing File: res://.godot/imported/museum.png-254cfd8763d19d527a72e8b18a8efa7b.ctex
+[  59% ] savepack | Storing File: res://assets/ui/jobs/museum.png.import
+[  60% ] savepack | Storing File: res://.godot/imported/pyramid.png-7b98528b97c180f19f3ff2d235e0f082.ctex
+[  60% ] savepack | Storing File: res://assets/ui/jobs/pyramid.png.import
+[  61% ] savepack | Storing File: res://.godot/imported/villa.png-6905c1baf5d9f1e049e294801de23709.ctex
+[  61% ] savepack | Storing File: res://assets/ui/jobs/villa.png.import
+[  62% ] savepack | Storing File: res://.godot/imported/capacity.svg-debc347df7a34c633312c89fc91f6d5b.ctex
+[  62% ] savepack | Storing File: res://assets/ui/upgrades/capacity.svg.import
+[  63% ] savepack | Storing File: res://.godot/imported/carry.svg-35fee131bbd287684bdc2ed56a39f77e.ctex
+[  63% ] savepack | Storing File: res://assets/ui/upgrades/carry.svg.import
+[  64% ] savepack | Storing File: res://.godot/imported/grip.svg-3b0fefe4665aaf9183b37b3b6ecde429.ctex
+[  64% ] savepack | Storing File: res://assets/ui/upgrades/grip.svg.import
+[  65% ] savepack | Storing File: res://.godot/imported/noise.svg-223d58d7ea233616a07a404ea5fcae0f.ctex
+[  65% ] savepack | Storing File: res://assets/ui/upgrades/noise.svg.import
+[  66% ] savepack | Storing File: res://.godot/imported/strength.svg-ccb03b8e78f6bb2b20300841a0b7b994.ctex
+[  66% ] savepack | Storing File: res://assets/ui/upgrades/strength.svg.import
+[  66% ] savepack | Storing File: res://.godot/imported/suburban_house_preview.png-8466d2e863f82cff1c459fe80f55f9db.ctex
+[  66% ] savepack | Storing File: res://assets/ui/suburban_house_preview.png.import
+[  66% ] savepack | Storing File: res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
+[  67% ] savepack | Storing File: res://scripts/balance.gdc
+[  68% ] savepack | Storing File: res://scripts/camera_juice.gdc
+[  69% ] savepack | Storing File: res://scripts/camera_toon_effect.gdc
+[  70% ] savepack | Storing File: res://scripts/cash_burst_3d.gdc
+[  71% ] savepack | Storing File: res://scripts/cash_piece_3d.gdc
+[  72% ] savepack | Storing File: res://scripts/cash_visual.gdc
+[  73% ] savepack | Storing File: res://scripts/game_ui.gdc
+[  74% ] savepack | Storing File: res://scripts/haptic_manager.gdc
+[  75% ] savepack | Storing File: res://scripts/house_art.gdc
+[  76% ] savepack | Storing File: res://scripts/hud_style.gdc
+[  77% ] savepack | Storing File: res://scripts/level.gdc
+[  78% ] savepack | Storing File: res://scripts/local_log.gdc
+[  79% ] savepack | Storing File: res://scripts/loot_guidance.gdc
+[  80% ] savepack | Storing File: res://scripts/loot_item.gdc
+[  81% ] savepack | Storing File: res://scripts/main.gdc
+[  82% ] savepack | Storing File: res://scripts/menu_character_preview.gdc
+[  83% ] savepack | Storing File: res://scripts/models.gdc
+[  84% ] savepack | Storing File: res://scripts/move_input.gdc
+[  85% ] savepack | Storing File: res://scripts/onboarding.gdc
+[  86% ] savepack | Storing File: res://scripts/player.gdc
+[  87% ] savepack | Storing File: res://scripts/progression.gdc
+[  88% ] savepack | Storing File: res://scripts/pyramid_art.gdc
+[  89% ] savepack | Storing File: res://scripts/pyramid_models.gdc
+[  90% ] savepack | Storing File: res://scripts/run_manager.gdc
+[  91% ] savepack | Storing File: res://scripts/save_store.gdc
+[  92% ] savepack | Storing File: res://scripts/sound_bank.gdc
+[  93% ] savepack | Storing File: res://scripts/special_jobs.gdc
+[  94% ] savepack | Storing File: res://scripts/thief_visual.gdc
+[  95% ] savepack | Storing File: res://scripts/toon_material.gdc
+[  96% ] savepack | Storing File: res://scripts/ui_juice.gdc
+[  97% ] savepack | Storing File: res://scripts/van.gdc
+[  98% ] savepack | Storing File: res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex
+[  98% ] savepack | Storing File: res://icon.svg.import
+[  98% ] savepack | Storing File: res://scenes/main.tscn.remap
+[  98% ] savepack | Storing File: res://scripts/balance.gd.remap
+[  98% ] savepack | Storing File: res://scripts/camera_juice.gd.remap
+[  98% ] savepack | Storing File: res://scripts/camera_toon_effect.gd.remap
+[  98% ] savepack | Storing File: res://scripts/cash_burst_3d.gd.remap
+[  98% ] savepack | Storing File: res://scripts/cash_piece_3d.gd.remap
+[  98% ] savepack | Storing File: res://scripts/cash_visual.gd.remap
+[  98% ] savepack | Storing File: res://scripts/game_ui.gd.remap
+[  98% ] savepack | Storing File: res://scripts/haptic_manager.gd.remap
+[  98% ] savepack | Storing File: res://scripts/house_art.gd.remap
+[  98% ] savepack | Storing File: res://scripts/hud_style.gd.remap
+[  98% ] savepack | Storing File: res://scripts/level.gd.remap
+[  98% ] savepack | Storing File: res://scripts/local_log.gd.remap
+[  98% ] savepack | Storing File: res://scripts/loot_guidance.gd.remap
+[  98% ] savepack | Storing File: res://scripts/loot_item.gd.remap
+[  98% ] savepack | Storing File: res://scripts/main.gd.remap
+[  98% ] savepack | Storing File: res://scripts/menu_character_preview.gd.remap
+[  98% ] savepack | Storing File: res://scripts/models.gd.remap
+[  98% ] savepack | Storing File: res://scripts/move_input.gd.remap
+[  98% ] savepack | Storing File: res://scripts/onboarding.gd.remap
+[  98% ] savepack | Storing File: res://scripts/player.gd.remap
+[  98% ] savepack | Storing File: res://scripts/progression.gd.remap
+[  98% ] savepack | Storing File: res://scripts/pyramid_art.gd.remap
+[  98% ] savepack | Storing File: res://scripts/pyramid_models.gd.remap
+[  98% ] savepack | Storing File: res://scripts/run_manager.gd.remap
+[  98% ] savepack | Storing File: res://scripts/save_store.gd.remap
+[  98% ] savepack | Storing File: res://scripts/sound_bank.gd.remap
+[  98% ] savepack | Storing File: res://scripts/special_jobs.gd.remap
+[  98% ] savepack | Storing File: res://scripts/thief_visual.gd.remap
+[  98% ] savepack | Storing File: res://scripts/toon_material.gd.remap
+[  98% ] savepack | Storing File: res://scripts/ui_juice.gd.remap
+[  98% ] savepack | Storing File: res://scripts/van.gd.remap
+[  98% ] savepack | Storing File: res://.godot/global_script_class_cache.cfg
+[  98% ] savepack | Storing File: res://icon.svg
+[  98% ] savepack | Storing File: res://.godot/uid_cache.bin
+[  98% ] savepack | Storing File: res://project.binary
+[ DONE ] savepack
+
+ERROR: Cannot save file 'C:/Users/trash/AppData/Roaming/Godot/editor_settings-4.7.tres'.
+   at: save (scene/resources/resource_format_text.cpp:1768)
+ERROR: Error saving editor settings to C:/Users/trash/AppData/Roaming/Godot/editor_settings-4.7.tres
+   at: save (editor/settings/editor_settings.cpp:1525)

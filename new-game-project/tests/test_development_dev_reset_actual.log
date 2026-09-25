@@ -1,0 +1,26 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: DEV startup begins with a fresh tutorial and zero cash
+PASS: DEV startup clears previous Special Job in its isolated profile
+PASS: DEV progress is saved during the current session
+PASS: DEV launch uses a separate profile and keeps QA isolated
+PASS: Next DEV launch resets wallet, tutorial and Special Jobs again
+PASS: Real DEV boot selects the isolated QA profile and starts fresh
+PASS: Real DEV relaunch resets the QA profile
+PASS: Injected DEV fixture can still exercise persistent saving
+PASS: New isolated DEV profile starts empty
+PASS: DEV button visible on location screen
+PASS: DEV maxes all five abilities, bypassing tier caps
+PASS: DEV only changes abilities, not money or campaign
+PASS: Button confirms MAX and disables repeated use
+PASS: MAX abilities apply to actual next round
+PASS: DEV action cannot change abilities during a round
+PASS: DEV also available in shop
+PASS: Progress survives menu and round changes within current session
+PASS: Second DEV launch retains abilities, wallet and objectives
+PASS: Explicit QA session-only store leaves disk untouched
+PASS: Session-only load ignores existing disk data
+PASS: Production launch keeps the original persistent profile
+PASS: DEV hidden when development mode disabled
+PASS: DEV disabled action cannot bypass progression
+DEV SUMMARY: 23 checks, 0 failures

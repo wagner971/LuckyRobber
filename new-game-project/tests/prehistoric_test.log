@@ -1,0 +1,63 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Unique Prehistoric inventory: $25,700 / 44 cargo
+PASS: Museum finale protects the entire new chapter
+PASS: Prehistoric Era stays locked before English Pub objectives
+PASS: English Pub completion opens Prehistoric Era
+PASS: New tier has safe upgrade caps
+PASS: Previous save preserves wallet and gains new level defaults
+PASS: Full clear requires both speed upgrades
+PASS: Distinct thematic loot: prehistoric_skull
+PASS: Prehistoric loot uses bounded idle economy: prehistoric_skull
+PASS: Distinct thematic loot: prehistoric_saber
+PASS: Prehistoric loot uses bounded idle economy: prehistoric_saber
+PASS: Distinct thematic loot: prehistoric_painting
+PASS: Prehistoric loot uses bounded idle economy: prehistoric_painting
+PASS: Distinct thematic loot: prehistoric_hide
+PASS: Prehistoric loot uses bounded idle economy: prehistoric_hide
+PASS: Distinct thematic loot: prehistoric_spear
+PASS: Prehistoric loot uses bounded idle economy: prehistoric_spear
+PASS: Distinct thematic loot: prehistoric_necklace
+PASS: Prehistoric loot uses bounded idle economy: prehistoric_necklace
+PASS: Distinct thematic loot: prehistoric_amber
+PASS: Prehistoric loot uses bounded idle economy: prehistoric_amber
+PASS: Distinct thematic loot: prehistoric_mortar
+PASS: Prehistoric loot uses bounded idle economy: prehistoric_mortar
+PASS: Distinct thematic loot: prehistoric_drum
+PASS: Prehistoric loot uses bounded idle economy: prehistoric_drum
+PASS: Distinct thematic loot: prehistoric_fur
+PASS: Prehistoric loot uses bounded idle economy: prehistoric_fur
+PASS: Clear cave travel lane
+PASS: Visible model: prehistoric_skull
+PASS: Visible model: prehistoric_saber
+PASS: Visible model: prehistoric_painting
+PASS: Visible model: prehistoric_hide
+PASS: Visible model: prehistoric_spear
+PASS: Visible model: prehistoric_necklace
+PASS: Visible model: prehistoric_amber
+PASS: Visible model: prehistoric_mortar
+PASS: Visible model: prehistoric_drum
+PASS: Visible model: prehistoric_fur
+MEASURE prehistoric_full_clear_speed_20 68.37s / 85s | $25700 | cargo 44
+PASS: Physical full clear at speed level 20
+PASS: Hall time and payout at speed level 20
+PASS: Escaped amber becomes collection trophy
+PASS: Clear cave travel lane
+PASS: Visible model: prehistoric_skull
+PASS: Visible model: prehistoric_saber
+PASS: Visible model: prehistoric_painting
+PASS: Visible model: prehistoric_hide
+PASS: Visible model: prehistoric_spear
+PASS: Visible model: prehistoric_necklace
+PASS: Visible model: prehistoric_amber
+PASS: Visible model: prehistoric_mortar
+PASS: Visible model: prehistoric_drum
+PASS: Visible model: prehistoric_fur
+MEASURE prehistoric_full_clear_speed_14 69.87s / 85s | $25700 | cargo 44
+PASS: Physical full clear at speed level 14
+PASS: Hall time and payout at speed level 14
+PASS: Escaped amber becomes collection trophy
+MEASURE prehistoric_special_short_route 16.03s / 35s | $5600 | cargo 12
+PASS: Short 35-second Special Job has a valuable escape route
+PASS: Short route banks mortar, drum and bedroll
+PREHISTORIC CHECKS 57 FAILURES 0

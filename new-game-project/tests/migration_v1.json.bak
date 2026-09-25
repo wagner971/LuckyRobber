@@ -1,0 +1,111 @@
+{
+	"bonuses": [
+		"house"
+	],
+	"contract_bonuses": [],
+	"contracts": {
+		"apartment.client_order": false,
+		"apartment.rush": false,
+		"apartment.small_van": false,
+		"electronics.client_order": false,
+		"electronics.rush": false,
+		"electronics.small_van": false,
+		"house.client_order": false,
+		"house.rush": false,
+		"house.small_van": false,
+		"mansion.client_order": false,
+		"mansion.rush": false,
+		"mansion.small_van": false,
+		"museum.client_order": false,
+		"museum.rush": false,
+		"museum.small_van": false,
+		"villa.client_order": false,
+		"villa.rush": false,
+		"villa.small_van": false
+	},
+	"cosmetics": {
+		"equipped": {
+			"set": "",
+			"suit": "",
+			"van": ""
+		},
+		"owned": []
+	},
+	"failures": 2,
+	"mode_stats": {
+		"client_order": {
+			"failures": 0,
+			"successes": 0
+		},
+		"normal": {
+			"failures": 2,
+			"successes": 13
+		},
+		"rush": {
+			"failures": 0,
+			"successes": 0
+		},
+		"small_van": {
+			"failures": 0,
+			"successes": 0
+		}
+	},
+	"objectives": {
+		"apartment": {
+			"cash": true,
+			"full_clear": false,
+			"signature": true
+		},
+		"electronics": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"house": {
+			"cash": true,
+			"full_clear": true,
+			"signature": true
+		},
+		"mansion": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"museum": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"villa": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		}
+	},
+	"records": {
+		"client_order": {},
+		"normal": {
+			"house": 37.2833
+		},
+		"rush": {},
+		"small_van": {}
+	},
+	"schema_version": 3,
+	"successes": 13,
+	"trophies": [
+		"flamingo",
+		"bust"
+	],
+	"unlocked": [
+		"apartment",
+		"house",
+		"villa"
+	],
+	"upgrades": {
+		"capacity": 4,
+		"carry": 4,
+		"grip": 4,
+		"strength": 3
+	},
+	"wallet": 4700
+}

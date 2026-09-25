@@ -1,0 +1,7 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+wallet BEFORE=250 AFTER=0
+upgrades BEFORE={ "strength": 2, "grip": 1, "carry": 1, "capacity": 1 } AFTER={ "strength": 1, "grip": 1, "carry": 1, "capacity": 1 }
+ERROR Unsupported save schema. Original file preserved; saving disabled.

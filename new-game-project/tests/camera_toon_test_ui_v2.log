@@ -1,0 +1,26 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: Contracts cannot be started before campaign clear
+PASS: Contract start available without MAX upgrades
+PASS: Contract menu starts live session with its own rules
+PASS: Play Again retains selected contract mode
+PASS: Normal button restores 60 seconds and permanent capacity
+PASS: Cosmetic shop signal purchases once even on repeated press
+PASS: Equipped cosmetic reaches next playable round without stat changes
+PASS: Ten complete UI run/result/replay cycles release nodes, signals and sound players
+PASS: Shop tier lock is visible and disabled
+PASS: Shop explains next tier unlock
+PASS: Tier bypass via direct buy signal cannot charge
+PASS: Unlock opens global purchase tier
+PASS: Exactly five stat cards and purchase controls
+PASS: Migrated over-tier level is explained in shop
+PASS: Grandfathered Grip15 remains active while replaying Apartment
+PASS: Warning uses text and compact bar, not color alone
+PASS: Alarm banner plus exact pickup noise shown together
+PASS: Alarm makes van escape action explicit
+PASS: Alarm overlay is brief; compact status remains
+PASS: Distinct synthesized alarm sound exists
+PASS: MAX shop has no level21 or fake zero-price purchase
+V2 UI SUMMARY: 21 checks, 0 failures

@@ -1,0 +1,17 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: READY generates no noise
+PASS: Starting pickup generates no noise
+PASS: Interrupted pickup generates no noise
+PASS: Successful pickup adds precise upgraded noise
+PASS: DROP adds no noise
+PASS: Next round resets noise/alarm/instance flags
+PASS: Upgrade level cannot change base threshold
+PASS: 75-percent warning once with no early alarm
+PASS: DROP remains available after alarm
+PASS: Can pick and load after alarm; no retrigger or repeated warning
+PASS: Contract alarm with7 seconds never adds time
+PASS: Alarm timeout loses carried loot
+PASS: Contract restart resets alarm and keeps overrides
+PASS: Timeout loses both loaded and carried loot
+NOISE AUTHORITY: 20 checks, 6 failures

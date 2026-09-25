@@ -1,0 +1,289 @@
+WorkerThreadPool: 12 threads, 3 max low-priority.
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Using "default" pen tablet driver...
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+CORE API HASH: 3769296884
+EDITOR API HASH: 3146738256
+Loading resource: res://tests/test_gameplay_hud.gd remapped: res://tests/test_gameplay_hud.gd
+Loading resource: res://assets/hud/lock.svg remapped: res://assets/hud/lock.svg
+Loading resource: res://.godot/imported/lock.svg-56c83ced34ad29634247e951a117a946.ctex remapped: res://.godot/imported/lock.svg-56c83ced34ad29634247e951a117a946.ctex
+Completed load for: 'res://assets/hud/lock.svg' remapped 'res://assets/hud/lock.svg' at thread -1
+Loading resource: res://assets/hud/clock.png remapped: res://assets/hud/clock.png
+Loading resource: res://.godot/imported/clock.png-91b1537a1f5b81fc948c1756f5246d7a.ctex remapped: res://.godot/imported/clock.png-91b1537a1f5b81fc948c1756f5246d7a.ctex
+Completed load for: 'res://assets/hud/clock.png' remapped 'res://assets/hud/clock.png' at thread -1
+Loading resource: res://assets/hud/cash.png remapped: res://assets/hud/cash.png
+Loading resource: res://.godot/imported/cash.png-319259cae107de31bcf2f10d387e30f4.ctex remapped: res://.godot/imported/cash.png-319259cae107de31bcf2f10d387e30f4.ctex
+Completed load for: 'res://assets/hud/cash.png' remapped 'res://assets/hud/cash.png' at thread -1
+Loading resource: res://assets/hud/box.png remapped: res://assets/hud/box.png
+Loading resource: res://.godot/imported/box.png-865085619aa4415f529e2c73361787cf.ctex remapped: res://.godot/imported/box.png-865085619aa4415f529e2c73361787cf.ctex
+Completed load for: 'res://assets/hud/box.png' remapped 'res://assets/hud/box.png' at thread -1
+Loading resource: res://assets/hud/noise.png remapped: res://assets/hud/noise.png
+Loading resource: res://.godot/imported/noise.png-888b9962022ca43a5936c41b4f22b0e6.ctex remapped: res://.godot/imported/noise.png-888b9962022ca43a5936c41b4f22b0e6.ctex
+Completed load for: 'res://assets/hud/noise.png' remapped 'res://assets/hud/noise.png' at thread -1
+Loading resource: res://assets/hud/warning.png remapped: res://assets/hud/warning.png
+Loading resource: res://.godot/imported/warning.png-64f195f22ba29cb0af6aaa12b22eb213.ctex remapped: res://.godot/imported/warning.png-64f195f22ba29cb0af6aaa12b22eb213.ctex
+Completed load for: 'res://assets/hud/warning.png' remapped 'res://assets/hud/warning.png' at thread -1
+Loading resource: res://assets/hud/strength.png remapped: res://assets/hud/strength.png
+Loading resource: res://.godot/imported/strength.png-f2db8b23988d09470919741e592742d7.ctex remapped: res://.godot/imported/strength.png-f2db8b23988d09470919741e592742d7.ctex
+Completed load for: 'res://assets/hud/strength.png' remapped 'res://assets/hud/strength.png' at thread -1
+Loading resource: res://assets/hud/pause.svg remapped: res://assets/hud/pause.svg
+Loading resource: res://.godot/imported/pause.svg-cafaede2d08f7c48163eaa4d860173ab.ctex remapped: res://.godot/imported/pause.svg-cafaede2d08f7c48163eaa4d860173ab.ctex
+Completed load for: 'res://assets/hud/pause.svg' remapped 'res://assets/hud/pause.svg' at thread -1
+Loading resource: res://assets/hud/play.svg remapped: res://assets/hud/play.svg
+Loading resource: res://.godot/imported/play.svg-5bd33ce86360c0caa92a5736cd6df463.ctex remapped: res://.godot/imported/play.svg-5bd33ce86360c0caa92a5736cd6df463.ctex
+Completed load for: 'res://assets/hud/play.svg' remapped 'res://assets/hud/play.svg' at thread -1
+Loading resource: res://assets/hud/escape.svg remapped: res://assets/hud/escape.svg
+Loading resource: res://.godot/imported/escape.svg-8ee5346f9412600e19037510d68716d2.ctex remapped: res://.godot/imported/escape.svg-8ee5346f9412600e19037510d68716d2.ctex
+Completed load for: 'res://assets/hud/escape.svg' remapped 'res://assets/hud/escape.svg' at thread -1
+Loading resource: res://assets/hud/drop.svg remapped: res://assets/hud/drop.svg
+Loading resource: res://.godot/imported/drop.svg-baf386ab076566b83ae487991775457b.ctex remapped: res://.godot/imported/drop.svg-baf386ab076566b83ae487991775457b.ctex
+Completed load for: 'res://assets/hud/drop.svg' remapped 'res://assets/hud/drop.svg' at thread -1
+Loading resource: res://assets/hud/hand.svg remapped: res://assets/hud/hand.svg
+Loading resource: res://.godot/imported/hand.svg-562e7706dd2196b5f53334b7e9a47229.ctex remapped: res://.godot/imported/hand.svg-562e7706dd2196b5f53334b7e9a47229.ctex
+Completed load for: 'res://assets/hud/hand.svg' remapped 'res://assets/hud/hand.svg' at thread -1
+Loading resource: res://assets/shaders/jobs_hero.gdshader remapped: res://assets/shaders/jobs_hero.gdshader
+Completed load for: 'res://assets/shaders/jobs_hero.gdshader' remapped 'res://assets/shaders/jobs_hero.gdshader' at thread -1
+Loading resource: res://assets/shaders/jobs_blueprint.gdshader remapped: res://assets/shaders/jobs_blueprint.gdshader
+Completed load for: 'res://assets/shaders/jobs_blueprint.gdshader' remapped 'res://assets/shaders/jobs_blueprint.gdshader' at thread -1
+Loading resource: res://assets/shaders/alarm_vignette.gdshader remapped: res://assets/shaders/alarm_vignette.gdshader
+Completed load for: 'res://assets/shaders/alarm_vignette.gdshader' remapped 'res://assets/shaders/alarm_vignette.gdshader' at thread -1
+Loading resource: res://assets/shaders/scene_polish.gdshader remapped: res://assets/shaders/scene_polish.gdshader
+Completed load for: 'res://assets/shaders/scene_polish.gdshader' remapped 'res://assets/shaders/scene_polish.gdshader' at thread -1
+Loading resource: res://assets/ui/diamond.svg remapped: res://assets/ui/diamond.svg
+Loading resource: res://.godot/imported/diamond.svg-8e043a17cc579dab8324fb7625b716f3.ctex remapped: res://.godot/imported/diamond.svg-8e043a17cc579dab8324fb7625b716f3.ctex
+Completed load for: 'res://assets/ui/diamond.svg' remapped 'res://assets/ui/diamond.svg' at thread -1
+Loading resource: res://assets/shaders/menu_studio.gdshader remapped: res://assets/shaders/menu_studio.gdshader
+Completed load for: 'res://assets/shaders/menu_studio.gdshader' remapped 'res://assets/shaders/menu_studio.gdshader' at thread -1
+Loading resource: res://assets/ui/settings.svg remapped: res://assets/ui/settings.svg
+Loading resource: res://.godot/imported/settings.svg-aadd20246e53d972a1c7c19b342cb53e.ctex remapped: res://.godot/imported/settings.svg-aadd20246e53d972a1c7c19b342cb53e.ctex
+Completed load for: 'res://assets/ui/settings.svg' remapped 'res://assets/ui/settings.svg' at thread -1
+Loading resource: res://assets/ui/gift.svg remapped: res://assets/ui/gift.svg
+Loading resource: res://.godot/imported/gift.svg-21e946dc70db89e37551bb6e20cc08c5.ctex remapped: res://.godot/imported/gift.svg-21e946dc70db89e37551bb6e20cc08c5.ctex
+Completed load for: 'res://assets/ui/gift.svg' remapped 'res://assets/ui/gift.svg' at thread -1
+Loading resource: res://assets/ui/busted.svg remapped: res://assets/ui/busted.svg
+Loading resource: res://.godot/imported/busted.svg-01de4efb34197b89924055a7f8cfde3b.ctex remapped: res://.godot/imported/busted.svg-01de4efb34197b89924055a7f8cfde3b.ctex
+Completed load for: 'res://assets/ui/busted.svg' remapped 'res://assets/ui/busted.svg' at thread -1
+Loading resource: res://assets/ui/jobs/pyramid.png remapped: res://assets/ui/jobs/pyramid.png
+Loading resource: res://.godot/imported/pyramid.png-7b98528b97c180f19f3ff2d235e0f082.ctex remapped: res://.godot/imported/pyramid.png-7b98528b97c180f19f3ff2d235e0f082.ctex
+Completed load for: 'res://assets/ui/jobs/pyramid.png' remapped 'res://assets/ui/jobs/pyramid.png' at thread -1
+Loading resource: res://assets/ui/jobs/house.png remapped: res://assets/ui/jobs/house.png
+Loading resource: res://.godot/imported/house.png-438158ff1f7161cea06dee40db3be20d.ctex remapped: res://.godot/imported/house.png-438158ff1f7161cea06dee40db3be20d.ctex
+Completed load for: 'res://assets/ui/jobs/house.png' remapped 'res://assets/ui/jobs/house.png' at thread -1
+Loading resource: res://assets/shaders/rarity_surface.gdshader remapped: res://assets/shaders/rarity_surface.gdshader
+Completed load for: 'res://assets/shaders/rarity_surface.gdshader' remapped 'res://assets/shaders/rarity_surface.gdshader' at thread -1
+Loading resource: res://assets/shaders/rarity_ground.gdshader remapped: res://assets/shaders/rarity_ground.gdshader
+Completed load for: 'res://assets/shaders/rarity_ground.gdshader' remapped 'res://assets/shaders/rarity_ground.gdshader' at thread -1
+Loading resource: res://assets/shaders/pirate_water.gdshader remapped: res://assets/shaders/pirate_water.gdshader
+Completed load for: 'res://assets/shaders/pirate_water.gdshader' remapped 'res://assets/shaders/pirate_water.gdshader' at thread -1
+Loading resource: res://assets/shaders/home_showcase_composite.gdshader remapped: res://assets/shaders/home_showcase_composite.gdshader
+Completed load for: 'res://assets/shaders/home_showcase_composite.gdshader' remapped 'res://assets/shaders/home_showcase_composite.gdshader' at thread -1
+Loading resource: res://assets/shaders/home_floor.gdshader remapped: res://assets/shaders/home_floor.gdshader
+Completed load for: 'res://assets/shaders/home_floor.gdshader' remapped 'res://assets/shaders/home_floor.gdshader' at thread -1
+Loading resource: res://assets/shaders/home_uplight.gdshader remapped: res://assets/shaders/home_uplight.gdshader
+Completed load for: 'res://assets/shaders/home_uplight.gdshader' remapped 'res://assets/shaders/home_uplight.gdshader' at thread -1
+Loading resource: res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.obj remapped: res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.obj
+Loading resource: res://.godot/imported/Meshy_AI_Cash_Bundle_0820173211_texture.obj-bcc6adeccba2e2ee9d92869e809032b1.mesh remapped: res://.godot/imported/Meshy_AI_Cash_Bundle_0820173211_texture.obj-bcc6adeccba2e2ee9d92869e809032b1.mesh
+Loading resource: res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.png remapped: res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.png
+Loading resource: res://.godot/imported/Meshy_AI_Cash_Bundle_0820173211_texture.png-c94cfb533eddd159a1bba545fbd19bc6.s3tc.ctex remapped: res://.godot/imported/Meshy_AI_Cash_Bundle_0820173211_texture.png-c94cfb533eddd159a1bba545fbd19bc6.s3tc.ctex
+Completed load for: 'res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.png' remapped 'res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.png' at thread -1
+Completed load for: 'res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.obj' remapped 'res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.obj' at thread -1
+Completed load for: 'res://tests/test_gameplay_hud.gd' remapped 'res://tests/test_gameplay_hud.gd' at thread -1
+SceneTreeFTI: traversal method DEFAULT
+Loaded builtin CA certificates
+Loading resource: res://scenes/main.tscn remapped: res://scenes/main.tscn
+Loading resource: res://scripts/main.gd remapped: res://scripts/main.gd
+Completed load for: 'res://scripts/main.gd' remapped 'res://scripts/main.gd' at thread -1
+Completed load for: 'res://scenes/main.tscn' remapped 'res://scenes/main.tscn' at thread -1
+Loading resource: res://assets/sfx/pickup_light_1.wav remapped: res://assets/sfx/pickup_light_1.wav
+Loading resource: res://.godot/imported/pickup_light_1.wav-4e7dbbb188ce8eaa9eac2345fbff6635.sample remapped: res://.godot/imported/pickup_light_1.wav-4e7dbbb188ce8eaa9eac2345fbff6635.sample
+Completed load for: 'res://assets/sfx/pickup_light_1.wav' remapped 'res://assets/sfx/pickup_light_1.wav' at thread -1
+Loading resource: res://assets/sfx/pickup_light_2.wav remapped: res://assets/sfx/pickup_light_2.wav
+Loading resource: res://.godot/imported/pickup_light_2.wav-191f452f9c0eac7fea8ab4f303034fd9.sample remapped: res://.godot/imported/pickup_light_2.wav-191f452f9c0eac7fea8ab4f303034fd9.sample
+Completed load for: 'res://assets/sfx/pickup_light_2.wav' remapped 'res://assets/sfx/pickup_light_2.wav' at thread -1
+Loading resource: res://assets/sfx/pickup_light_3.wav remapped: res://assets/sfx/pickup_light_3.wav
+Loading resource: res://.godot/imported/pickup_light_3.wav-355c468335072c71f75edd075ac836d1.sample remapped: res://.godot/imported/pickup_light_3.wav-355c468335072c71f75edd075ac836d1.sample
+Completed load for: 'res://assets/sfx/pickup_light_3.wav' remapped 'res://assets/sfx/pickup_light_3.wav' at thread -1
+Loading resource: res://assets/sfx/pickup_heavy_1.wav remapped: res://assets/sfx/pickup_heavy_1.wav
+Loading resource: res://.godot/imported/pickup_heavy_1.wav-7d8421d2dee0efe1bc0df29627b2f1dc.sample remapped: res://.godot/imported/pickup_heavy_1.wav-7d8421d2dee0efe1bc0df29627b2f1dc.sample
+Completed load for: 'res://assets/sfx/pickup_heavy_1.wav' remapped 'res://assets/sfx/pickup_heavy_1.wav' at thread -1
+Loading resource: res://assets/sfx/pickup_heavy_2.wav remapped: res://assets/sfx/pickup_heavy_2.wav
+Loading resource: res://.godot/imported/pickup_heavy_2.wav-b1ab5a2f4b7f9e0a0bfd75c0d22f0f4d.sample remapped: res://.godot/imported/pickup_heavy_2.wav-b1ab5a2f4b7f9e0a0bfd75c0d22f0f4d.sample
+Completed load for: 'res://assets/sfx/pickup_heavy_2.wav' remapped 'res://assets/sfx/pickup_heavy_2.wav' at thread -1
+Loading resource: res://assets/sfx/pickup_heavy_3.wav remapped: res://assets/sfx/pickup_heavy_3.wav
+Loading resource: res://.godot/imported/pickup_heavy_3.wav-53e4dba636fb66688202f6a4d72cc658.sample remapped: res://.godot/imported/pickup_heavy_3.wav-53e4dba636fb66688202f6a4d72cc658.sample
+Completed load for: 'res://assets/sfx/pickup_heavy_3.wav' remapped 'res://assets/sfx/pickup_heavy_3.wav' at thread -1
+Loading resource: res://assets/sfx/impact_light_1.wav remapped: res://assets/sfx/impact_light_1.wav
+Loading resource: res://.godot/imported/impact_light_1.wav-38961eea3d85c298be863f9493824231.sample remapped: res://.godot/imported/impact_light_1.wav-38961eea3d85c298be863f9493824231.sample
+Completed load for: 'res://assets/sfx/impact_light_1.wav' remapped 'res://assets/sfx/impact_light_1.wav' at thread -1
+Loading resource: res://assets/sfx/impact_light_2.wav remapped: res://assets/sfx/impact_light_2.wav
+Loading resource: res://.godot/imported/impact_light_2.wav-b4b2838dce645d72487534686bfecc68.sample remapped: res://.godot/imported/impact_light_2.wav-b4b2838dce645d72487534686bfecc68.sample
+Completed load for: 'res://assets/sfx/impact_light_2.wav' remapped 'res://assets/sfx/impact_light_2.wav' at thread -1
+Loading resource: res://assets/sfx/impact_medium_1.wav remapped: res://assets/sfx/impact_medium_1.wav
+Loading resource: res://.godot/imported/impact_medium_1.wav-0de9b065154f7c48e9d709370134eadc.sample remapped: res://.godot/imported/impact_medium_1.wav-0de9b065154f7c48e9d709370134eadc.sample
+Completed load for: 'res://assets/sfx/impact_medium_1.wav' remapped 'res://assets/sfx/impact_medium_1.wav' at thread -1
+Loading resource: res://assets/sfx/impact_medium_2.wav remapped: res://assets/sfx/impact_medium_2.wav
+Loading resource: res://.godot/imported/impact_medium_2.wav-33cd5f80a33ba987e1d834dd01120141.sample remapped: res://.godot/imported/impact_medium_2.wav-33cd5f80a33ba987e1d834dd01120141.sample
+Completed load for: 'res://assets/sfx/impact_medium_2.wav' remapped 'res://assets/sfx/impact_medium_2.wav' at thread -1
+Loading resource: res://assets/sfx/impact_heavy_1.wav remapped: res://assets/sfx/impact_heavy_1.wav
+Loading resource: res://.godot/imported/impact_heavy_1.wav-70bd26f0e297c4d8981e449bf0f4cffc.sample remapped: res://.godot/imported/impact_heavy_1.wav-70bd26f0e297c4d8981e449bf0f4cffc.sample
+Completed load for: 'res://assets/sfx/impact_heavy_1.wav' remapped 'res://assets/sfx/impact_heavy_1.wav' at thread -1
+Loading resource: res://assets/sfx/impact_heavy_2.wav remapped: res://assets/sfx/impact_heavy_2.wav
+Loading resource: res://.godot/imported/impact_heavy_2.wav-55f4f4f94c839be1d894e505a8cc1211.sample remapped: res://.godot/imported/impact_heavy_2.wav-55f4f4f94c839be1d894e505a8cc1211.sample
+Completed load for: 'res://assets/sfx/impact_heavy_2.wav' remapped 'res://assets/sfx/impact_heavy_2.wav' at thread -1
+Loading resource: res://assets/sfx/impact_very_heavy_1.wav remapped: res://assets/sfx/impact_very_heavy_1.wav
+Loading resource: res://.godot/imported/impact_very_heavy_1.wav-95b449b4907a394309db9b6a0dfb7752.sample remapped: res://.godot/imported/impact_very_heavy_1.wav-95b449b4907a394309db9b6a0dfb7752.sample
+Completed load for: 'res://assets/sfx/impact_very_heavy_1.wav' remapped 'res://assets/sfx/impact_very_heavy_1.wav' at thread -1
+Loading resource: res://assets/sfx/impact_very_heavy_2.wav remapped: res://assets/sfx/impact_very_heavy_2.wav
+Loading resource: res://.godot/imported/impact_very_heavy_2.wav-3479eab7dc1fb5cceb80d399e237a6d9.sample remapped: res://.godot/imported/impact_very_heavy_2.wav-3479eab7dc1fb5cceb80d399e237a6d9.sample
+Completed load for: 'res://assets/sfx/impact_very_heavy_2.wav' remapped 'res://assets/sfx/impact_very_heavy_2.wav' at thread -1
+Loading resource: res://assets/sfx/cash_burst.wav remapped: res://assets/sfx/cash_burst.wav
+Loading resource: res://.godot/imported/cash_burst.wav-adf8e5bf0baa2d287e05a773dee3b2a8.sample remapped: res://.godot/imported/cash_burst.wav-adf8e5bf0baa2d287e05a773dee3b2a8.sample
+Completed load for: 'res://assets/sfx/cash_burst.wav' remapped 'res://assets/sfx/cash_burst.wav' at thread -1
+Loading resource: res://assets/sfx/cash_collect.wav remapped: res://assets/sfx/cash_collect.wav
+Loading resource: res://.godot/imported/cash_collect.wav-b2d5fb9767cafcbf4873d7bc4df0562b.sample remapped: res://.godot/imported/cash_collect.wav-b2d5fb9767cafcbf4873d7bc4df0562b.sample
+Completed load for: 'res://assets/sfx/cash_collect.wav' remapped 'res://assets/sfx/cash_collect.wav' at thread -1
+Loading resource: res://assets/sfx/noise_tick.wav remapped: res://assets/sfx/noise_tick.wav
+Loading resource: res://.godot/imported/noise_tick.wav-b89dfc291edcec2c42b4808fe06a1ea6.sample remapped: res://.godot/imported/noise_tick.wav-b89dfc291edcec2c42b4808fe06a1ea6.sample
+Completed load for: 'res://assets/sfx/noise_tick.wav' remapped 'res://assets/sfx/noise_tick.wav' at thread -1
+Loading resource: res://assets/sfx/noise_warning.wav remapped: res://assets/sfx/noise_warning.wav
+Loading resource: res://.godot/imported/noise_warning.wav-4bb6026dca640c89d9404acdb7e63875.sample remapped: res://.godot/imported/noise_warning.wav-4bb6026dca640c89d9404acdb7e63875.sample
+Completed load for: 'res://assets/sfx/noise_warning.wav' remapped 'res://assets/sfx/noise_warning.wav' at thread -1
+Loading resource: res://assets/sfx/alarm_trigger.wav remapped: res://assets/sfx/alarm_trigger.wav
+Loading resource: res://.godot/imported/alarm_trigger.wav-da4784e23d185f03388ca7d01a9979f1.sample remapped: res://.godot/imported/alarm_trigger.wav-da4784e23d185f03388ca7d01a9979f1.sample
+Completed load for: 'res://assets/sfx/alarm_trigger.wav' remapped 'res://assets/sfx/alarm_trigger.wav' at thread -1
+Loading resource: res://assets/sfx/timer_tick.wav remapped: res://assets/sfx/timer_tick.wav
+Loading resource: res://.godot/imported/timer_tick.wav-252b9c7adf7a8c9fd2a5fce16a9962d5.sample remapped: res://.godot/imported/timer_tick.wav-252b9c7adf7a8c9fd2a5fce16a9962d5.sample
+Completed load for: 'res://assets/sfx/timer_tick.wav' remapped 'res://assets/sfx/timer_tick.wav' at thread -1
+Loading resource: res://assets/sfx/escape_success.wav remapped: res://assets/sfx/escape_success.wav
+Loading resource: res://.godot/imported/escape_success.wav-c81bd2371840942a2e5544b9e076041e.sample remapped: res://.godot/imported/escape_success.wav-c81bd2371840942a2e5544b9e076041e.sample
+Completed load for: 'res://assets/sfx/escape_success.wav' remapped 'res://assets/sfx/escape_success.wav' at thread -1
+Loading resource: res://assets/sfx/busted.wav remapped: res://assets/sfx/busted.wav
+Loading resource: res://.godot/imported/busted.wav-135e87537d51d09148fccae2a76fb542.sample remapped: res://.godot/imported/busted.wav-135e87537d51d09148fccae2a76fb542.sample
+Completed load for: 'res://assets/sfx/busted.wav' remapped 'res://assets/sfx/busted.wav' at thread -1
+Loading resource: res://assets/sfx/upgrade_purchase.wav remapped: res://assets/sfx/upgrade_purchase.wav
+Loading resource: res://.godot/imported/upgrade_purchase.wav-2744cf7389962285ad22207c9bb8c0d8.sample remapped: res://.godot/imported/upgrade_purchase.wav-2744cf7389962285ad22207c9bb8c0d8.sample
+Completed load for: 'res://assets/sfx/upgrade_purchase.wav' remapped 'res://assets/sfx/upgrade_purchase.wav' at thread -1
+Loading resource: res://assets/sfx/strength_unlock.wav remapped: res://assets/sfx/strength_unlock.wav
+Loading resource: res://.godot/imported/strength_unlock.wav-4b1638291169ffd047f2855ba2da76a7.sample remapped: res://.godot/imported/strength_unlock.wav-4b1638291169ffd047f2855ba2da76a7.sample
+Completed load for: 'res://assets/sfx/strength_unlock.wav' remapped 'res://assets/sfx/strength_unlock.wav' at thread -1
+Loading resource: res://assets/sfx/special_reveal.wav remapped: res://assets/sfx/special_reveal.wav
+Loading resource: res://.godot/imported/special_reveal.wav-512fe6131744a6998a5cf97ea8502112.sample remapped: res://.godot/imported/special_reveal.wav-512fe6131744a6998a5cf97ea8502112.sample
+Completed load for: 'res://assets/sfx/special_reveal.wav' remapped 'res://assets/sfx/special_reveal.wav' at thread -1
+Loading resource: res://assets/sfx/drop.wav remapped: res://assets/sfx/drop.wav
+Loading resource: res://.godot/imported/drop.wav-6bed34ba4859060013cfe9233e94d33c.sample remapped: res://.godot/imported/drop.wav-6bed34ba4859060013cfe9233e94d33c.sample
+Completed load for: 'res://assets/sfx/drop.wav' remapped 'res://assets/sfx/drop.wav' at thread -1
+Loading resource: res://assets/sfx/blocked.wav remapped: res://assets/sfx/blocked.wav
+Loading resource: res://.godot/imported/blocked.wav-1f4685e8c2a7bd4702c9e916f7dcc0eb.sample remapped: res://.godot/imported/blocked.wav-1f4685e8c2a7bd4702c9e916f7dcc0eb.sample
+Completed load for: 'res://assets/sfx/blocked.wav' remapped 'res://assets/sfx/blocked.wav' at thread -1
+Loading resource: res://assets/ui/home/play.svg remapped: res://assets/ui/home/play.svg
+Loading resource: res://.godot/imported/play.svg-f353cc7ce9264d662c55383a121b78f0.ctex remapped: res://.godot/imported/play.svg-f353cc7ce9264d662c55383a121b78f0.ctex
+Completed load for: 'res://assets/ui/home/play.svg' remapped 'res://assets/ui/home/play.svg' at thread -1
+Loading resource: res://assets/ui/home/dumbbell.svg remapped: res://assets/ui/home/dumbbell.svg
+Loading resource: res://.godot/imported/dumbbell.svg-251ec0ba5ac48b1c6098c57e5642c728.ctex remapped: res://.godot/imported/dumbbell.svg-251ec0ba5ac48b1c6098c57e5642c728.ctex
+Completed load for: 'res://assets/ui/home/dumbbell.svg' remapped 'res://assets/ui/home/dumbbell.svg' at thread -1
+Loading resource: res://assets/ui/home/collection_box.svg remapped: res://assets/ui/home/collection_box.svg
+Loading resource: res://.godot/imported/collection_box.svg-51c9e23a4b8de0a9acb100d95c9dc794.ctex remapped: res://.godot/imported/collection_box.svg-51c9e23a4b8de0a9acb100d95c9dc794.ctex
+Completed load for: 'res://assets/ui/home/collection_box.svg' remapped 'res://assets/ui/home/collection_box.svg' at thread -1
+Loading resource: res://assets/ui/home/cap.svg remapped: res://assets/ui/home/cap.svg
+Loading resource: res://.godot/imported/cap.svg-43c04c8a88ff170dd37c5338017e6cd5.ctex remapped: res://.godot/imported/cap.svg-43c04c8a88ff170dd37c5338017e6cd5.ctex
+Completed load for: 'res://assets/ui/home/cap.svg' remapped 'res://assets/ui/home/cap.svg' at thread -1
+Loading resource: res://assets/ui/jobs/icons/cash.svg remapped: res://assets/ui/jobs/icons/cash.svg
+Loading resource: res://.godot/imported/cash.svg-b0fb2c01bb743dcae11206f9f8361055.ctex remapped: res://.godot/imported/cash.svg-b0fb2c01bb743dcae11206f9f8361055.ctex
+Completed load for: 'res://assets/ui/jobs/icons/cash.svg' remapped 'res://assets/ui/jobs/icons/cash.svg' at thread -1
+PASS: Shared mobile polish is active during a heist
+PASS: Polish sits behind readable HUD and does not capture touch
+PASS: Camera effects switch can remove the visual pass
+PASS: Ready timer reflects this job and inactive progress stays hidden
+PASS: HUD icons imported
+PASS: Ready has no unavailable actions
+PASS: @MarginContainer@10 fits (64, 64)
+PASS: @PanelContainer@53 fits (64, 64)
+PASS: @MarginContainer@61 fits (64, 64)
+PASS: @Button@29 fits (64, 64)
+PASS: @Label@18 fits (64, 64)
+PASS: @Label@25 fits (64, 64)
+PASS: @Label@36 fits (64, 64)
+PASS: @Label@42 fits (64, 64)
+PASS: @Label@59 fits (64, 64)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: Instruction card hugs its text above bottom actions
+PASS: Noninteractive HUD decoration does not steal joystick touches
+PASS: Pause touch does not start joystick
+PASS: Touch pause opens modal
+PASS: Pickup progress displays actual fraction
+PASS: Carrying shows item and DROP
+PASS: Load uses crate icon and real loading duration
+PASS: Touch DROP releases actual item without starting movement
+PASS: Warning uses label and warning icon
+PASS: Cargo and cash reflect run, not bank
+PASS: Noise warning remains confined to the HUD
+PASS: Full van stops suggesting more pickups
+PASS: Full van directs the player to escape
+PASS: Full van has explicit label and full meter
+PASS: Alarm exposes escape action
+PASS: Alarm banner visible
+PASS: Alarm shows a dedicated police countdown and static amber corners
+PASS: @MarginContainer@10 fits (64, 64)
+PASS: @PanelContainer@53 fits (64, 64)
+PASS: @MarginContainer@61 fits (64, 64)
+PASS: @Button@29 fits (64, 64)
+PASS: @Label@18 fits (64, 64)
+PASS: @Label@25 fits (64, 64)
+PASS: @Label@36 fits (64, 64)
+PASS: @Label@42 fits (64, 64)
+PASS: @Label@59 fits (64, 64)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: Instruction card hugs its text above bottom actions
+PASS: Compact instruction card does not cover ESCAPE
+PASS: @MarginContainer@10 fits (360, 800)
+PASS: @PanelContainer@53 fits (360, 800)
+PASS: @MarginContainer@61 fits (360, 800)
+PASS: @Button@29 fits (360, 800)
+PASS: @Label@18 fits (360, 800)
+PASS: @Label@25 fits (360, 800)
+PASS: @Label@36 fits (360, 800)
+PASS: @Label@42 fits (360, 800)
+PASS: @Label@59 fits (360, 800)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: Instruction card hugs its text above bottom actions
+PASS: Compact instruction card does not cover ESCAPE
+PASS: @MarginContainer@10 fits (600, 800)
+PASS: @PanelContainer@53 fits (600, 800)
+PASS: @MarginContainer@61 fits (600, 800)
+PASS: @Button@29 fits (600, 800)
+PASS: @Label@18 fits (600, 800)
+PASS: @Label@25 fits (600, 800)
+PASS: @Label@36 fits (600, 800)
+PASS: @Label@42 fits (600, 800)
+PASS: @Label@59 fits (600, 800)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: Instruction card hugs its text above bottom actions
+PASS: Compact instruction card does not cover ESCAPE
+PASS: Feedback card hides completely on expiry
+Loading resource: res://assets/ui/jobs/icons/fridge.svg remapped: res://assets/ui/jobs/icons/fridge.svg
+Loading resource: res://.godot/imported/fridge.svg-651e2655b2d33a1fd9085f95f1a8648e.ctex remapped: res://.godot/imported/fridge.svg-651e2655b2d33a1fd9085f95f1a8648e.ctex
+Completed load for: 'res://assets/ui/jobs/icons/fridge.svg' remapped 'res://assets/ui/jobs/icons/fridge.svg' at thread -1
+Loading resource: res://assets/ui/jobs/nav/house.svg remapped: res://assets/ui/jobs/nav/house.svg
+Loading resource: res://.godot/imported/house.svg-4c95def0c0e510fc1fc04b82b2f663bc.ctex remapped: res://.godot/imported/house.svg-4c95def0c0e510fc1fc04b82b2f663bc.ctex
+Completed load for: 'res://assets/ui/jobs/nav/house.svg' remapped 'res://assets/ui/jobs/nav/house.svg' at thread -1
+Loading resource: res://assets/ui/jobs/nav/target.svg remapped: res://assets/ui/jobs/nav/target.svg
+Loading resource: res://.godot/imported/target.svg-8562665c7cf78a895c991d50bfa6f912.ctex remapped: res://.godot/imported/target.svg-8562665c7cf78a895c991d50bfa6f912.ctex
+Completed load for: 'res://assets/ui/jobs/nav/target.svg' remapped 'res://assets/ui/jobs/nav/target.svg' at thread -1
+Loading resource: res://assets/ui/jobs/nav/wrench.svg remapped: res://assets/ui/jobs/nav/wrench.svg
+Loading resource: res://.godot/imported/wrench.svg-68b6a819fc860d15d2afbbdfe12a2ac6.ctex remapped: res://.godot/imported/wrench.svg-68b6a819fc860d15d2afbbdfe12a2ac6.ctex
+Completed load for: 'res://assets/ui/jobs/nav/wrench.svg' remapped 'res://assets/ui/jobs/nav/wrench.svg' at thread -1
+Loading resource: res://assets/ui/jobs/nav/chest.svg remapped: res://assets/ui/jobs/nav/chest.svg
+Loading resource: res://.godot/imported/chest.svg-53b286c2c9a70e04b7f47f07433c02c4.ctex remapped: res://.godot/imported/chest.svg-53b286c2c9a70e04b7f47f07433c02c4.ctex
+Completed load for: 'res://assets/ui/jobs/nav/chest.svg' remapped 'res://assets/ui/jobs/nav/chest.svg' at thread -1
+PASS: Touch ESCAPE settles run normally
+GAMEPLAY HUD CHECKS 75; FAILURES 0
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"

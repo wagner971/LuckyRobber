@@ -1,0 +1,46 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+SCRIPT ERROR: Parse Error: Could not preload resource script "res://scripts/pirate_ship_art.gd".
+   at: GDScript::reload (res://scripts/level.gd:13)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/capture_pirate_ui.gd:13)
+SCRIPT ERROR: Parse Error: Could not resolve script "res://scripts/pirate_ship_art.gd".
+   at: GDScript::reload (res://scripts/level.gd:13)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/capture_pirate_ui.gd:13)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://scripts/main.gd:0)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/capture_pirate_ui.gd:13)
+ERROR: Failed to load script "res://scripts/main.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/capture_pirate_ui.gd:13)
+ERROR: Resource file not found: res://assets/ui/jobs/icons/pirate_chest.svg (expected type: unknown)
+   at: _load (core/io/resource_loader.cpp:325)
+   GDScript backtrace (most recent call first):
+       [0] jobs_objective (res://scripts/game_ui.gd:1460)
+       [1] jobs_playable_content (res://scripts/game_ui.gd:1360)
+       [2] locations (res://scripts/game_ui.gd:1221)
+       [3] open_menu (res://scripts/main.gd:423)
+       [4] action (res://scripts/main.gd:320)
+       [5] capture (res://tests/capture_pirate_ui.gd:25)
+ERROR: Resource file not found: res://assets/ui/jobs/icons/pirate_chest.svg (expected type: unknown)
+   at: _load (core/io/resource_loader.cpp:325)
+   GDScript backtrace (most recent call first):
+       [0] jobs_playable_content (res://scripts/game_ui.gd:1373)
+       [1] locations (res://scripts/game_ui.gd:1221)
+       [2] open_menu (res://scripts/main.gd:423)
+       [3] action (res://scripts/main.gd:320)
+       [4] capture (res://tests/capture_pirate_ui.gd:25)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: start_run (res://scripts/main.gd:87)
+   GDScript backtrace (most recent call first):
+       [0] start_run (res://scripts/main.gd:87)
+       [1] capture (res://tests/capture_pirate_ui.gd:27)
+       [2] shot (res://tests/capture_pirate_ui.gd:8)
+SCRIPT ERROR: Invalid call. Nonexistent function 'set_physics_process' in base 'Nil'.
+   at: capture (res://tests/capture_pirate_ui.gd:28)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/capture_pirate_ui.gd:28)
+       [1] shot (res://tests/capture_pirate_ui.gd:8)

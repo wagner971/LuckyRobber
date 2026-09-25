@@ -1,0 +1,315 @@
+{
+	"checks": 200,
+	"failures": 0,
+	"intervals": [
+		2,
+		4,
+		2,
+		4,
+		2,
+		3,
+		4
+	],
+	"physical_routes": [
+		{
+			"cargo": 11,
+			"circuits": [
+				4.05,
+				3.62,
+				5.18,
+				5.25
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "apartment.rush_hour",
+			"limit": 35.0,
+			"location": "apartment",
+			"mode": "special",
+			"time": 18.1,
+			"types": [
+				"small_tv",
+				"floor_lamp",
+				"toilet",
+				"fridge"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 840
+		},
+		{
+			"cargo": 14,
+			"circuits": [
+				6.13,
+				5.93,
+				8.32,
+				7.48
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "house.rush_hour",
+			"limit": 35.0,
+			"location": "house",
+			"mode": "special",
+			"time": 27.87,
+			"types": [
+				"tool_cabinet",
+				"toilet",
+				"bathtub",
+				"sofa"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 1430
+		},
+		{
+			"cargo": 18,
+			"circuits": [
+				9.370000000000001,
+				6.0200000000000005,
+				6.92,
+				5.6000000000000005
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "villa.rush_hour",
+			"limit": 35.0,
+			"location": "villa",
+			"mode": "special",
+			"time": 27.900000000000002,
+			"types": [
+				"piano",
+				"sofa",
+				"small_safe",
+				"gaming_pc"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 2400
+		},
+		{
+			"cargo": 21,
+			"circuits": [
+				5.12,
+				5.3500000000000005,
+				4.68,
+				5.3500000000000005,
+				6.15
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "electronics.rush_hour",
+			"limit": 35.0,
+			"location": "electronics",
+			"mode": "special",
+			"time": 26.650000000000002,
+			"types": [
+				"vending_machine",
+				"arcade_machine",
+				"arcade_machine",
+				"gaming_pc",
+				"gaming_pc"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 3050
+		},
+		{
+			"cargo": 12,
+			"circuits": [
+				10.72,
+				9.370000000000001
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "mansion.rush_hour",
+			"limit": 35.0,
+			"location": "mansion",
+			"mode": "special",
+			"time": 20.080000000000002,
+			"types": [
+				"large_statue",
+				"small_safe"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 2000
+		},
+		{
+			"cargo": 7,
+			"circuits": [
+				9.8
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "laboratory.rush_hour",
+			"limit": 35.0,
+			"location": "laboratory",
+			"mode": "special",
+			"time": 9.8,
+			"types": [
+				"lab_quantum_core"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 1600
+		},
+		{
+			"cargo": 24,
+			"circuits": [
+				7.5200000000000005,
+				9.370000000000001,
+				10.3
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "museum.rush_hour",
+			"limit": 35.0,
+			"location": "museum",
+			"mode": "special",
+			"time": 27.18,
+			"types": [
+				"museum_artifact",
+				"large_statue",
+				"time_machine"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 6000
+		},
+		{
+			"cargo": 35,
+			"circuits": [
+				2.5,
+				5.23,
+				5.12,
+				4.07,
+				4.13,
+				6.1000000000000005
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "pyramid.rush_hour",
+			"limit": 35.0,
+			"location": "pyramid",
+			"mode": "special",
+			"time": 27.150000000000002,
+			"types": [
+				"treasure_chest",
+				"giant_anubis",
+				"obelisk_fragment",
+				"pharaoh_bust",
+				"sarcophagus",
+				"golden_throne"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 7750
+		},
+		{
+			"cargo": 35,
+			"circuits": [
+				3.6,
+				4.2700000000000005,
+				5.07,
+				5.8,
+				6.25,
+				4.5
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "castle.rush_hour",
+			"limit": 35.0,
+			"location": "castle",
+			"mode": "special",
+			"time": 29.48,
+			"types": [
+				"relic_chest",
+				"gargoyle_statue",
+				"gothic_mirror",
+				"pipe_organ",
+				"vampire_throne",
+				"dracula_coffin"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 8050
+		}
+	],
+	"simulation": [
+		"N",
+		"N",
+		"S",
+		"N",
+		"N",
+		"N",
+		"N",
+		"S",
+		"N",
+		"N",
+		"S",
+		"N",
+		"N",
+		"N",
+		"N",
+		"S",
+		"N",
+		"N",
+		"S",
+		"N",
+		"N",
+		"N",
+		"S",
+		"N",
+		"N",
+		"N",
+		"N",
+		"S",
+		"N",
+		"N"
+	]
+}

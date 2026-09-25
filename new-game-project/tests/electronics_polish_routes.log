@@ -1,0 +1,15 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Store inventory, cargo and value stay unchanged
+PASS: Only Normal Electronics gets the longer alarm escape window
+MEASURE electronics_v2_full_clear 53.68s / 60s | $4060 | cargo 32
+ELECTRONICS DIAGNOSTIC circuits=[5.12, 5.35, 4.68, 6.18, 5.35, 6.15, 3.82, 4.45, 5.12, 3.33, 4.13] types=["vending_machine", "arcade_machine", "arcade_machine", "gaming_pc", "gaming_pc", "gaming_pc", "small_tv", "small_tv", "small_tv", "monitor", "monitor"] alarm_at=38.8999999999991 remaining=3.2166666666664
+PASS: Every electronics display, arcade and stock item is physically reachable and loadable
+PASS: Full clear banks every unchanged loot item
+MEASURE electronics_v2_rush 26.65s / 35s | $3050 | cargo 21
+PASS: Electronics rush contract remains physically solvable
+MEASURE electronics_v2_small_van 19.95s / 60s | $1820 | cargo 12
+PASS: Electronics small_van contract remains physically solvable
+MEASURE electronics_v2_client_order 21.30s / 35s | $2400 | cargo 16
+PASS: Electronics client_order contract remains physically solvable
+ELECTRONICS V2 ROUTES: 7 checks, 0 failures

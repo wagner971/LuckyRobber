@@ -1,0 +1,21 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Rotation day 0 shows exactly three distinct cosmetics
+PASS: Rotation day 1 shows exactly three distinct cosmetics
+PASS: Rotation day 2 shows exactly three distinct cosmetics
+PASS: Rotation day 3 shows exactly three distinct cosmetics
+PASS: Rotation day 4 shows exactly three distinct cosmetics
+PASS: Rotation day 5 shows exactly three distinct cosmetics
+PASS: Rotation day 6 shows exactly three distinct cosmetics
+PASS: Rotation day 7 shows exactly three distinct cosmetics
+PASS: Rotation day 8 shows exactly three distinct cosmetics
+PASS: Rotation day 9 shows exactly three distinct cosmetics
+PASS: Rotation day 10 shows exactly three distinct cosmetics
+PASS: Rotation day 11 shows exactly three distinct cosmetics
+PASS: Rotation day 12 shows exactly three distinct cosmetics
+PASS: Every cosmetic returns in the rotation cycle
+PASS: Today's Shop refreshes at the next UTC day
+PASS: Off-rotation cosmetic cannot be purchased
+PASS: Featured diamond cosmetic is purchasable at its regular price
+PASS: Owned cosmetics stay usable outside their rotation
+SHOP ROTATION SUMMARY: 18 checks, 0 failures

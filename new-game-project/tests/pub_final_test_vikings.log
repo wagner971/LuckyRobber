@@ -1,0 +1,63 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Unique Viking inventory: $17,000 / 44 cargo
+PASS: Museum finale protects the entire new chapter
+PASS: Viking Hall stays locked before Pirate Ship objectives
+PASS: Pirate Ship completion opens Viking Hall
+PASS: New tier has safe upgrade caps
+PASS: Previous save preserves wallet and gains new level defaults
+PASS: Full clear requires both speed upgrades
+PASS: Distinct thematic loot: viking_throne
+PASS: Viking loot uses bounded idle economy: viking_throne
+PASS: Distinct thematic loot: viking_runestone
+PASS: Viking loot uses bounded idle economy: viking_runestone
+PASS: Distinct thematic loot: viking_loom
+PASS: Viking loot uses bounded idle economy: viking_loom
+PASS: Distinct thematic loot: viking_helmet
+PASS: Viking loot uses bounded idle economy: viking_helmet
+PASS: Distinct thematic loot: viking_horn
+PASS: Viking loot uses bounded idle economy: viking_horn
+PASS: Distinct thematic loot: viking_axe
+PASS: Viking loot uses bounded idle economy: viking_axe
+PASS: Distinct thematic loot: viking_shield
+PASS: Viking loot uses bounded idle economy: viking_shield
+PASS: Distinct thematic loot: viking_cauldron
+PASS: Viking loot uses bounded idle economy: viking_cauldron
+PASS: Distinct thematic loot: viking_anvil
+PASS: Viking loot uses bounded idle economy: viking_anvil
+PASS: Distinct thematic loot: viking_raven
+PASS: Viking loot uses bounded idle economy: viking_raven
+PASS: Clear lane beside hearth
+PASS: Visible model: viking_throne
+PASS: Visible model: viking_runestone
+PASS: Visible model: viking_loom
+PASS: Visible model: viking_helmet
+PASS: Visible model: viking_horn
+PASS: Visible model: viking_axe
+PASS: Visible model: viking_shield
+PASS: Visible model: viking_cauldron
+PASS: Visible model: viking_anvil
+PASS: Visible model: viking_raven
+MEASURE viking_full_clear_speed_20 73.13s / 85s | $17000 | cargo 44
+PASS: Physical full clear at speed level 20
+PASS: Hall time and payout at speed level 20
+PASS: Escaped raven becomes collection trophy
+PASS: Clear lane beside hearth
+PASS: Visible model: viking_throne
+PASS: Visible model: viking_runestone
+PASS: Visible model: viking_loom
+PASS: Visible model: viking_helmet
+PASS: Visible model: viking_horn
+PASS: Visible model: viking_axe
+PASS: Visible model: viking_shield
+PASS: Visible model: viking_cauldron
+PASS: Visible model: viking_anvil
+PASS: Visible model: viking_raven
+MEASURE viking_full_clear_speed_12 75.47s / 85s | $17000 | cargo 44
+PASS: Physical full clear at speed level 12
+PASS: Hall time and payout at speed level 12
+PASS: Escaped raven becomes collection trophy
+MEASURE viking_special_short_route 16.80s / 35s | $5300 | cargo 16
+PASS: Short 35-second Special Job has a valuable escape route
+PASS: Short route banks cauldron, anvil and raven
+VIKING CHECKS 57 FAILURES 0

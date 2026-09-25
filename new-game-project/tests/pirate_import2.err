@@ -1,0 +1,10 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+SCRIPT ERROR: Parse Error: Could not preload resource script "res://scripts/pirate_ship_art.gd".
+   at: GDScript::reload (res://scripts/level.gd:13)
+SCRIPT ERROR: Parse Error: Could not resolve script "res://scripts/pirate_ship_art.gd".
+   at: GDScript::reload (res://scripts/level.gd:13)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://scripts/main.gd:0)
+ERROR: Failed to load script "res://scripts/main.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

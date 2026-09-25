@@ -1,0 +1,143 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 1
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 4
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces LIGHT noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces MEDIUM noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces HEAVY noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Every STR upgrade reduces VERY_HEAVY noise at Noise Control 20
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: Noise Control retains its own independent reduction
+PASS: MAX full haul still triggers alarm: apartment
+PASS: MAX full haul still triggers alarm: house
+PASS: MAX full haul still triggers alarm: villa
+PASS: MAX full haul still triggers alarm: electronics
+PASS: MAX full haul still triggers alarm: mansion
+PASS: MAX full haul still triggers alarm: laboratory
+PASS: MAX full haul still triggers alarm: museum
+PASS: MAX full haul still triggers alarm: pyramid
+PASS: MAX full haul still triggers alarm: castle
+PASS: MAX full haul still triggers alarm: pirate_ship
+PASS: MAX full haul still triggers alarm: vikings
+PASS: MAX full haul still triggers alarm: english_pub
+PASS: MAX full haul still triggers alarm: prehistoric
+PASS: Real starter circuit STR 1, item 0
+PASS: Real starter circuit STR 1, item 1
+PASS: Real starter circuit STR 1, item 2
+PASS: Three starter items warn before triggering alarm
+PASS: Fourth object can reach van safely at STR 1
+PASS: Same four-item haul: STR1 alarm, STR2 below alarm
+PASS: Real 12-second pressure still leaves time to escape
+PASS: Small run remains winnable at STR 1
+STARTER STR 1: 44.00 noise / 36.40 threshold, 14.60s active, 10.73s left
+PASS: Real starter circuit STR 2, item 0
+PASS: Real starter circuit STR 2, item 1
+PASS: Real starter circuit STR 2, item 2
+PASS: Fourth object can reach van safely at STR 2
+PASS: Same four-item haul: STR1 alarm, STR2 below alarm
+PASS: Small run remains winnable at STR 2
+STARTER STR 2: 26.40 noise / 36.40 threshold, 14.60s active, 45.40s left
+PASS: Silent Heist remains silent despite low Strength
+PASS: Double Noise still applies on top of handling noise
+PASS: Repeated pickup callback never adds noise twice
+STRENGTH NOISE: 138 checks, 0 failures

@@ -1,0 +1,4 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+ROUTE pickup failed: chair at (1.75636, 0.0, 1.901085) target CHAIR  ·  $50  ·  1 CARGO
+FAIL: Furnished House stays clearable with 24 cargo and moderate speed upgrades

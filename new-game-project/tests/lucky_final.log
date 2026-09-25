@@ -1,0 +1,107 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Forty effects
+PASS: Exact 30% spawn boundary
+PASS: Twenty positive, twenty negative
+PASS: Reachable spawn positions found
+PASS: Magnet collects while moving
+PASS: Permanent upgrades unchanged: magnet
+PASS: silent affects real noise
+PASS: Permanent upgrades unchanged: silent
+PASS: speed movement modifier
+PASS: Permanent upgrades unchanged: speed
+PASS: instant pickup duration
+PASS: Permanent upgrades unchanged: instant
+PASS: bottomless cargo
+PASS: Permanent upgrades unchanged: bottomless
+PASS: time start clock
+PASS: Permanent upgrades unchanged: time
+PASS: double_cash real item cash
+PASS: Permanent upgrades unchanged: double_cash
+PASS: golden rarity rules
+PASS: Permanent upgrades unchanged: golden
+PASS: strength temporary strength
+PASS: Permanent upgrades unchanged: strength
+PASS: feather carry modifier
+PASS: Permanent upgrades unchanged: feather
+PASS: delay alarm clock
+PASS: Permanent upgrades unchanged: delay
+PASS: quick_load load duration
+PASS: Permanent upgrades unchanged: quick_load
+PASS: cash_rain real item cash
+PASS: Permanent upgrades unchanged: cash_rain
+PASS: lucky_house rarity rules
+PASS: Permanent upgrades unchanged: lucky_house
+PASS: Second chance once
+PASS: Permanent upgrades unchanged: second
+PASS: Ghost collision capsule
+PASS: Permanent upgrades unchanged: ghost
+PASS: Vacuum extends actual load radius
+PASS: Permanent upgrades unchanged: vacuum
+PASS: Permanent upgrades unchanged: haul
+PASS: vision world treatment
+PASS: Permanent upgrades unchanged: vision
+PASS: jackpot world treatment
+PASS: Permanent upgrades unchanged: jackpot
+PASS: noise affects real noise
+PASS: Permanent upgrades unchanged: noise
+PASS: slow movement modifier
+PASS: Permanent upgrades unchanged: slow
+PASS: hands carry modifier
+PASS: Permanent upgrades unchanged: hands
+PASS: tiny cargo
+PASS: Permanent upgrades unchanged: tiny
+PASS: short start clock
+PASS: Permanent upgrades unchanged: short
+PASS: butter pickup duration
+PASS: Permanent upgrades unchanged: butter
+PASS: Permanent upgrades unchanged: loud_load
+PASS: cheap real item cash
+PASS: Permanent upgrades unchanged: cheap
+PASS: weak temporary strength
+PASS: Permanent upgrades unchanged: weak
+PASS: panic carry modifier
+PASS: Permanent upgrades unchanged: panic
+PASS: Sticky slowdown
+PASS: Sticky recovery
+PASS: Permanent upgrades unchanged: sticky
+PASS: route world treatment
+PASS: Permanent upgrades unchanged: route
+PASS: Heavy footsteps generate periodic noise
+PASS: Permanent upgrades unchanged: shoes
+PASS: rush alarm clock
+PASS: Permanent upgrades unchanged: rush
+PASS: world carry modifier
+PASS: Permanent upgrades unchanged: world
+PASS: bad_luck rarity rules
+PASS: Permanent upgrades unchanged: bad_luck
+PASS: Slippery drops carried item once
+PASS: Permanent upgrades unchanged: slippery
+PASS: door load duration
+PASS: Permanent upgrades unchanged: door
+PASS: dark world treatment
+PASS: Permanent upgrades unchanged: dark
+PASS: curse world treatment
+PASS: Permanent upgrades unchanged: curse
+PASS: Tiny Van is unchanged in Final Job
+PASS: Weak Thief removes a level even at Strength 1
+PASS: Effect consumed at actual start
+PASS: Optional block excluded from completion and blueprint counts
+PASS: Block has no cash/cargo cost
+PASS: Pending effect saved
+PASS: Same outcome survives interrupted reveal
+PASS: Invalid effect sanitized
+PASS: Connected spawn floor: apartment
+PASS: Connected spawn floor: house
+PASS: Connected spawn floor: villa
+PASS: Connected spawn floor: electronics
+PASS: Connected spawn floor: mansion
+PASS: Connected spawn floor: laboratory
+PASS: Connected spawn floor: museum
+PASS: Connected spawn floor: pyramid
+PASS: Connected spawn floor: castle
+PASS: Connected spawn floor: pirate_ship
+PASS: Connected spawn floor: vikings
+PASS: Connected spawn floor: english_pub
+PASS: Connected spawn floor: prehistoric
+LUCKY BLOCKS SUMMARY: 104 checks, 0 failures

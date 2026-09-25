@@ -1,0 +1,72 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+PASS: Fresh flags are false
+PASS: Home PLAY goes directly to Apartment tutorial
+PASS: 90 seconds and unchanged real Apartment layout
+PASS: Reading MOVE costs no time
+PASS: MOVE has gesture and simplified HUD without Noise
+PASS: Stationary input does not complete MOVE
+PASS: Real intentional movement succeeds
+PASS: Travel advances state and starts clock
+PASS: First TV is stable accessible real instance
+PASS: Other loot disabled before first TV
+PASS: Single first target label gives TV/value/cargo
+PASS: First TV has green pulse and arrow
+PASS: Single loot label avoids player and HUD at (360, 800)
+PASS: Single loot label avoids player and HUD at (600, 800)
+PASS: Single loot label avoids player and HUD at (450, 800)
+PASS: Pickup range changes hint to STOP
+PASS: Existing automatic pickup advances CARRY
+PASS: Tutorial pickup has no Noise or Alarm
+PASS: Van pulse and carry hint guide destination
+PASS: Dropping tutorial TV works
+PASS: Dropped first TV remains recoverable target
+PASS: Dropped TV can be picked back up
+PASS: Real zone starts LOAD step
+PASS: First load credits van only, not wallet
+PASS: First load explicitly explains locked van money
+PASS: Actual cash mesh appears in reward flight
+PASS: Escape waits for second item
+PASS: Second choice follows first load explanation
+PASS: Second item is a free choice
+PASS: Second chosen chair loads at unchanged value
+PASS: Return and empty-handed van arrival unlock ESCAPE
+PASS: CTA displays exact real van amount
+PASS: Successful escape banks exact loot and completes flag
+PASS: Repeated escape cannot double-credit tutorial
+PASS: Tutorial changes only wallet and completion, not objectives/records/trophies/contracts/stats/scheduler
+PASS: Continue returns to simple Home
+PASS: Next PLAY starts real NORMAL 60-second Noise lesson
+PASS: Noise bar introduced in run two
+PASS: First real TV adds unchanged Noise and triggers lesson once
+PASS: Noise explanation and completed flag
+PASS: Noise run uses normal wallet/stat/scheduler settlement
+PASS: Settings opens same tutorial as replay
+PASS: Successful replay changes no permanent progression or flags
+PASS: Replay completion returns to menu
+PASS: Noise lesson does not repeat
+PASS: Strength-locked fridge shows price and lock requirement
+PASS: Insufficient cargo shown contextually
+PASS: Label disappears when object stops being relevant
+PASS: Tutorial cannot time out into BUSTED
+PASS: Pause freezes lesson clock and state
+PASS: Abandon gives no partial reward or normal failure
+PASS: PLAY restarts abandoned tutorial cleanly
+PASS: Closing incomplete tutorial has no saved run or cash claim
+PASS: Relauch tutorial is clean
+PASS: Cash and tutorial flag persist atomically
+PASS: Noise flag saves immediately without banking current loot
+PASS: Legacy schema 2 preserves progress and skips onboarding
+PASS: Legacy schema 3 preserves progress and skips onboarding
+PASS: Legacy schema 4 preserves progress and skips onboarding
+PASS: Legacy schema 5 preserves progress and skips onboarding
+PASS: Old empty profile still receives onboarding
+PASS: Modern explicit false Noise flag survives validation despite wallet progress
+PASS: Existing player PLAY opens normal Jobs with intact progress
+PASS: Pending Special Job cannot intervene before Noise lesson
+PASS: PLAY prioritizes real Normal lesson while retaining pending offer
+PASS: Priority run still teaches actual pickup Noise
+PASS: Noise lesson preserves exact pending Special Job
+PASS: Full Special Job flow resumes after Noise lesson
+ONBOARDING CHECKS 68; FAILURES 0

@@ -1,0 +1,70 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: vehicle_black has the requested cash price
+PASS: No in-run purchase: vehicle_black
+PASS: Featured purchase succeeds: vehicle_black
+PASS: Only the exact cash price is deducted: vehicle_black
+PASS: Equipped once, cannot buy twice: vehicle_black
+PASS: Distinct model detail: vehicle_black
+PASS: Cargo and loading orientation preserved: vehicle_black
+PASS: vehicle_pickup has the requested cash price
+PASS: No in-run purchase: vehicle_pickup
+PASS: Featured purchase succeeds: vehicle_pickup
+PASS: Only the exact cash price is deducted: vehicle_pickup
+PASS: Equipped once, cannot buy twice: vehicle_pickup
+PASS: Distinct model detail: vehicle_pickup
+PASS: Cargo and loading orientation preserved: vehicle_pickup
+PASS: Pickup removes both tall cargo doors
+PASS: Pickup has two lowered sides
+PASS: vehicle_box has the requested cash price
+PASS: No in-run purchase: vehicle_box
+PASS: Featured purchase succeeds: vehicle_box
+PASS: Only the exact cash price is deducted: vehicle_box
+PASS: Equipped once, cannot buy twice: vehicle_box
+PASS: Distinct model detail: vehicle_box
+PASS: Cargo and loading orientation preserved: vehicle_box
+PASS: vehicle_armored has the requested cash price
+PASS: No in-run purchase: vehicle_armored
+PASS: Featured purchase succeeds: vehicle_armored
+PASS: Only the exact cash price is deducted: vehicle_armored
+PASS: Equipped once, cannot buy twice: vehicle_armored
+PASS: Distinct model detail: vehicle_armored
+PASS: Cargo and loading orientation preserved: vehicle_armored
+PASS: vehicle_luxury has the requested cash price
+PASS: No in-run purchase: vehicle_luxury
+PASS: Featured purchase succeeds: vehicle_luxury
+PASS: Only the exact cash price is deducted: vehicle_luxury
+PASS: Equipped once, cannot buy twice: vehicle_luxury
+PASS: Distinct model detail: vehicle_luxury
+PASS: Cargo and loading orientation preserved: vehicle_luxury
+PASS: vehicle_hearse has the requested cash price
+PASS: No in-run purchase: vehicle_hearse
+PASS: Featured purchase succeeds: vehicle_hearse
+PASS: Only the exact cash price is deducted: vehicle_hearse
+PASS: Equipped once, cannot buy twice: vehicle_hearse
+PASS: Distinct model detail: vehicle_hearse
+PASS: Cargo and loading orientation preserved: vehicle_hearse
+PASS: vehicle_pirate has the requested cash price
+PASS: No in-run purchase: vehicle_pirate
+PASS: Featured purchase succeeds: vehicle_pirate
+PASS: Only the exact cash price is deducted: vehicle_pirate
+PASS: Equipped once, cannot buy twice: vehicle_pirate
+PASS: Distinct model detail: vehicle_pirate
+PASS: Cargo and loading orientation preserved: vehicle_pirate
+PASS: vehicle_pharaoh has the requested cash price
+PASS: No in-run purchase: vehicle_pharaoh
+PASS: Featured purchase succeeds: vehicle_pharaoh
+PASS: Only the exact cash price is deducted: vehicle_pharaoh
+PASS: Equipped once, cannot buy twice: vehicle_pharaoh
+PASS: Distinct model detail: vehicle_pharaoh
+PASS: Cargo and loading orientation preserved: vehicle_pharaoh
+PASS: Cosmetics never modify upgrades or capacity
+PASS: Vehicle ownership saves
+PASS: Vehicles and equipped skin survive relaunch
+PASS: Owned vehicle can be equipped outside its daily offer
+PASS: Save failure rolls back charge, ownership and equip
+PASS: Default shell restored without losing cargo
+PASS: Today's Shop opens the vehicle preview
+PASS: Preview purchase equips the vehicle and updates the UI
+PASS: Equipped shell appears in the actual heist
+VEHICLE SUMMARY: 67 checks, 0 failures

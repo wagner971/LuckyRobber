@@ -1,0 +1,54 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: Home starts with actual live blocky player model
+PASS: Home displays isolated live3D viewport, no sprite
+PASS: Home exposes dominant PLAY and real Settings
+PASS: Menu actor visibly animates while waiting
+PASS: Preview render resolution bounded for mobile
+PASS: Home PLAY fits portrait (720, 1280)
+PASS: Home PLAY fits portrait (720, 1600)
+PASS: Home PLAY fits portrait (720, 1100)
+PASS: Collection has a dedicated visible live preview
+PASS: EquipA updates SAME preview actor immediately
+PASS: Outfit tint preserves skin and face
+PASS: Collection selection clearly identifies current outfit
+PASS: EquipB updates both character and van through existing set rules
+PASS: OutfitB saved immediately
+PASS: Individual van clears set, restores original suit, applies mint
+PASS: Independent suit and van can combine without desync
+PASS: Original look resets SAME rig and van, no stale colors
+PASS: Upgrades reuses live appearance and component
+PASS: Home reflects equippedB after menu navigation
+PASS: Background suspends menu animation and rendering
+PASS: Foreground resumes menu preview
+PASS: Presentation does not change wallet, scheduler or progression
+PASS: 3D hero clicks cannot start joystick or gameplay
+PASS: Real viewport click on PLAY opens Jobs and releases preview
+PASS: Android Back from Jobs returns Home
+PASS: Gameplay player and van match menu outfitB exactly
+PASS: No menu preview nodes remain during gameplay
+PASS: New game instance reloads outfitB into Home preview
+PASS: Settings has a functional audio control
+PASS: Settings changes actual audio state
+PASS: Sound preference persists separately from progression
+PASS: Stats displays actual saved progress
+PASS: Repeated navigation keeps exactly one preview
+PASS: 32menu transitions release old models, viewports and signals
+PASS: Preview lifecycle ends cleanly with main scene
+PASS: COSMETICS still opens the cosmetics screen separately (B)
+PASS: Persistent nav COLLECTION opens the real Trophy Collection screen (A)
+PASS: Trophy shelf builds one 3D preview per trophy
+PASS: No trophy preview stays continuously UPDATE_ALWAYS (I)
+PASS: Trophy Collection nav bar can leave the screen, not a dead end (C)
+PASS: Cash reward appears before the trophy reveal
+PASS: First trophy acquisition shows a NEW TROPHY notification (D)
+PASS: Notification names the new trophy
+PASS: New trophy popup shows its live 3D model
+PASS: Showing the notification does not touch wallet or trophy data (H)
+PASS: VIEW TROPHIES opens Trophy Collection and dismisses the notification (E)
+PASS: Re-acquiring an already-owned trophy does not show NEW TROPHY again (F)
+PASS: Leaving Results cancels its pending trophy reveal
+PASS: Trophy ownership survives save/load (G)
+LIVE MENU SUMMARY: 49 checks, 0 failures

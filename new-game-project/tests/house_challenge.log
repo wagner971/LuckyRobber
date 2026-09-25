@@ -1,0 +1,462 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: Exact formula price strength L1
+PASS: Exact formula price strength L2
+PASS: Exact formula price strength L3
+PASS: Exact formula price strength L4
+PASS: Exact total strength $23000
+PASS: MAX display safe, no purchase beyond strength
+PASS: Exact formula price grip L1
+PASS: Exact formula price grip L2
+PASS: Exact formula price grip L3
+PASS: Exact formula price grip L4
+PASS: Exact formula price grip L5
+PASS: Exact formula price grip L6
+PASS: Exact formula price grip L7
+PASS: Exact formula price grip L8
+PASS: Exact formula price grip L9
+PASS: Exact formula price grip L10
+PASS: Exact formula price grip L11
+PASS: Exact formula price grip L12
+PASS: Exact formula price grip L13
+PASS: Exact formula price grip L14
+PASS: Exact formula price grip L15
+PASS: Exact formula price grip L16
+PASS: Exact formula price grip L17
+PASS: Exact formula price grip L18
+PASS: Exact formula price grip L19
+PASS: Exact total grip $42450
+PASS: MAX display safe, no purchase beyond grip
+PASS: Exact formula price carry L1
+PASS: Exact formula price carry L2
+PASS: Exact formula price carry L3
+PASS: Exact formula price carry L4
+PASS: Exact formula price carry L5
+PASS: Exact formula price carry L6
+PASS: Exact formula price carry L7
+PASS: Exact formula price carry L8
+PASS: Exact formula price carry L9
+PASS: Exact formula price carry L10
+PASS: Exact formula price carry L11
+PASS: Exact formula price carry L12
+PASS: Exact formula price carry L13
+PASS: Exact formula price carry L14
+PASS: Exact formula price carry L15
+PASS: Exact formula price carry L16
+PASS: Exact formula price carry L17
+PASS: Exact formula price carry L18
+PASS: Exact formula price carry L19
+PASS: Exact total carry $46050
+PASS: MAX display safe, no purchase beyond carry
+PASS: Exact formula price capacity L1
+PASS: Exact formula price capacity L2
+PASS: Exact formula price capacity L3
+PASS: Exact formula price capacity L4
+PASS: Exact formula price capacity L5
+PASS: Exact formula price capacity L6
+PASS: Exact formula price capacity L7
+PASS: Exact formula price capacity L8
+PASS: Exact formula price capacity L9
+PASS: Exact formula price capacity L10
+PASS: Exact formula price capacity L11
+PASS: Exact formula price capacity L12
+PASS: Exact formula price capacity L13
+PASS: Exact formula price capacity L14
+PASS: Exact formula price capacity L15
+PASS: Exact formula price capacity L16
+PASS: Exact formula price capacity L17
+PASS: Exact formula price capacity L18
+PASS: Exact formula price capacity L19
+PASS: Exact total capacity $63600
+PASS: MAX display safe, no purchase beyond capacity
+PASS: Exact formula price noise L1
+PASS: Exact formula price noise L2
+PASS: Exact formula price noise L3
+PASS: Exact formula price noise L4
+PASS: Exact formula price noise L5
+PASS: Exact formula price noise L6
+PASS: Exact formula price noise L7
+PASS: Exact formula price noise L8
+PASS: Exact formula price noise L9
+PASS: Exact formula price noise L10
+PASS: Exact formula price noise L11
+PASS: Exact formula price noise L12
+PASS: Exact formula price noise L13
+PASS: Exact formula price noise L14
+PASS: Exact formula price noise L15
+PASS: Exact formula price noise L16
+PASS: Exact formula price noise L17
+PASS: Exact formula price noise L18
+PASS: Exact formula price noise L19
+PASS: Exact total noise $49600
+PASS: MAX display safe, no purchase beyond noise
+PASS: Exactly 80 purchases, total $224700
+PASS: Rounding ties go up consistently
+PASS: Grip MAX = 157 percent; smallest real loot above 0.25s minimum
+PASS: Safety minimum retained, loading unchanged
+PASS: Carry MAX 128.5 percent and van MAX 46
+PASS: Noise L1=100 percent, L20=81 percent with floor
+PASS: Four exact base Noise classes
+PASS: Capped speed LIGHT L1
+PASS: Capped speed LIGHT L2
+PASS: Capped speed LIGHT L3
+PASS: Capped speed LIGHT L4
+PASS: Capped speed LIGHT L5
+PASS: Capped speed LIGHT L6
+PASS: Capped speed LIGHT L7
+PASS: Capped speed LIGHT L8
+PASS: Capped speed LIGHT L9
+PASS: Capped speed LIGHT L10
+PASS: Capped speed LIGHT L11
+PASS: Capped speed LIGHT L12
+PASS: Capped speed LIGHT L13
+PASS: Capped speed LIGHT L14
+PASS: Capped speed LIGHT L15
+PASS: Capped speed LIGHT L16
+PASS: Capped speed LIGHT L17
+PASS: Capped speed LIGHT L18
+PASS: Capped speed LIGHT L19
+PASS: Capped speed LIGHT L20
+PASS: Capped speed MEDIUM L1
+PASS: Capped speed MEDIUM L2
+PASS: Capped speed MEDIUM L3
+PASS: Capped speed MEDIUM L4
+PASS: Capped speed MEDIUM L5
+PASS: Capped speed MEDIUM L6
+PASS: Capped speed MEDIUM L7
+PASS: Capped speed MEDIUM L8
+PASS: Capped speed MEDIUM L9
+PASS: Capped speed MEDIUM L10
+PASS: Capped speed MEDIUM L11
+PASS: Capped speed MEDIUM L12
+PASS: Capped speed MEDIUM L13
+PASS: Capped speed MEDIUM L14
+PASS: Capped speed MEDIUM L15
+PASS: Capped speed MEDIUM L16
+PASS: Capped speed MEDIUM L17
+PASS: Capped speed MEDIUM L18
+PASS: Capped speed MEDIUM L19
+PASS: Capped speed MEDIUM L20
+PASS: Capped speed HEAVY L1
+PASS: Capped speed HEAVY L2
+PASS: Capped speed HEAVY L3
+PASS: Capped speed HEAVY L4
+PASS: Capped speed HEAVY L5
+PASS: Capped speed HEAVY L6
+PASS: Capped speed HEAVY L7
+PASS: Capped speed HEAVY L8
+PASS: Capped speed HEAVY L9
+PASS: Capped speed HEAVY L10
+PASS: Capped speed HEAVY L11
+PASS: Capped speed HEAVY L12
+PASS: Capped speed HEAVY L13
+PASS: Capped speed HEAVY L14
+PASS: Capped speed HEAVY L15
+PASS: Capped speed HEAVY L16
+PASS: Capped speed HEAVY L17
+PASS: Capped speed HEAVY L18
+PASS: Capped speed HEAVY L19
+PASS: Capped speed HEAVY L20
+PASS: Capped speed VERY_HEAVY L1
+PASS: Capped speed VERY_HEAVY L2
+PASS: Capped speed VERY_HEAVY L3
+PASS: Capped speed VERY_HEAVY L4
+PASS: Capped speed VERY_HEAVY L5
+PASS: Capped speed VERY_HEAVY L6
+PASS: Capped speed VERY_HEAVY L7
+PASS: Capped speed VERY_HEAVY L8
+PASS: Capped speed VERY_HEAVY L9
+PASS: Capped speed VERY_HEAVY L10
+PASS: Capped speed VERY_HEAVY L11
+PASS: Capped speed VERY_HEAVY L12
+PASS: Capped speed VERY_HEAVY L13
+PASS: Capped speed VERY_HEAVY L14
+PASS: Capped speed VERY_HEAVY L15
+PASS: Capped speed VERY_HEAVY L16
+PASS: Capped speed VERY_HEAVY L17
+PASS: Capped speed VERY_HEAVY L18
+PASS: Capped speed VERY_HEAVY L19
+PASS: Capped speed VERY_HEAVY L20
+PASS: Expected inventory apartment
+PASS: Threshold from full base inventory apartment
+PASS: Expected inventory house
+PASS: Threshold from full base inventory house
+PASS: Expected inventory villa
+PASS: Threshold from full base inventory villa
+PASS: Expected inventory electronics
+PASS: Threshold from full base inventory electronics
+PASS: Expected inventory mansion
+PASS: Threshold from full base inventory mansion
+PASS: Expected inventory museum
+PASS: Threshold from full base inventory museum
+PASS: Expected inventory pyramid
+PASS: Threshold from full base inventory pyramid
+PASS: Expected inventory castle
+PASS: Threshold from full base inventory castle
+PASS: Shop effects reflect formulas rather than inconsistent example text
+PASS: READY generates no noise
+PASS: Starting pickup generates no noise
+PASS: Interrupted pickup generates no noise
+PASS: Successful pickup adds precise upgraded noise
+PASS: DROP adds no noise
+PASS: Repickup adds no noise for same instance
+PASS: Repeated callback is idempotent
+PASS: Next round resets noise/alarm/instance flags
+PASS: Upgrade level cannot change base threshold
+PASS: 75-percent warning once with no early alarm
+PASS: Threshold equality triggers alarm; 30 becomes exactly12
+PASS: Paused alarm timer does not decrease
+PASS: DROP remains available after alarm
+PASS: Can pick and load after alarm; no retrigger or repeated warning
+PASS: Escape after alarm banks exact loot
+PASS: Contract alarm with7 seconds never adds time
+PASS: Alarm timeout loses carried loot
+PASS: Contract restart resets alarm and keeps overrides
+PASS: Timeout loses both loaded and carried loot
+PASS: Escaped incomplete contract pays normal loot, not BUSTED or medal
+PASS: Contract never changes career objectives or Normal records
+PASS: Incomplete contract does not set a contract record
+PASS: Meeting contract goal or filling van does not auto escape or bank
+PASS: First contract pays $640 loot + $500 bonus once
+PASS: Contract awards trophy but no career objectives
+PASS: Repeat contract pays loot only, unique trophy and bonus stay unique
+PASS: Contract medals, bonus ledger and mode records survive reload
+PASS: Contract timeout loses both cargo and carried loot
+PASS: Empty escape gives $0 without repeatable completion bonus
+PASS: Cash objectives use delivered value only
+PASS: Threshold65 percent, alarm window remains12 seconds
+PASS: Artifact changes only cargo8 to10
+PASS: Museum exactly46 cargo and unchanged$8170
+PASS: Van formula unchanged: L19=44 L20=46
+PASS: Museum Small Van only changes capacity to18
+PASS: Full inventory noise totals L1=100/L20=81 percent apartment
+PASS: Threshold is80.2469 percent of MAX full-clear noise apartment
+PASS: Location threshold independent of Noise Control apartment
+PASS: Normal timer unchanged apartment
+PASS: Full inventory noise totals L1=100/L20=81 percent house
+PASS: Threshold is80.2469 percent of MAX full-clear noise house
+PASS: Location threshold independent of Noise Control house
+PASS: Normal timer unchanged house
+PASS: Full inventory noise totals L1=100/L20=81 percent villa
+PASS: Threshold is80.2469 percent of MAX full-clear noise villa
+PASS: Location threshold independent of Noise Control villa
+PASS: Normal timer unchanged villa
+PASS: Full inventory noise totals L1=100/L20=81 percent electronics
+PASS: Threshold is80.2469 percent of MAX full-clear noise electronics
+PASS: Location threshold independent of Noise Control electronics
+PASS: Normal timer unchanged electronics
+PASS: Full inventory noise totals L1=100/L20=81 percent mansion
+PASS: Threshold is80.2469 percent of MAX full-clear noise mansion
+PASS: Location threshold independent of Noise Control mansion
+PASS: Normal timer unchanged mansion
+PASS: Full inventory noise totals L1=100/L20=81 percent museum
+PASS: Threshold is80.2469 percent of MAX full-clear noise museum
+PASS: Location threshold independent of Noise Control museum
+PASS: Normal timer unchanged museum
+PASS: Full inventory noise totals L1=100/L20=81 percent pyramid
+PASS: Threshold is80.2469 percent of MAX full-clear noise pyramid
+PASS: Location threshold independent of Noise Control pyramid
+PASS: Normal timer unchanged pyramid
+PASS: Full inventory noise totals L1=100/L20=81 percent castle
+PASS: Threshold is80.2469 percent of MAX full-clear noise castle
+PASS: Location threshold independent of Noise Control castle
+PASS: Normal timer unchanged castle
+PASS: L19 cannot accept final artifact with36 cargo already loaded
+PASS: L20 accepts final10-cargo artifact with36 already loaded
+PASS: Visible model small_tv
+PASS: Visible model chair
+PASS: Visible model small_tv
+PASS: Visible model chair
+PASS: Visible model monitor
+PASS: Visible model printer
+PASS: Visible model toilet
+PASS: Visible model fridge
+PASS: Visible model pink_flamingo
+MEASURE apartment.full_clear 34.67s / 60s | $1210 | cargo 17
+NOISE 45.360 / 36.400 | alarm 29.55s | left 6.88s
+AT ALARM: 7 loaded / 12 cargo / 42.120 noise
+PASS: Physical full clear at MAX apartment
+PASS: First Normal full-clear bonus apartment
+MEASURE apartment.rush 15.23s / 30s | $840 | cargo 11
+NOISE 26.730 / 36.400 | alarm -1.00s | left 14.77s
+PASS: Physical contract solution apartment.rush
+PASS: Correct contract reward tier apartment.rush
+MEASURE apartment.small_van 10.32s / 60s | $620 | cargo 8
+NOISE 21.060 / 36.400 | alarm -1.00s | left 49.68s
+PASS: Physical contract solution apartment.small_van
+PASS: Correct contract reward tier apartment.small_van
+MEASURE apartment.client_order 13.08s / 30s | $640 | cargo 8
+NOISE 18.630 / 36.400 | alarm -1.00s | left 16.92s
+PASS: Physical contract solution apartment.client_order
+PASS: Correct contract reward tier apartment.client_order
+PASS: Visible model small_tv
+PASS: Visible model chair
+PASS: Visible model tool_cabinet
+PASS: Visible model printer
+PASS: Visible model toilet
+PASS: Visible model fridge
+PASS: Visible model bathtub
+PASS: Visible model sofa
+PASS: Visible model golden_bust
+MEASURE house.full_clear 49.20s / 60s | $2260 | cargo 25
+NOISE 69.660 / 55.900 | alarm 41.05s | left 3.85s
+AT ALARM: 7 loaded / 18 cargo / 63.990 noise
+PASS: Physical full clear at MAX house
+PASS: First Normal full-clear bonus house
+MEASURE house.rush 26.68s / 30s | $1400 | cargo 15
+NOISE 42.930 / 55.900 | alarm -1.00s | left 3.32s
+PASS: Physical contract solution house.rush
+PASS: Correct contract reward tier house.rush
+MEASURE house.small_van 22.98s / 60s | $1280 | cargo 12
+NOISE 34.830 / 55.900 | alarm -1.00s | left 37.02s
+PASS: Physical contract solution house.small_van
+PASS: Correct contract reward tier house.small_van
+MEASURE house.client_order 21.02s / 30s | $1010 | cargo 10
+NOISE 29.970 / 55.900 | alarm -1.00s | left 8.98s
+PASS: Physical contract solution house.client_order
+PASS: Correct contract reward tier house.client_order
+PASS: Visible model piano
+PASS: Visible model fridge
+PASS: Visible model toilet
+PASS: Visible model arcade_machine
+PASS: Visible model small_safe
+PASS: Visible model gaming_pc
+PASS: Visible model small_tv
+PASS: Visible model small_tv
+PASS: Visible model monitor
+MEASURE villa.full_clear 44.72s / 60s | $3510 | cargo 30
+NOISE 74.520 / 59.800 | alarm 33.48s | left 0.77s
+AT ALARM: 5 loaded / 22 cargo / 59.940 noise
+PASS: Physical full clear at MAX villa
+PASS: First Normal full-clear bonus villa
+MEASURE villa.rush 23.75s / 35s | $2440 | cargo 18
+NOISE 39.690 / 59.800 | alarm -1.00s | left 11.25s
+PASS: Physical contract solution villa.rush
+PASS: Correct contract reward tier villa.rush
+MEASURE villa.small_van 12.82s / 60s | $1650 | cargo 11
+NOISE 24.300 / 59.800 | alarm -1.00s | left 47.18s
+PASS: Physical contract solution villa.small_van
+PASS: Correct contract reward tier villa.small_van
+MEASURE villa.client_order 15.30s / 35s | $1790 | cargo 13
+NOISE 29.970 / 59.800 | alarm -1.00s | left 19.70s
+PASS: Physical contract solution villa.client_order
+PASS: Correct contract reward tier villa.client_order
+PASS: Visible model vending_machine
+PASS: Visible model arcade_machine
+PASS: Visible model arcade_machine
+PASS: Visible model gaming_pc
+PASS: Visible model gaming_pc
+PASS: Visible model gaming_pc
+PASS: Visible model small_tv
+PASS: Visible model small_tv
+PASS: Visible model small_tv
+PASS: Visible model monitor
+PASS: Visible model monitor
+MEASURE electronics.full_clear 52.22s / 60s | $4060 | cargo 32
+NOISE 69.660 / 55.900 | alarm 41.77s | left 1.55s
+AT ALARM: 7 loaded / 26 cargo / 57.510 noise
+PASS: Physical full clear at MAX electronics
+PASS: First Normal full-clear bonus electronics
+MEASURE electronics.rush 29.43s / 35s | $3050 | cargo 21
+NOISE 40.500 / 55.900 | alarm -1.00s | left 5.57s
+PASS: Physical contract solution electronics.rush
+PASS: Correct contract reward tier electronics.rush
+MEASURE electronics.small_van 19.73s / 60s | $1820 | cargo 12
+NOISE 24.300 / 55.900 | alarm -1.00s | left 40.27s
+PASS: Physical contract solution electronics.small_van
+PASS: Correct contract reward tier electronics.small_van
+MEASURE electronics.client_order 22.80s / 35s | $2400 | cargo 16
+NOISE 30.780 / 55.900 | alarm -1.00s | left 12.20s
+PASS: Physical contract solution electronics.client_order
+PASS: Correct contract reward tier electronics.client_order
+PASS: Visible model large_statue
+PASS: Visible model piano
+PASS: Visible model small_safe
+PASS: Visible model small_safe
+PASS: Visible model fridge
+PASS: Visible model gaming_pc
+PASS: Visible model gaming_pc
+PASS: Visible model small_tv
+PASS: Visible model toilet
+PASS: Visible model monitor
+MEASURE mansion.full_clear 54.12s / 60s | $5170 | cargo 38
+NOISE 93.960 / 75.400 | alarm 42.28s | left 0.17s
+AT ALARM: 6 loaded / 29 cargo / 79.380 noise
+PASS: Physical full clear at MAX mansion
+PASS: First Normal full-clear bonus mansion
+MEASURE mansion.rush 31.85s / 35s | $3900 | cargo 24
+NOISE 55.080 / 75.400 | alarm -1.00s | left 3.15s
+PASS: Physical contract solution mansion.rush
+PASS: Correct contract reward tier mansion.rush
+MEASURE mansion.small_van 15.37s / 60s | $2500 | cargo 14
+NOISE 29.160 / 75.400 | alarm -1.00s | left 44.63s
+PASS: Physical contract solution mansion.small_van
+PASS: Correct contract reward tier mansion.small_van
+MEASURE mansion.client_order 28.77s / 35s | $3500 | cargo 22
+NOISE 58.320 / 75.400 | alarm -1.00s | left 6.23s
+PASS: Physical contract solution mansion.client_order
+PASS: Correct contract reward tier mansion.client_order
+PASS: Visible model museum_artifact
+PASS: Visible model large_statue
+PASS: Visible model large_statue
+PASS: Visible model piano
+PASS: Visible model small_safe
+PASS: Visible model small_safe
+PASS: Visible model gaming_pc
+PASS: Visible model toilet
+MEASURE museum.full_clear 50.60s / 60s | $8170 | cargo 46
+NOISE 98.820 / 79.300 | alarm 39.50s | left 0.90s
+AT ALARM: 5 loaded / 36 cargo / 87.480 noise
+PASS: Physical full clear at MAX museum
+PASS: First Normal full-clear bonus museum
+MEASURE museum.rush 28.82s / 35s | $6000 | cargo 30
+NOISE 58.320 / 79.300 | alarm -1.00s | left 6.18s
+PASS: Physical contract solution museum.rush
+PASS: Correct contract reward tier museum.rush
+MEASURE museum.small_van 14.38s / 60s | $4000 | cargo 18
+NOISE 29.160 / 79.300 | alarm -1.00s | left 45.62s
+PASS: Physical contract solution museum.small_van
+PASS: Correct contract reward tier museum.small_van
+MEASURE museum.client_order 27.67s / 35s | $5500 | cargo 28
+NOISE 58.320 / 79.300 | alarm -1.00s | left 7.33s
+PASS: Physical contract solution museum.client_order
+PASS: Correct contract reward tier museum.client_order
+PASS: Visible model canopic_jar
+PASS: Visible model canopic_jar
+PASS: Visible model treasure_chest
+PASS: Visible model treasure_chest
+PASS: Visible model pharaoh_mask
+PASS: Visible model giant_scarab
+PASS: Visible model giant_anubis
+PASS: Visible model obelisk_fragment
+PASS: Visible model pharaoh_bust
+PASS: Visible model sarcophagus
+PASS: Visible model golden_throne
+MEASURE pyramid.full_clear 47.87s / 60s | $10500 | cargo 44
+NOISE 81.000 / 65.000 | alarm 39.97s | left 5.10s
+AT ALARM: 9 loaded / 29 cargo / 66.420 noise
+PASS: Physical full clear at MAX pyramid
+PASS: First Normal full-clear bonus pyramid
+PASS: Visible model crown_display
+PASS: Visible model blood_chalice
+PASS: Visible model relic_chest
+PASS: Visible model bat_idol
+PASS: Visible model gargoyle_statue
+PASS: Visible model skull_candelabrum
+PASS: Visible model vampire_portrait
+PASS: Visible model gothic_mirror
+PASS: Visible model pipe_organ
+PASS: Visible model vampire_throne
+PASS: Visible model dracula_coffin
+MEASURE castle.full_clear 49.83s / 60s | $10900 | cargo 44
+NOISE 78.570 / 63.050 | alarm 42.88s | left 5.05s
+AT ALARM: 9 loaded / 29 cargo / 63.990 noise
+PASS: Physical full clear at MAX castle
+PASS: First Normal full-clear bonus castle
+MEASURE museum.small_van_exact_artifact_statue 14.38s / 60s | $4000 | cargo 18
+NOISE 29.160 / 79.300 | alarm -1.00s | left 45.62s
+PASS: Physical artifact+statue solution exactly18 cargo/$4000
+PASS: Required Museum solution contains precisely artifact and statue
+CHALLENGE V2.1 SUMMARY: 395 checks, 0 failures

@@ -1,0 +1,82 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+PASS: Navigation keeps the outgoing page until the blend: locations
+PASS: Outgoing page cannot receive a second press: locations
+PASS: Navigation releases the old page cleanly: locations
+PASS: Navigation keeps the outgoing page until the blend: shop
+PASS: Outgoing page cannot receive a second press: shop
+PASS: Navigation releases the old page cleanly: shop
+PASS: Navigation keeps the outgoing page until the blend: collection
+PASS: Outgoing page cannot receive a second press: collection
+PASS: Navigation releases the old page cleanly: collection
+PASS: Navigation keeps the outgoing page until the blend: cosmetics
+PASS: Outgoing page cannot receive a second press: cosmetics
+PASS: Navigation releases the old page cleanly: cosmetics
+PASS: Navigation keeps the outgoing page until the blend: settings
+PASS: Outgoing page cannot receive a second press: settings
+PASS: Navigation releases the old page cleanly: settings
+PASS: Navigation keeps the outgoing page until the blend: stats
+PASS: Outgoing page cannot receive a second press: stats
+PASS: Navigation releases the old page cleanly: stats
+PASS: Navigation keeps the outgoing page until the blend: duplication
+PASS: Outgoing page cannot receive a second press: duplication
+PASS: Navigation releases the old page cleanly: duplication
+PASS: Navigation keeps the outgoing page until the blend: home
+PASS: Outgoing page cannot receive a second press: home
+PASS: Navigation releases the old page cleanly: home
+PASS: Rapid navigation settles on the last requested destination
+PASS: Empty record footnotes are omitted
+PASS: Locked Jobs use a compact previous-job action
+PASS: Incoming card blends in without a visibility jump
+PASS: Rapid swipes leave a single centered card
+PASS: Map loading starts behind an animated curtain
+PASS: Double Play launches only the first requested map
+PASS: Loading reveal holds simulation and movement
+PASS: Map reveal consumes no play time
+PASS: Map reveal restores movement and simulation
+PASS: Pause modal settles fully visible
+PASS: Resume removes its fading modal
+PASS: Failure results settle with fully readable controls
+PASS: Focus-loss pause during reveal is not undone
+PASS: Successful results preserve their reward presentation
+PASS: Navigation keeps the outgoing page until the blend: locations
+PASS: Outgoing page cannot receive a second press: locations
+PASS: Navigation releases the old page cleanly: locations
+PASS: Navigation keeps the outgoing page until the blend: shop
+PASS: Outgoing page cannot receive a second press: shop
+PASS: Navigation releases the old page cleanly: shop
+PASS: Navigation keeps the outgoing page until the blend: collection
+PASS: Outgoing page cannot receive a second press: collection
+PASS: Navigation releases the old page cleanly: collection
+PASS: Navigation keeps the outgoing page until the blend: cosmetics
+PASS: Outgoing page cannot receive a second press: cosmetics
+PASS: Navigation releases the old page cleanly: cosmetics
+PASS: Navigation keeps the outgoing page until the blend: settings
+PASS: Outgoing page cannot receive a second press: settings
+PASS: Navigation releases the old page cleanly: settings
+PASS: Navigation keeps the outgoing page until the blend: stats
+PASS: Outgoing page cannot receive a second press: stats
+PASS: Navigation releases the old page cleanly: stats
+PASS: Navigation keeps the outgoing page until the blend: duplication
+PASS: Outgoing page cannot receive a second press: duplication
+PASS: Navigation releases the old page cleanly: duplication
+PASS: Navigation keeps the outgoing page until the blend: home
+PASS: Outgoing page cannot receive a second press: home
+PASS: Navigation releases the old page cleanly: home
+PASS: Rapid navigation settles on the last requested destination
+PASS: Empty record footnotes are omitted
+PASS: Locked Jobs use a compact previous-job action
+PASS: Incoming card blends in without a visibility jump
+PASS: Rapid swipes leave a single centered card
+PASS: Map loading starts behind an animated curtain
+PASS: Double Play launches only the first requested map
+PASS: Loading reveal holds simulation and movement
+PASS: Map reveal consumes no play time
+PASS: Map reveal restores movement and simulation
+PASS: Pause modal settles fully visible
+PASS: Resume removes its fading modal
+PASS: Failure results settle with fully readable controls
+PASS: Focus-loss pause during reveal is not undone
+PASS: Successful results preserve their reward presentation
+SCREEN MOTION: 78 checks, 0 failures

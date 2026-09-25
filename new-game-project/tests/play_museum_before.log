@@ -1,0 +1,17 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+FAIL: Home PLAY selects a location, never starts a job: fresh
+PASS: Home PLAY selects a location, never starts a job: normal
+FAIL: Home PLAY selects a location, never starts a job: special
+PASS: Home PLAY selects a location, never starts a job: apartment_final
+PASS: Home PLAY selects a location, never starts a job: museum_final
+PASS: Fresh Museum opens its paused briefing
+FAIL: Museum moves after UI launch/briefing: normal
+PASS: Movement starts the Museum clock
+PASS: Museum moves after UI launch/briefing: FINAL_JOB
+PASS: Movement starts the Museum clock
+PASS: Focus loss during reveal keeps Museum paused
+FAIL: Museum moves after a reveal interrupted by focus loss
+PASS: Movement starts the Museum clock
+PLAY / MUSEUM: 13 checks, 4 failures

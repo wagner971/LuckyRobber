@@ -1,0 +1,10 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Both analysis benches have solid drop footprints
+PASS: Small instruments are supported at bench height without a carry offset
+MEASURE laboratory_polish_local_tier 71.23s / 85s | $7250 | cargo 39
+PASS: Laboratory-tier upgrades can retrieve all nine instruments and escape
+PASS: Completing the redesigned Laboratory still unlocks duplication
+PASS: The actual full Laboratory escape records all nine reusable blueprints without scans
+PASS: Original heist loot still pays full value immediately, separately from replicas
+LABORATORY POLISH: 6 checks, 0 failures

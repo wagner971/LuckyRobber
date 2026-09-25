@@ -1,0 +1,17 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+SCRIPT ERROR: Parse Error: Identifier "CameraToonEffect" not declared in the current scope.
+   at: GDScript::reload (res://scripts/level.gd:37)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://scripts/main.gd:0)
+ERROR: Failed to load script "res://scripts/main.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+ERROR: SAVE FAILED (open): Can't open file
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] write_error (res://scripts/save_store.gd:216)
+       [1] save_progress (res://scripts/save_store.gd:196)
+       [2] create_launch_store (res://scripts/main.gd:55)
+       [3] _ready (res://scripts/main.gd:25)

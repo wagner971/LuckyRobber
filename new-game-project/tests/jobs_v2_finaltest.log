@@ -1,0 +1,26 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: Jobs opens on visual Apartment with a concrete next target
+PASS: One location preview is in focus without old technical list
+PASS: Normal run remains directly playable
+PASS: Developer notice stays out of the Jobs presentation
+PASS: Jobs navigation fits the default portrait window
+PASS: Real pointer swipe on hero preview changes the selected job
+PASS: Location mini-cards select the intended job
+PASS: Carousel animates the incoming card instead of swapping instantly
+PASS: Locked House shows one real requirement and no objectives
+PASS: Outgoing card is released after the swipe animation
+PASS: Ready Final Job has distinct primary action alongside Normal
+PASS: Special Job appears on its location without replacing Normal
+PASS: Special and Final Job actions stay above the pager
+PASS: Chapter 2 teaser uses the actual Museum unlock rule
+PASS: Locked chapter keeps future locations hidden and avoids nonexistent Time Machine
+PASS: Chapter 2 reveals playable Pyramid once unlocked
+PASS: Last location has its own preview
+PASS: Swipe stops at the last location without wrapping
+PASS: Horizontal swipe selects the previous location
+PASS: Jobs actions fit portrait (720, 1280) · play 1054 nav 1203–1256
+PASS: Jobs actions fit portrait (720, 1600) · play 1374 nav 1523–1576
+JOBS V1 SUMMARY: 21 checks, 0 failures

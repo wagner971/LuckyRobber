@@ -1,0 +1,79 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+PASS: Shared mobile polish is active during a heist
+PASS: Polish sits behind readable HUD and does not capture touch
+PASS: Camera effects switch can remove the visual pass
+PASS: Ready timer reflects this job and inactive progress stays hidden
+PASS: HUD icons imported
+PASS: Ready has no unavailable actions
+PASS: @MarginContainer@10 fits (450, 800)
+PASS: @PanelContainer@53 fits (450, 800)
+PASS: @MarginContainer@61 fits (450, 800)
+PASS: @Button@29 fits (450, 800)
+PASS: @Label@18 fits (450, 800)
+PASS: @Label@25 fits (450, 800)
+PASS: @Label@36 fits (450, 800)
+PASS: @Label@42 fits (450, 800)
+PASS: @Label@59 fits (450, 800)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: Instruction card hugs its text above bottom actions
+PASS: Noninteractive HUD decoration does not steal joystick touches
+PASS: Pause touch does not start joystick
+PASS: Touch pause opens modal
+PASS: Pickup progress displays actual fraction
+PASS: Carrying shows item and DROP
+PASS: Load uses crate icon and real loading duration
+PASS: Touch DROP releases actual item without starting movement
+PASS: Warning uses label and warning icon
+PASS: Cargo and cash reflect run, not bank
+PASS: Noise warning remains confined to the HUD
+PASS: Full van stops suggesting more pickups
+PASS: Full van directs the player to escape
+PASS: Full van has explicit label and full meter
+PASS: Alarm exposes escape action
+PASS: Alarm banner visible
+PASS: Alarm shows a dedicated police countdown and static amber corners
+PASS: @MarginContainer@10 fits (450, 800)
+PASS: @PanelContainer@53 fits (450, 800)
+PASS: @MarginContainer@61 fits (450, 800)
+PASS: @Button@29 fits (450, 800)
+PASS: @Label@18 fits (450, 800)
+PASS: @Label@25 fits (450, 800)
+PASS: @Label@36 fits (450, 800)
+PASS: @Label@42 fits (450, 800)
+PASS: @Label@59 fits (450, 800)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: Instruction card hugs its text above bottom actions
+PASS: Compact instruction card does not cover ESCAPE
+PASS: @MarginContainer@10 fits (360, 800)
+PASS: @PanelContainer@53 fits (360, 800)
+PASS: @MarginContainer@61 fits (360, 800)
+PASS: @Button@29 fits (360, 800)
+PASS: @Label@18 fits (360, 800)
+PASS: @Label@25 fits (360, 800)
+PASS: @Label@36 fits (360, 800)
+PASS: @Label@42 fits (360, 800)
+PASS: @Label@59 fits (360, 800)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: Instruction card hugs its text above bottom actions
+PASS: Compact instruction card does not cover ESCAPE
+PASS: @MarginContainer@10 fits (600, 800)
+PASS: @PanelContainer@53 fits (600, 800)
+PASS: @MarginContainer@61 fits (600, 800)
+PASS: @Button@29 fits (600, 800)
+PASS: @Label@18 fits (600, 800)
+PASS: @Label@25 fits (600, 800)
+PASS: @Label@36 fits (600, 800)
+PASS: @Label@42 fits (600, 800)
+PASS: @Label@59 fits (600, 800)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: Instruction card hugs its text above bottom actions
+PASS: Compact instruction card does not cover ESCAPE
+PASS: Feedback card hides completely on expiry
+PASS: Touch ESCAPE settles run normally
+GAMEPLAY HUD CHECKS 75; FAILURES 0

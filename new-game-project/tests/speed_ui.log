@@ -1,0 +1,24 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+PASS: Farming stays available; Final Job is withheld before the speed purchases
+PASS: Jobs explicitly explains the two speed requirements
+PASS: Requirement chip opens Carry Speed directly
+PASS: Shop exposes the required level and affordable price
+PASS: Home target recommends the actual missing upgrade
+PASS: Direct Final Job action also enforces requirements
+PASS: Buying only Carry does not bypass Pickup requirement
+PASS: Both actual purchases enable Final Job for exactly $550
+PASS: Final Job action remains visible inside portrait safe area
+PASS: Player can start Final Job immediately after satisfying both requirements
+PASS: Farming stays available; Final Job is withheld before the speed purchases
+PASS: Jobs explicitly explains the two speed requirements
+PASS: Requirement chip opens Carry Speed directly
+PASS: Shop exposes the required level and affordable price
+PASS: Home target recommends the actual missing upgrade
+PASS: Direct Final Job action also enforces requirements
+PASS: Buying only Carry does not bypass Pickup requirement
+PASS: Both actual purchases enable Final Job for exactly $550
+PASS: Final Job action remains visible inside portrait safe area
+PASS: Player can start Final Job immediately after satisfying both requirements
+SPEED UI: 20 checks, 0 failures

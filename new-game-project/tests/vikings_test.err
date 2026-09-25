@@ -1,0 +1,6 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+SCRIPT ERROR: Invalid access to property or key 'viking_ship' on a base object of type 'Dictionary'.
+   at: test (res://tests/test_vikings.gd:19)
+   GDScript backtrace (most recent call first):
+       [0] test (res://tests/test_vikings.gd:19)

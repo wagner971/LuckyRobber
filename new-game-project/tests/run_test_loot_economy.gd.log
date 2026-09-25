@@ -1,0 +1,42 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Escaped loot opens an item decision before results
+PASS: Only the run bonus was credited before the choice
+PASS: Selling pays exactly once and advances to next item
+PASS: Repeating an old choice cannot duplicate money
+PASS: Pawn listing does not pay immediately
+PASS: Last decision opens Results with sale and bonus only
+PASS: Results explains the three fates
+PASS: Collection opens a visible Hideout with pawn access
+PASS: Kept duck can be placed in a fixed Hideout spot
+PASS: Pawn shop displays the listed physical item
+PASS: Pawn shop has a large live isometric 3D room
+PASS: Stolen loot and moving customers inhabit the same shop scene
+PASS: Shelves and register use direct taps without a walking joystick
+PASS: Tapping another shelf inspects that exact display spot
+PASS: Returning player sees a short offline-earnings popup
+PASS: A live sale gives a customer the sold model and pops the register amount
+PASS: Customer request jumps to an unlocked job containing the requested loot
+PASS: Refreshing the idle shop leaves only one animated 3D diorama
+PASS: Sale timer refresh keeps the player's scroll position
+PASS: Offline sale waits in register without silently minting wallet cash
+PASS: Collecting transfers proceeds to wallet once
+PASS: Collect cannot be repeated for duplicate cash
+PASS: Kept objects and fixed placements survive save validation
+PASS: Loot economy save writes atomically
+PASS: Hideout and money survive a real save/load
+PASS: Interrupted item decisions resume from the saved haul
+PASS: Schema 6 saves migrate with money intact and a rollback backup
+PASS: One offline session advances by at most six hours
+PASS: Clerk and Black Market upgrades charge once and expand shelves
+PASS: Fixed furniture spots complete both Hideout sets
+PASS: Sets improve future pawn price and sale time without generating loot
+PASS: Pawn diorama starts with four real shelves and can grow to six
+PASS: First customer requests two obtainable Apartment TVs
+PASS: An empty stash cannot satisfy an order or mint cash
+PASS: One TV cannot complete a two-item customer request
+PASS: Customer cannot take a TV displayed in the Hideout
+PASS: Order consumes stolen TVs and pays their promised double price once
+PASS: Repeated delivery cannot claim the same customer reward
+PASS: Next customer request survives save validation
+LOOT ECONOMY: 39 checks, 0 failures

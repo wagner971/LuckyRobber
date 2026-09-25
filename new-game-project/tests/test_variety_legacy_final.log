@@ -1,0 +1,34 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Real-save COPY migration backs up V1 before writing current schema
+PASS: Real snapshot maps 4/4/3/4 to 4/15/11/12 plus Noise1 without charge
+PASS: Migration preserves unlocked
+PASS: Migration preserves objectives
+PASS: Migration preserves trophies
+PASS: Migration preserves contracts
+PASS: Migration preserves contract_bonuses
+PASS: Migration preserves bonuses
+PASS: Migration preserves cosmetics
+PASS: Migration preserves successes
+PASS: Migration preserves failures
+PASS: Migration preserves historical V1 records
+PASS: V2 reload never migrates levels twice
+PASS: Proportional migration grip old L1
+PASS: Proportional migration grip old L2
+PASS: Proportional migration grip old L3
+PASS: Proportional migration grip old L4
+PASS: Proportional migration grip old L5
+PASS: Proportional migration carry old L1
+PASS: Proportional migration carry old L2
+PASS: Proportional migration carry old L3
+PASS: Proportional migration carry old L4
+PASS: Proportional migration carry old L5
+PASS: Proportional migration capacity old L1
+PASS: Proportional migration capacity old L2
+PASS: Proportional migration capacity old L3
+PASS: Proportional migration capacity old L4
+PASS: Proportional migration capacity old L5
+PASS: Proportional migration capacity old L6
+PASS: Schema2 chains safely into schema4
+PASS: Corrupt V2 file recovers backup
+LEGACY MIGRATION SUMMARY: 31 checks, 0 failures

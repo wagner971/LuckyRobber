@@ -1,0 +1,387 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (4 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | LootGuidance[39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | RarityVisual[39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (7 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | rarity_highlight_detail_idle.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | rarity_highlight_detail_sweep.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | rarity_highlight_far.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | rarity_highlight_narrow.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | rarity_highlight_near.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | rarity_highlight_near_settled.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | rarity_highlight_sweep.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (7 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  12% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  25% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  37% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  50% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  62% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  75% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mreimport[22m | rarity_highlight_detail_idle.png[39m[0m
+[  12% ] [90m[1mreimport[22m | rarity_highlight_detail_sweep.png[39m[0m
+[  25% ] [90m[1mreimport[22m | rarity_highlight_far.png[39m[0m
+[  37% ] [90m[1mreimport[22m | rarity_highlight_narrow.png[39m[0m
+[  50% ] [90m[1mreimport[22m | rarity_highlight_near.png[39m[0m
+[  62% ] [90m[1mreimport[22m | rarity_highlight_near_settled.png[39m[0m
+[  75% ] [90m[1mreimport[22m | rarity_highlight_sweep.png[39m[0m
+[  87% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (7 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/Meshy_AI_Cash_Bundle_0820173211_texture.obj-bcc6adeccba2e2ee9d92869e809032b1.mesh[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.obj.import[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/Meshy_AI_Cash_Bundle_0820173211_texture.png-c94cfb533eddd159a1bba545fbd19bc6.s3tc.ctex[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.png.import[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/box.png-865085619aa4415f529e2c73361787cf.ctex[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://assets/hud/box.png.import[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cash.png-319259cae107de31bcf2f10d387e30f4.ctex[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://assets/hud/cash.png.import[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/clock.png-91b1537a1f5b81fc948c1756f5246d7a.ctex[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://assets/hud/clock.png.import[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/drop.svg-baf386ab076566b83ae487991775457b.ctex[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://assets/hud/drop.svg.import[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/escape.svg-8ee5346f9412600e19037510d68716d2.ctex[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://assets/hud/escape.svg.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/hand.svg-562e7706dd2196b5f53334b7e9a47229.ctex[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://assets/hud/hand.svg.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lock.svg-56c83ced34ad29634247e951a117a946.ctex[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://assets/hud/lock.svg.import[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/noise.png-888b9962022ca43a5936c41b4f22b0e6.ctex[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://assets/hud/noise.png.import[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pause.svg-cafaede2d08f7c48163eaa4d860173ab.ctex[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://assets/hud/pause.svg.import[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/play.svg-5bd33ce86360c0caa92a5736cd6df463.ctex[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://assets/hud/play.svg.import[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/strength.png-f2db8b23988d09470919741e592742d7.ctex[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://assets/hud/strength.png.import[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/warning.png-64f195f22ba29cb0af6aaa12b22eb213.ctex[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://assets/hud/warning.png.import[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/alarm_trigger.wav-da4784e23d185f03388ca7d01a9979f1.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/alarm_trigger.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/blocked.wav-1f4685e8c2a7bd4702c9e916f7dcc0eb.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/blocked.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/busted.wav-135e87537d51d09148fccae2a76fb542.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/busted.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cash_burst.wav-adf8e5bf0baa2d287e05a773dee3b2a8.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/cash_burst.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cash_collect.wav-b2d5fb9767cafcbf4873d7bc4df0562b.sample[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/cash_collect.wav.import[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/drop.wav-6bed34ba4859060013cfe9233e94d33c.sample[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/drop.wav.import[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/escape_success.wav-c81bd2371840942a2e5544b9e076041e.sample[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/escape_success.wav.import[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/impact_heavy_1.wav-70bd26f0e297c4d8981e449bf0f4cffc.sample[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/impact_heavy_1.wav.import[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/impact_heavy_2.wav-55f4f4f94c839be1d894e505a8cc1211.sample[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/impact_heavy_2.wav.import[39m[0m
+[  14% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/impact_light_1.wav-38961eea3d85c298be863f9493824231.sample[39m[0m
+[  14% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/impact_light_1.wav.import[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/impact_light_2.wav-b4b2838dce645d72487534686bfecc68.sample[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/impact_light_2.wav.import[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/impact_medium_1.wav-0de9b065154f7c48e9d709370134eadc.sample[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/impact_medium_1.wav.import[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/impact_medium_2.wav-33cd5f80a33ba987e1d834dd01120141.sample[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/impact_medium_2.wav.import[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/impact_very_heavy_1.wav-95b449b4907a394309db9b6a0dfb7752.sample[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/impact_very_heavy_1.wav.import[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/impact_very_heavy_2.wav-3479eab7dc1fb5cceb80d399e237a6d9.sample[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/impact_very_heavy_2.wav.import[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/noise_tick.wav-b89dfc291edcec2c42b4808fe06a1ea6.sample[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/noise_tick.wav.import[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/noise_warning.wav-4bb6026dca640c89d9404acdb7e63875.sample[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/noise_warning.wav.import[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickup_heavy_1.wav-7d8421d2dee0efe1bc0df29627b2f1dc.sample[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/pickup_heavy_1.wav.import[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickup_heavy_2.wav-b1ab5a2f4b7f9e0a0bfd75c0d22f0f4d.sample[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/pickup_heavy_2.wav.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickup_heavy_3.wav-53e4dba636fb66688202f6a4d72cc658.sample[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/pickup_heavy_3.wav.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickup_light_1.wav-4e7dbbb188ce8eaa9eac2345fbff6635.sample[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/pickup_light_1.wav.import[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickup_light_2.wav-191f452f9c0eac7fea8ab4f303034fd9.sample[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/pickup_light_2.wav.import[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickup_light_3.wav-355c468335072c71f75edd075ac836d1.sample[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/pickup_light_3.wav.import[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/special_reveal.wav-512fe6131744a6998a5cf97ea8502112.sample[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/special_reveal.wav.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/strength_unlock.wav-4b1638291169ffd047f2855ba2da76a7.sample[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/strength_unlock.wav.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/timer_tick.wav-252b9c7adf7a8c9fd2a5fce16a9962d5.sample[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/timer_tick.wav.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/upgrade_purchase.wav-2744cf7389962285ad22207c9bb8c0d8.sample[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://assets/sfx/upgrade_purchase.wav.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/alarm_vignette.gdshader[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/home_backdrop.gdshader[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/home_floor.gdshader[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/home_preview_grade.gdshader[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/home_showcase_composite.gdshader[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/home_uplight.gdshader[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/jobs_blueprint.gdshader[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/jobs_hero.gdshader[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/menu_studio.gdshader[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/pirate_water.gdshader[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/rarity_ground.gdshader[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/rarity_surface.gdshader[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/scene_polish.gdshader[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cap.svg-43c04c8a88ff170dd37c5338017e6cd5.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://assets/ui/home/cap.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/collection_box.svg-51c9e23a4b8de0a9acb100d95c9dc794.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://assets/ui/home/collection_box.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/dumbbell.svg-251ec0ba5ac48b1c6098c57e5642c728.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://assets/ui/home/dumbbell.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/night_warehouse_v1.png-65e4c7e5328cad1ccd331890ae9bcfd1.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://assets/ui/home/night_warehouse_v1.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/play.svg-f353cc7ce9264d662c55383a121b78f0.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://assets/ui/home/play.svg.import[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/arcade_machine.svg-6dd49d23611aee468080b6eb5da25d07.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/arcade_machine.svg.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cash.svg-b0fb2c01bb743dcae11206f9f8361055.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/cash.svg.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/crown.svg-3bd80e0871d621686bef9b888be69b75.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/crown.svg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/dracula_coffin.svg-7a8f76a1feb7c68ded0b4d83a40c8963.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/dracula_coffin.svg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/fridge.svg-651e2655b2d33a1fd9085f95f1a8648e.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/fridge.svg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lab_quantum_core.svg-0f53361616a6bb65293a78e069fe8434.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/lab_quantum_core.svg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/large_statue.svg-bf5396ac7a2303cbbe74cee1e4a9cae5.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/large_statue.svg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/museum_artifact.svg-0d283571b6d598f51fb93ffef5acebba.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/museum_artifact.svg.import[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/piano.svg-2672be6029b95fa03bb39d6147953117.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/piano.svg.import[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pirate_chest.svg-b509435b2890d0d604b59ea566754417.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/pirate_chest.svg.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/prehistoric_skull.svg-66b91809589c5ce48fddeddba2bc174d.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/prehistoric_skull.svg.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pub_billiards.svg-3c4154033504a01a6f4cadf85a286d0e.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/pub_billiards.svg.import[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sarcophagus.svg-106c7e538e98e7fc76b1c357cc9e23d7.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/sarcophagus.svg.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/small_safe.svg-c58828ca4aa20e369b81f4f2c08917c1.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/small_safe.svg.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sofa.svg-4fa6159a2b5f583b8ec48135445eff99.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/sofa.svg.import[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/time_machine.svg-b5aedbab3e2705c8bfcfe23a15ae6b52.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/time_machine.svg.import[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/toilet.svg-36766c57b00fd59ecca3646627df02c5.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/toilet.svg.import[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/vending_machine.svg-31400aac1438c316fc61446a23c91e6b.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/vending_machine.svg.import[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/viking_throne.svg-46d65c2afe81acf99723569844151dbe.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/icons/viking_throne.svg.import[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/chest.svg-53b286c2c9a70e04b7f47f07433c02c4.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/nav/chest.svg.import[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/house.svg-4c95def0c0e510fc1fc04b82b2f663bc.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/nav/house.svg.import[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/target.svg-8562665c7cf78a895c991d50bfa6f912.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/nav/target.svg.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wrench.svg-68b6a819fc860d15d2afbbdfe12a2ac6.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/nav/wrench.svg.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/apartment.png-7fffb889d597ab6ac60a4d14698316da.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/apartment.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/apartment_reference.png-a981ad6eaee640c93b6adcd5104b5f96.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/apartment_reference.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/castle.png-52ac9ffc18134d4afb8ae46f375c447c.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/castle.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/electronics.png-04b21e5953bbea3f389500f7bc0e89f0.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/electronics.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/english_pub.png-a5c5fa8eb701b123b4d052167ca929ea.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/english_pub.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/house.png-438158ff1f7161cea06dee40db3be20d.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/house.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/laboratory.png-c4bd03fee1f2fbd5975b56e5e114a763.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/laboratory.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/mansion.png-847fc4145dc0888fad3818805940abb1.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/mansion.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/museum.png-254cfd8763d19d527a72e8b18a8efa7b.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/museum.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pirate_ship.png-de10da45ad95fe618a65ae4e8892b15f.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/pirate_ship.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/prehistoric.png-2aca7b0a4a1bf367ae85f6ba47490053.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/prehistoric.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pyramid.png-7b98528b97c180f19f3ff2d235e0f082.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/pyramid.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/vikings.png-bd3a73d4299c1ac3461cdd29d938d540.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/vikings.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/villa.png-6905c1baf5d9f1e049e294801de23709.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://assets/ui/jobs/villa.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/capacity.svg-debc347df7a34c633312c89fc91f6d5b.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://assets/ui/upgrades/capacity.svg.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/carry.svg-35fee131bbd287684bdc2ed56a39f77e.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://assets/ui/upgrades/carry.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/grip.svg-3b0fefe4665aaf9183b37b3b6ecde429.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://assets/ui/upgrades/grip.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/noise.svg-223d58d7ea233616a07a404ea5fcae0f.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://assets/ui/upgrades/noise.svg.import[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/strength.svg-ccb03b8e78f6bb2b20300841a0b7b994.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://assets/ui/upgrades/strength.svg.import[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/busted.svg-01de4efb34197b89924055a7f8cfde3b.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://assets/ui/busted.svg.import[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/diamond.svg-8e043a17cc579dab8324fb7625b716f3.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://assets/ui/diamond.svg.import[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gift.svg-21e946dc70db89e37551bb6e20cc08c5.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://assets/ui/gift.svg.import[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/settings.svg-aadd20246e53d972a1c7c19b342cb53e.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://assets/ui/settings.svg.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/suburban_house_preview.png-8466d2e863f82cff1c459fe80f55f9db.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://assets/ui/suburban_house_preview.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-5d013dbd373de36c0a8ae9467b428b88-editor_settings-4.7.res[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://scripts/apartment_art.gdc[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://scripts/apartment_interior.gdc[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://scripts/balance.gdc[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://scripts/camera_juice.gdc[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://scripts/cash_burst_3d.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://scripts/cash_piece_3d.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://scripts/cash_visual.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://scripts/castle_surroundings.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://scripts/daily_wheel.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://scripts/daily_wheel_view.gdc[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://scripts/duplication.gdc[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://scripts/electronics_art.gdc[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://scripts/electronics_interior.gdc[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://scripts/game_ui.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://scripts/haptic_manager.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://scripts/home_showcase_set.gdc[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://scripts/house_art.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://scripts/house_interior.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://scripts/hud_style.gdc[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://scripts/laboratory_art.gdc[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://scripts/laboratory_interior.gdc[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://scripts/lab_models.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://scripts/level.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://scripts/local_log.gdc[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://scripts/loot_guidance.gdc[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://scripts/loot_item.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://scripts/loot_rarity.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://scripts/main.gdc[39m[0m
+[  78% ] [90m[1msavepack[22m | Storing File: res://scripts/mansion_art.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://scripts/mansion_interior.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://scripts/menu_character_preview.gdc[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://scripts/models.gdc[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://scripts/move_input.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://scripts/museum_art.gdc[39m[0m
+[  82% ] [90m[1msavepack[22m | Storing File: res://scripts/onboarding.gdc[39m[0m
+[  82% ] [90m[1msavepack[22m | Storing File: res://scripts/pirate_models.gdc[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://scripts/pirate_ship_art.gdc[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://scripts/player.gdc[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://scripts/play_rewards.gdc[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://scripts/prehistoric_art.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | Storing File: res://scripts/prehistoric_models.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://scripts/progression.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://scripts/pub_art.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://scripts/pub_models.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://scripts/pyramid_art.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://scripts/pyramid_models.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://scripts/rarity_visual.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://scripts/run_manager.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://scripts/save_store.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://scripts/screen_motion.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://scripts/security_patrol.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://scripts/sound_bank.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/special_jobs.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://scripts/thief_visual.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://scripts/toon_material.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://scripts/training_art.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://scripts/ui_juice.gdc[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://scripts/van.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | Storing File: res://scripts/viking_art.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | Storing File: res://scripts/viking_models.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/villa_art.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/villa_interior.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://icon.svg.import[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Godot/editor_settings-4.7.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scenes/main.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/apartment_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/apartment_interior.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/balance.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/camera_juice.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/cash_burst_3d.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/cash_piece_3d.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/cash_visual.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/castle_surroundings.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/daily_wheel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/daily_wheel_view.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/duplication.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/electronics_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/electronics_interior.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/game_ui.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/haptic_manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/home_showcase_set.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/house_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/house_interior.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/hud_style.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/laboratory_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/laboratory_interior.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/lab_models.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/level.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/local_log.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/loot_guidance.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/loot_item.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/loot_rarity.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/main.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/mansion_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/mansion_interior.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/menu_character_preview.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/models.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/move_input.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/museum_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/onboarding.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/pirate_models.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/pirate_ship_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/player.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/play_rewards.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/prehistoric_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/prehistoric_models.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/progression.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/pub_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/pub_models.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/pyramid_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/pyramid_models.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/rarity_visual.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/run_manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/save_store.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/screen_motion.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/security_patrol.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/sound_bank.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/special_jobs.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/thief_visual.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/toon_material.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/training_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/ui_juice.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/van.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/viking_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/viking_models.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/villa_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://scripts/villa_interior.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://icon.svg[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m

@@ -1,0 +1,18 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: Jobs opens on visual Apartment with a concrete next target
+PASS: One location preview is in focus without old technical list
+PASS: Normal run remains directly playable
+PASS: Jobs navigation fits the default portrait window
+SCRIPT ERROR: Invalid call. Nonexistent function 'to_local' in base 'Control'.
+   at: GameUI.job_select (res://scripts/game_ui.gd:1023)
+   GDScript backtrace (most recent call first):
+       [0] job_select (res://scripts/game_ui.gd:1023)
+       [1] <anonymous lambda> (res://scripts/game_ui.gd:788)
+       [2] run_test (res://tests/test_jobs_v1.gd:57)
+SCRIPT ERROR: Invalid access to property or key 'pressed' on a base object of type 'Nil'.
+   at: run_test (res://tests/test_jobs_v1.gd:58)
+   GDScript backtrace (most recent call first):
+       [0] run_test (res://tests/test_jobs_v1.gd:58)

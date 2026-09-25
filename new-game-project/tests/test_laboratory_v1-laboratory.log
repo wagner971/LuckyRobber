@@ -1,0 +1,22 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Laboratory is directly before Museum
+PASS: Nine laboratory instruments have their intended cargo and value
+PASS: Every Laboratory loot type is unique to the level
+PASS: No laboratory loot prop repeats in the same map
+PASS: Quantum Core is the signature and trophy
+PASS: Mansion progression opens Laboratory before Museum
+PASS: Two Laboratory objectives open Museum but not Chapter 2
+MEASURE laboratory.normal 71.72s / 85s | $7250 | cargo 39
+PASS: Physical Laboratory normal route is solvable
+PASS: Laboratory keeps route walls and a rear-facing van
+MEASURE laboratory.rush 36.70s / 55s | $4200 | cargo 21
+PASS: Physical Laboratory rush route is solvable
+PASS: Laboratory keeps route walls and a rear-facing van
+MEASURE laboratory.small_van 18.35s / 75s | $2450 | cargo 11
+PASS: Physical Laboratory small_van route is solvable
+PASS: Laboratory keeps route walls and a rear-facing van
+MEASURE laboratory.client_order 19.10s / 60s | $2150 | cargo 10
+PASS: Physical Laboratory client_order route is solvable
+PASS: Laboratory keeps route walls and a rear-facing van
+LABORATORY V1 SUMMARY: 15 checks, 0 failures

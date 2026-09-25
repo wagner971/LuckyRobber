@@ -1,0 +1,32 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+PASS: Home starts with actual live blocky player model
+PASS: Home displays isolated live3D viewport, no sprite
+PASS: Home exposes dominant PLAY and real Settings
+PASS: Menu actor visibly animates while waiting
+PASS: Full-screen Home render resolution bounded for mobile
+PASS: Home PLAY fits portrait (720, 1280)
+PASS: Home PLAY fits portrait (720, 1600)
+PASS: Home PLAY fits portrait (720, 1100)
+PASS: Collection has a dedicated visible live preview
+PASS: EquipA updates SAME preview actor immediately
+PASS: Outfit tint preserves skin and face
+PASS: Collection selection clearly identifies current outfit
+PASS: EquipB updates both character and van through existing set rules
+PASS: OutfitB saved immediately
+PASS: Individual van clears set, restores original suit, applies mint
+PASS: Independent suit and van can combine without desync
+PASS: Original look resets SAME rig and van, no stale colors
+PASS: Upgrades reuses live appearance and component
+PASS: Home reflects equippedB after menu navigation
+PASS: Background suspends menu animation and rendering
+PASS: Foreground resumes menu preview
+PASS: Presentation does not change wallet, scheduler or progression
+PASS: 3D hero clicks cannot start joystick or gameplay
+DEBUG PLAY rect=[P: (18.0, 853.0), S: (684.0, 138.0)] wheel=[P: (542.0, 275.0), S: (166.0, 54.0)] motion=false outgoing=false root=(450, 800)
+DEBUG AFTER PLAY screen=locations motion=false
+FAIL: Real viewport click on PLAY opens Jobs and releases preview
+PASS: Android Back from Jobs returns Home
+FAIL: Watchdog: test() did not finish within 60s (unhandled error or a stuck await).
+LIVE MENU SUMMARY: 26 checks, 2 failures

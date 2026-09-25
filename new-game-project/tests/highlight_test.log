@@ -1,0 +1,123 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: apartment: previews have no gameplay highlights
+PASS: apartment: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: apartment: focus strengthens the contour
+PASS: apartment: pause freezes focus
+PASS: apartment: no lingering marker in state 2
+PASS: apartment: no lingering marker in state 3
+PASS: apartment: no lingering marker in state 4
+PASS: apartment: dropped loot is readable again
+PASS: apartment: Dark Heist suppresses ordinary highlight
+PASS: house: previews have no gameplay highlights
+PASS: house: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: house: focus strengthens the contour
+PASS: house: pause freezes focus
+PASS: house: no lingering marker in state 2
+PASS: house: no lingering marker in state 3
+PASS: house: no lingering marker in state 4
+PASS: house: dropped loot is readable again
+PASS: house: Dark Heist suppresses ordinary highlight
+PASS: villa: previews have no gameplay highlights
+PASS: villa: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: villa: focus strengthens the contour
+PASS: villa: pause freezes focus
+PASS: villa: no lingering marker in state 2
+PASS: villa: no lingering marker in state 3
+PASS: villa: no lingering marker in state 4
+PASS: villa: dropped loot is readable again
+PASS: villa: Dark Heist suppresses ordinary highlight
+PASS: electronics: previews have no gameplay highlights
+PASS: electronics: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: electronics: focus strengthens the contour
+PASS: electronics: pause freezes focus
+PASS: electronics: no lingering marker in state 2
+PASS: electronics: no lingering marker in state 3
+PASS: electronics: no lingering marker in state 4
+PASS: electronics: dropped loot is readable again
+PASS: electronics: Dark Heist suppresses ordinary highlight
+PASS: mansion: previews have no gameplay highlights
+PASS: mansion: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: mansion: focus strengthens the contour
+PASS: mansion: pause freezes focus
+PASS: mansion: no lingering marker in state 2
+PASS: mansion: no lingering marker in state 3
+PASS: mansion: no lingering marker in state 4
+PASS: mansion: dropped loot is readable again
+PASS: mansion: Dark Heist suppresses ordinary highlight
+PASS: laboratory: previews have no gameplay highlights
+PASS: laboratory: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: laboratory: focus strengthens the contour
+PASS: laboratory: pause freezes focus
+PASS: laboratory: no lingering marker in state 2
+PASS: laboratory: no lingering marker in state 3
+PASS: laboratory: no lingering marker in state 4
+PASS: laboratory: dropped loot is readable again
+PASS: laboratory: Dark Heist suppresses ordinary highlight
+PASS: museum: previews have no gameplay highlights
+PASS: museum: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: museum: focus strengthens the contour
+PASS: museum: pause freezes focus
+PASS: museum: no lingering marker in state 2
+PASS: museum: no lingering marker in state 3
+PASS: museum: no lingering marker in state 4
+PASS: museum: dropped loot is readable again
+PASS: museum: Dark Heist suppresses ordinary highlight
+PASS: pyramid: previews have no gameplay highlights
+PASS: pyramid: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: pyramid: focus strengthens the contour
+PASS: pyramid: pause freezes focus
+PASS: pyramid: no lingering marker in state 2
+PASS: pyramid: no lingering marker in state 3
+PASS: pyramid: no lingering marker in state 4
+PASS: pyramid: dropped loot is readable again
+PASS: pyramid: Dark Heist suppresses ordinary highlight
+PASS: castle: previews have no gameplay highlights
+PASS: castle: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: castle: focus strengthens the contour
+PASS: castle: pause freezes focus
+PASS: castle: no lingering marker in state 2
+PASS: castle: no lingering marker in state 3
+PASS: castle: no lingering marker in state 4
+PASS: castle: dropped loot is readable again
+PASS: castle: Dark Heist suppresses ordinary highlight
+PASS: pirate_ship: previews have no gameplay highlights
+PASS: pirate_ship: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: pirate_ship: focus strengthens the contour
+PASS: pirate_ship: pause freezes focus
+PASS: pirate_ship: no lingering marker in state 2
+PASS: pirate_ship: no lingering marker in state 3
+PASS: pirate_ship: no lingering marker in state 4
+PASS: pirate_ship: dropped loot is readable again
+PASS: pirate_ship: Dark Heist suppresses ordinary highlight
+PASS: vikings: previews have no gameplay highlights
+PASS: vikings: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: vikings: focus strengthens the contour
+PASS: vikings: pause freezes focus
+PASS: vikings: no lingering marker in state 2
+PASS: vikings: no lingering marker in state 3
+PASS: vikings: no lingering marker in state 4
+PASS: vikings: dropped loot is readable again
+PASS: vikings: Dark Heist suppresses ordinary highlight
+PASS: english_pub: previews have no gameplay highlights
+PASS: english_pub: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: english_pub: focus strengthens the contour
+PASS: english_pub: pause freezes focus
+PASS: english_pub: no lingering marker in state 2
+PASS: english_pub: no lingering marker in state 3
+PASS: english_pub: no lingering marker in state 4
+PASS: english_pub: dropped loot is readable again
+PASS: english_pub: Dark Heist suppresses ordinary highlight
+PASS: prehistoric: previews have no gameplay highlights
+PASS: prehistoric: every loot type has a batched visible silhouette; values and physics unchanged
+PASS: prehistoric: focus strengthens the contour
+PASS: prehistoric: pause freezes focus
+PASS: prehistoric: no lingering marker in state 2
+PASS: prehistoric: no lingering marker in state 3
+PASS: prehistoric: no lingering marker in state 4
+PASS: prehistoric: dropped loot is readable again
+PASS: prehistoric: Dark Heist suppresses ordinary highlight
+PASS: Rare color and existing sweep preserved
+PASS: Dark Heist preserves special loot identity
+PASS: Run end removes silhouettes
+HIGHLIGHT: 120 checks, 0 failures

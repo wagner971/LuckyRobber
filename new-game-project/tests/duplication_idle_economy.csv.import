@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://besnn77eouk0s"
+
+[deps]
+
+files=["res://tests/duplication_idle_economy.source.translation", "res://tests/duplication_idle_economy.original.translation", "res://tests/duplication_idle_economy.seconds.translation", "res://tests/duplication_idle_economy.replica.translation", "res://tests/duplication_idle_economy.one.translation", "res://tests/duplication_idle_economy.three.translation", "res://tests/duplication_idle_economy.benchmark.translation", "res://tests/duplication_idle_economy.three.translation", "res://tests/duplication_idle_economy.buffer.translation", "res://tests/duplication_idle_economy.chamber2.translation", "res://tests/duplication_idle_economy.chamber3.translation"]
+
+source_file="res://tests/duplication_idle_economy.csv"
+dest_files=["res://tests/duplication_idle_economy.source.translation", "res://tests/duplication_idle_economy.original.translation", "res://tests/duplication_idle_economy.seconds.translation", "res://tests/duplication_idle_economy.replica.translation", "res://tests/duplication_idle_economy.one.translation", "res://tests/duplication_idle_economy.three.translation", "res://tests/duplication_idle_economy.benchmark.translation", "res://tests/duplication_idle_economy.three.translation", "res://tests/duplication_idle_economy.buffer.translation", "res://tests/duplication_idle_economy.chamber2.translation", "res://tests/duplication_idle_economy.chamber3.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

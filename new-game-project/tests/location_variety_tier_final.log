@@ -1,0 +1,123 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: Apartment Final Job opens House
+PASS: Two goals never open villa before house full clear
+PASS: house STEAL EVERYTHING opens villa
+PASS: Two goals never open electronics before villa full clear
+PASS: villa STEAL EVERYTHING opens electronics
+PASS: Two goals never open mansion before electronics full clear
+PASS: electronics STEAL EVERYTHING opens mansion
+PASS: Two goals never open museum before mansion full clear
+PASS: mansion STEAL EVERYTHING opens museum
+PASS: Two goals never open pyramid before museum full clear
+PASS: museum STEAL EVERYTHING opens pyramid
+PASS: Two goals never open castle before pyramid full clear
+PASS: pyramid STEAL EVERYTHING opens castle
+PASS: Museum full clear opens mastery contracts
+PASS: Current Van tier can fit all apartment loot
+PASS: Current Van tier can fit all house loot
+PASS: Current Van tier can fit all villa loot
+PASS: Current Van tier can fit all electronics loot
+PASS: Current Van tier can fit all mansion loot
+PASS: Current Van tier can fit all museum loot
+PASS: Current Van tier can fit all pyramid loot
+PASS: Current Van tier can fit all castle loot
+PASS: Distinct authored identity exists for villa
+PASS: No loot overlaps a wall: villa.piano
+PASS: Reachable loot approach: villa.piano
+PASS: No loot overlaps a wall: villa.fridge
+PASS: Reachable loot approach: villa.fridge
+PASS: No loot overlaps a wall: villa.toilet
+PASS: Reachable loot approach: villa.toilet
+PASS: No loot overlaps a wall: villa.arcade
+PASS: Reachable loot approach: villa.arcade
+PASS: No loot overlaps a wall: villa.safe
+PASS: Reachable loot approach: villa.safe
+PASS: No loot overlaps a wall: villa.pc
+PASS: Reachable loot approach: villa.pc
+PASS: No loot overlaps a wall: villa.tv_a
+PASS: Reachable loot approach: villa.tv_a
+PASS: No loot overlaps a wall: villa.tv_b
+PASS: Reachable loot approach: villa.tv_b
+PASS: No loot overlaps a wall: villa.monitor
+PASS: Reachable loot approach: villa.monitor
+MEASURE villa.tier_full_clear 47.53s / 60s | $3510 | cargo 30
+TIER ROUTE villa: success=true full_clear=true items=9/9 remaining=1.45 alarm=true
+PASS: Playable full clear at current unlock tier: villa
+PASS: Full clear fits timer at current unlock tier: villa
+PASS: Distinct authored identity exists for electronics
+PASS: No loot overlaps a wall: electronics.vending
+PASS: Reachable loot approach: electronics.vending
+PASS: No loot overlaps a wall: electronics.arcade_a
+PASS: Reachable loot approach: electronics.arcade_a
+PASS: No loot overlaps a wall: electronics.arcade_b
+PASS: Reachable loot approach: electronics.arcade_b
+PASS: No loot overlaps a wall: electronics.pc_a
+PASS: Reachable loot approach: electronics.pc_a
+PASS: No loot overlaps a wall: electronics.pc_b
+PASS: Reachable loot approach: electronics.pc_b
+PASS: No loot overlaps a wall: electronics.pc_c
+PASS: Reachable loot approach: electronics.pc_c
+PASS: No loot overlaps a wall: electronics.tv_a
+PASS: Reachable loot approach: electronics.tv_a
+PASS: No loot overlaps a wall: electronics.tv_b
+PASS: Reachable loot approach: electronics.tv_b
+PASS: No loot overlaps a wall: electronics.tv_c
+PASS: Reachable loot approach: electronics.tv_c
+PASS: No loot overlaps a wall: electronics.monitor_a
+PASS: Reachable loot approach: electronics.monitor_a
+PASS: No loot overlaps a wall: electronics.monitor_b
+PASS: Reachable loot approach: electronics.monitor_b
+MEASURE electronics.tier_full_clear 53.35s / 60s | $4060 | cargo 32
+TIER ROUTE electronics: success=true full_clear=true items=11/11 remaining=3.15 alarm=true
+PASS: Playable full clear at current unlock tier: electronics
+PASS: Full clear fits timer at current unlock tier: electronics
+PASS: Distinct authored identity exists for mansion
+PASS: No loot overlaps a wall: mansion.statue
+PASS: Reachable loot approach: mansion.statue
+PASS: No loot overlaps a wall: mansion.piano
+PASS: Reachable loot approach: mansion.piano
+PASS: No loot overlaps a wall: mansion.safe_a
+PASS: Reachable loot approach: mansion.safe_a
+PASS: No loot overlaps a wall: mansion.safe_b
+PASS: Reachable loot approach: mansion.safe_b
+PASS: No loot overlaps a wall: mansion.fridge
+PASS: Reachable loot approach: mansion.fridge
+PASS: No loot overlaps a wall: mansion.pc_a
+PASS: Reachable loot approach: mansion.pc_a
+PASS: No loot overlaps a wall: mansion.pc_b
+PASS: Reachable loot approach: mansion.pc_b
+PASS: No loot overlaps a wall: mansion.tv
+PASS: Reachable loot approach: mansion.tv
+PASS: No loot overlaps a wall: mansion.toilet
+PASS: Reachable loot approach: mansion.toilet
+PASS: No loot overlaps a wall: mansion.monitor
+PASS: Reachable loot approach: mansion.monitor
+MEASURE mansion.tier_full_clear 55.47s / 60s | $5170 | cargo 38
+TIER ROUTE mansion: success=true full_clear=true items=10/10 remaining=2.38 alarm=true
+PASS: Playable full clear at current unlock tier: mansion
+PASS: Full clear fits timer at current unlock tier: mansion
+PASS: Distinct authored identity exists for museum
+PASS: No loot overlaps a wall: museum.artifact
+PASS: Reachable loot approach: museum.artifact
+PASS: No loot overlaps a wall: museum.statue_a
+PASS: Reachable loot approach: museum.statue_a
+PASS: No loot overlaps a wall: museum.statue_b
+PASS: Reachable loot approach: museum.statue_b
+PASS: No loot overlaps a wall: museum.piano
+PASS: Reachable loot approach: museum.piano
+PASS: No loot overlaps a wall: museum.safe_a
+PASS: Reachable loot approach: museum.safe_a
+PASS: No loot overlaps a wall: museum.safe_b
+PASS: Reachable loot approach: museum.safe_b
+PASS: No loot overlaps a wall: museum.pc
+PASS: Reachable loot approach: museum.pc
+PASS: No loot overlaps a wall: museum.toilet
+PASS: Reachable loot approach: museum.toilet
+MEASURE museum.tier_full_clear 50.60s / 60s | $8170 | cargo 46
+TIER ROUTE museum: success=true full_clear=true items=8/8 remaining=0.90 alarm=true
+PASS: Playable full clear at current unlock tier: museum
+PASS: Full clear fits timer at current unlock tier: museum
+LOCATION VARIETY V1 SUMMARY: 110 checks, 0 failures

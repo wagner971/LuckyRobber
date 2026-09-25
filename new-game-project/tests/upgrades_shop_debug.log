@@ -1,0 +1,23 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: Five compact power-up cards are present
+PASS: Next target states the loot goal
+PASS: Strength teases the next recognizable loot
+PASS: Cards show the immediate benefit without formulas
+PASS: Technical formulas and DEV controls stay out of the default shop
+PASS: Live 3D preview responds to Strength
+PASS: Selecting Carry updates the live preview
+PASS: Selecting Van Space switches preview focus
+PASS: Next Target jumps to the needed power-up
+PASS: Detailed formulas start collapsed
+PASS: Formula remains available on demand
+PASS: Buying Strength keeps progression and price intact
+PASS: Purchase keeps focus and shows an unlock celebration
+PASS: Strength purchase celebrates the specific new loot
+PASS: Selected level progress starts at the previous value
+SHOP ANIM 40.0 / $1500
+FAIL: Progress and wallet animate to the purchased state
+PASS: Shop fits a larger portrait viewport
+UPGRADES SHOP SUMMARY: 17 checks, 1 failures

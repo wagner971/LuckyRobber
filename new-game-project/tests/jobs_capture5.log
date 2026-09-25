@@ -1,0 +1,21 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: Jobs opens on visual Apartment with a concrete next target
+PASS: One location preview is in focus without old technical list
+PASS: Normal run remains directly playable
+PASS: Locked House shows one real requirement and no objectives
+PASS: Ready Final Job has distinct primary action alongside Normal
+PASS: Special Job appears on its location without replacing Normal
+PASS: Chapter 2 teaser uses the actual Museum unlock rule
+PASS: Locked chapter keeps future locations hidden and avoids nonexistent Time Machine
+PASS: Chapter 2 reveals playable Pyramid once unlocked
+PASS: Last location has its own preview
+PASS: Swipe stops at the last location without wrapping
+PASS: Horizontal swipe selects the previous location
+FAIL: Jobs actions fit portrait (720, 1100)
+PASS: Jobs actions fit portrait (720, 1280)
+PASS: Jobs actions fit portrait (720, 1600)
+JOBS V1 SUMMARY: 15 checks, 1 failures

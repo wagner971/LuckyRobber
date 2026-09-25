@@ -1,0 +1,9 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Real movement through Apartment picks TV and loads first cargo
+PASS: Physical first delivery advances free-choice step
+PASS: Second chair can be reached, picked up and loaded with real physics
+PASS: Physical route ends in correct escape zone
+PASS: Physical two-delivery route settles exact reward
+ONBOARDING ROUTE SECONDS 6.88
+ONBOARDING ROUTE CHECKS 5; FAILURES 0

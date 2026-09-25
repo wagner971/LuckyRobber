@@ -1,0 +1,103 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Results creates its art view
+PASS: Replay is the main action
+PASS: Home is the only secondary action
+PASS: Wallet finishes at actual persisted balance
+PASS: Correct reward or loss count-up
+PASS: Presentation never credits or deducts money
+PASS: Replay/retry is yellow
+PASS: Home is mint
+PASS: Replay stays at this location, completed final/special return to normal
+PASS: Home action wired
+PASS: Secondary reward details are accessible
+PASS: Results creates its art view
+PASS: Replay is the main action
+PASS: Home is the only secondary action
+PASS: Wallet finishes at actual persisted balance
+PASS: Correct reward or loss count-up
+PASS: Presentation never credits or deducts money
+PASS: Replay/retry is yellow
+PASS: Home is mint
+PASS: Replay stays at this location, completed final/special return to normal
+PASS: Home action wired
+PASS: Secondary reward details are accessible
+PASS: Results creates its art view
+PASS: Replay is the main action
+PASS: Home is the only secondary action
+PASS: Wallet finishes at actual persisted balance
+PASS: Correct reward or loss count-up
+PASS: Presentation never credits or deducts money
+PASS: Replay/retry is yellow
+PASS: Home is mint
+PASS: Replay stays at this location, completed final/special return to normal
+PASS: Home action wired
+PASS: Secondary reward details are accessible
+PASS: Results creates its art view
+PASS: Replay is the main action
+PASS: Home is the only secondary action
+PASS: Wallet finishes at actual persisted balance
+PASS: Correct reward or loss count-up
+PASS: Presentation never credits or deducts money
+PASS: Replay/retry is yellow
+PASS: Home is mint
+PASS: Replay stays at this location, completed final/special return to normal
+PASS: Home action wired
+PASS: Secondary reward details are accessible
+PASS: Safe area contains control at (450, 800)
+PASS: Safe area contains control at (450, 800)
+PASS: Safe area contains control at (450, 800)
+PASS: Safe area contains control at (450, 800)
+PASS: Safe area contains control at (450, 800)
+PASS: Seven-digit reward fits the money field
+PASS: Safe area contains control at (360, 800)
+PASS: Safe area contains control at (360, 800)
+PASS: Safe area contains control at (360, 800)
+PASS: Safe area contains control at (360, 800)
+PASS: Safe area contains control at (360, 800)
+PASS: Seven-digit reward fits the money field
+PASS: Safe area contains control at (320, 712)
+PASS: Safe area contains control at (320, 712)
+PASS: Safe area contains control at (320, 712)
+PASS: Safe area contains control at (320, 712)
+PASS: Safe area contains control at (320, 712)
+PASS: Seven-digit reward fits the money field
+PASS: Safe area contains control at (720, 1100)
+PASS: Safe area contains control at (720, 1100)
+PASS: Safe area contains control at (720, 1100)
+PASS: Safe area contains control at (720, 1100)
+PASS: Safe area contains control at (720, 1100)
+PASS: Seven-digit reward fits the money field
+PASS: Tutorial opens Jobs rather than forcing another run
+PASS: Tutorial continue preserved
+PASS: Tutorial retry preserved
+PASS: Tutorial can leave to Home
+PASS: ESCAPED enters with a real overshooting scale animation
+PASS: Title settles at its intended framing
+PASS: Cash repeatedly shifts small-big-small
+PASS: Amount pops after the count-up
+PASS: Central reward is the animated 3D cash model
+PASS: Money rain has a bounded mobile-friendly particle count
+PASS: Bills genuinely travel, rather than remaining painted in the backdrop
+PASS: Animated decoration cannot intercept menu taps
+PASS: Leaving the success screen releases animation and its 3D viewport
+PASS: Failure never celebrates with falling reward money
+PASS: Failure runs its own animation
+PASS: BUSTED stamps in and settles
+PASS: Failure title gets a brief impact shake
+PASS: Shake stops rather than distracting indefinitely
+PASS: Failure emblem loops small-big-small
+PASS: Lost amount pops after the count-up
+PASS: Failure particles stay bounded
+PASS: Failure animation cannot intercept Retry or Home
+PASS: Hidden failure view stops CPU animation
+PASS: Failure layout respects safe area at (320, 712)
+PASS: Failure layout respects safe area at (320, 712)
+PASS: Failure layout respects safe area at (320, 712)
+PASS: Failure layout respects safe area at (320, 712)
+PASS: Failure layout respects safe area at (360, 800)
+PASS: Failure layout respects safe area at (360, 800)
+PASS: Failure layout respects safe area at (360, 800)
+PASS: Failure layout respects safe area at (360, 800)
+PASS: Leaving failure releases particles and animation
+RESULTS V2: 100 checks, 0 failures

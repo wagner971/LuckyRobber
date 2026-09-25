@@ -1,0 +1,49 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: New profile starts before the first job
+PASS: Separate garage teaches with three objects
+PASS: Move gesture has a readable first step and an exit through pause
+PASS: No timer, cash, capacity or noise overload at the start
+PASS: Garage can be paused
+PASS: Practice has no countdown pressure
+PASS: Physical movement starts tutorial
+PASS: Movement highlights only the TV
+PASS: First delivery reveals money
+PASS: Bigger second object reveals capacity
+PASS: Full van reveals Escape
+PASS: Escape banks $640 once and animates departure
+PASS: Departure ends at the reward, never auto-starts Apartment
+PASS: CHOOSE A JOB fits safe area
+PASS: UPGRADES fits safe area
+PASS: HOME fits safe area
+PASS: Choose a Job opens Jobs before the noise lesson
+PASS: Menu navigation stays in home
+PASS: Menu navigation stays in locations
+PASS: Menu navigation stays in shop
+PASS: Menu navigation stays in locations
+PASS: Menu navigation stays in locations
+PASS: First explicit job choice opens a paused briefing
+PASS: First Apartment already has its real map and visible Strength locks
+PASS: Briefing cannot spend time or start a heist
+PASS: Generic Resume cannot bypass the briefing
+PASS: START HEIST fits safe area
+PASS: BACK TO JOBS fits safe area
+PASS: Back to Jobs cancels briefing without losing a run
+PASS: START HEIST fits safe area
+PASS: BACK TO JOBS fits safe area
+PASS: Start Heist acknowledges briefing and waits for movement
+PASS: Briefing acknowledgement survives save validation
+PASS: Reading the real HUD before moving costs no time
+PASS: First real pickup uses real noise rules and saves the one-time hint
+PASS: First Apartment pays real loot and returns to Results
+PASS: Optional guide focuses Carry Speed
+PASS: Buying an upgrade stays in the shop, never auto-starts a run
+PASS: Later explicit job starts skip the acknowledged briefing
+PASS: Leaving before moving does not count as a failure
+PASS: Replay ends at results without paying twice or resetting onboarding
+PASS: Practice completion also opens Jobs
+PASS: Abandoned practice has a reachable result screen
+PASS: Abandoned practice can leave for Jobs
+PASS: Existing experienced saves do not repeat the new briefing
+PASS: Migrated garage-only save can select Jobs with noise still unlearned
+ONBOARDING V3 CHECKS 46; FAILURES 0

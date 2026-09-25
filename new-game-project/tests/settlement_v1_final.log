@@ -1,0 +1,14 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Escaped incomplete contract pays normal loot, not BUSTED or medal
+PASS: Contract never changes career objectives or Normal records
+PASS: Incomplete contract does not set a contract record
+PASS: Meeting contract goal or filling van does not auto escape or bank
+PASS: First contract pays $640 loot + $500 bonus once
+PASS: Contract awards trophy but no career objectives
+PASS: Repeat contract pays loot only, unique trophy and bonus stay unique
+PASS: Contract medals, bonus ledger and mode records survive reload
+PASS: Contract timeout loses both cargo and carried loot
+PASS: Empty escape gives $0 without repeatable completion bonus
+PASS: Cash objectives use delivered value only
+SETTLEMENT: 11 checks, 0 failures

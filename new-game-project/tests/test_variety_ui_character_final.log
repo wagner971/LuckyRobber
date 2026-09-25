@@ -1,0 +1,31 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Persistent DEV profile
+PASS: No special card before threshold
+PASS: Developer hook cannot force locked location
+PASS: Special cannot be launched without offer
+PASS: Result announces exact normal threshold
+PASS: Pending card has both choices
+PASS: Offer clearly shows conditions and location
+PASS: Navigation cannot reroll or advance scheduler
+PASS: Hook cannot replace existing offer
+PASS: Continue Normal plays60 and preserves pending
+PASS: Ignoring actual offer does not replace or queue specials
+PASS: Special playable before Mastery unlock
+PASS: Special HUD identifies35 and bonus
+PASS: Back before first movement preserves offer
+PASS: READY abandon preserves offer
+PASS: Active run cannot be silently replaced by restart
+PASS: Hook blocked during active run
+PASS: Live signal settlement pays base140 +56
+PASS: Results show exact base bonus and total
+PASS: Special results do not pretend to be Mastery
+PASS: One-off special cannot replay from result
+PASS: Result returns to normal60
+PASS: Consumed card disappears
+PASS: Developer hook safely forces threshold
+PASS: DEV MAX does not consume or reroll job
+PASS: New DEV game instance restores money, MAX abilities and exact pending offer
+PASS: Restored offer is visible
+PASS: Developer force hook disabled in production
+VARIETY UI SUMMARY: 28 checks, 0 failures

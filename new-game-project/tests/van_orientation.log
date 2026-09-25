@@ -1,0 +1,13 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: Van rear faces the apartment entrance and load point
+PASS: Van rear faces the house entrance and load point
+PASS: Van rear faces the villa entrance and load point
+PASS: Van rear faces the electronics entrance and load point
+PASS: Van rear faces the mansion entrance and load point
+PASS: Van rear faces the museum entrance and load point
+PASS: Van rear faces the pyramid entrance and load point
+PASS: Van rear faces the castle entrance and load point
+VAN ORIENTATION: 8 locations, 0 failures

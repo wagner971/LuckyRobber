@@ -1,0 +1,7 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+{"event":"run_started","location":"apartment","mode":"normal","time":"2026-09-21T06:45:50","upgrades":{"capacity":20,"carry":20,"grip":20,"noise":20,"strength":5}}
+{"event":"item_picked_up","id":"apartment.fridge","item":"fridge","time":"2026-09-21T06:45:50"}
+{"added":9.72,"event":"noise_added","instance_id":"apartment.fridge","location":"apartment","mode":"normal","threshold":36.4,"time":"2026-09-21T06:45:50","total":9.72}
+IN-GAME CHARACTER CAPTURE COMPLETE

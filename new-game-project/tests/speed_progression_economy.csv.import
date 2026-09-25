@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dhvuhksfcnqsv"
+
+[deps]
+
+files=["res://tests/speed_progression_economy.required.translation", "res://tests/speed_progression_economy.pair.translation", "res://tests/speed_progression_economy.cumulative.translation", "res://tests/speed_progression_economy.full.translation", "res://tests/speed_progression_economy.pair.translation"]
+
+source_file="res://tests/speed_progression_economy.csv"
+dest_files=["res://tests/speed_progression_economy.required.translation", "res://tests/speed_progression_economy.pair.translation", "res://tests/speed_progression_economy.cumulative.translation", "res://tests/speed_progression_economy.full.translation", "res://tests/speed_progression_economy.pair.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

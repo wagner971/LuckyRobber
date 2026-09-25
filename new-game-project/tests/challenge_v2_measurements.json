@@ -1,0 +1,6555 @@
+{
+	"campaign": [
+		{
+			"location": "apartment",
+			"loot": 550,
+			"remaining": 6.08333333333314,
+			"round": 1,
+			"success": true,
+			"time": 21.7833333333334,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 1
+			},
+			"wallet_after": 550
+		},
+		{
+			"location": "apartment",
+			"loot": 550,
+			"remaining": 6.08333333333314,
+			"round": 2,
+			"success": true,
+			"time": 21.7833333333334,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 1
+			},
+			"wallet_after": 1100
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 3,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 740
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 4,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 1380
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 5,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 2020
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 6,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 2660
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 7,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 3300
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 8,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 3940
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 9,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 4580
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 10,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 5220
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 11,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 5860
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 12,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 6500
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 13,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 7140
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 14,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 7780
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 15,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 8420
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 16,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 9060
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 17,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 9700
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 18,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 10340
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 19,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 10980
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 20,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 11620
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 21,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 12260
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 22,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 12900
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 23,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 13540
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 24,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 14180
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 25,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 14820
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 26,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 15460
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 27,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 16100
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 28,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 16740
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 29,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 17380
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 30,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 18020
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 31,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 18660
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 32,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 19300
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 33,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 19940
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 34,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 20580
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 35,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 21220
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 36,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 21860
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 37,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 22500
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 38,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 23140
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 39,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 23780
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 40,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 24420
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 41,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 25060
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 42,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 25700
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 43,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 26340
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 44,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 26980
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 45,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 27620
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 46,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 28260
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 47,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 28900
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 48,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 29540
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 49,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 30180
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 50,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 30820
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 51,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 31460
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 52,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 32100
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 53,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 32740
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 54,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 33380
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 55,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 34020
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 56,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 34660
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 57,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 35300
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 58,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 35940
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 59,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 36580
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 60,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 37220
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 61,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 37860
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 62,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 38500
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 63,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 39140
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 64,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 39780
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 65,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 40420
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 66,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 41060
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 67,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 41700
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 68,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 42340
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 69,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 42980
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 70,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 43620
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 71,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 44260
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 72,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 44900
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 73,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 45540
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 74,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 46180
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 75,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 46820
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 76,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 47460
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 77,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 48100
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 78,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 48740
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 79,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 49380
+		},
+		{
+			"location": "apartment",
+			"loot": 640,
+			"remaining": 44.7833333333342,
+			"round": 80,
+			"success": true,
+			"time": 15.216666666667,
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"wallet_after": 50020
+		}
+	],
+	"checks": 654,
+	"failures": 122,
+	"purchases": [
+		{
+			"before_round": 3,
+			"cost": 1000,
+			"key": "strength",
+			"level": 2,
+			"wallet_after": 100
+		}
+	],
+	"routes": [
+		{
+			"alarm_at": 28.8499999999996,
+			"cargo": 17,
+			"circuits": [
+				3.82,
+				2.52,
+				3.35,
+				2.83,
+				4.18,
+				4.7,
+				4.83,
+				4.6,
+				3.52
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "apartment.full_clear",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 43.5456,
+			"remaining": 6.49999999999981,
+			"route_instance_ids": [
+				"apartment.tv_a",
+				"apartment.chair_a",
+				"apartment.lamp",
+				"apartment.fan",
+				"apartment.laptop",
+				"apartment.microwave",
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 34.35,
+			"types": [
+				"small_tv",
+				"chair",
+				"floor_lamp",
+				"table_fan",
+				"laptop",
+				"microwave",
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 1210
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 11,
+			"circuits": [
+				3.82,
+				3.33,
+				4.83,
+				4.6
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "apartment.rush",
+			"limit": 30.0,
+			"location": "apartment",
+			"mode": "rush",
+			"noise": 25.6608,
+			"remaining": 13.4166666666673,
+			"route_instance_ids": [
+				"apartment.tv_a",
+				"apartment.lamp",
+				"apartment.toilet",
+				"apartment.fridge"
+			],
+			"threshold": 36.4,
+			"time": 16.58,
+			"types": [
+				"small_tv",
+				"floor_lamp",
+				"toilet",
+				"fridge"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 840
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				3.82,
+				3.33,
+				4.63
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "apartment.small_van",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "small_van",
+			"noise": 20.2176,
+			"remaining": 48.2166666666673,
+			"route_instance_ids": [
+				"apartment.tv_a",
+				"apartment.lamp",
+				"apartment.fridge"
+			],
+			"threshold": 36.4,
+			"time": 11.78,
+			"types": [
+				"small_tv",
+				"floor_lamp",
+				"fridge"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 620
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				4.6,
+				4.62,
+				3.52
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "apartment.client_order",
+			"limit": 30.0,
+			"location": "apartment",
+			"mode": "client_order",
+			"noise": 17.8848,
+			"remaining": 17.2666666666674,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 12.73,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": 47.5999999999986,
+			"cargo": 23,
+			"circuits": [
+				7.38,
+				4.28,
+				6.05,
+				7.42,
+				5.6,
+				5.58,
+				7.7,
+				6.5
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "house.full_clear",
+			"limit": 60.0,
+			"location": "house",
+			"mode": "normal",
+			"noise": 59.0976,
+			"remaining": 9.08333333333319,
+			"route_instance_ids": [
+				"house.tv",
+				"house.chair",
+				"house.tools",
+				"house.duck",
+				"house.toilet",
+				"house.fridge",
+				"house.tub",
+				"house.sofa"
+			],
+			"threshold": 49.4,
+			"time": 50.52,
+			"types": [
+				"small_tv",
+				"chair",
+				"tool_cabinet",
+				"rubber_duck",
+				"toilet",
+				"fridge",
+				"bathtub",
+				"sofa"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 2140
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 14,
+			"circuits": [
+				5.65,
+				5.6,
+				7.7,
+				6.5
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "house.rush",
+			"limit": 30.0,
+			"location": "house",
+			"mode": "rush",
+			"noise": 38.1024,
+			"remaining": 4.55000000000041,
+			"route_instance_ids": [
+				"house.tools",
+				"house.toilet",
+				"house.tub",
+				"house.sofa"
+			],
+			"threshold": 49.4,
+			"time": 25.45,
+			"types": [
+				"tool_cabinet",
+				"toilet",
+				"bathtub",
+				"sofa"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 1430
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 11,
+			"circuits": [
+				5.65,
+				7.7,
+				6.5
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "house.small_van",
+			"limit": 60.0,
+			"location": "house",
+			"mode": "small_van",
+			"noise": 32.6592,
+			"remaining": 40.1500000000011,
+			"route_instance_ids": [
+				"house.tools",
+				"house.tub",
+				"house.sofa"
+			],
+			"threshold": 49.4,
+			"time": 19.85,
+			"types": [
+				"tool_cabinet",
+				"bathtub",
+				"sofa"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 1210
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 10,
+			"circuits": [
+				7.03,
+				7.7,
+				6.5
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "house.client_order",
+			"limit": 30.0,
+			"location": "house",
+			"mode": "client_order",
+			"noise": 26.4384,
+			"remaining": 8.7666666666671,
+			"route_instance_ids": [
+				"house.duck",
+				"house.tub",
+				"house.sofa"
+			],
+			"threshold": 49.4,
+			"time": 21.23,
+			"types": [
+				"rubber_duck",
+				"bathtub",
+				"sofa"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 1010
+		},
+		{
+			"alarm_at": 36.8833333333325,
+			"cargo": 28,
+			"circuits": [
+				7.92,
+				7.62,
+				7.57,
+				5.17,
+				5.82,
+				5.28,
+				5.27,
+				6.65,
+				4.83
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "villa.full_clear",
+			"limit": 70.0,
+			"location": "villa",
+			"mode": "normal",
+			"noise": 73.872,
+			"remaining": 6.76666666666684,
+			"route_instance_ids": [
+				"villa.piano",
+				"villa.tub",
+				"villa.toilet",
+				"villa.sofa",
+				"villa.safe",
+				"villa.pc",
+				"villa.tv",
+				"villa.chair",
+				"villa.monitor"
+			],
+			"threshold": 61.75,
+			"time": 56.12,
+			"types": [
+				"piano",
+				"bathtub",
+				"toilet",
+				"sofa",
+				"small_safe",
+				"gaming_pc",
+				"small_tv",
+				"chair",
+				"monitor"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 3260
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 18,
+			"circuits": [
+				7.92,
+				5.15,
+				5.82,
+				5.28
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "villa.rush",
+			"limit": 35.0,
+			"location": "villa",
+			"mode": "rush",
+			"noise": 47.4336,
+			"remaining": 10.8333333333342,
+			"route_instance_ids": [
+				"villa.piano",
+				"villa.sofa",
+				"villa.safe",
+				"villa.pc"
+			],
+			"threshold": 61.75,
+			"time": 24.17,
+			"types": [
+				"piano",
+				"sofa",
+				"small_safe",
+				"gaming_pc"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 2400
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 12,
+			"circuits": [
+				7.92,
+				7.58,
+				5.27
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "villa.small_van",
+			"limit": 60.0,
+			"location": "villa",
+			"mode": "small_van",
+			"noise": 24.8832,
+			"remaining": 39.2333333333345,
+			"route_instance_ids": [
+				"villa.piano",
+				"villa.toilet",
+				"villa.pc"
+			],
+			"threshold": 61.75,
+			"time": 20.77,
+			"types": [
+				"piano",
+				"toilet",
+				"gaming_pc"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 1670
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 13,
+			"circuits": [
+				7.92,
+				5.15,
+				5.25
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "villa.client_order",
+			"limit": 35.0,
+			"location": "villa",
+			"mode": "client_order",
+			"noise": 33.4368,
+			"remaining": 16.6833333333344,
+			"route_instance_ids": [
+				"villa.piano",
+				"villa.sofa",
+				"villa.tv"
+			],
+			"threshold": 61.75,
+			"time": 18.32,
+			"types": [
+				"piano",
+				"sofa",
+				"small_tv"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 1590
+		},
+		{
+			"alarm_at": 39.8166666666657,
+			"cargo": 32,
+			"circuits": [
+				4.37,
+				4.58,
+				3.93,
+				5.9,
+				5.05,
+				5.85,
+				3.58,
+				4.22,
+				4.88,
+				3.27,
+				4.05
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "electronics.full_clear",
+			"limit": 65.0,
+			"location": "electronics",
+			"mode": "normal",
+			"noise": 66.8736,
+			"remaining": 8.13333333333306,
+			"route_instance_ids": [
+				"electronics.vending",
+				"electronics.arcade_a",
+				"electronics.arcade_b",
+				"electronics.pc_a",
+				"electronics.pc_b",
+				"electronics.pc_c",
+				"electronics.tv_a",
+				"electronics.tv_b",
+				"electronics.tv_c",
+				"electronics.monitor_a",
+				"electronics.monitor_b"
+			],
+			"threshold": 55.9,
+			"time": 49.68,
+			"types": [
+				"vending_machine",
+				"arcade_machine",
+				"arcade_machine",
+				"gaming_pc",
+				"gaming_pc",
+				"gaming_pc",
+				"small_tv",
+				"small_tv",
+				"small_tv",
+				"monitor",
+				"monitor"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 4060
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 21,
+			"circuits": [
+				4.37,
+				4.58,
+				3.93,
+				5.05,
+				5.85
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "electronics.rush",
+			"limit": 35.0,
+			"location": "electronics",
+			"mode": "rush",
+			"noise": 38.88,
+			"remaining": 11.2166666666675,
+			"route_instance_ids": [
+				"electronics.vending",
+				"electronics.arcade_a",
+				"electronics.arcade_b",
+				"electronics.pc_b",
+				"electronics.pc_c"
+			],
+			"threshold": 55.9,
+			"time": 23.78,
+			"types": [
+				"vending_machine",
+				"arcade_machine",
+				"arcade_machine",
+				"gaming_pc",
+				"gaming_pc"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 3050
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 12,
+			"circuits": [
+				4.37,
+				5.05,
+				5.85,
+				3.27
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "electronics.small_van",
+			"limit": 60.0,
+			"location": "electronics",
+			"mode": "small_van",
+			"noise": 23.328,
+			"remaining": 41.4666666666677,
+			"route_instance_ids": [
+				"electronics.vending",
+				"electronics.pc_b",
+				"electronics.pc_c",
+				"electronics.monitor_a"
+			],
+			"threshold": 55.9,
+			"time": 18.53,
+			"types": [
+				"vending_machine",
+				"gaming_pc",
+				"gaming_pc",
+				"monitor"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 1820
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 16,
+			"circuits": [
+				4.37,
+				3.93,
+				5.05,
+				5.85
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "electronics.client_order",
+			"limit": 35.0,
+			"location": "electronics",
+			"mode": "client_order",
+			"noise": 29.5488,
+			"remaining": 15.8000000000011,
+			"route_instance_ids": [
+				"electronics.vending",
+				"electronics.arcade_b",
+				"electronics.pc_b",
+				"electronics.pc_c"
+			],
+			"threshold": 55.9,
+			"time": 19.2,
+			"types": [
+				"vending_machine",
+				"arcade_machine",
+				"gaming_pc",
+				"gaming_pc"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 2400
+		},
+		{
+			"alarm_at": 48.7999999999985,
+			"cargo": 38,
+			"circuits": [
+				8.87,
+				9.05,
+				7.97,
+				8.37,
+				5.2,
+				6.12,
+				6.12,
+				3.73,
+				6.53,
+				6.52
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "mansion.full_clear",
+			"limit": 85.0,
+			"location": "mansion",
+			"mode": "normal",
+			"noise": 90.2016,
+			"remaining": 12.3333333333341,
+			"route_instance_ids": [
+				"mansion.statue",
+				"mansion.piano",
+				"mansion.safe_a",
+				"mansion.safe_b",
+				"mansion.fridge",
+				"mansion.pc_a",
+				"mansion.pc_b",
+				"mansion.tv",
+				"mansion.toilet",
+				"mansion.monitor"
+			],
+			"threshold": 75.4,
+			"time": 68.47,
+			"types": [
+				"large_statue",
+				"piano",
+				"small_safe",
+				"small_safe",
+				"fridge",
+				"gaming_pc",
+				"gaming_pc",
+				"small_tv",
+				"toilet",
+				"monitor"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 5170
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 24,
+			"circuits": [
+				8.87,
+				9.05,
+				7.97,
+				6.1,
+				6.12
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "mansion.rush",
+			"limit": 55.0,
+			"location": "mansion",
+			"mode": "rush",
+			"noise": 52.8768,
+			"remaining": 16.9000000000022,
+			"route_instance_ids": [
+				"mansion.statue",
+				"mansion.piano",
+				"mansion.safe_a",
+				"mansion.pc_a",
+				"mansion.pc_b"
+			],
+			"threshold": 75.4,
+			"time": 38.1,
+			"types": [
+				"large_statue",
+				"piano",
+				"small_safe",
+				"gaming_pc",
+				"gaming_pc"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 3900
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 14,
+			"circuits": [
+				8.87,
+				9.05
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "mansion.small_van",
+			"limit": 60.0,
+			"location": "mansion",
+			"mode": "small_van",
+			"noise": 27.9936,
+			"remaining": 42.0833333333344,
+			"route_instance_ids": [
+				"mansion.statue",
+				"mansion.piano"
+			],
+			"threshold": 75.4,
+			"time": 17.92,
+			"types": [
+				"large_statue",
+				"piano"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 2500
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 22,
+			"circuits": [
+				8.87,
+				9.05,
+				7.97,
+				8.37
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "mansion.client_order",
+			"limit": 50.0,
+			"location": "mansion",
+			"mode": "client_order",
+			"noise": 55.9872,
+			"remaining": 15.7500000000019,
+			"route_instance_ids": [
+				"mansion.statue",
+				"mansion.piano",
+				"mansion.safe_a",
+				"mansion.safe_b"
+			],
+			"threshold": 75.4,
+			"time": 34.25,
+			"types": [
+				"large_statue",
+				"piano",
+				"small_safe",
+				"small_safe"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 3500
+		},
+		{
+			"alarm_at": 59.6666666666646,
+			"cargo": 39,
+			"circuits": [
+				4.48,
+				4.5,
+				6.08,
+				6.03,
+				7.9,
+				7.87,
+				9.1,
+				9.15,
+				8.25
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "laboratory.full_clear",
+			"limit": 90.0,
+			"location": "laboratory",
+			"mode": "normal",
+			"noise": 79.3152,
+			"remaining": 26.3000000000002,
+			"route_instance_ids": [
+				"laboratory.microscope",
+				"laboratory.analyzer",
+				"laboratory.centrifuge",
+				"laboratory.data_rack",
+				"laboratory.robot_arm",
+				"laboratory.laser",
+				"laboratory.specimen",
+				"laboratory.cryo_pod",
+				"laboratory.core"
+			],
+			"threshold": 66.3,
+			"time": 63.37,
+			"types": [
+				"lab_microscope",
+				"lab_analyzer",
+				"lab_centrifuge",
+				"lab_server",
+				"lab_robot_arm",
+				"lab_laser",
+				"lab_specimen",
+				"lab_cryo_pod",
+				"lab_quantum_core"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 7250
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 21,
+			"circuits": [
+				4.45,
+				9.08,
+				9.15,
+				8.25
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "laboratory.rush",
+			"limit": 55.0,
+			"location": "laboratory",
+			"mode": "rush",
+			"noise": 42.768,
+			"remaining": 24.0666666666684,
+			"route_instance_ids": [
+				"laboratory.analyzer",
+				"laboratory.specimen",
+				"laboratory.cryo_pod",
+				"laboratory.core"
+			],
+			"threshold": 66.3,
+			"time": 30.93,
+			"types": [
+				"lab_analyzer",
+				"lab_specimen",
+				"lab_cryo_pod",
+				"lab_quantum_core"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 4200
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 11,
+			"circuits": [
+				7.8,
+				8.25
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "laboratory.small_van",
+			"limit": 75.0,
+			"location": "laboratory",
+			"mode": "small_van",
+			"noise": 23.328,
+			"remaining": 58.9500000000009,
+			"route_instance_ids": [
+				"laboratory.laser",
+				"laboratory.core"
+			],
+			"threshold": 66.3,
+			"time": 16.05,
+			"types": [
+				"lab_laser",
+				"lab_quantum_core"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 2450
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 10,
+			"circuits": [
+				4.48,
+				4.5,
+				8.22
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "laboratory.client_order",
+			"limit": 60.0,
+			"location": "laboratory",
+			"mode": "client_order",
+			"noise": 22.5504,
+			"remaining": 42.800000000001,
+			"route_instance_ids": [
+				"laboratory.microscope",
+				"laboratory.analyzer",
+				"laboratory.core"
+			],
+			"threshold": 66.3,
+			"time": 17.2,
+			"types": [
+				"lab_microscope",
+				"lab_analyzer",
+				"lab_quantum_core"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 2150
+		},
+		{
+			"alarm_at": 48.8499999999985,
+			"cargo": 45,
+			"circuits": [
+				6.03,
+				7.67,
+				9.02,
+				8.5,
+				8.0,
+				6.78,
+				4.98,
+				4.42
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "museum.full_clear",
+			"limit": 85.0,
+			"location": "museum",
+			"mode": "normal",
+			"noise": 86.3136,
+			"remaining": 17.4500000000004,
+			"route_instance_ids": [
+				"museum.artifact",
+				"museum.statue_a",
+				"museum.statue_b",
+				"museum.machine",
+				"museum.relic",
+				"museum.chest",
+				"museum.safe",
+				"museum.pc"
+			],
+			"threshold": 72.15,
+			"time": 55.4,
+			"types": [
+				"museum_artifact",
+				"large_statue",
+				"large_statue",
+				"time_machine",
+				"ancient_relic",
+				"treasure_chest",
+				"small_safe",
+				"gaming_pc"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 9700
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 24,
+			"circuits": [
+				6.03,
+				7.67,
+				8.5
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "museum.rush",
+			"limit": 35.0,
+			"location": "museum",
+			"mode": "rush",
+			"noise": 41.9904,
+			"remaining": 12.8000000000009,
+			"route_instance_ids": [
+				"museum.artifact",
+				"museum.statue_a",
+				"museum.machine"
+			],
+			"threshold": 72.15,
+			"time": 22.2,
+			"types": [
+				"museum_artifact",
+				"large_statue",
+				"time_machine"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 6000
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 16,
+			"circuits": [
+				6.03,
+				8.53
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "museum.small_van",
+			"limit": 60.0,
+			"location": "museum",
+			"mode": "small_van",
+			"noise": 27.9936,
+			"remaining": 45.4333333333342,
+			"route_instance_ids": [
+				"museum.artifact",
+				"museum.machine"
+			],
+			"threshold": 72.15,
+			"time": 14.57,
+			"types": [
+				"museum_artifact",
+				"time_machine"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 4500
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 27,
+			"circuits": [
+				6.03,
+				7.67,
+				8.5,
+				8.02
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "museum.client_order",
+			"limit": 45.0,
+			"location": "museum",
+			"mode": "client_order",
+			"noise": 47.4336,
+			"remaining": 14.7833333333349,
+			"route_instance_ids": [
+				"museum.artifact",
+				"museum.statue_a",
+				"museum.machine",
+				"museum.relic"
+			],
+			"threshold": 72.15,
+			"time": 30.22,
+			"types": [
+				"museum_artifact",
+				"large_statue",
+				"time_machine",
+				"ancient_relic"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 6650
+		},
+		{
+			"alarm_at": 40.649999999999,
+			"cargo": 44,
+			"circuits": [
+				3.45,
+				3.87,
+				2.2,
+				2.18,
+				4.95,
+				4.92,
+				4.5,
+				4.42,
+				3.68,
+				3.58,
+				5.37
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "pyramid.full_clear",
+			"limit": 60.0,
+			"location": "pyramid",
+			"mode": "normal",
+			"noise": 77.76,
+			"remaining": 10.5333333333332,
+			"route_instance_ids": [
+				"pyramid.jar_a",
+				"pyramid.jar_b",
+				"pyramid.chest_a",
+				"pyramid.chest_b",
+				"pyramid.mask",
+				"pyramid.scarab",
+				"pyramid.anubis",
+				"pyramid.obelisk",
+				"pyramid.bust",
+				"pyramid.sarcophagus",
+				"pyramid.throne"
+			],
+			"threshold": 65.0,
+			"time": 43.12,
+			"types": [
+				"canopic_jar",
+				"canopic_jar",
+				"treasure_chest",
+				"treasure_chest",
+				"pharaoh_mask",
+				"giant_scarab",
+				"giant_anubis",
+				"obelisk_fragment",
+				"pharaoh_bust",
+				"sarcophagus",
+				"golden_throne"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 10500
+		},
+		{
+			"alarm_at": 43.3999999999988,
+			"cargo": 44,
+			"circuits": [
+				3.67,
+				4.07,
+				3.25,
+				3.63,
+				3.78,
+				3.42,
+				4.75,
+				4.27,
+				5.02,
+				5.6,
+				3.73
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "castle.full_clear",
+			"limit": 60.0,
+			"location": "castle",
+			"mode": "normal",
+			"noise": 75.4272,
+			"remaining": 10.2166666666666,
+			"route_instance_ids": [
+				"castle.crown",
+				"castle.chalice",
+				"castle.relic_chest",
+				"castle.bat_idol",
+				"castle.gargoyle",
+				"castle.candelabrum",
+				"castle.portrait",
+				"castle.mirror",
+				"castle.organ",
+				"castle.throne",
+				"castle.coffin"
+			],
+			"threshold": 63.05,
+			"time": 45.18,
+			"types": [
+				"crown_display",
+				"blood_chalice",
+				"relic_chest",
+				"bat_idol",
+				"gargoyle_statue",
+				"skull_candelabrum",
+				"vampire_portrait",
+				"gothic_mirror",
+				"pipe_organ",
+				"vampire_throne",
+				"dracula_coffin"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 10900
+		},
+		{
+			"alarm_at": 61.5666666666645,
+			"cargo": 44,
+			"circuits": [
+				6.98,
+				7.3,
+				8.73,
+				6.97,
+				5.02,
+				5.33,
+				6.4,
+				5.7,
+				5.98,
+				5.45
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "pirate_ship.full_clear",
+			"limit": 80.0,
+			"location": "pirate_ship",
+			"mode": "normal",
+			"noise": 80.8704,
+			"remaining": 16.133333333337,
+			"route_instance_ids": [
+				"pirate_ship.anchor",
+				"pirate_ship.cannon",
+				"pirate_ship.kraken",
+				"pirate_ship.spyglass",
+				"pirate_ship.sextant",
+				"pirate_ship.compass",
+				"pirate_ship.parrot",
+				"pirate_ship.rum",
+				"pirate_ship.wheel",
+				"pirate_ship.chest"
+			],
+			"threshold": 67.6,
+			"time": 63.87,
+			"types": [
+				"pirate_anchor",
+				"pirate_cannon",
+				"pirate_figurehead",
+				"pirate_spyglass",
+				"pirate_sextant",
+				"pirate_compass",
+				"pirate_parrot",
+				"pirate_rum",
+				"pirate_wheel",
+				"pirate_chest"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 13200
+		},
+		{
+			"alarm_at": 65.2333333333309,
+			"cargo": 44,
+			"circuits": [
+				8.07,
+				9.35,
+				8.92,
+				7.6,
+				7.9,
+				7.02,
+				6.88,
+				5.78,
+				6.53,
+				5.08
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "vikings.full_clear",
+			"limit": 85.0,
+			"location": "vikings",
+			"mode": "normal",
+			"noise": 83.2032,
+			"remaining": 11.8666666666704,
+			"route_instance_ids": [
+				"vikings.throne",
+				"vikings.runestone",
+				"vikings.loom",
+				"vikings.helmet",
+				"vikings.horn",
+				"vikings.axe",
+				"vikings.shield",
+				"vikings.cauldron",
+				"vikings.anvil",
+				"vikings.raven"
+			],
+			"threshold": 69.55,
+			"time": 73.13,
+			"types": [
+				"viking_throne",
+				"viking_runestone",
+				"viking_loom",
+				"viking_helmet",
+				"viking_horn",
+				"viking_axe",
+				"viking_shield",
+				"viking_cauldron",
+				"viking_anvil",
+				"viking_raven"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 17000
+		},
+		{
+			"alarm_at": 59.2333333333313,
+			"cargo": 44,
+			"circuits": [
+				7.83,
+				9.4,
+				7.82,
+				6.88,
+				6.77,
+				5.92,
+				5.73,
+				5.5,
+				6.1,
+				4.85
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "english_pub.full_clear",
+			"limit": 85.0,
+			"location": "english_pub",
+			"mode": "normal",
+			"noise": 71.5392,
+			"remaining": 18.2000000000038,
+			"route_instance_ids": [
+				"english_pub.billiards",
+				"english_pub.clock",
+				"english_pub.settee",
+				"english_pub.gramophone",
+				"english_pub.radio",
+				"english_pub.darts",
+				"english_pub.tankard",
+				"english_pub.register",
+				"english_pub.pumps",
+				"english_pub.sign"
+			],
+			"threshold": 59.8,
+			"time": 66.8,
+			"types": [
+				"pub_billiards",
+				"pub_clock",
+				"pub_settee",
+				"pub_gramophone",
+				"pub_radio",
+				"pub_darts",
+				"pub_tankard",
+				"pub_register",
+				"pub_beer_engine",
+				"pub_sign"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 21000
+		},
+		{
+			"alarm_at": 55.1833333333315,
+			"cargo": 44,
+			"circuits": [
+				8.2,
+				8.92,
+				8.62,
+				7.27,
+				7.28,
+				6.35,
+				5.13,
+				6.1,
+				5.15,
+				5.35
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "prehistoric.full_clear",
+			"limit": 85.0,
+			"location": "prehistoric",
+			"mode": "normal",
+			"noise": 78.5376,
+			"remaining": 16.6333333333372,
+			"route_instance_ids": [
+				"prehistoric.mammoth",
+				"prehistoric.saber",
+				"prehistoric.painting",
+				"prehistoric.hide",
+				"prehistoric.spear",
+				"prehistoric.necklace",
+				"prehistoric.amber",
+				"prehistoric.mortar",
+				"prehistoric.drum",
+				"prehistoric.fur"
+			],
+			"threshold": 65.65,
+			"time": 68.37,
+			"types": [
+				"prehistoric_skull",
+				"prehistoric_saber",
+				"prehistoric_painting",
+				"prehistoric_hide",
+				"prehistoric_spear",
+				"prehistoric_necklace",
+				"prehistoric_amber",
+				"prehistoric_mortar",
+				"prehistoric_drum",
+				"prehistoric_fur"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 25700
+		},
+		{
+			"alarm_at": 24.1166666666666,
+			"cargo": 17,
+			"circuits": [
+				3.82,
+				2.52,
+				3.35,
+				2.83,
+				4.18,
+				4.7,
+				4.83,
+				4.6,
+				3.52
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "apartment.max_except_noise1",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 53.76,
+			"remaining": 1.76666666666649,
+			"route_instance_ids": [
+				"apartment.tv_a",
+				"apartment.chair_a",
+				"apartment.lamp",
+				"apartment.fan",
+				"apartment.laptop",
+				"apartment.microwave",
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 34.35,
+			"types": [
+				"small_tv",
+				"chair",
+				"floor_lamp",
+				"table_fan",
+				"laptop",
+				"microwave",
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 1210
+		},
+		{
+			"alarm_at": 40.4166666666657,
+			"cargo": 23,
+			"circuits": [
+				7.38,
+				4.28,
+				6.05,
+				7.42,
+				5.6,
+				5.58,
+				7.7,
+				6.5
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "house.max_except_noise1",
+			"limit": 60.0,
+			"location": "house",
+			"mode": "normal",
+			"noise": 72.96,
+			"remaining": 1.89999999999982,
+			"route_instance_ids": [
+				"house.tv",
+				"house.chair",
+				"house.tools",
+				"house.duck",
+				"house.toilet",
+				"house.fridge",
+				"house.tub",
+				"house.sofa"
+			],
+			"threshold": 49.4,
+			"time": 50.52,
+			"types": [
+				"small_tv",
+				"chair",
+				"tool_cabinet",
+				"rubber_duck",
+				"toilet",
+				"fridge",
+				"bathtub",
+				"sofa"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 2140
+		},
+		{
+			"alarm_at": 31.5666666666662,
+			"cargo": 28,
+			"circuits": [
+				7.92,
+				7.62,
+				7.57,
+				5.17,
+				5.82,
+				5.28,
+				5.27,
+				6.65,
+				4.83
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "villa.max_except_noise1",
+			"limit": 70.0,
+			"location": "villa",
+			"mode": "normal",
+			"noise": 91.2,
+			"remaining": 1.45000000000019,
+			"route_instance_ids": [
+				"villa.piano",
+				"villa.tub",
+				"villa.toilet",
+				"villa.sofa",
+				"villa.safe",
+				"villa.pc",
+				"villa.tv",
+				"villa.chair",
+				"villa.monitor"
+			],
+			"threshold": 61.75,
+			"time": 56.12,
+			"types": [
+				"piano",
+				"bathtub",
+				"toilet",
+				"sofa",
+				"small_safe",
+				"gaming_pc",
+				"small_tv",
+				"chair",
+				"monitor"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 3260
+		},
+		{
+			"alarm_at": 31.3666666666662,
+			"cargo": 31,
+			"circuits": [
+				4.37,
+				4.58,
+				3.93,
+				5.9,
+				5.05,
+				5.85,
+				3.58,
+				4.22,
+				4.88,
+				3.27
+			],
+			"contract_met": false,
+			"escaped": false,
+			"label": "electronics.max_except_noise1",
+			"limit": 65.0,
+			"location": "electronics",
+			"mode": "normal",
+			"noise": 82.56,
+			"remaining": 0.0,
+			"route_instance_ids": [
+				"electronics.vending",
+				"electronics.arcade_a",
+				"electronics.arcade_b",
+				"electronics.pc_a",
+				"electronics.pc_b",
+				"electronics.pc_c",
+				"electronics.tv_a",
+				"electronics.tv_b",
+				"electronics.tv_c",
+				"electronics.monitor_a",
+				"electronics.monitor_b"
+			],
+			"threshold": 55.9,
+			"time": 49.37,
+			"types": [
+				"vending_machine",
+				"arcade_machine",
+				"arcade_machine",
+				"gaming_pc",
+				"gaming_pc",
+				"gaming_pc",
+				"small_tv",
+				"small_tv",
+				"small_tv",
+				"monitor"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 3990
+		},
+		{
+			"alarm_at": 36.9666666666659,
+			"cargo": 38,
+			"circuits": [
+				8.87,
+				9.05,
+				7.97,
+				8.37,
+				5.2,
+				6.12,
+				6.12,
+				3.73,
+				6.53,
+				6.52
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "mansion.max_except_noise1",
+			"limit": 85.0,
+			"location": "mansion",
+			"mode": "normal",
+			"noise": 111.36,
+			"remaining": 0.500000000000535,
+			"route_instance_ids": [
+				"mansion.statue",
+				"mansion.piano",
+				"mansion.safe_a",
+				"mansion.safe_b",
+				"mansion.fridge",
+				"mansion.pc_a",
+				"mansion.pc_b",
+				"mansion.tv",
+				"mansion.toilet",
+				"mansion.monitor"
+			],
+			"threshold": 75.4,
+			"time": 68.47,
+			"types": [
+				"large_statue",
+				"piano",
+				"small_safe",
+				"small_safe",
+				"fridge",
+				"gaming_pc",
+				"gaming_pc",
+				"small_tv",
+				"toilet",
+				"monitor"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 5170
+		},
+		{
+			"alarm_at": 50.9166666666651,
+			"cargo": 39,
+			"circuits": [
+				4.48,
+				4.5,
+				6.08,
+				6.03,
+				7.9,
+				7.87,
+				9.1,
+				9.15,
+				8.25
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "laboratory.max_except_noise1",
+			"limit": 90.0,
+			"location": "laboratory",
+			"mode": "normal",
+			"noise": 97.92,
+			"remaining": 17.5500000000007,
+			"route_instance_ids": [
+				"laboratory.microscope",
+				"laboratory.analyzer",
+				"laboratory.centrifuge",
+				"laboratory.data_rack",
+				"laboratory.robot_arm",
+				"laboratory.laser",
+				"laboratory.specimen",
+				"laboratory.cryo_pod",
+				"laboratory.core"
+			],
+			"threshold": 66.3,
+			"time": 63.37,
+			"types": [
+				"lab_microscope",
+				"lab_analyzer",
+				"lab_centrifuge",
+				"lab_server",
+				"lab_robot_arm",
+				"lab_laser",
+				"lab_specimen",
+				"lab_cryo_pod",
+				"lab_quantum_core"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 7250
+		},
+		{
+			"alarm_at": 35.3999999999993,
+			"cargo": 45,
+			"circuits": [
+				6.03,
+				7.67,
+				9.02,
+				8.5,
+				8.0,
+				6.78,
+				4.98,
+				4.42
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "museum.max_except_noise1",
+			"limit": 85.0,
+			"location": "museum",
+			"mode": "normal",
+			"noise": 106.56,
+			"remaining": 4.00000000000007,
+			"route_instance_ids": [
+				"museum.artifact",
+				"museum.statue_a",
+				"museum.statue_b",
+				"museum.machine",
+				"museum.relic",
+				"museum.chest",
+				"museum.safe",
+				"museum.pc"
+			],
+			"threshold": 72.15,
+			"time": 55.4,
+			"types": [
+				"museum_artifact",
+				"large_statue",
+				"large_statue",
+				"time_machine",
+				"ancient_relic",
+				"treasure_chest",
+				"small_safe",
+				"gaming_pc"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 9700
+		},
+		{
+			"alarm_at": 35.9833333333326,
+			"cargo": 44,
+			"circuits": [
+				3.45,
+				3.87,
+				2.2,
+				2.18,
+				4.95,
+				4.92,
+				4.5,
+				4.42,
+				3.68,
+				3.58,
+				5.37
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "pyramid.max_except_noise1",
+			"limit": 60.0,
+			"location": "pyramid",
+			"mode": "normal",
+			"noise": 96.0,
+			"remaining": 5.86666666666643,
+			"route_instance_ids": [
+				"pyramid.jar_a",
+				"pyramid.jar_b",
+				"pyramid.chest_a",
+				"pyramid.chest_b",
+				"pyramid.mask",
+				"pyramid.scarab",
+				"pyramid.anubis",
+				"pyramid.obelisk",
+				"pyramid.bust",
+				"pyramid.sarcophagus",
+				"pyramid.throne"
+			],
+			"threshold": 65.0,
+			"time": 43.12,
+			"types": [
+				"canopic_jar",
+				"canopic_jar",
+				"treasure_chest",
+				"treasure_chest",
+				"pharaoh_mask",
+				"giant_scarab",
+				"giant_anubis",
+				"obelisk_fragment",
+				"pharaoh_bust",
+				"sarcophagus",
+				"golden_throne"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 10500
+		},
+		{
+			"alarm_at": 38.7999999999991,
+			"cargo": 44,
+			"circuits": [
+				3.67,
+				4.07,
+				3.25,
+				3.63,
+				3.78,
+				3.42,
+				4.75,
+				4.27,
+				5.02,
+				5.6,
+				3.73
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "castle.max_except_noise1",
+			"limit": 60.0,
+			"location": "castle",
+			"mode": "normal",
+			"noise": 93.12,
+			"remaining": 5.61666666666648,
+			"route_instance_ids": [
+				"castle.crown",
+				"castle.chalice",
+				"castle.relic_chest",
+				"castle.bat_idol",
+				"castle.gargoyle",
+				"castle.candelabrum",
+				"castle.portrait",
+				"castle.mirror",
+				"castle.organ",
+				"castle.throne",
+				"castle.coffin"
+			],
+			"threshold": 63.05,
+			"time": 45.18,
+			"types": [
+				"crown_display",
+				"blood_chalice",
+				"relic_chest",
+				"bat_idol",
+				"gargoyle_statue",
+				"skull_candelabrum",
+				"vampire_portrait",
+				"gothic_mirror",
+				"pipe_organ",
+				"vampire_throne",
+				"dracula_coffin"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 10900
+		},
+		{
+			"alarm_at": 49.7999999999985,
+			"cargo": 44,
+			"circuits": [
+				6.98,
+				7.3,
+				8.73,
+				6.97,
+				5.02,
+				5.33,
+				6.4,
+				5.7,
+				5.98,
+				5.45
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "pirate_ship.max_except_noise1",
+			"limit": 80.0,
+			"location": "pirate_ship",
+			"mode": "normal",
+			"noise": 99.84,
+			"remaining": 11.9333333333337,
+			"route_instance_ids": [
+				"pirate_ship.anchor",
+				"pirate_ship.cannon",
+				"pirate_ship.kraken",
+				"pirate_ship.spyglass",
+				"pirate_ship.sextant",
+				"pirate_ship.compass",
+				"pirate_ship.parrot",
+				"pirate_ship.rum",
+				"pirate_ship.wheel",
+				"pirate_ship.chest"
+			],
+			"threshold": 67.6,
+			"time": 63.87,
+			"types": [
+				"pirate_anchor",
+				"pirate_cannon",
+				"pirate_figurehead",
+				"pirate_spyglass",
+				"pirate_sextant",
+				"pirate_compass",
+				"pirate_parrot",
+				"pirate_rum",
+				"pirate_wheel",
+				"pirate_chest"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 13200
+		},
+		{
+			"alarm_at": 58.9499999999979,
+			"cargo": 44,
+			"circuits": [
+				8.07,
+				9.35,
+				8.92,
+				7.6,
+				7.9,
+				7.02,
+				6.88,
+				5.78,
+				6.53,
+				5.08
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "vikings.max_except_noise1",
+			"limit": 85.0,
+			"location": "vikings",
+			"mode": "normal",
+			"noise": 102.72,
+			"remaining": 11.8666666666704,
+			"route_instance_ids": [
+				"vikings.throne",
+				"vikings.runestone",
+				"vikings.loom",
+				"vikings.helmet",
+				"vikings.horn",
+				"vikings.axe",
+				"vikings.shield",
+				"vikings.cauldron",
+				"vikings.anvil",
+				"vikings.raven"
+			],
+			"threshold": 69.55,
+			"time": 73.13,
+			"types": [
+				"viking_throne",
+				"viking_runestone",
+				"viking_loom",
+				"viking_helmet",
+				"viking_horn",
+				"viking_axe",
+				"viking_shield",
+				"viking_cauldron",
+				"viking_anvil",
+				"viking_raven"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 17000
+		},
+		{
+			"alarm_at": 53.4499999999982,
+			"cargo": 44,
+			"circuits": [
+				7.83,
+				9.4,
+				7.82,
+				6.88,
+				6.77,
+				5.92,
+				5.73,
+				5.5,
+				6.1,
+				4.85
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "english_pub.max_except_noise1",
+			"limit": 85.0,
+			"location": "english_pub",
+			"mode": "normal",
+			"noise": 88.32,
+			"remaining": 14.6500000000006,
+			"route_instance_ids": [
+				"english_pub.billiards",
+				"english_pub.clock",
+				"english_pub.settee",
+				"english_pub.gramophone",
+				"english_pub.radio",
+				"english_pub.darts",
+				"english_pub.tankard",
+				"english_pub.register",
+				"english_pub.pumps",
+				"english_pub.sign"
+			],
+			"threshold": 59.8,
+			"time": 66.8,
+			"types": [
+				"pub_billiards",
+				"pub_clock",
+				"pub_settee",
+				"pub_gramophone",
+				"pub_radio",
+				"pub_darts",
+				"pub_tankard",
+				"pub_register",
+				"pub_beer_engine",
+				"pub_sign"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 21000
+		},
+		{
+			"alarm_at": 43.6666666666655,
+			"cargo": 44,
+			"circuits": [
+				8.2,
+				8.92,
+				8.62,
+				7.27,
+				7.28,
+				6.35,
+				5.13,
+				6.1,
+				5.15,
+				5.35
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "prehistoric.max_except_noise1",
+			"limit": 85.0,
+			"location": "prehistoric",
+			"mode": "normal",
+			"noise": 96.96,
+			"remaining": 9.30000000000069,
+			"route_instance_ids": [
+				"prehistoric.mammoth",
+				"prehistoric.saber",
+				"prehistoric.painting",
+				"prehistoric.hide",
+				"prehistoric.spear",
+				"prehistoric.necklace",
+				"prehistoric.amber",
+				"prehistoric.mortar",
+				"prehistoric.drum",
+				"prehistoric.fur"
+			],
+			"threshold": 65.65,
+			"time": 68.37,
+			"types": [
+				"prehistoric_skull",
+				"prehistoric_saber",
+				"prehistoric_painting",
+				"prehistoric_hide",
+				"prehistoric_spear",
+				"prehistoric_necklace",
+				"prehistoric_amber",
+				"prehistoric_mortar",
+				"prehistoric_drum",
+				"prehistoric_fur"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 1,
+				"strength": 5
+			},
+			"value": 25700
+		},
+		{
+			"alarm_at": 15.866666666667,
+			"cargo": 8,
+			"circuits": [
+				4.3,
+				3.87,
+				4.45,
+				5.43,
+				3.73
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_01_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 58.0,
+			"remaining": 6.08333333333314,
+			"route_instance_ids": [
+				"apartment.tv_a",
+				"apartment.lamp",
+				"apartment.laptop",
+				"apartment.microwave",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 21.78,
+			"types": [
+				"small_tv",
+				"floor_lamp",
+				"laptop",
+				"microwave",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 1
+			},
+			"value": 550
+		},
+		{
+			"alarm_at": 15.866666666667,
+			"cargo": 8,
+			"circuits": [
+				4.3,
+				3.87,
+				4.45,
+				5.43,
+				3.73
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_02_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 58.0,
+			"remaining": 6.08333333333314,
+			"route_instance_ids": [
+				"apartment.tv_a",
+				"apartment.lamp",
+				"apartment.laptop",
+				"apartment.microwave",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 21.78,
+			"types": [
+				"small_tv",
+				"floor_lamp",
+				"laptop",
+				"microwave",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 1
+			},
+			"value": 550
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_03_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_04_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_05_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_06_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_07_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_08_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_09_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_10_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_11_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_12_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_13_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_14_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_15_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_16_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_17_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_18_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_19_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_20_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_21_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_22_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_23_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_24_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_25_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_26_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_27_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_28_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_29_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_30_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_31_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_32_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_33_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_34_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_35_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_36_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_37_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_38_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_39_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_40_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_41_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_42_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_43_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_44_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_45_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_46_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_47_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_48_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_49_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_50_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_51_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_52_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_53_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_54_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_55_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_56_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_57_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_58_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_59_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_60_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_61_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_62_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_63_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_64_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_65_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_66_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_67_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_68_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_69_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_70_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_71_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_72_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_73_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_74_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_75_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_76_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_77_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_78_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_79_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		},
+		{
+			"alarm_at": -1.0,
+			"cargo": 8,
+			"circuits": [
+				5.5,
+				6.0,
+				3.72
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "campaign_v2_80_apartment",
+			"limit": 60.0,
+			"location": "apartment",
+			"mode": "normal",
+			"noise": 25.3,
+			"remaining": 44.7833333333342,
+			"route_instance_ids": [
+				"apartment.toilet",
+				"apartment.fridge",
+				"apartment.flamingo"
+			],
+			"threshold": 36.4,
+			"time": 15.22,
+			"types": [
+				"toilet",
+				"fridge",
+				"pink_flamingo"
+			],
+			"upgrades": {
+				"capacity": 1,
+				"carry": 1,
+				"grip": 1,
+				"noise": 1,
+				"strength": 2
+			},
+			"value": 640
+		}
+	]
+}

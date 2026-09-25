@@ -1,0 +1,7 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Bed and library desk block movement/drop footprints
+PASS: Electronics sit on furniture without a carried-model elevation offset
+MEASURE mansion_polish_local_tier 78.38s / 80s | $5170 | cargo 38
+PASS: Mansion-tier upgrades can physically clear all ten items and escape
+MANSION POLISH: 3 checks, 0 failures

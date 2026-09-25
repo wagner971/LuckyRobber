@@ -1,0 +1,21 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Museum has eight themed exhibits and the new economy
+PASS: Only Museum Normal and Final Job widen the alarm window
+MEASURE museum_v2_full_clear 64.17s / 80s | $9700 | cargo 45
+MUSEUM DIAGNOSTIC circuits=[7.52, 9.37, 10.88, 10.3, 8.35, 7.07, 5.95, 4.73] types=["museum_artifact", "large_statue", "large_statue", "time_machine", "ancient_relic", "treasure_chest", "small_safe", "gaming_pc"] alarm_at=57.1666666666647 remaining=15.833333333337
+PASS: Every Museum gallery and the Time Machine can be cleared physically
+PASS: Full clear banks the complete Museum inventory
+MEASURE museum_v2_rush 27.18s / 35s | $6000 | cargo 24
+PASS: Museum rush contract remains physically solvable
+MEASURE museum_v2_small_van 17.82s / 60s | $4500 | cargo 16
+PASS: Museum small_van contract remains physically solvable
+MEASURE museum_v2_client_order 35.52s / 45s | $6650 | cargo 27
+PASS: Museum client_order contract remains physically solvable
+PASS: Two Museum goals offer the finale without opening Chapter 2
+PASS: Older saves without Museum completion keep Chapter 2 locked
+MEASURE museum_v2_final_job 64.17s / 80s | $9700 | cargo 45
+PASS: Physical Museum Final Job steals Time Machine and opens Pyramid
+MEASURE museum_v2_final_job_mid_tier 69.08s / 80s | $9700 | cargo 45
+PASS: Museum Final Job is feasible without maxing Grip, Carry, or Noise
+MUSEUM V2 ROUTES: 11 checks, 0 failures

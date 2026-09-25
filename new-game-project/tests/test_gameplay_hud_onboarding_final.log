@@ -1,0 +1,60 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Ready timer and hidden inactive progress
+PASS: HUD icons imported
+PASS: Ready has no unavailable actions
+PASS: @MarginContainer@7 fits (64, 64)
+PASS: @MarginContainer@43 fits (64, 64)
+PASS: @Button@25 fits (64, 64)
+PASS: @Label@15 fits (64, 64)
+PASS: @Label@21 fits (64, 64)
+PASS: @Label@32 fits (64, 64)
+PASS: @Label@38 fits (64, 64)
+PASS: @Label@51 fits (64, 64)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: Noninteractive HUD decoration does not steal joystick touches
+PASS: Pause touch does not start joystick
+PASS: Touch pause opens modal
+PASS: Pickup progress displays actual fraction
+PASS: Carrying shows item and DROP
+PASS: Load uses crate icon and real loading duration
+PASS: Touch DROP releases actual item without starting movement
+PASS: Warning uses label and warning icon
+PASS: Cargo and cash reflect run, not bank
+PASS: Full van has explicit label and full meter
+PASS: Alarm exposes escape action
+PASS: Alarm banner visible
+PASS: @MarginContainer@7 fits (64, 64)
+PASS: @MarginContainer@43 fits (64, 64)
+PASS: @Button@25 fits (64, 64)
+PASS: @Label@15 fits (64, 64)
+PASS: @Label@21 fits (64, 64)
+PASS: @Label@32 fits (64, 64)
+PASS: @Label@38 fits (64, 64)
+PASS: @Label@51 fits (64, 64)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: @MarginContainer@7 fits (360, 800)
+PASS: @MarginContainer@43 fits (360, 800)
+PASS: @Button@25 fits (360, 800)
+PASS: @Label@15 fits (360, 800)
+PASS: @Label@21 fits (360, 800)
+PASS: @Label@32 fits (360, 800)
+PASS: @Label@38 fits (360, 800)
+PASS: @Label@51 fits (360, 800)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: @MarginContainer@7 fits (600, 800)
+PASS: @MarginContainer@43 fits (600, 800)
+PASS: @Button@25 fits (600, 800)
+PASS: @Label@15 fits (600, 800)
+PASS: @Label@21 fits (600, 800)
+PASS: @Label@32 fits (600, 800)
+PASS: @Label@38 fits (600, 800)
+PASS: @Label@51 fits (600, 800)
+PASS: Top HUD leaves playfield clear
+PASS: Interaction stays below playfield
+PASS: Feedback card hides completely on expiry
+PASS: Touch ESCAPE settles run normally
+GAMEPLAY HUD CHECKS 57; FAILURES 0

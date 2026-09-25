@@ -1,0 +1,27 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+PASS: Home starts with actual live blocky player model
+PASS: Home displays isolated live3D viewport, no sprite
+PASS: Home exposes dominant PLAY and real Settings
+PASS: Menu actor visibly animates while waiting
+PASS: Full-screen Home render resolution bounded for mobile
+PASS: Home PLAY fits portrait (720, 1280)
+PASS: Home PLAY fits portrait (720, 1600)
+PASS: Home PLAY fits portrait (720, 1100)
+PASS: Collection has a dedicated visible live preview
+PASS: EquipA updates SAME preview actor immediately
+PASS: Outfit tint preserves skin and face
+PASS: Collection selection clearly identifies current outfit
+PASS: EquipB updates both character and van through existing set rules
+PASS: OutfitB saved immediately
+PASS: Individual van clears set, restores original suit, applies mint
+PASS: Independent suit and van can combine without desync
+PASS: Original look resets SAME rig and van, no stale colors
+PASS: Upgrades reuses live appearance and component
+PASS: Home reflects equippedB after menu navigation
+PASS: Background suspends menu animation and rendering
+PASS: Foreground resumes menu preview
+PASS: Presentation does not change wallet, scheduler or progression
+PASS: 3D hero clicks cannot start joystick or gameplay
+DEBUG PREVIEW AFTER PLAY: @Control@1235:<Control#152320345917> screen=locations outgoing=@PanelContainer@1221:<PanelContainer#151380824676> tween=true

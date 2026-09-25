@@ -1,0 +1,11 @@
+# Gameplay Readability V1 — 0.9.22
+
+Camera jocului este mai apropiată și privește diorama la aproximativ 53–56°, cu urmărire lină a personajului. Apartment are o încadrare inițială în care hoțul se vede lângă van; celelalte locații primesc zoom proporțional cu dimensiunea lor. Camera păstrează direcțiile simple ale controlului tactil, iar opțiunea Camera Effects oprește shake-ul fără să oprească urmărirea.
+
+Mesajul central apare acum numai pentru **ALARM** și **VAN FULL**. Pickup, load, impact și blocajele obișnuite folosesc sunet, efecte existente și hintul compact de sus, fără un al doilea banner. La 8/8, jocul nu mai propune obiecte noi: indică întoarcerea la van, colorează și pulsează zona de încărcare și accentuează ESCAPE. Obiectele care cer Strength mai mare au lacăt și nivelul necesar vizibile în lume încă de la început. Câștigul de zgomot este afișat ca număr întreg.
+
+În zona de avertizare apare o vignetă roșie ușoară; la alarmă marginile pulsează mai puternic, bara de zgomot afișează **POLICE IN Ns**, iar timpul de evadare existent rămâne neschimbat. Home are o singură acțiune PLAY, cu jobul recomandat scris pe buton. Home, Jobs, Upgrades, Results și Collection folosesc aceeași navigare cu iconițe; Upgrades primește un punct roșu când un upgrade disponibil poate fi cumpărat. Results lasă recompensa să se numere, apoi arată câteva modele ale obiectelor furate și trofeul nou în pagină, fără popup peste bani.
+
+Modelele cărate sunt aliniate la CarryAnchor după pickup. Animația de mers greu, arcul obiectului spre van, suspensia la impact și efectul 3D al banilor existau deja și au fost păstrate. Suburban House are 23 cargo față de maximum 20 la nivelul său de progresie; Villa are 28 față de maximum 26, deci alegerea lootului rămâne necesară. Alarma și costurile/efectele upgrade-urilor din Balance V2.1 au rămas nemodificate pentru runda de testare cu cei șapte jucători propusă de utilizator. Nu a fost realizată o înregistrare audio pe telefon; efectele și volumul necesită verificare pe dispozitiv.
+
+Capturi: [Apartment la intrare](tests/apartment_v2_450x800.png), [camera în interior](tests/apartment_follow_450x800.png), [van plin](tests/hud_full.png), [alarmă](tests/hud_alarm.png), [Home](tests/home_v2_first_job.png), [Results cu trofeu](tests/results_trophy_mobile.png).

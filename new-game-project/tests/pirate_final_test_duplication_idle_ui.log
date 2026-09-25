@@ -1,0 +1,27 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Locked Laboratory is inaccessible
+PASS: Unlocked lab opens with an automatic-production action
+PASS: Actual UI starts the selected highest-yield blueprint
+PASS: No premature collect action
+PASS: Offline copies become collectible through the live UI
+PASS: Collect pays exactly once and keeps automatic production active
+PASS: Repeated UI action cannot duplicate the payout
+PASS: UI upgrades purchase the two additional chambers at advertised prices
+PASS: Chamber claim button fits narrow safe width
+PASS: Chamber claim button fits narrow safe width
+PASS: Chamber claim button fits narrow safe width
+PASS: Claim action is rejected outside the lab screen
+PASS: Locked Laboratory is inaccessible
+PASS: Unlocked lab opens with an automatic-production action
+PASS: Actual UI starts the selected highest-yield blueprint
+PASS: No premature collect action
+PASS: Offline copies become collectible through the live UI
+PASS: Collect pays exactly once and keeps automatic production active
+PASS: Repeated UI action cannot duplicate the payout
+PASS: UI upgrades purchase the two additional chambers at advertised prices
+PASS: Chamber claim button fits narrow safe width
+PASS: Chamber claim button fits narrow safe width
+PASS: Chamber claim button fits narrow safe width
+PASS: Claim action is rejected outside the lab screen
+IDLE UI: 24 checks, 0 failures

@@ -1,0 +1,134 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+FAIL: Exact formula price grip L3
+FAIL: Exact formula price grip L4
+FAIL: Exact formula price grip L5
+FAIL: Exact formula price grip L6
+FAIL: Exact formula price grip L7
+FAIL: Exact formula price grip L8
+FAIL: Exact formula price grip L9
+FAIL: Exact formula price grip L10
+FAIL: Exact formula price grip L11
+FAIL: Exact formula price grip L12
+FAIL: Exact formula price grip L13
+FAIL: Exact formula price grip L14
+FAIL: Exact formula price grip L15
+FAIL: Exact formula price grip L16
+FAIL: Exact formula price grip L17
+FAIL: Exact formula price grip L18
+FAIL: Exact formula price grip L19
+FAIL: Exact total grip $30800
+FAIL: Exact formula price carry L4
+FAIL: Exact formula price carry L5
+FAIL: Exact formula price carry L6
+FAIL: Exact formula price carry L7
+FAIL: Exact formula price carry L8
+FAIL: Exact formula price carry L9
+FAIL: Exact formula price carry L10
+FAIL: Exact formula price carry L11
+FAIL: Exact formula price carry L12
+FAIL: Exact formula price carry L13
+FAIL: Exact formula price carry L14
+FAIL: Exact formula price carry L15
+FAIL: Exact formula price carry L16
+FAIL: Exact formula price carry L17
+FAIL: Exact formula price carry L18
+FAIL: Exact formula price carry L19
+FAIL: Exact total carry $37100
+FAIL: Exactly 80 purchases, total $224700
+FAIL: Grip MAX = 157 percent; smallest real loot above 0.25s minimum
+FAIL: Carry MAX 128.5 percent and van MAX 46
+FAIL: Capped speed LIGHT L2
+FAIL: Capped speed LIGHT L3
+FAIL: Capped speed LIGHT L4
+FAIL: Capped speed LIGHT L5
+FAIL: Capped speed LIGHT L6
+FAIL: Capped speed LIGHT L7
+FAIL: Capped speed LIGHT L8
+FAIL: Capped speed LIGHT L9
+FAIL: Capped speed LIGHT L10
+FAIL: Capped speed LIGHT L11
+FAIL: Capped speed LIGHT L12
+FAIL: Capped speed LIGHT L13
+FAIL: Capped speed LIGHT L14
+FAIL: Capped speed LIGHT L15
+FAIL: Capped speed LIGHT L16
+FAIL: Capped speed LIGHT L17
+FAIL: Capped speed LIGHT L18
+FAIL: Capped speed LIGHT L19
+FAIL: Capped speed LIGHT L20
+FAIL: Capped speed MEDIUM L2
+FAIL: Capped speed MEDIUM L3
+FAIL: Capped speed MEDIUM L4
+FAIL: Capped speed MEDIUM L5
+FAIL: Capped speed MEDIUM L6
+FAIL: Capped speed MEDIUM L7
+FAIL: Capped speed MEDIUM L8
+FAIL: Capped speed MEDIUM L9
+FAIL: Capped speed MEDIUM L10
+FAIL: Capped speed MEDIUM L11
+FAIL: Capped speed MEDIUM L12
+FAIL: Capped speed MEDIUM L13
+FAIL: Capped speed MEDIUM L14
+FAIL: Capped speed MEDIUM L15
+FAIL: Capped speed MEDIUM L16
+FAIL: Capped speed MEDIUM L17
+FAIL: Capped speed MEDIUM L18
+FAIL: Capped speed MEDIUM L19
+FAIL: Capped speed MEDIUM L20
+FAIL: Capped speed HEAVY L2
+FAIL: Capped speed HEAVY L3
+FAIL: Capped speed HEAVY L4
+FAIL: Capped speed HEAVY L5
+FAIL: Capped speed HEAVY L6
+FAIL: Capped speed HEAVY L7
+FAIL: Capped speed HEAVY L8
+FAIL: Capped speed HEAVY L9
+FAIL: Capped speed HEAVY L10
+FAIL: Capped speed HEAVY L11
+FAIL: Capped speed HEAVY L12
+FAIL: Capped speed HEAVY L13
+FAIL: Capped speed HEAVY L14
+FAIL: Capped speed HEAVY L15
+FAIL: Capped speed HEAVY L16
+FAIL: Capped speed HEAVY L17
+FAIL: Capped speed HEAVY L18
+FAIL: Capped speed HEAVY L19
+FAIL: Capped speed HEAVY L20
+FAIL: Capped speed VERY_HEAVY L2
+FAIL: Capped speed VERY_HEAVY L3
+FAIL: Capped speed VERY_HEAVY L4
+FAIL: Capped speed VERY_HEAVY L5
+FAIL: Capped speed VERY_HEAVY L6
+FAIL: Capped speed VERY_HEAVY L7
+FAIL: Capped speed VERY_HEAVY L8
+FAIL: Capped speed VERY_HEAVY L9
+FAIL: Capped speed VERY_HEAVY L10
+FAIL: Capped speed VERY_HEAVY L11
+FAIL: Capped speed VERY_HEAVY L12
+FAIL: Capped speed VERY_HEAVY L13
+FAIL: Capped speed VERY_HEAVY L14
+FAIL: Capped speed VERY_HEAVY L15
+FAIL: Capped speed VERY_HEAVY L16
+FAIL: Capped speed VERY_HEAVY L17
+FAIL: Capped speed VERY_HEAVY L18
+FAIL: Capped speed VERY_HEAVY L19
+FAIL: Capped speed VERY_HEAVY L20
+FAIL: Shop effects reflect formulas rather than inconsistent example text
+SCRIPT ERROR: Invalid access to property or key 'laboratory' on a base object of type 'Array'.
+   at: test_v2_migration (res://tests/test_challenge_v2.gd:70)
+   GDScript backtrace (most recent call first):
+       [0] test_v2_migration (res://tests/test_challenge_v2.gd:70)
+       [1] test (res://tests/test_challenge_v2.gd:12)
+SCRIPT ERROR: Out of bounds get index '9' (on base: 'Array')
+   at: test_v2_purchases (res://tests/test_challenge_v2.gd:108)
+   GDScript backtrace (most recent call first):
+       [0] test_v2_purchases (res://tests/test_challenge_v2.gd:108)
+       [1] test (res://tests/test_challenge_v2.gd:13)
+FAIL: Repickup adds no noise for same instance
+FAIL: Repeated callback is idempotent
+FAIL: Threshold equality triggers alarm; 30 becomes exactly12
+FAIL: Paused alarm timer does not decrease
+FAIL: Escape after alarm banks both items
+FAIL: No later sale pays the same loot twice
+FAIL: Physical earned-cash campaign reaches Museum and unlocks contracts

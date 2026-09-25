@@ -1,0 +1,80 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: No clock or collection before intentional movement
+PASS: Stable nearest pickup target
+PASS: Small joystick jitter does not cancel pickup
+PASS: Intentional movement resets pickup
+PASS: One visible carried object
+PASS: Medium weight changes carry speed
+PASS: DROP finds a valid nearby position
+PASS: DROP stays nearby, no cash, no duplicate
+PASS: Drop grace prevents immediate recollection
+PASS: Dropped object can be recollected
+PASS: Loading has an explicit state
+PASS: Movement interrupts loading and keeps object
+PASS: Load frees hands and updates cargo
+PASS: No duplicate load, auto escape, or premature banking
+PASS: Pause freezes clock and resets intention
+PASS: Escape grants reward exactly once
+PASS: Timeout beats escape and loses loaded loot
+PASS: Fridge locked by Strength
+PASS: Insufficient van space blocks pickup
+PASS: Full van stays active until explicit escape
+PASS: Ineligible closest object does not block eligible target
+PASS: Wall ray blocks pickup through partition
+PASS: Occluded target cannot be selected
+PASS: Drop position avoids walls and map limits
+PASS: Upgrades blocked during rounds
+PASS: Strength purchase costs exactly $250
+PASS: Insufficient funds never go negative
+PASS: Atomic save succeeds
+PASS: Save/load roundtrip
+PASS: Corrupted save recovers backup
+PASS: Save validation clamps levels, wallet and duplicate trophies
+PASS: Strength does not change carry speed
+PASS: Grip affects pickup only
+PASS: Carry speed improves weights and caps at unladen speed
+PASS: MAX enforced for strength
+PASS: MAX enforced for grip
+PASS: MAX enforced for carry
+PASS: MAX enforced for capacity
+PASS: Missing save initializes cleanly
+PASS: Touch diagonal speed is normalized
+PASS: Other touch cannot release active pointer
+PASS: Returning joystick to neutral stops movement
+PASS: Touch release resets input
+PASS: Mouse drag emulates floating joystick
+PASS: Focus reset clears active pointer
+PASS: CharacterBody collides with partition
+PASS: Picking up loot leaves no invisible collider
+PASS: House unlocks with two objectives, without full clear
+PASS: Escaped trophy joins collection once
+PASS: Repeated trophy remains normal loot without duplicate collection
+PASS: Failed run grants no trophies or objectives
+PASS: Configured totals for apartment
+PASS: PHYSICAL full clear apartment in 28.40s
+PASS: First clear bonus and time record apartment
+PASS: Unique full-clear bonus never repeats apartment
+PASS: Configured totals for house
+PASS: PHYSICAL full clear house in 37.80s
+PASS: First clear bonus and time record house
+PASS: Unique full-clear bonus never repeats house
+PASS: Physical first run earns Strength upgrade in 7.87s
+PASS: Ten runs release all level, loot, tween and manager nodes
+PASS: Menu fits portrait (720, 1280)
+PASS: HUD safe bounds at (720, 1280)
+PASS: Menu fits portrait (720, 1600)
+PASS: HUD safe bounds at (720, 1600)
+PASS: W keyboard input maps up the screen
+PASS: Keyboard release stops immediately
+PASS: Arrow key maps right
+PASS: Viewport routes mouse drag to joystick
+PASS: Background pauses gameplay and clears pointer
+PASS: Return from background requires explicit RESUME
+PASS: RESUME restores play without stale input
+PASS: UI press is consumed and never starts movement
+PASS: Pause button works through viewport event routing
+PASS: Back notification pauses instead of auto quitting
+PASS: ABANDON reaches result screen and loses run
+PASS: Result can return to location select
+TEST SUMMARY: 77 checks, 0 failures

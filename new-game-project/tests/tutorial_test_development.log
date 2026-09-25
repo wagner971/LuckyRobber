@@ -1,0 +1,27 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: DEV startup begins with a fresh tutorial and zero cash
+PASS: DEV startup clears previous Special Job in its isolated profile
+PASS: DEV progress is saved during the current session
+PASS: DEV launch uses a separate profile and keeps QA isolated
+PASS: Next DEV launch resets wallet, tutorial and Special Jobs again
+PASS: Injected DEV fixture can still exercise persistent saving
+PASS: New isolated DEV profile starts empty
+PASS: Home keeps DEV out of the normal composition
+PASS: DEV max is available inside the Settings drawer
+PASS: DEV maxes all five abilities, bypassing tier caps
+PASS: DEV unlocks Chapter 1 but keeps Pyramid and Castle behind Museum
+PASS: Direct Pyramid launch stays blocked before Museum completion
+PASS: DEV grants no money, objectives or campaign
+PASS: Button confirms MAX and disables repeated use
+PASS: MAX abilities apply to actual next round
+PASS: DEV action cannot change abilities during a round
+PASS: DEV remains hidden in the shop
+PASS: Progress survives menu and round changes within current session
+PASS: Second DEV launch retains abilities, wallet and objectives
+PASS: Explicit QA session-only store leaves disk untouched
+PASS: Session-only load ignores existing disk data
+PASS: Production launch keeps the original persistent profile
+PASS: DEV hidden when development mode disabled
+PASS: DEV disabled action cannot bypass progression
+DEV SUMMARY: 24 checks, 0 failures

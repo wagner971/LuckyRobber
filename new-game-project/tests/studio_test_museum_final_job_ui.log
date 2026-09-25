@@ -1,0 +1,9 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Museum keeps Play primary and shows the van requirement on the objective
+PASS: Museum finale cannot start below required van capacity
+PASS: Jobs presents the playable Museum Final Job without a duplicate target
+PASS: Museum Special Job stays secondary and clear of navigation
+PASS: Museum Final Job button starts the correct mode
+PASS: Results celebrates the story item and Chapter 2 unlock
+MUSEUM FINAL JOB UI: 6 checks, 0 failures

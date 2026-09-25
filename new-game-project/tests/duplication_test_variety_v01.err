@@ -1,0 +1,4 @@
+SCRIPT ERROR: Parse Error: Could not resolve super class inheritance from "res://tests/route_harness.gd".
+   at: GDScript::reload (res://tests/test_variety_v01.gd:1)
+ERROR: Failed to load script "res://tests/test_variety_v01.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

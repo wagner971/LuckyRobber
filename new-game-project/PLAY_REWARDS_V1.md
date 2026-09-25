@@ -1,0 +1,7 @@
+# Play Rewards V1 — 0.9.64
+
+**Getaway Streak** is the only run reward track. Each successful, started heist with at least one item loaded in the van advances it by one. Tutorial, empty escapes, time spent in menus, and failed/abandoned runs do not advance it. Failure does not erase progress. At 3/3, a **Stash Crate** opens automatically for a fixed **$300 + 2 diamonds**, then the track returns to 0/3. Results show the next disclosed reward and a separate crate reveal after the cash count. Diamonds contribute to cosmetic purchases; there is no additional reward currency.
+
+**Today's Shop** shows exactly three existing, purchasable cosmetics in Cosmetics. It rotates at the UTC day boundary. Its five-item pool loops, so every item returns within five rotations. Nonfeatured items cannot be bought until they return; owned items remain available to equip at all times, and earned cosmetics remain visible in the wardrobe. The UI states that looks return. There are no exclusive expiring offers or paid randomness.
+
+Profile schema 12 adds `getaway_progress`, migrating schema 11 with a backup. Crate diamonds also update the shared ledger used by the DEV fresh-start profile. Validation: `tests/test_play_rewards.gd` (23 checks), daily reward tests, Home/studio UI, satisfying pass, and live menu. Portrait captures: `tests/today_shop_450x800.png`, `tests/stash_crate_results_450x800.png`, `tests/stash_crate_results_360x640.png`.

@@ -1,0 +1,803 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Exact formula price strength L1
+PASS: Exact formula price strength L2
+PASS: Exact formula price strength L3
+PASS: Exact formula price strength L4
+PASS: Exact total strength $23000
+PASS: MAX display safe, no purchase beyond strength
+PASS: Exact formula price grip L1
+PASS: Exact formula price grip L2
+PASS: MAX display safe, no purchase beyond grip
+PASS: Exact formula price carry L1
+PASS: Exact formula price carry L2
+PASS: Exact formula price carry L3
+PASS: MAX display safe, no purchase beyond carry
+PASS: Exact formula price capacity L1
+PASS: Exact formula price capacity L2
+PASS: Exact formula price capacity L3
+PASS: Exact formula price capacity L4
+PASS: Exact formula price capacity L5
+PASS: Exact formula price capacity L6
+PASS: Exact formula price capacity L7
+PASS: Exact formula price capacity L8
+PASS: Exact formula price capacity L9
+PASS: Exact formula price capacity L10
+PASS: Exact formula price capacity L11
+PASS: Exact formula price capacity L12
+PASS: Exact formula price capacity L13
+PASS: Exact formula price capacity L14
+PASS: Exact formula price capacity L15
+PASS: Exact formula price capacity L16
+PASS: Exact formula price capacity L17
+PASS: Exact formula price capacity L18
+PASS: Exact formula price capacity L19
+PASS: Exact total capacity $63600
+PASS: MAX display safe, no purchase beyond capacity
+PASS: Exact formula price noise L1
+PASS: Exact formula price noise L2
+PASS: Exact formula price noise L3
+PASS: Exact formula price noise L4
+PASS: Exact formula price noise L5
+PASS: Exact formula price noise L6
+PASS: Exact formula price noise L7
+PASS: Exact formula price noise L8
+PASS: Exact formula price noise L9
+PASS: Exact formula price noise L10
+PASS: Exact formula price noise L11
+PASS: Exact formula price noise L12
+PASS: Exact formula price noise L13
+PASS: Exact formula price noise L14
+PASS: Exact formula price noise L15
+PASS: Exact formula price noise L16
+PASS: Exact formula price noise L17
+PASS: Exact formula price noise L18
+PASS: Exact formula price noise L19
+PASS: Exact total noise $49600
+PASS: MAX display safe, no purchase beyond noise
+PASS: Rounding ties go up consistently
+PASS: Safety minimum retained, loading unchanged
+PASS: Noise L1=100 percent, L20=81 percent with floor
+PASS: Four exact base Noise classes
+PASS: Capped speed LIGHT L1
+PASS: Capped speed MEDIUM L1
+PASS: Capped speed HEAVY L1
+PASS: Capped speed VERY_HEAVY L1
+PASS: Expected inventory apartment
+PASS: Threshold from full base inventory apartment
+PASS: Expected inventory house
+PASS: Threshold from full base inventory house
+PASS: Expected inventory villa
+PASS: Threshold from full base inventory villa
+PASS: Expected inventory electronics
+PASS: Threshold from full base inventory electronics
+PASS: Expected inventory mansion
+PASS: Threshold from full base inventory mansion
+PASS: Expected inventory laboratory
+PASS: Threshold from full base inventory laboratory
+PASS: Expected inventory museum
+PASS: Threshold from full base inventory museum
+PASS: Expected inventory pyramid
+PASS: Threshold from full base inventory pyramid
+PASS: Expected inventory castle
+PASS: Threshold from full base inventory castle
+PASS: Expected inventory pirate_ship
+PASS: Threshold from full base inventory pirate_ship
+PASS: Expected inventory vikings
+PASS: Threshold from full base inventory vikings
+PASS: Expected inventory english_pub
+PASS: Threshold from full base inventory english_pub
+PASS: Expected inventory prehistoric
+PASS: Threshold from full base inventory prehistoric
+PASS: Real-save COPY migration backs up V1 before writing current schema
+PASS: Real snapshot maps 4/4/3/4 to 4/15/11/12 plus Noise1 without charge
+PASS: Fresh game has all five stats at L1
+PASS: Global tier cap apartment / strength
+PASS: Real purchase strength
+PASS: Tier/MAX blocks transaction strength
+PASS: Global tier cap apartment / grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Tier/MAX blocks transaction grip
+PASS: Global tier cap apartment / carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Tier/MAX blocks transaction carry
+PASS: Global tier cap apartment / capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Tier/MAX blocks transaction capacity
+PASS: Global tier cap apartment / noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Tier/MAX blocks transaction noise
+PASS: Global tier cap house / strength
+PASS: Real purchase strength
+PASS: Tier/MAX blocks transaction strength
+PASS: Global tier cap house / grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Tier/MAX blocks transaction grip
+PASS: Global tier cap house / carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Tier/MAX blocks transaction carry
+PASS: Global tier cap house / capacity
+PASS: Real purchase capacity
+PASS: Tier/MAX blocks transaction capacity
+PASS: Global tier cap house / noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Tier/MAX blocks transaction noise
+PASS: Global tier cap villa / strength
+PASS: Real purchase strength
+PASS: Tier/MAX blocks transaction strength
+PASS: Global tier cap villa / grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Tier/MAX blocks transaction grip
+PASS: Global tier cap villa / carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Tier/MAX blocks transaction carry
+PASS: Global tier cap villa / capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Tier/MAX blocks transaction capacity
+PASS: Global tier cap villa / noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Tier/MAX blocks transaction noise
+PASS: Global tier cap electronics / strength
+PASS: Tier/MAX blocks transaction strength
+PASS: Global tier cap electronics / grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Tier/MAX blocks transaction grip
+PASS: Global tier cap electronics / carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Tier/MAX blocks transaction carry
+PASS: Global tier cap electronics / capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Tier/MAX blocks transaction capacity
+PASS: Global tier cap electronics / noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Tier/MAX blocks transaction noise
+PASS: Global tier cap mansion / strength
+PASS: Real purchase strength
+PASS: Tier/MAX blocks transaction strength
+PASS: Global tier cap mansion / grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Tier/MAX blocks transaction grip
+PASS: Global tier cap mansion / carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Tier/MAX blocks transaction carry
+PASS: Global tier cap mansion / capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Tier/MAX blocks transaction capacity
+PASS: Global tier cap mansion / noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Tier/MAX blocks transaction noise
+PASS: Global tier cap laboratory / strength
+PASS: Tier/MAX blocks transaction strength
+PASS: Global tier cap laboratory / grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Tier/MAX blocks transaction grip
+PASS: Global tier cap laboratory / carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Tier/MAX blocks transaction carry
+PASS: Global tier cap laboratory / capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Tier/MAX blocks transaction capacity
+PASS: Global tier cap laboratory / noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Tier/MAX blocks transaction noise
+PASS: Global tier cap museum / strength
+PASS: Tier/MAX blocks transaction strength
+PASS: Global tier cap museum / grip
+PASS: Real purchase grip
+PASS: Real purchase grip
+PASS: Tier/MAX blocks transaction grip
+PASS: Global tier cap museum / carry
+PASS: Real purchase carry
+PASS: Real purchase carry
+PASS: Tier/MAX blocks transaction carry
+PASS: Global tier cap museum / capacity
+PASS: Real purchase capacity
+PASS: Real purchase capacity
+PASS: Tier/MAX blocks transaction capacity
+PASS: Global tier cap museum / noise
+PASS: Real purchase noise
+PASS: Real purchase noise
+PASS: Tier/MAX blocks transaction noise
+PASS: Global tier cap pyramid / strength
+PASS: Tier/MAX blocks transaction strength
+PASS: Global tier cap pyramid / grip
+PASS: Tier/MAX blocks transaction grip
+PASS: Global tier cap pyramid / carry
+PASS: Tier/MAX blocks transaction carry
+PASS: Global tier cap pyramid / capacity
+PASS: Tier/MAX blocks transaction capacity
+PASS: Global tier cap pyramid / noise
+PASS: Tier/MAX blocks transaction noise
+PASS: Global tier cap castle / strength
+PASS: Tier/MAX blocks transaction strength
+PASS: Global tier cap castle / grip
+PASS: Tier/MAX blocks transaction grip
+PASS: Global tier cap castle / carry
+PASS: Tier/MAX blocks transaction carry
+PASS: Global tier cap castle / capacity
+PASS: Tier/MAX blocks transaction capacity
+PASS: Global tier cap castle / noise
+PASS: Tier/MAX blocks transaction noise
+PASS: READY generates no noise
+PASS: Starting pickup generates no noise
+PASS: Interrupted pickup generates no noise
+PASS: Successful pickup adds precise upgraded noise
+PASS: DROP adds no noise
+PASS: Next round resets noise/alarm/instance flags
+PASS: Upgrade level cannot change base threshold
+PASS: 75-percent warning once with no early alarm
+PASS: DROP remains available after alarm
+PASS: Can pick and load after alarm; no retrigger or repeated warning
+PASS: Contract alarm with7 seconds never adds time
+PASS: Alarm timeout loses carried loot
+PASS: Contract restart resets alarm and keeps overrides
+PASS: Timeout loses both loaded and carried loot
+PASS: Escaped incomplete contract banks loot, not a medal
+PASS: Incomplete-contract loot pays once
+PASS: Contract never changes career objectives or Normal records
+PASS: Incomplete contract does not set a contract record
+PASS: Meeting contract goal or filling van does not auto escape or bank
+PASS: First contract pays its $500 bonus and $640 loot
+PASS: Selling contract loot adds its $640 base value
+PASS: Contract awards trophy but no career objectives
+PASS: Repeat contract banks loot only; trophy and bonus stay unique
+PASS: Repeated contract loot still has normal sale value
+PASS: Contract medals, bonus ledger and mode records survive reload
+PASS: Contract timeout loses both cargo and carried loot
+PASS: Empty escape gives $0 without repeatable completion bonus
+PASS: Cash objectives use delivered value only
+PASS: Visible model small_tv
+PASS: Visible model chair
+PASS: Visible model floor_lamp
+PASS: Visible model table_fan
+PASS: Visible model laptop
+PASS: Visible model microwave
+PASS: Visible model toilet
+PASS: Visible model fridge
+PASS: Visible model pink_flamingo
+MEASURE apartment.full_clear 34.35s / 60s | $1210 | cargo 17
+NOISE 43.546 / 36.400 | alarm 28.85s | left 6.50s
+PASS: Physical full clear at MAX apartment
+PASS: First Normal full-clear banks its bonus and loot apartment
+PASS: Sold full-clear haul has configured value apartment
+MEASURE apartment.rush 16.58s / 30s | $840 | cargo 11
+NOISE 25.661 / 36.400 | alarm -1.00s | left 13.42s
+PASS: Physical contract solution apartment.rush
+PASS: Correct immediate contract and loot payment apartment.rush
+PASS: Correct sale plus contract reward tier apartment.rush
+MEASURE apartment.small_van 11.78s / 60s | $620 | cargo 8
+NOISE 20.218 / 36.400 | alarm -1.00s | left 48.22s
+PASS: Physical contract solution apartment.small_van
+PASS: Correct immediate contract and loot payment apartment.small_van
+PASS: Correct sale plus contract reward tier apartment.small_van
+MEASURE apartment.client_order 12.73s / 30s | $640 | cargo 8
+NOISE 17.885 / 36.400 | alarm -1.00s | left 17.27s
+PASS: Physical contract solution apartment.client_order
+PASS: Correct immediate contract and loot payment apartment.client_order
+PASS: Correct sale plus contract reward tier apartment.client_order
+PASS: Visible model small_tv
+PASS: Visible model chair
+PASS: Visible model tool_cabinet
+PASS: Visible model rubber_duck
+PASS: Visible model toilet
+PASS: Visible model fridge
+PASS: Visible model bathtub
+PASS: Visible model sofa
+MEASURE house.full_clear 50.52s / 60s | $2140 | cargo 23
+NOISE 59.098 / 49.400 | alarm 47.60s | left 9.08s
+PASS: Physical full clear at MAX house
+PASS: First Normal full-clear banks its bonus and loot house
+PASS: Sold full-clear haul has configured value house
+MEASURE house.rush 25.45s / 30s | $1430 | cargo 14
+NOISE 38.102 / 49.400 | alarm -1.00s | left 4.55s
+PASS: Physical contract solution house.rush
+PASS: Correct immediate contract and loot payment house.rush
+PASS: Correct sale plus contract reward tier house.rush
+MEASURE house.small_van 19.85s / 60s | $1210 | cargo 11
+NOISE 32.659 / 49.400 | alarm -1.00s | left 40.15s
+PASS: Physical contract solution house.small_van
+PASS: Correct immediate contract and loot payment house.small_van
+PASS: Correct sale plus contract reward tier house.small_van
+MEASURE house.client_order 21.23s / 30s | $1010 | cargo 10
+NOISE 26.438 / 49.400 | alarm -1.00s | left 8.77s
+PASS: Physical contract solution house.client_order
+PASS: Correct immediate contract and loot payment house.client_order
+PASS: Correct sale plus contract reward tier house.client_order
+PASS: Visible model piano
+PASS: Visible model bathtub
+PASS: Visible model toilet
+PASS: Visible model sofa
+PASS: Visible model small_safe
+PASS: Visible model gaming_pc
+PASS: Visible model small_tv
+PASS: Visible model chair
+PASS: Visible model monitor
+MEASURE villa.full_clear 56.12s / 70s | $3260 | cargo 28
+NOISE 73.872 / 61.750 | alarm 36.88s | left 6.77s
+PASS: Physical full clear at MAX villa
+PASS: First Normal full-clear banks its bonus and loot villa
+PASS: Sold full-clear haul has configured value villa
+MEASURE villa.rush 24.17s / 35s | $2400 | cargo 18
+NOISE 47.434 / 61.750 | alarm -1.00s | left 10.83s
+PASS: Physical contract solution villa.rush
+PASS: Correct immediate contract and loot payment villa.rush
+PASS: Correct sale plus contract reward tier villa.rush
+MEASURE villa.small_van 20.77s / 60s | $1670 | cargo 12
+NOISE 24.883 / 61.750 | alarm -1.00s | left 39.23s
+PASS: Physical contract solution villa.small_van
+PASS: Correct immediate contract and loot payment villa.small_van
+PASS: Correct sale plus contract reward tier villa.small_van
+MEASURE villa.client_order 18.32s / 35s | $1590 | cargo 13
+NOISE 33.437 / 61.750 | alarm -1.00s | left 16.68s
+PASS: Physical contract solution villa.client_order
+PASS: Correct immediate contract and loot payment villa.client_order
+PASS: Correct sale plus contract reward tier villa.client_order
+PASS: Visible model vending_machine
+PASS: Visible model arcade_machine
+PASS: Visible model arcade_machine
+PASS: Visible model gaming_pc
+PASS: Visible model gaming_pc
+PASS: Visible model gaming_pc
+PASS: Visible model small_tv
+PASS: Visible model small_tv
+PASS: Visible model small_tv
+PASS: Visible model monitor
+PASS: Visible model monitor
+MEASURE electronics.full_clear 49.68s / 65s | $4060 | cargo 32
+NOISE 66.874 / 55.900 | alarm 39.82s | left 8.13s
+PASS: Physical full clear at MAX electronics
+PASS: First Normal full-clear banks its bonus and loot electronics
+PASS: Sold full-clear haul has configured value electronics
+MEASURE electronics.rush 23.78s / 35s | $3050 | cargo 21
+NOISE 38.880 / 55.900 | alarm -1.00s | left 11.22s
+PASS: Physical contract solution electronics.rush
+PASS: Correct immediate contract and loot payment electronics.rush
+PASS: Correct sale plus contract reward tier electronics.rush
+MEASURE electronics.small_van 18.53s / 60s | $1820 | cargo 12
+NOISE 23.328 / 55.900 | alarm -1.00s | left 41.47s
+PASS: Physical contract solution electronics.small_van
+PASS: Correct immediate contract and loot payment electronics.small_van
+PASS: Correct sale plus contract reward tier electronics.small_van
+MEASURE electronics.client_order 19.20s / 35s | $2400 | cargo 16
+NOISE 29.549 / 55.900 | alarm -1.00s | left 15.80s
+PASS: Physical contract solution electronics.client_order
+PASS: Correct immediate contract and loot payment electronics.client_order
+PASS: Correct sale plus contract reward tier electronics.client_order
+PASS: Visible model large_statue
+PASS: Visible model piano
+PASS: Visible model small_safe
+PASS: Visible model small_safe
+PASS: Visible model fridge
+PASS: Visible model gaming_pc
+PASS: Visible model gaming_pc
+PASS: Visible model small_tv
+PASS: Visible model toilet
+PASS: Visible model monitor
+MEASURE mansion.full_clear 68.47s / 85s | $5170 | cargo 38
+NOISE 90.202 / 75.400 | alarm 48.80s | left 12.33s
+PASS: Physical full clear at MAX mansion
+PASS: First Normal full-clear banks its bonus and loot mansion
+PASS: Sold full-clear haul has configured value mansion
+MEASURE mansion.rush 38.10s / 55s | $3900 | cargo 24
+NOISE 52.877 / 75.400 | alarm -1.00s | left 16.90s
+PASS: Physical contract solution mansion.rush
+PASS: Correct immediate contract and loot payment mansion.rush
+PASS: Correct sale plus contract reward tier mansion.rush
+MEASURE mansion.small_van 17.92s / 60s | $2500 | cargo 14
+NOISE 27.994 / 75.400 | alarm -1.00s | left 42.08s
+PASS: Physical contract solution mansion.small_van
+PASS: Correct immediate contract and loot payment mansion.small_van
+PASS: Correct sale plus contract reward tier mansion.small_van
+MEASURE mansion.client_order 34.25s / 50s | $3500 | cargo 22
+NOISE 55.987 / 75.400 | alarm -1.00s | left 15.75s
+PASS: Physical contract solution mansion.client_order
+PASS: Correct immediate contract and loot payment mansion.client_order
+PASS: Correct sale plus contract reward tier mansion.client_order
+PASS: Visible model lab_microscope
+PASS: Visible model lab_analyzer
+PASS: Visible model lab_centrifuge
+PASS: Visible model lab_server
+PASS: Visible model lab_robot_arm
+PASS: Visible model lab_laser
+PASS: Visible model lab_specimen
+PASS: Visible model lab_cryo_pod
+PASS: Visible model lab_quantum_core
+MEASURE laboratory.full_clear 63.37s / 90s | $7250 | cargo 39
+NOISE 79.315 / 66.300 | alarm 59.67s | left 26.30s
+PASS: Physical full clear at MAX laboratory
+PASS: First Normal full-clear banks its bonus and loot laboratory
+PASS: Sold full-clear haul has configured value laboratory
+MEASURE laboratory.rush 30.93s / 55s | $4200 | cargo 21
+NOISE 42.768 / 66.300 | alarm -1.00s | left 24.07s
+PASS: Physical contract solution laboratory.rush
+PASS: Correct immediate contract and loot payment laboratory.rush
+PASS: Correct sale plus contract reward tier laboratory.rush
+MEASURE laboratory.small_van 16.05s / 75s | $2450 | cargo 11
+NOISE 23.328 / 66.300 | alarm -1.00s | left 58.95s
+PASS: Physical contract solution laboratory.small_van
+PASS: Correct immediate contract and loot payment laboratory.small_van
+PASS: Correct sale plus contract reward tier laboratory.small_van
+MEASURE laboratory.client_order 17.20s / 60s | $2150 | cargo 10
+NOISE 22.550 / 66.300 | alarm -1.00s | left 42.80s
+PASS: Physical contract solution laboratory.client_order
+PASS: Correct immediate contract and loot payment laboratory.client_order
+PASS: Correct sale plus contract reward tier laboratory.client_order
+PASS: Visible model museum_artifact
+PASS: Visible model large_statue
+PASS: Visible model large_statue
+PASS: Visible model time_machine
+PASS: Visible model ancient_relic
+PASS: Visible model treasure_chest
+PASS: Visible model small_safe
+PASS: Visible model gaming_pc
+MEASURE museum.full_clear 55.40s / 85s | $9700 | cargo 45
+NOISE 86.314 / 72.150 | alarm 48.85s | left 17.45s
+PASS: Physical full clear at MAX museum
+PASS: First Normal full-clear banks its bonus and loot museum
+PASS: Sold full-clear haul has configured value museum
+MEASURE museum.rush 22.20s / 35s | $6000 | cargo 24
+NOISE 41.990 / 72.150 | alarm -1.00s | left 12.80s
+PASS: Physical contract solution museum.rush
+PASS: Correct immediate contract and loot payment museum.rush
+PASS: Correct sale plus contract reward tier museum.rush
+MEASURE museum.small_van 14.57s / 60s | $4500 | cargo 16
+NOISE 27.994 / 72.150 | alarm -1.00s | left 45.43s
+PASS: Physical contract solution museum.small_van
+PASS: Correct immediate contract and loot payment museum.small_van
+PASS: Correct sale plus contract reward tier museum.small_van
+MEASURE museum.client_order 30.22s / 45s | $6650 | cargo 27
+NOISE 47.434 / 72.150 | alarm -1.00s | left 14.78s
+PASS: Physical contract solution museum.client_order
+PASS: Correct immediate contract and loot payment museum.client_order
+PASS: Correct sale plus contract reward tier museum.client_order
+PASS: Visible model canopic_jar
+PASS: Visible model canopic_jar
+PASS: Visible model treasure_chest
+PASS: Visible model treasure_chest
+PASS: Visible model pharaoh_mask
+PASS: Visible model giant_scarab
+PASS: Visible model giant_anubis
+PASS: Visible model obelisk_fragment
+PASS: Visible model pharaoh_bust
+PASS: Visible model sarcophagus
+PASS: Visible model golden_throne
+MEASURE pyramid.full_clear 43.12s / 60s | $10500 | cargo 44
+NOISE 77.760 / 65.000 | alarm 40.65s | left 10.53s
+PASS: Physical full clear at MAX pyramid
+PASS: First Normal full-clear banks its bonus and loot pyramid
+PASS: Sold full-clear haul has configured value pyramid
+PASS: Visible model crown_display
+PASS: Visible model blood_chalice
+PASS: Visible model relic_chest
+PASS: Visible model bat_idol
+PASS: Visible model gargoyle_statue
+PASS: Visible model skull_candelabrum
+PASS: Visible model vampire_portrait
+PASS: Visible model gothic_mirror
+PASS: Visible model pipe_organ
+PASS: Visible model vampire_throne
+PASS: Visible model dracula_coffin
+MEASURE castle.full_clear 45.18s / 60s | $10900 | cargo 44
+NOISE 75.427 / 63.050 | alarm 43.40s | left 10.22s
+PASS: Physical full clear at MAX castle
+PASS: First Normal full-clear banks its bonus and loot castle
+PASS: Sold full-clear haul has configured value castle
+PASS: Visible model pirate_anchor
+PASS: Visible model pirate_cannon
+PASS: Visible model pirate_figurehead
+PASS: Visible model pirate_spyglass
+PASS: Visible model pirate_sextant
+PASS: Visible model pirate_compass
+PASS: Visible model pirate_parrot
+PASS: Visible model pirate_rum
+PASS: Visible model pirate_wheel
+PASS: Visible model pirate_chest
+MEASURE pirate_ship.full_clear 63.87s / 80s | $13200 | cargo 44
+NOISE 80.870 / 67.600 | alarm 61.57s | left 16.13s
+PASS: Physical full clear at MAX pirate_ship
+PASS: First Normal full-clear banks its bonus and loot pirate_ship
+PASS: Sold full-clear haul has configured value pirate_ship
+PASS: Visible model viking_throne
+PASS: Visible model viking_runestone
+PASS: Visible model viking_loom
+PASS: Visible model viking_helmet
+PASS: Visible model viking_horn
+PASS: Visible model viking_axe
+PASS: Visible model viking_shield
+PASS: Visible model viking_cauldron
+PASS: Visible model viking_anvil
+PASS: Visible model viking_raven
+MEASURE vikings.full_clear 73.13s / 85s | $17000 | cargo 44
+NOISE 83.203 / 69.550 | alarm 65.23s | left 11.87s
+PASS: Physical full clear at MAX vikings
+PASS: First Normal full-clear banks its bonus and loot vikings
+PASS: Sold full-clear haul has configured value vikings
+PASS: Visible model pub_billiards
+PASS: Visible model pub_clock
+PASS: Visible model pub_settee
+PASS: Visible model pub_gramophone
+PASS: Visible model pub_radio
+PASS: Visible model pub_darts
+PASS: Visible model pub_tankard
+PASS: Visible model pub_register
+PASS: Visible model pub_beer_engine
+PASS: Visible model pub_sign
+MEASURE english_pub.full_clear 66.80s / 85s | $21000 | cargo 44
+NOISE 71.539 / 59.800 | alarm 59.23s | left 18.20s
+PASS: Physical full clear at MAX english_pub
+PASS: First Normal full-clear banks its bonus and loot english_pub
+PASS: Sold full-clear haul has configured value english_pub
+PASS: Visible model prehistoric_skull
+PASS: Visible model prehistoric_saber
+PASS: Visible model prehistoric_painting
+PASS: Visible model prehistoric_hide
+PASS: Visible model prehistoric_spear
+PASS: Visible model prehistoric_necklace
+PASS: Visible model prehistoric_amber
+PASS: Visible model prehistoric_mortar
+PASS: Visible model prehistoric_drum
+PASS: Visible model prehistoric_fur
+MEASURE prehistoric.full_clear 68.37s / 85s | $25700 | cargo 44
+NOISE 78.538 / 65.650 | alarm 55.18s | left 16.63s
+PASS: Physical full clear at MAX prehistoric
+PASS: First Normal full-clear banks its bonus and loot prehistoric
+PASS: Sold full-clear haul has configured value prehistoric
+MEASURE apartment.max_except_noise1 34.35s / 60s | $1210 | cargo 17
+NOISE 53.760 / 36.400 | alarm 24.12s | left 1.77s
+PASS: Physical low-noise-control greed triggers alarm apartment
+DIAGNOSTIC noise1 apartment full_clear=true remaining=1.76666666666649
+MEASURE house.max_except_noise1 50.52s / 60s | $2140 | cargo 23
+NOISE 72.960 / 49.400 | alarm 40.42s | left 1.90s
+PASS: Physical low-noise-control greed triggers alarm house
+DIAGNOSTIC noise1 house full_clear=true remaining=1.89999999999982
+MEASURE villa.max_except_noise1 56.12s / 70s | $3260 | cargo 28
+NOISE 91.200 / 61.750 | alarm 31.57s | left 1.45s
+PASS: Physical low-noise-control greed triggers alarm villa
+DIAGNOSTIC noise1 villa full_clear=true remaining=1.45000000000019
+MEASURE electronics.max_except_noise1 49.37s / 65s | $3990 | cargo 31
+NOISE 82.560 / 55.900 | alarm 31.37s | left 0.00s
+PASS: Physical low-noise-control greed triggers alarm electronics
+DIAGNOSTIC noise1 electronics full_clear=false remaining=0.0
+MEASURE mansion.max_except_noise1 68.47s / 85s | $5170 | cargo 38
+NOISE 111.360 / 75.400 | alarm 36.97s | left 0.50s
+PASS: Physical low-noise-control greed triggers alarm mansion
+DIAGNOSTIC noise1 mansion full_clear=true remaining=0.50000000000053
+MEASURE laboratory.max_except_noise1 63.37s / 90s | $7250 | cargo 39
+NOISE 97.920 / 66.300 | alarm 50.92s | left 17.55s
+PASS: Physical low-noise-control greed triggers alarm laboratory
+DIAGNOSTIC noise1 laboratory full_clear=true remaining=17.5500000000007
+MEASURE museum.max_except_noise1 55.40s / 85s | $9700 | cargo 45
+NOISE 106.560 / 72.150 | alarm 35.40s | left 4.00s
+PASS: Physical low-noise-control greed triggers alarm museum
+DIAGNOSTIC noise1 museum full_clear=true remaining=4.00000000000007
+MEASURE pyramid.max_except_noise1 43.12s / 60s | $10500 | cargo 44
+NOISE 96.000 / 65.000 | alarm 35.98s | left 5.87s
+PASS: Physical low-noise-control greed triggers alarm pyramid
+DIAGNOSTIC noise1 pyramid full_clear=true remaining=5.86666666666643
+MEASURE castle.max_except_noise1 45.18s / 60s | $10900 | cargo 44
+NOISE 93.120 / 63.050 | alarm 38.80s | left 5.62s
+PASS: Physical low-noise-control greed triggers alarm castle
+DIAGNOSTIC noise1 castle full_clear=true remaining=5.61666666666648
+MEASURE pirate_ship.max_except_noise1 63.87s / 80s | $13200 | cargo 44
+NOISE 99.840 / 67.600 | alarm 49.80s | left 11.93s
+PASS: Physical low-noise-control greed triggers alarm pirate_ship
+DIAGNOSTIC noise1 pirate_ship full_clear=true remaining=11.9333333333337
+MEASURE vikings.max_except_noise1 73.13s / 85s | $17000 | cargo 44
+NOISE 102.720 / 69.550 | alarm 58.95s | left 11.87s
+PASS: Physical low-noise-control greed triggers alarm vikings
+DIAGNOSTIC noise1 vikings full_clear=true remaining=11.8666666666704
+MEASURE english_pub.max_except_noise1 66.80s / 85s | $21000 | cargo 44
+NOISE 88.320 / 59.800 | alarm 53.45s | left 14.65s
+PASS: Physical low-noise-control greed triggers alarm english_pub
+DIAGNOSTIC noise1 english_pub full_clear=true remaining=14.6500000000006
+MEASURE prehistoric.max_except_noise1 68.37s / 85s | $25700 | cargo 44
+NOISE 96.960 / 65.650 | alarm 43.67s | left 9.30s
+PASS: Physical low-noise-control greed triggers alarm prehistoric
+DIAGNOSTIC noise1 prehistoric full_clear=true remaining=9.30000000000069
+MEASURE campaign_v2_01_apartment 21.78s / 60s | $550 | cargo 8
+NOISE 58.000 / 36.400 | alarm 15.87s | left 6.08s
+MEASURE campaign_v2_02_apartment 21.78s / 60s | $550 | cargo 8
+NOISE 58.000 / 36.400 | alarm 15.87s | left 6.08s
+MEASURE campaign_v2_03_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_04_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_05_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_06_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_07_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_08_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_09_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_10_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_11_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_12_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_13_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_14_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_15_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_16_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_17_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_18_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_19_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_20_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_21_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_22_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_23_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_24_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_25_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_26_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_27_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_28_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_29_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_30_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_31_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_32_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_33_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_34_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_35_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_36_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_37_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_38_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_39_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_40_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_41_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_42_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_43_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_44_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_45_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_46_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_47_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_48_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_49_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_50_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_51_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_52_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_53_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_54_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_55_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_56_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_57_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_58_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_59_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_60_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_61_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_62_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_63_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_64_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_65_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_66_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_67_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_68_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_69_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_70_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_71_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_72_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_73_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_74_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_75_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_76_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_77_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_78_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_79_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+MEASURE campaign_v2_80_apartment 15.22s / 60s | $640 | cargo 8
+NOISE 25.300 / 36.400 | alarm -1.00s | left 44.78s
+PASS: Campaign finishes below80 purchases: 1/80
+CAMPAIGN V2: 80 runs, 1 purchases, wallet $50020
+CHALLENGE V2 SUMMARY: 654 checks, 122 failures

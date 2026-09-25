@@ -1,0 +1,30 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: New profile starts before the first job
+PASS: Practice uses a distinct three-item garage
+PASS: Practice increases carried size before the final small item
+PASS: First frame shows only world and movement gesture
+PASS: Practice has no running countdown
+PASS: Physical movement starts tutorial
+PASS: Movement unlocks TV while clock remains off
+PASS: First load reveals money without the later HUD
+PASS: Second load nearly fills the van and reveals cargo space
+PASS: Final chair fills the van and reveals escape
+PASS: Garage escape banks the three objects and starts van departure
+PASS: First real job starts directly after departure
+PASS: Job one adds timer only; locked loot and noise wait
+PASS: Timer lesson cannot trigger noise
+PASS: First haul banks directly and shows Results
+PASS: No stash decision interrupts the first reward
+PASS: First result points to one affordable upgrade
+PASS: Upgrade guide opens Carry Speed directly
+PASS: Buying guided upgrade returns straight to the next job
+PASS: Job two introduces noise with ten-second alarm escape
+PASS: First noisy pickup teaches and persists the alarm
+PASS: Second job also banks directly
+PASS: Third job introduces visible Strength locks
+PASS: Third job remains a heist; duplication waits for Laboratory
+PASS: Home has no pawn access
+PASS: Collection opens trophies without a stash
+PASS: Existing saves retain their onboarding progress
+ONBOARDING V2 CHECKS 27; FAILURES 0

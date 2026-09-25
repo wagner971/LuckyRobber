@@ -1,0 +1,114 @@
+{
+	"bonuses": [],
+	"contract_bonuses": [],
+	"contracts": {
+		"apartment.client_order": false,
+		"apartment.rush": false,
+		"apartment.small_van": false,
+		"electronics.client_order": false,
+		"electronics.rush": false,
+		"electronics.small_van": false,
+		"house.client_order": false,
+		"house.rush": false,
+		"house.small_van": false,
+		"mansion.client_order": false,
+		"mansion.rush": false,
+		"mansion.small_van": false,
+		"museum.client_order": false,
+		"museum.rush": false,
+		"museum.small_van": false,
+		"villa.client_order": false,
+		"villa.rush": false,
+		"villa.small_van": false
+	},
+	"cosmetics": {
+		"equipped": {
+			"set": "",
+			"suit": "",
+			"van": ""
+		},
+		"owned": []
+	},
+	"failures": 0,
+	"mode_stats": {
+		"client_order": {
+			"failures": 0,
+			"successes": 0
+		},
+		"normal": {
+			"failures": 0,
+			"successes": 0
+		},
+		"rush": {
+			"failures": 0,
+			"successes": 0
+		},
+		"small_van": {
+			"failures": 0,
+			"successes": 0
+		},
+		"special": {
+			"failures": 0,
+			"successes": 0
+		}
+	},
+	"objectives": {
+		"apartment": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"electronics": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"house": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"mansion": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"museum": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"villa": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		}
+	},
+	"records": {
+		"client_order": {},
+		"normal": {},
+		"rush": {},
+		"small_van": {},
+		"special": {}
+	},
+	"runs_since_special": 0,
+	"schema_version": 5,
+	"special_in_progress": false,
+	"special_interval": 2,
+	"special_location_id": "",
+	"special_pending": false,
+	"special_type": "RUSH_HOUR",
+	"successes": 0,
+	"trophies": [],
+	"unlocked": [
+		"apartment"
+	],
+	"upgrades": {
+		"capacity": 1,
+		"carry": 1,
+		"grip": 1,
+		"noise": 1,
+		"strength": 1
+	},
+	"wallet": 0
+}

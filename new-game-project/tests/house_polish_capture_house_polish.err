@@ -1,0 +1,6 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+SCRIPT ERROR: Invalid call. Nonexistent function 'set_physics_process' in base 'Nil'.
+   at: capture (res://tests/capture_house_polish.gd:17)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/capture_house_polish.gd:17)

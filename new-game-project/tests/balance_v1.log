@@ -1,0 +1,331 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Safe effect display strength level 1 including MAX
+PASS: Safe effect display strength level 2 including MAX
+PASS: Safe effect display strength level 3 including MAX
+PASS: Safe effect display strength level 4 including MAX
+PASS: Safe effect display strength level 5 including MAX
+PASS: Safe effect display grip level 1 including MAX
+PASS: Safe effect display grip level 2 including MAX
+PASS: Safe effect display grip level 3 including MAX
+PASS: Safe effect display grip level 4 including MAX
+PASS: Safe effect display grip level 5 including MAX
+PASS: Safe effect display carry level 1 including MAX
+PASS: Safe effect display carry level 2 including MAX
+PASS: Safe effect display carry level 3 including MAX
+PASS: Safe effect display carry level 4 including MAX
+PASS: Safe effect display carry level 5 including MAX
+PASS: Safe effect display capacity level 1 including MAX
+PASS: Safe effect display capacity level 2 including MAX
+PASS: Safe effect display capacity level 3 including MAX
+PASS: Safe effect display capacity level 4 including MAX
+PASS: Safe effect display capacity level 5 including MAX
+PASS: Safe effect display capacity level 6 including MAX
+PASS: Exactly 17 permanent purchases costing $50,900
+PASS: Strength 1 unlocks real catalog entries
+PASS: Strength 2 unlocks real catalog entries
+PASS: Strength 3 unlocks real catalog entries
+PASS: Strength 4 unlocks real catalog entries
+PASS: Strength 5 unlocks real catalog entries
+PASS: Exact inventory totals apartment
+PASS: Unique spawn identity apartment.tv_a
+PASS: Unique spawn identity apartment.chair_a
+PASS: Unique spawn identity apartment.tv_b
+PASS: Unique spawn identity apartment.chair_b
+PASS: Unique spawn identity apartment.monitor
+PASS: Unique spawn identity apartment.printer
+PASS: Unique spawn identity apartment.toilet
+PASS: Unique spawn identity apartment.fridge
+PASS: Unique spawn identity apartment.flamingo
+PASS: Trophy marks an existing instance flamingo
+PASS: One trophy and valid signature objective apartment
+PASS: Contract refers to available inventory apartment.rush
+PASS: Contract refers to available inventory apartment.small_van
+PASS: Contract refers to available inventory apartment.client_order
+PASS: Exact inventory totals house
+PASS: Unique spawn identity house.tv_a
+PASS: Unique spawn identity house.tv_b
+PASS: Unique spawn identity house.chair
+PASS: Unique spawn identity house.monitor
+PASS: Unique spawn identity house.printer
+PASS: Unique spawn identity house.toilet
+PASS: Unique spawn identity house.fridge
+PASS: Unique spawn identity house.safe_a
+PASS: Unique spawn identity house.safe_b
+PASS: Unique spawn identity house.bust
+PASS: Trophy marks an existing instance bust
+PASS: One trophy and valid signature objective house
+PASS: Contract refers to available inventory house.rush
+PASS: Contract refers to available inventory house.small_van
+PASS: Contract refers to available inventory house.client_order
+PASS: Exact inventory totals villa
+PASS: Unique spawn identity villa.piano
+PASS: Trophy marks an existing instance villa_piano
+PASS: Unique spawn identity villa.fridge
+PASS: Unique spawn identity villa.toilet
+PASS: Unique spawn identity villa.arcade
+PASS: Unique spawn identity villa.safe
+PASS: Unique spawn identity villa.pc
+PASS: Unique spawn identity villa.tv_a
+PASS: Unique spawn identity villa.tv_b
+PASS: Unique spawn identity villa.monitor
+PASS: One trophy and valid signature objective villa
+PASS: Contract refers to available inventory villa.rush
+PASS: Contract refers to available inventory villa.small_van
+PASS: Contract refers to available inventory villa.client_order
+PASS: Exact inventory totals electronics
+PASS: Unique spawn identity electronics.vending
+PASS: Trophy marks an existing instance electronics_vending
+PASS: Unique spawn identity electronics.arcade_a
+PASS: Unique spawn identity electronics.arcade_b
+PASS: Unique spawn identity electronics.pc_a
+PASS: Unique spawn identity electronics.pc_b
+PASS: Unique spawn identity electronics.pc_c
+PASS: Unique spawn identity electronics.tv_a
+PASS: Unique spawn identity electronics.tv_b
+PASS: Unique spawn identity electronics.tv_c
+PASS: Unique spawn identity electronics.monitor_a
+PASS: Unique spawn identity electronics.monitor_b
+PASS: One trophy and valid signature objective electronics
+PASS: Contract refers to available inventory electronics.rush
+PASS: Contract refers to available inventory electronics.small_van
+PASS: Contract refers to available inventory electronics.client_order
+PASS: Exact inventory totals mansion
+PASS: Unique spawn identity mansion.statue
+PASS: Trophy marks an existing instance mansion_statue
+PASS: Unique spawn identity mansion.piano
+PASS: Unique spawn identity mansion.safe_a
+PASS: Unique spawn identity mansion.safe_b
+PASS: Unique spawn identity mansion.fridge
+PASS: Unique spawn identity mansion.pc_a
+PASS: Unique spawn identity mansion.pc_b
+PASS: Unique spawn identity mansion.tv
+PASS: Unique spawn identity mansion.toilet
+PASS: Unique spawn identity mansion.monitor
+PASS: One trophy and valid signature objective mansion
+PASS: Contract refers to available inventory mansion.rush
+PASS: Contract refers to available inventory mansion.small_van
+PASS: Contract refers to available inventory mansion.client_order
+PASS: Exact inventory totals museum
+PASS: Unique spawn identity museum.artifact
+PASS: Trophy marks an existing instance museum_crown
+PASS: Unique spawn identity museum.statue_a
+PASS: Unique spawn identity museum.statue_b
+PASS: Unique spawn identity museum.piano
+PASS: Unique spawn identity museum.safe_a
+PASS: Unique spawn identity museum.safe_b
+PASS: Unique spawn identity museum.pc
+PASS: Unique spawn identity museum.toilet
+PASS: One trophy and valid signature objective museum
+PASS: Contract refers to available inventory museum.rush
+PASS: Contract refers to available inventory museum.small_van
+PASS: Contract refers to available inventory museum.client_order
+PASS: Migration preserves wallet and all compatible levels, no retroactive cost or bag mapping
+PASS: Migration backs up source before writing schema 3
+PASS: Migration preserves objectives, unlocks, trophies and unique bonuses
+PASS: Migration retains records and round statistics
+PASS: Migrated data survives relaunch without another reset
+PASS: Corrupt V3 save recovers known backup
+PASS: Validation rejects invalid numbers, modes, IDs and cosmetic slots
+PASS: Fresh profile has three distinct incomplete states
+PASS: MAX alone does not complete campaign
+PASS: Campaign and contracts unlock without MAX
+PASS: Cosmetic purchase charges exact price
+PASS: Owned cosmetic cannot be bought twice
+PASS: Exclusive cosmetics cannot be bought
+PASS: Cosmetics cannot be bought during a run
+PASS: Equipping changes appearance only
+PASS: Ownership and equipment persist separately
+PASS: Six trophies award exclusive collector set
+PASS: Exclusive reward at 6 medals
+PASS: Exclusive reward at 12 medals
+PASS: Exclusive reward at 18 medals
+PASS: Contracts and trophies alone are not mastery
+PASS: Mastery = 18 objectives + 6 trophies + 18 contracts, independent of upgrades or paid cosmetics
+PASS: Completed version is acknowledged and replay remains available
+PASS: Next goal suggests missing Strength for signature loot
+PASS: Purchase actual strength tier
+PASS: Purchase actual strength tier
+PASS: Purchase actual strength tier
+PASS: Purchase actual strength tier
+PASS: No hidden level after MAX strength
+PASS: Purchase actual grip tier
+PASS: Purchase actual grip tier
+PASS: Purchase actual grip tier
+PASS: Purchase actual grip tier
+PASS: No hidden level after MAX grip
+PASS: Purchase actual carry tier
+PASS: Purchase actual carry tier
+PASS: Purchase actual carry tier
+PASS: Purchase actual carry tier
+PASS: No hidden level after MAX carry
+PASS: Purchase actual capacity tier
+PASS: Purchase actual capacity tier
+PASS: Purchase actual capacity tier
+PASS: Purchase actual capacity tier
+PASS: Purchase actual capacity tier
+PASS: No hidden level after MAX capacity
+PASS: All upgrades cost exactly $50,900 in live transactions
+PASS: Exact capped carry formula LIGHT L1
+PASS: Exact capped carry formula LIGHT L2
+PASS: Exact capped carry formula LIGHT L3
+PASS: Exact capped carry formula LIGHT L4
+PASS: Exact capped carry formula LIGHT L5
+PASS: Exact capped carry formula MEDIUM L1
+PASS: Exact capped carry formula MEDIUM L2
+PASS: Exact capped carry formula MEDIUM L3
+PASS: Exact capped carry formula MEDIUM L4
+PASS: Exact capped carry formula MEDIUM L5
+PASS: Exact capped carry formula HEAVY L1
+PASS: Exact capped carry formula HEAVY L2
+PASS: Exact capped carry formula HEAVY L3
+PASS: Exact capped carry formula HEAVY L4
+PASS: Exact capped carry formula HEAVY L5
+PASS: Exact capped carry formula VERY_HEAVY L1
+PASS: Exact capped carry formula VERY_HEAVY L2
+PASS: Exact capped carry formula VERY_HEAVY L3
+PASS: Exact capped carry formula VERY_HEAVY L4
+PASS: Exact capped carry formula VERY_HEAVY L5
+PASS: Grip minimum 0.25s, loading fixed 0.30s
+PASS: Small Van uses min(permanent, limit) without changing upgrade
+PASS: Normal restores permanent capacity after contract
+PASS: Rush overrides only duration
+PASS: Base speed reaches 5.0 within 0.183s
+PASS: Stopping completes within 0.10s
+PASS: Round snapshots permanent upgrades; changes affect next run only
+PASS: Cosmetics visibly recolor van without touching gameplay rules
+PASS: Set visibly changes suit material
+PASS: Escaped incomplete contract pays normal loot, not BUSTED or medal
+PASS: Contract never changes career objectives or Normal records
+PASS: Meeting contract goal or filling van does not auto escape or bank
+PASS: First contract pays $640 loot + $500 bonus once
+PASS: Contract awards trophy but no career objectives
+PASS: Repeat contract pays loot only, unique trophy and bonus stay unique
+FAIL: Contract medals, bonus ledger and mode records survive reload
+PASS: Contract timeout loses both cargo and carried loot
+PASS: Empty escape gives $0 without repeatable completion bonus
+PASS: Cash objectives use delivered value only
+PASS: Visible model small_tv
+PASS: Visible model chair
+PASS: Visible model small_tv
+PASS: Visible model chair
+PASS: Visible model monitor
+PASS: Visible model printer
+PASS: Visible model toilet
+PASS: Visible model fridge
+PASS: Visible model pink_flamingo
+MEASURE apartment.full_clear 38.70s / 60s | $1210 | cargo 17
+PASS: Physical full clear at MAX apartment
+MEASURE apartment.rush 16.03s / 30s | $840 | cargo 11
+PASS: Physical contract solution apartment.rush
+MEASURE apartment.small_van 10.43s / 60s | $620 | cargo 8
+PASS: Physical contract solution apartment.small_van
+MEASURE apartment.client_order 14.83s / 30s | $640 | cargo 8
+PASS: Physical contract solution apartment.client_order
+PASS: Visible model small_tv
+PASS: Visible model small_tv
+PASS: Visible model chair
+PASS: Visible model monitor
+PASS: Visible model printer
+PASS: Visible model toilet
+PASS: Visible model fridge
+PASS: Visible model small_safe
+PASS: Visible model small_safe
+PASS: Visible model golden_bust
+MEASURE house.full_clear 48.15s / 60s | $2260 | cargo 25
+PASS: Physical full clear at MAX house
+MEASURE house.rush 21.37s / 30s | $1480 | cargo 14
+PASS: Physical contract solution house.rush
+MEASURE house.small_van 17.47s / 60s | $1220 | cargo 11
+PASS: Physical contract solution house.small_van
+MEASURE house.client_order 17.75s / 30s | $1180 | cargo 10
+PASS: Physical contract solution house.client_order
+PASS: Visible model piano
+PASS: Visible model fridge
+PASS: Visible model toilet
+PASS: Visible model arcade_machine
+PASS: Visible model small_safe
+PASS: Visible model gaming_pc
+PASS: Visible model small_tv
+PASS: Visible model small_tv
+PASS: Visible model monitor
+MEASURE villa.full_clear 42.37s / 60s | $3510 | cargo 30
+PASS: Physical full clear at MAX villa
+MEASURE villa.rush 22.27s / 35s | $2440 | cargo 18
+PASS: Physical contract solution villa.rush
+MEASURE villa.small_van 11.90s / 60s | $1650 | cargo 11
+PASS: Physical contract solution villa.small_van
+MEASURE villa.client_order 14.27s / 35s | $1790 | cargo 13
+PASS: Physical contract solution villa.client_order
+PASS: Visible model vending_machine
+PASS: Visible model arcade_machine
+PASS: Visible model arcade_machine
+PASS: Visible model gaming_pc
+PASS: Visible model gaming_pc
+PASS: Visible model gaming_pc
+PASS: Visible model small_tv
+PASS: Visible model small_tv
+PASS: Visible model small_tv
+PASS: Visible model monitor
+PASS: Visible model monitor
+MEASURE electronics.full_clear 50.32s / 60s | $4060 | cargo 32
+PASS: Physical full clear at MAX electronics
+MEASURE electronics.rush 28.27s / 35s | $3050 | cargo 21
+PASS: Physical contract solution electronics.rush
+MEASURE electronics.small_van 18.92s / 60s | $1820 | cargo 12
+PASS: Physical contract solution electronics.small_van
+MEASURE electronics.client_order 21.67s / 35s | $2400 | cargo 16
+PASS: Physical contract solution electronics.client_order
+PASS: Visible model large_statue
+PASS: Visible model piano
+PASS: Visible model small_safe
+PASS: Visible model small_safe
+PASS: Visible model fridge
+PASS: Visible model gaming_pc
+PASS: Visible model gaming_pc
+PASS: Visible model small_tv
+PASS: Visible model toilet
+PASS: Visible model monitor
+MEASURE mansion.full_clear 50.93s / 60s | $5170 | cargo 38
+PASS: Physical full clear at MAX mansion
+MEASURE mansion.rush 29.87s / 35s | $3900 | cargo 24
+PASS: Physical contract solution mansion.rush
+MEASURE mansion.small_van 14.13s / 60s | $2500 | cargo 14
+PASS: Physical contract solution mansion.small_van
+MEASURE mansion.client_order 26.57s / 35s | $3500 | cargo 22
+PASS: Physical contract solution mansion.client_order
+PASS: Visible model museum_artifact
+PASS: Visible model large_statue
+PASS: Visible model large_statue
+PASS: Visible model piano
+PASS: Visible model small_safe
+PASS: Visible model small_safe
+PASS: Visible model gaming_pc
+PASS: Visible model toilet
+MEASURE museum.full_clear 46.90s / 60s | $8170 | cargo 44
+PASS: Physical full clear at MAX museum
+MEASURE museum.rush 26.48s / 35s | $6000 | cargo 28
+PASS: Physical contract solution museum.rush
+MEASURE museum.small_van 13.15s / 60s | $4000 | cargo 16
+PASS: Physical contract solution museum.small_van
+MEASURE museum.client_order 25.42s / 35s | $5500 | cargo 26
+PASS: Physical contract solution museum.client_order
+MEASURE first_run_400 16.38s / 60s | $400 | cargo 6
+PASS: Actual first run earns $400 from two TVs, monitor and chair
+PASS: First run finances Strength 2 and keeps $150
+MEASURE strength2_630 18.82s / 60s | $630 | cargo 8
+PASS: Actual Strength 2 route earns $630 and unlocks House without full clear
+PASS: Bigger van is affordable after second successful run
+MEASURE campaign_03_house 28.20s / 60s | $950 | cargo 12
+MEASURE campaign_04_house 23.08s / 60s | $1340 | cargo 12
+MEASURE campaign_05_villa 29.85s / 60s | $2080 | cargo 18
+MEASURE campaign_06_villa 29.85s / 60s | $2080 | cargo 18
+MEASURE campaign_07_villa 28.62s / 60s | $2600 | cargo 18
+MEASURE campaign_08_electronics 28.65s / 60s | $2600 | cargo 18
+MEASURE campaign_09_mansion 32.72s / 60s | $2540 | cargo 18
+MEASURE campaign_10_mansion 26.58s / 60s | $3020 | cargo 18
+MEASURE campaign_11_museum 17.77s / 60s | $4000 | cargo 16
+PASS: Continuous playable campaign reaches Museum objectives using only earned money
+PASS: Campaign completion and contracts do not require all upgrades MAX
+PASS: Campaign route does not require Apartment full clear
+BALANCE V1 SUMMARY: 293 checks, 1 failures

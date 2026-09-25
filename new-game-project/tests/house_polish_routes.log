@@ -1,0 +1,13 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+MEASURE house_polish_local_tier 44.77s / 60s | $1950 | cargo 20
+PASS: Local tier can physically earn both House progression objectives
+MEASURE house_polish_full_clear 55.27s / 60s | $2090 | cargo 22
+HOUSE CLEAR DIAGNOSTIC phase=3 remaining=0.0 alarm_at=43.2666666666655 progress=0 needed=0.42372881355932 velocity=(0.0, 0.0, 0.0)
+MEASURE house_polish_rush 27.87s / 30s | $1430 | cargo 14
+PASS: House rush contract remains physically solvable
+MEASURE house_polish_small_van 21.93s / 60s | $1210 | cargo 11
+PASS: House small_van contract remains physically solvable
+MEASURE house_polish_client_order 22.90s / 30s | $1010 | cargo 10
+PASS: House client_order contract remains physically solvable
+HOUSE POLISH: 5 checks, 1 failures

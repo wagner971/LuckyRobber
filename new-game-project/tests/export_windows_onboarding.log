@@ -1,0 +1,172 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started Registering global classes... (11 steps)
+[   0% ] update_scripts_classes | GameUI
+[   8% ] update_scripts_classes | LocalLog
+[  16% ] update_scripts_classes | LootGuidance
+[  25% ] update_scripts_classes | 
+[  33% ] update_scripts_classes | RunManager
+[  41% ] update_scripts_classes | 
+[  50% ] update_scripts_classes | 
+[  58% ] update_scripts_classes | 
+[  66% ] update_scripts_classes | 
+[  75% ] update_scripts_classes | 
+[  83% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] _update_scan_actions | Started Scanning actions... (17 steps)
+[   0% ] _update_scan_actions | onboarding_banked.png
+[   5% ] _update_scan_actions | onboarding_banked_settled.png
+[  11% ] _update_scan_actions | onboarding_carry.png
+[  16% ] _update_scan_actions | onboarding_escape.png
+[  22% ] _update_scan_actions | onboarding_first_load.png
+[  27% ] _update_scan_actions | onboarding_get_tv.png
+[  33% ] _update_scan_actions | onboarding_move.png
+[  38% ] _update_scan_actions | onboarding_noise.png
+[  44% ] _update_scan_actions | onboarding_noise_intro.png
+[  50% ] _update_scan_actions | onboarding_pickup.png
+[  55% ] _update_scan_actions | onboarding_replay.png
+[  61% ] _update_scan_actions | onboarding_second_choice.png
+[  66% ] _update_scan_actions | onboarding_space_blocked.png
+[  72% ] _update_scan_actions | onboarding_strength_locked.png
+[  77% ] _update_scan_actions | onboarding_target_360.png
+[  83% ] _update_scan_actions | onboarding_target_450.png
+[  88% ] _update_scan_actions | onboarding_target_600.png
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started (Re)Importing Assets (17 steps)
+[   0% ] reimport | Preparing files to reimport...
+[   5% ] reimport | Preparing files to reimport...
+[  11% ] reimport | Preparing files to reimport...
+[  16% ] reimport | Preparing files to reimport...
+[  22% ] reimport | Preparing files to reimport...
+[  27% ] reimport | Preparing files to reimport...
+[  33% ] reimport | Preparing files to reimport...
+[  38% ] reimport | Preparing files to reimport...
+[  44% ] reimport | Preparing files to reimport...
+[  50% ] reimport | Preparing files to reimport...
+[  55% ] reimport | Preparing files to reimport...
+[  61% ] reimport | Preparing files to reimport...
+[  66% ] reimport | Preparing files to reimport...
+[  72% ] reimport | Preparing files to reimport...
+[  77% ] reimport | Preparing files to reimport...
+[  83% ] reimport | Preparing files to reimport...
+[  88% ] reimport | Preparing files to reimport...
+[   0% ] reimport | Executing pre-reimport operations...
+[   0% ] reimport | onboarding_target_600.png
+[   5% ] reimport | onboarding_target_450.png
+[  11% ] reimport | onboarding_target_360.png
+[  16% ] reimport | onboarding_strength_locked.png
+[  22% ] reimport | onboarding_space_blocked.png
+[  27% ] reimport | onboarding_second_choice.png
+[  33% ] reimport | onboarding_replay.png
+[  38% ] reimport | onboarding_pickup.png
+[  44% ] reimport | onboarding_noise_intro.png
+[  50% ] reimport | onboarding_noise.png
+[  55% ] reimport | onboarding_move.png
+[  61% ] reimport | onboarding_get_tv.png
+[  66% ] reimport | onboarding_first_load.png
+[  72% ] reimport | onboarding_escape.png
+[  77% ] reimport | onboarding_carry.png
+[  83% ] reimport | onboarding_banked_settled.png
+[  88% ] reimport | onboarding_banked.png
+[  94% ] reimport | Finalizing Asset Import...
+[ DONE ] reimport
+
+[   0% ] reimport | Started (Re)Importing Assets (17 steps)
+[   0% ] reimport | Executing post-reimport operations...
+[ DONE ] reimport
+
+[   0% ] savepack | Started Packing (102 steps)
+[   1% ] savepack | Storing File: res://.godot/imported/Meshy_AI_Cash_Bundle_0820173211_texture.obj-bcc6adeccba2e2ee9d92869e809032b1.mesh
+[   1% ] savepack | Storing File: res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.obj.import
+[   3% ] savepack | Storing File: res://.godot/imported/Meshy_AI_Cash_Bundle_0820173211_texture.png-c94cfb533eddd159a1bba545fbd19bc6.ctex
+[   3% ] savepack | Storing File: res://assets/cash/Meshy_AI_Cash_Bundle_0820173211_texture.png.import
+[   6% ] savepack | Storing File: res://.godot/imported/box.png-865085619aa4415f529e2c73361787cf.ctex
+[   6% ] savepack | Storing File: res://assets/hud/box.png.import
+[   8% ] savepack | Storing File: res://.godot/imported/cash.png-319259cae107de31bcf2f10d387e30f4.ctex
+[   8% ] savepack | Storing File: res://assets/hud/cash.png.import
+[  11% ] savepack | Storing File: res://.godot/imported/clock.png-91b1537a1f5b81fc948c1756f5246d7a.ctex
+[  11% ] savepack | Storing File: res://assets/hud/clock.png.import
+[  13% ] savepack | Storing File: res://.godot/imported/drop.svg-baf386ab076566b83ae487991775457b.ctex
+[  13% ] savepack | Storing File: res://assets/hud/drop.svg.import
+[  16% ] savepack | Storing File: res://.godot/imported/escape.svg-8ee5346f9412600e19037510d68716d2.ctex
+[  16% ] savepack | Storing File: res://assets/hud/escape.svg.import
+[  18% ] savepack | Storing File: res://.godot/imported/hand.svg-562e7706dd2196b5f53334b7e9a47229.ctex
+[  18% ] savepack | Storing File: res://assets/hud/hand.svg.import
+[  21% ] savepack | Storing File: res://.godot/imported/lock.svg-56c83ced34ad29634247e951a117a946.ctex
+[  21% ] savepack | Storing File: res://assets/hud/lock.svg.import
+[  24% ] savepack | Storing File: res://.godot/imported/noise.png-888b9962022ca43a5936c41b4f22b0e6.ctex
+[  24% ] savepack | Storing File: res://assets/hud/noise.png.import
+[  26% ] savepack | Storing File: res://.godot/imported/pause.svg-cafaede2d08f7c48163eaa4d860173ab.ctex
+[  26% ] savepack | Storing File: res://assets/hud/pause.svg.import
+[  29% ] savepack | Storing File: res://.godot/imported/play.svg-5bd33ce86360c0caa92a5736cd6df463.ctex
+[  29% ] savepack | Storing File: res://assets/hud/play.svg.import
+[  31% ] savepack | Storing File: res://.godot/imported/strength.png-f2db8b23988d09470919741e592742d7.ctex
+[  31% ] savepack | Storing File: res://assets/hud/strength.png.import
+[  33% ] savepack | Storing File: res://.godot/imported/warning.png-64f195f22ba29cb0af6aaa12b22eb213.ctex
+[  33% ] savepack | Storing File: res://assets/hud/warning.png.import
+[  35% ] savepack | Storing File: res://assets/shaders/toon_halftone.gdshader
+[  38% ] savepack | Storing File: res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
+[  41% ] savepack | Storing File: res://scripts/balance.gdc
+[  43% ] savepack | Storing File: res://scripts/cash_visual.gdc
+[  46% ] savepack | Storing File: res://scripts/game_ui.gdc
+[  48% ] savepack | Storing File: res://scripts/hud_style.gdc
+[  51% ] savepack | Storing File: res://scripts/level.gdc
+[  53% ] savepack | Storing File: res://scripts/local_log.gdc
+[  56% ] savepack | Storing File: res://scripts/loot_guidance.gdc
+[  58% ] savepack | Storing File: res://scripts/loot_item.gdc
+[  61% ] savepack | Storing File: res://scripts/main.gdc
+[  64% ] savepack | Storing File: res://scripts/menu_character_preview.gdc
+[  66% ] savepack | Storing File: res://scripts/models.gdc
+[  68% ] savepack | Storing File: res://scripts/move_input.gdc
+[  70% ] savepack | Storing File: res://scripts/onboarding.gdc
+[  73% ] savepack | Storing File: res://scripts/player.gdc
+[  75% ] savepack | Storing File: res://scripts/progression.gdc
+[  78% ] savepack | Storing File: res://scripts/run_manager.gdc
+[  81% ] savepack | Storing File: res://scripts/save_store.gdc
+[  83% ] savepack | Storing File: res://scripts/sound_bank.gdc
+[  86% ] savepack | Storing File: res://scripts/special_jobs.gdc
+[  88% ] savepack | Storing File: res://scripts/thief_visual.gdc
+[  91% ] savepack | Storing File: res://scripts/toon_material.gdc
+[  93% ] savepack | Storing File: res://scripts/van.gdc
+[  96% ] savepack | Storing File: res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex
+[  96% ] savepack | Storing File: res://icon.svg.import
+[  96% ] savepack | Storing File: res://scenes/main.tscn.remap
+[  96% ] savepack | Storing File: res://scripts/balance.gd.remap
+[  96% ] savepack | Storing File: res://scripts/cash_visual.gd.remap
+[  96% ] savepack | Storing File: res://scripts/game_ui.gd.remap
+[  96% ] savepack | Storing File: res://scripts/hud_style.gd.remap
+[  96% ] savepack | Storing File: res://scripts/level.gd.remap
+[  96% ] savepack | Storing File: res://scripts/local_log.gd.remap
+[  96% ] savepack | Storing File: res://scripts/loot_guidance.gd.remap
+[  96% ] savepack | Storing File: res://scripts/loot_item.gd.remap
+[  96% ] savepack | Storing File: res://scripts/main.gd.remap
+[  96% ] savepack | Storing File: res://scripts/menu_character_preview.gd.remap
+[  96% ] savepack | Storing File: res://scripts/models.gd.remap
+[  96% ] savepack | Storing File: res://scripts/move_input.gd.remap
+[  96% ] savepack | Storing File: res://scripts/onboarding.gd.remap
+[  96% ] savepack | Storing File: res://scripts/player.gd.remap
+[  96% ] savepack | Storing File: res://scripts/progression.gd.remap
+[  96% ] savepack | Storing File: res://scripts/run_manager.gd.remap
+[  96% ] savepack | Storing File: res://scripts/save_store.gd.remap
+[  96% ] savepack | Storing File: res://scripts/sound_bank.gd.remap
+[  96% ] savepack | Storing File: res://scripts/special_jobs.gd.remap
+[  96% ] savepack | Storing File: res://scripts/thief_visual.gd.remap
+[  96% ] savepack | Storing File: res://scripts/toon_material.gd.remap
+[  96% ] savepack | Storing File: res://scripts/van.gd.remap
+[  96% ] savepack | Storing File: res://.godot/global_script_class_cache.cfg
+[  96% ] savepack | Storing File: res://icon.svg
+[  96% ] savepack | Storing File: res://.godot/uid_cache.bin
+[  96% ] savepack | Storing File: res://project.binary
+[ DONE ] savepack
+

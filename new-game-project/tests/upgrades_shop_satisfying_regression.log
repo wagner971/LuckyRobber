@@ -1,0 +1,37 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: Camera punch moves only the camera by a tiny amount
+PASS: Orthographic punch stays below 1.5% zoom
+PASS: Camera effects OFF restores exact base transform
+PASS: Camera effects OFF blocks alarm impulse
+PASS: Van compression increases monotonically with weight
+PASS: LIGHT load stores weight and compresses van
+PASS: MEDIUM load stores weight and compresses van
+PASS: HEAVY load stores weight and compresses van
+PASS: VERY_HEAVY load stores weight and compresses van
+PASS: Haptics OFF makes no vibration calls
+PASS: Enabled haptics makes one pickup pulse
+PASS: Light and heavy pickups each have three local WAV variants
+PASS: Van impacts have weight variants
+PASS: Zero SFX volume makes no player and no error
+PASS: Audio mixer caps overlapping voices
+PASS: Balance constants remain unchanged
+PASS: Upgrade purchase charges exactly once
+PASS: Scene change cancels upgrade animation without extra purchase
+PASS: Strength badge stays compact
+PASS: Strength purchase reveals a short unlock badge
+PASS: Settings disable haptics/camera and mute SFX
+PASS: Feedback settings persist separately from progress
+PASS: New run inherits camera effects OFF
+PASS: Noise bar animates rather than jumping
+PASS: Alarm callout is short and legible
+PASS: Alarm settles into one compact persistent status
+PASS: Alarm hides duplicate instruction when escape CTA is available
+PASS: Escape banks once and uses the result screen for the reward
+PASS: Results emphasizes escape and immediate replay
+PASS: Cash reward counts up to the banked amount
+PASS: Result overlay cleans up after scene change
+PASS: Busted result preserves wallet and shows loss
+SATISFYING PASS CHECKS 32; FAILURES 0

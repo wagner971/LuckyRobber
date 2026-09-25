@@ -1,0 +1,39 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Jobs controls fit safe portrait with three secondary actions: apartment (360, 640)
+PASS: Jobs controls fit safe portrait with three secondary actions: museum (360, 640)
+PASS: Results and navigation stay in safe area: success (360, 640)
+PASS: Results and navigation stay in safe area: failure (360, 640)
+PASS: Results and navigation stay in safe area: dense (360, 640)
+PASS: Results and navigation stay in safe area: final (360, 640)
+PASS: Museum completion action selects the newly unlocked chapter
+PASS: Collection completion caption never wraps vertically
+PASS: Abandon requires explicit loss confirmation
+PASS: Keep Playing resumes without losing the run
+PASS: Confirmed abandon reaches honest run-ended results
+PASS: HUD describes current automatic banking flow
+PASS: Jobs controls fit safe portrait with three secondary actions: apartment (360, 720)
+PASS: Jobs controls fit safe portrait with three secondary actions: museum (360, 720)
+PASS: Results and navigation stay in safe area: success (360, 720)
+PASS: Results and navigation stay in safe area: failure (360, 720)
+FAIL: Results and navigation stay in safe area: dense (360, 720)
+PASS: Results and navigation stay in safe area: final (360, 720)
+PASS: Museum completion action selects the newly unlocked chapter
+PASS: Collection completion caption never wraps vertically
+PASS: Abandon requires explicit loss confirmation
+PASS: Keep Playing resumes without losing the run
+PASS: Confirmed abandon reaches honest run-ended results
+PASS: HUD describes current automatic banking flow
+PASS: Jobs controls fit safe portrait with three secondary actions: apartment (320, 712)
+PASS: Jobs controls fit safe portrait with three secondary actions: museum (320, 712)
+PASS: Results and navigation stay in safe area: success (320, 712)
+PASS: Results and navigation stay in safe area: failure (320, 712)
+PASS: Results and navigation stay in safe area: dense (320, 712)
+PASS: Results and navigation stay in safe area: final (320, 712)
+PASS: Museum completion action selects the newly unlocked chapter
+PASS: Collection completion caption never wraps vertically
+PASS: Abandon requires explicit loss confirmation
+PASS: Keep Playing resumes without losing the run
+PASS: Confirmed abandon reaches honest run-ended results
+PASS: HUD describes current automatic banking flow
+STUDIO UI: 36 checks, 1 failures

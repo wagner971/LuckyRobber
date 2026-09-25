@@ -1,0 +1,116 @@
+{
+	"bonuses": [],
+	"contract_bonuses": [],
+	"contracts": {
+		"apartment.client_order": false,
+		"apartment.rush": false,
+		"apartment.small_van": false,
+		"electronics.client_order": false,
+		"electronics.rush": false,
+		"electronics.small_van": false,
+		"house.client_order": false,
+		"house.rush": false,
+		"house.small_van": false,
+		"mansion.client_order": false,
+		"mansion.rush": false,
+		"mansion.small_van": false,
+		"museum.client_order": false,
+		"museum.rush": false,
+		"museum.small_van": false,
+		"villa.client_order": false,
+		"villa.rush": false,
+		"villa.small_van": false
+	},
+	"cosmetics": {
+		"equipped": {
+			"set": "",
+			"suit": "",
+			"van": ""
+		},
+		"owned": [
+			"trophy_gold"
+		]
+	},
+	"failures": 0,
+	"mode_stats": {
+		"client_order": {
+			"failures": 0,
+			"successes": 0
+		},
+		"normal": {
+			"failures": 0,
+			"successes": 11
+		},
+		"rush": {
+			"failures": 0,
+			"successes": 0
+		},
+		"small_van": {
+			"failures": 0,
+			"successes": 0
+		}
+	},
+	"objectives": {
+		"apartment": {
+			"cash": true,
+			"full_clear": false,
+			"signature": true
+		},
+		"electronics": {
+			"cash": true,
+			"full_clear": false,
+			"signature": true
+		},
+		"house": {
+			"cash": true,
+			"full_clear": false,
+			"signature": true
+		},
+		"mansion": {
+			"cash": true,
+			"full_clear": false,
+			"signature": true
+		},
+		"museum": {
+			"cash": true,
+			"full_clear": false,
+			"signature": true
+		},
+		"villa": {
+			"cash": true,
+			"full_clear": false,
+			"signature": true
+		}
+	},
+	"records": {
+		"client_order": {},
+		"normal": {},
+		"rush": {},
+		"small_van": {}
+	},
+	"schema_version": 3,
+	"successes": 11,
+	"trophies": [
+		"flamingo",
+		"bust",
+		"villa_piano",
+		"electronics_vending",
+		"mansion_statue",
+		"museum_crown"
+	],
+	"unlocked": [
+		"apartment",
+		"house",
+		"villa",
+		"electronics",
+		"mansion",
+		"museum"
+	],
+	"upgrades": {
+		"capacity": 3,
+		"carry": 1,
+		"grip": 1,
+		"strength": 5
+	},
+	"wallet": 7390
+}

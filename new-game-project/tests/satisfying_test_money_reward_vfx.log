@@ -1,0 +1,43 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Dedicated van and torso anchors exist
+PASS: Reward tiers are cosmetic 9/12/16/19
+PASS: $1500 enters the highest visual tier without changing its value
+PASS: $50 creates expected mesh count
+PASS: $50 consists of three real MeshInstance3D boxes
+PASS: $50 has real thickness, green face and raised band
+PASS: $50 starts at van origin
+PASS: $50 stays compact and rotates in 3D
+PASS: $50 completes and returns every piece to pool
+PASS: $50 VFX does not modify van loot or wallet
+PASS: $340 creates expected mesh count
+PASS: $340 consists of three real MeshInstance3D boxes
+PASS: $340 has real thickness, green face and raised band
+PASS: $340 starts at van origin
+PASS: $340 stays compact and rotates in 3D
+PASS: $340 completes and returns every piece to pool
+PASS: $340 VFX does not modify van loot or wallet
+PASS: $1000 creates expected mesh count
+PASS: $1000 consists of three real MeshInstance3D boxes
+PASS: $1000 has real thickness, green face and raised band
+PASS: $1000 starts at van origin
+PASS: $1000 stays compact and rotates in 3D
+PASS: $1000 completes and returns every piece to pool
+PASS: $1000 VFX does not modify van loot or wallet
+PASS: $2500 creates expected mesh count
+PASS: $2500 consists of three real MeshInstance3D boxes
+PASS: $2500 has real thickness, green face and raised band
+PASS: $2500 starts at van origin
+PASS: $2500 stays compact and rotates in 3D
+PASS: $2500 completes and returns every piece to pool
+PASS: $2500 VFX does not modify van loot or wallet
+PASS: Different reward tiers reuse a bounded pool
+PASS: Overlapping loads respect global 40-piece cap
+PASS: A fourth immediate load reuses oldest visual pieces instead of losing its burst
+PASS: Pause freezes money animation
+PASS: Overlapping bursts cleanly return every piece
+PASS: Magnet tracks moving player's current torso position
+PASS: Moving-target burst finishes without leftovers
+PASS: Explicit cleanup cancels an active burst
+PASS: New run has no cash from previous run
+MONEY REWARD VFX CHECKS 40; FAILURES 0

@@ -1,0 +1,130 @@
+{
+	"checks": 16,
+	"failures": 0,
+	"routes": [
+		{
+			"cargo": 39,
+			"circuits": [
+				4.48,
+				4.5,
+				6.08,
+				6.03,
+				7.9,
+				7.87,
+				9.1,
+				9.15,
+				8.25
+			],
+			"contract_met": false,
+			"escaped": true,
+			"label": "laboratory.normal",
+			"limit": 90.0,
+			"location": "laboratory",
+			"mode": "normal",
+			"time": 63.370000000000005,
+			"types": [
+				"lab_microscope",
+				"lab_analyzer",
+				"lab_centrifuge",
+				"lab_server",
+				"lab_robot_arm",
+				"lab_laser",
+				"lab_specimen",
+				"lab_cryo_pod",
+				"lab_quantum_core"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 7250
+		},
+		{
+			"cargo": 21,
+			"circuits": [
+				4.45,
+				9.08,
+				9.15,
+				8.25
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "laboratory.rush",
+			"limit": 55.0,
+			"location": "laboratory",
+			"mode": "rush",
+			"time": 30.93,
+			"types": [
+				"lab_analyzer",
+				"lab_specimen",
+				"lab_cryo_pod",
+				"lab_quantum_core"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 4200
+		},
+		{
+			"cargo": 11,
+			"circuits": [
+				7.8,
+				8.25
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "laboratory.small_van",
+			"limit": 75.0,
+			"location": "laboratory",
+			"mode": "small_van",
+			"time": 16.05,
+			"types": [
+				"lab_laser",
+				"lab_quantum_core"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 2450
+		},
+		{
+			"cargo": 10,
+			"circuits": [
+				4.48,
+				4.5,
+				8.22
+			],
+			"contract_met": true,
+			"escaped": true,
+			"label": "laboratory.client_order",
+			"limit": 60.0,
+			"location": "laboratory",
+			"mode": "client_order",
+			"time": 17.2,
+			"types": [
+				"lab_microscope",
+				"lab_analyzer",
+				"lab_quantum_core"
+			],
+			"upgrades": {
+				"capacity": 20,
+				"carry": 20,
+				"grip": 20,
+				"noise": 20,
+				"strength": 5
+			},
+			"value": 2150
+		}
+	]
+}

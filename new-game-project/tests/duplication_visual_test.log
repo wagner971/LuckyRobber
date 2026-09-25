@@ -1,0 +1,21 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+PASS: Fresh game has no duplication access or scans
+PASS: Earlier heists cannot use the laboratory
+PASS: Escaped original banks immediately with no stash choice
+PASS: First Laboratory heist unlocks one scan and its real stolen blueprint
+PASS: Even valuable copies finish within a typical heist
+PASS: Player can choose a known object in the first chamber
+PASS: A used scan and locked chamber cannot start again
+PASS: Copy cannot be claimed early
+PASS: Completed copy pays exactly one original value
+PASS: Claim cannot be repeated
+PASS: Later heist grants one scan, not one per item
+PASS: Unstolen objects cannot be synthesized
+PASS: First upgrade opens second chamber
+PASS: Third chamber is the maximum
+PASS: Old pawn stock and stash convert to cash without losing value
+PASS: New save validates duplicate slots and blueprints
+PASS: Recovered lab opens its dedicated machine screen
+DUPLICATION V1 SUMMARY: 17 checks, 0 failures

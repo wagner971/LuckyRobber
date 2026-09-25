@@ -1,0 +1,54 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Jobs opens on visual Apartment with a concrete next target
+PASS: One location preview is in focus without old technical list
+PASS: Jobs uses discrete pages without a free-scrolling container
+PASS: Normal run remains directly playable
+PASS: Chapter 1 shows seven dots with Apartment active
+PASS: Active location name is not duplicated in bottom tabs
+PASS: Three objective notes use clear icons
+PASS: Loot, item count, and time have labelled icons
+PASS: Van capacity is shown as its own progress bar
+PASS: Carousel uses swipe and dots without duplicate arrows or chapter index
+PASS: Jobs navigation shows four pictograms above the labels
+PASS: Developer notice stays out of the Jobs presentation
+PASS: Jobs navigation fits the default portrait window
+PASS: Real pointer swipe on hero preview changes the selected job
+PASS: Vertical gesture does not turn the carousel
+PASS: Dots select and track the intended job
+PASS: Carousel animates the incoming card instead of swapping instantly
+PASS: Outgoing and incoming card contents stay clipped
+PASS: Only one card is visible at a time during the scale-and-fade swap
+PASS: Cards overlap throughout the swap without an empty gap
+PASS: Incoming card replaces the old card without overlapping content
+PASS: Locked House shows one real requirement and no objectives
+PASS: Locked location desaturates its preview and hides stats
+PASS: Outgoing card is released after the swipe animation
+PASS: Selected card settles centered at full scale and brightness
+PASS: Rapid tab changes still snap to one centered card
+PASS: Insufficient cargo keeps Play primary and explains the lock on the crown objective
+PASS: Full-clear objective replaces the duplicate Next Target panel
+PASS: Primary Play still starts a normal heist when the Final Job is blocked
+PASS: Playable Final Job is the primary action; Normal remains secondary
+PASS: Final Job CTA is larger than secondary actions
+PASS: Special Job appears as a small secondary action
+PASS: Special and Final Job actions stay above navigation
+PASS: Special Job chip starts its existing mode
+PASS: Completed location hides an empty Next Target panel
+PASS: Chapter 2 shows the Museum completion requirement
+PASS: Pyramid has a dedicated locked screen and no Play action
+PASS: Locked chapter omits future locations and gameplay details
+PASS: Locked chapter action returns to Museum
+PASS: Chapter 2 reveals two location dots once unlocked
+PASS: Last location has its own preview
+PASS: Swipe stops at the last location without wrapping
+PASS: Horizontal swipe selects the previous location
+PASS: Jobs actions fit portrait (450, 800) · play 1061 nav 1170–1262
+PASS: Objective slots do not clip horizontally at (450, 800)
+PASS: Jobs actions fit portrait (720, 1280) · play 1061 nav 1170–1262
+PASS: Objective slots do not clip horizontally at (720, 1280)
+PASS: Jobs actions fit portrait (720, 1600) · play 1381 nav 1490–1582
+PASS: Objective slots do not clip horizontally at (720, 1600)
+PASS: Bottom navigation opens Upgrades from Jobs
+PASS: Bottom navigation returns to the selected job
+JOBS CARD SWAP SUMMARY: 51 checks, 0 failures

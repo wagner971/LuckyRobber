@@ -1,0 +1,18 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Apartment common cash is below a full-clear payout
+PASS: By Electronics, even the smallest cash prize clears $1000
+PASS: New profile has one free spin
+PASS: A diamond result credits the new currency
+PASS: Second spin on the same UTC day is blocked
+PASS: Diamonds and cooldown survive a relaunch
+PASS: DEV fresh progress cannot bypass the shared daily cooldown
+PASS: Next UTC day grants another free spin
+PASS: Jackpot saves a future skin ticket and gives immediate diamonds
+PASS: Displayed wheel sectors match actual 100% odds
+PASS: Existing Plum Suit costs 50 diamonds
+PASS: Diamond cosmetic cannot be bought with cash
+PASS: 50 diamonds buy the existing skin without spending cash
+PASS: Home exposes an optional wheel entry
+PASS: Wheel opens without entering or blocking a heist
+DAILY WHEEL SUMMARY: 15 checks, 0 failures

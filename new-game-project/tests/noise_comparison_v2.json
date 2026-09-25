@@ -1,0 +1,205 @@
+{
+	"apartment_final_job_completed": false,
+	"bonuses": [
+		"prehistoric"
+	],
+	"contract_bonuses": [],
+	"contracts": {
+		"apartment.client_order": false,
+		"apartment.rush": false,
+		"apartment.small_van": false,
+		"electronics.client_order": false,
+		"electronics.rush": false,
+		"electronics.small_van": false,
+		"house.client_order": false,
+		"house.rush": false,
+		"house.small_van": false,
+		"laboratory.client_order": false,
+		"laboratory.rush": false,
+		"laboratory.small_van": false,
+		"mansion.client_order": false,
+		"mansion.rush": false,
+		"mansion.small_van": false,
+		"museum.client_order": false,
+		"museum.rush": false,
+		"museum.small_van": false,
+		"villa.client_order": false,
+		"villa.rush": false,
+		"villa.small_van": false
+	},
+	"cosmetics": {
+		"equipped": {
+			"set": "",
+			"suit": "",
+			"van": ""
+		},
+		"owned": []
+	},
+	"daily_gift_claims": 0,
+	"daily_gift_last_at": -1,
+	"daily_spin_day": -1,
+	"diamonds": 0,
+	"duplication": {
+		"jobs": [
+			{},
+			{},
+			{}
+		],
+		"known": [
+			"prehistoric_skull",
+			"prehistoric_saber",
+			"prehistoric_painting",
+			"prehistoric_hide",
+			"prehistoric_spear",
+			"prehistoric_necklace",
+			"prehistoric_amber",
+			"prehistoric_mortar",
+			"prehistoric_drum",
+			"prehistoric_fur"
+		],
+		"slot_level": 1,
+		"unlocked": false,
+		"version": 2
+	},
+	"failures": 0,
+	"first_job_at": 1790293682,
+	"garage_owned": [],
+	"heist_briefing_seen": false,
+	"level_gifts": {
+		"prehistoric": {
+			"rarity": 0,
+			"seen": false
+		}
+	},
+	"lucky_pending": {},
+	"mode_stats": {
+		"FINAL_JOB": {
+			"failures": 0,
+			"successes": 0
+		},
+		"client_order": {
+			"failures": 0,
+			"successes": 0
+		},
+		"normal": {
+			"failures": 0,
+			"successes": 1
+		},
+		"rush": {
+			"failures": 0,
+			"successes": 0
+		},
+		"small_van": {
+			"failures": 0,
+			"successes": 0
+		},
+		"special": {
+			"failures": 0,
+			"successes": 0
+		}
+	},
+	"museum_final_job_completed": false,
+	"noise_tutorial_completed": true,
+	"objectives": {
+		"apartment": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"castle": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"electronics": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"english_pub": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"house": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"laboratory": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"mansion": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"museum": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"pirate_ship": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"prehistoric": {
+			"cash": true,
+			"full_clear": true,
+			"signature": true
+		},
+		"pyramid": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"vikings": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"villa": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		}
+	},
+	"rare_loot": [],
+	"records": {
+		"FINAL_JOB": {},
+		"client_order": {},
+		"normal": {
+			"prehistoric": 68.36666666666407
+		},
+		"rush": {},
+		"small_van": {},
+		"special": {}
+	},
+	"runs_since_special": 1,
+	"schema_version": 16,
+	"special_in_progress": false,
+	"special_interval": 4,
+	"special_location_id": "",
+	"special_pending": false,
+	"special_type": "RUSH_HOUR",
+	"successes": 1,
+	"trophies": [
+		"prehistoric_amber"
+	],
+	"tutorial_completed": false,
+	"unlocked": [
+		"apartment"
+	],
+	"upgrades": {
+		"capacity": 20,
+		"carry": 20,
+		"grip": 20,
+		"noise": 1,
+		"strength": 5
+	},
+	"wallet": 25950,
+	"wheel_jackpots": []
+}

@@ -1,0 +1,65 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Unique pirate inventory: $13,200 / 44 cargo
+PASS: Museum finale protects the entire new chapter
+PASS: Ship stays locked before Castle objectives
+PASS: Castle completion opens Pirate Ship
+PASS: New tier has safe upgrade caps
+PASS: Previous save preserves wallet and gains new level defaults
+PASS: Full clear requires both speed upgrades
+PASS: Distinct thematic loot: pirate_anchor
+PASS: Pirate loot uses bounded idle economy: pirate_anchor
+PASS: Distinct thematic loot: pirate_cannon
+PASS: Pirate loot uses bounded idle economy: pirate_cannon
+PASS: Distinct thematic loot: pirate_figurehead
+PASS: Pirate loot uses bounded idle economy: pirate_figurehead
+PASS: Distinct thematic loot: pirate_spyglass
+PASS: Pirate loot uses bounded idle economy: pirate_spyglass
+PASS: Distinct thematic loot: pirate_sextant
+PASS: Pirate loot uses bounded idle economy: pirate_sextant
+PASS: Distinct thematic loot: pirate_compass
+PASS: Pirate loot uses bounded idle economy: pirate_compass
+PASS: Distinct thematic loot: pirate_parrot
+PASS: Pirate loot uses bounded idle economy: pirate_parrot
+PASS: Distinct thematic loot: pirate_rum
+PASS: Pirate loot uses bounded idle economy: pirate_rum
+PASS: Distinct thematic loot: pirate_wheel
+PASS: Pirate loot uses bounded idle economy: pirate_wheel
+PASS: Distinct thematic loot: pirate_chest
+PASS: Pirate loot uses bounded idle economy: pirate_chest
+PASS: Cannot drop cargo into the sea
+PASS: Clear deck lane
+PASS: Visible model: pirate_anchor
+PASS: Visible model: pirate_cannon
+PASS: Visible model: pirate_figurehead
+PASS: Visible model: pirate_spyglass
+PASS: Visible model: pirate_sextant
+PASS: Visible model: pirate_compass
+PASS: Visible model: pirate_parrot
+PASS: Visible model: pirate_rum
+PASS: Visible model: pirate_wheel
+PASS: Visible model: pirate_chest
+MEASURE pirate_full_clear_speed_20 53.82s / 80s | $13200 | cargo 44
+PASS: Physical full clear at speed level 20
+PASS: Ship time and payout at speed level 20
+PASS: Escaped parrot becomes collection trophy
+PASS: Cannot drop cargo into the sea
+PASS: Clear deck lane
+PASS: Visible model: pirate_anchor
+PASS: Visible model: pirate_cannon
+PASS: Visible model: pirate_figurehead
+PASS: Visible model: pirate_spyglass
+PASS: Visible model: pirate_sextant
+PASS: Visible model: pirate_compass
+PASS: Visible model: pirate_parrot
+PASS: Visible model: pirate_rum
+PASS: Visible model: pirate_wheel
+PASS: Visible model: pirate_chest
+MEASURE pirate_full_clear_speed_11 56.25s / 80s | $13200 | cargo 44
+PASS: Physical full clear at speed level 11
+PASS: Ship time and payout at speed level 11
+PASS: Escaped parrot becomes collection trophy
+MEASURE pirate_special_short_route 14.55s / 35s | $5250 | cargo 15
+PASS: Short 35-second Special Job has a valuable escape route
+PASS: Short route banks parrot, wheel and chest
+PIRATE CHECKS 59 FAILURES 0

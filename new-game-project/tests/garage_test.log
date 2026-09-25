@@ -1,0 +1,50 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Fresh profile starts with no purchased decor
+PASS: Insufficient cash cannot buy decor
+PASS: Starter garage contains only base furnishing
+PASS: Exact requested price: sofa
+PASS: No mid-heist purchase: sofa
+PASS: Atomic cash purchase: sofa
+PASS: No duplicate charge: sofa
+PASS: Exact requested price: tv
+PASS: No mid-heist purchase: tv
+PASS: Atomic cash purchase: tv
+PASS: No duplicate charge: tv
+PASS: Exact requested price: arcade
+PASS: No mid-heist purchase: arcade
+PASS: Atomic cash purchase: arcade
+PASS: No duplicate charge: arcade
+PASS: Exact requested price: pool
+PASS: No mid-heist purchase: pool
+PASS: Atomic cash purchase: pool
+PASS: No duplicate charge: pool
+PASS: Exact requested price: jukebox
+PASS: No mid-heist purchase: jukebox
+PASS: Atomic cash purchase: jukebox
+PASS: No duplicate charge: jukebox
+PASS: Exact requested price: safe
+PASS: No mid-heist purchase: safe
+PASS: Atomic cash purchase: safe
+PASS: No duplicate charge: safe
+PASS: Exact requested price: statue
+PASS: No mid-heist purchase: statue
+PASS: Atomic cash purchase: statue
+PASS: No duplicate charge: statue
+PASS: Exact requested price: floor
+PASS: No mid-heist purchase: floor
+PASS: Atomic cash purchase: floor
+PASS: No duplicate charge: floor
+PASS: All seven furniture models placed once; floor handled separately
+PASS: Decor never changes stats or diamonds
+PASS: Garage ownership saves
+PASS: All purchases survive relaunch
+PASS: Schema 13 migrates with preserved cash and a backup
+PASS: Failed save rolls back cash and decor
+PASS: Malformed ownership is sanitized
+PASS: Collection opens the starter Garage
+PASS: Shop preview does not grant ownership
+PASS: Real UI purchase charges once and marks placed
+PASS: Original Home podium is restored and separate from Garage
+PASS: Purchased furniture remains in Garage when returning
+GARAGE SUMMARY: 47 checks, 0 failures

@@ -1,0 +1,196 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (2 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | GameUI[39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (53 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | busted.svg[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | studio_before_abandoned_320x712.png[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | studio_before_abandoned_360x720.png[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | studio_before_busted_320x712.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | studio_before_busted_360x720.png[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | studio_before_chapter_locked_320x712.png[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | studio_before_chapter_locked_360x720.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | studio_before_collection_empty_320x712.png[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | studio_before_collection_empty_360x720.png[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | studio_before_collection_owned_320x712.png[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | studio_before_collection_owned_360x720.png[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | studio_before_cosmetics_320x712.png[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | studio_before_cosmetics_360x720.png[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | studio_before_duplication_320x712.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | studio_before_duplication_360x720.png[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | studio_before_final_job_320x712.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | studio_before_final_job_360x720.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | studio_before_full_clear_320x712.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | studio_before_full_clear_360x720.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | studio_before_home_320x712.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | studio_before_home_360x720.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | studio_before_hud_alarm_320x712.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | studio_before_hud_alarm_360x720.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | studio_before_hud_full_320x712.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | studio_before_hud_full_360x720.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | studio_before_hud_ready_320x712.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | studio_before_hud_ready_360x720.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | studio_before_hud_warning_320x712.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | studio_before_hud_warning_360x720.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | studio_before_jobs_320x712.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | studio_before_jobs_360x720.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | studio_before_jobs_final_special_320x712.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | studio_before_jobs_final_special_360x720.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | studio_before_museum_final_320x712.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | studio_before_museum_final_360x720.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | studio_before_pause_320x712.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | studio_before_pause_360x720.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | studio_before_settings_320x712.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | studio_before_settings_360x720.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | studio_before_special_320x712.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | studio_before_special_360x720.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | studio_before_stats_320x712.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | studio_before_stats_360x720.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | studio_before_success_320x712.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | studio_before_success_360x720.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | studio_before_trophy_320x712.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | studio_before_trophy_360x720.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | studio_before_tutorial_320x712.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | studio_before_tutorial_360x720.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | studio_before_upgrades_320x712.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | studio_before_upgrades_360x720.png[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | studio_before_upgrade_details_320x712.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | studio_before_upgrade_details_360x720.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (53 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   1% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   3% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   5% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   7% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   9% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  11% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  12% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  14% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  16% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  18% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  20% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  22% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  24% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  25% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  27% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  29% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  31% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  33% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  35% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  37% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  38% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  40% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  42% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  44% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  46% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  48% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  50% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  51% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  53% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  55% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  57% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  59% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  61% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  62% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  64% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  66% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  68% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  70% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  72% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  74% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  75% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  77% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  79% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  81% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  83% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  85% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  87% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  88% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  90% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  92% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  94% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  96% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mreimport[22m | studio_before_hud_warning_320x712.png[39m[0m
+[   1% ] [90m[1mreimport[22m | studio_before_hud_warning_360x720.png[39m[0m
+[   3% ] [90m[1mreimport[22m | studio_before_jobs_320x712.png[39m[0m
+[   5% ] [90m[1mreimport[22m | studio_before_jobs_360x720.png[39m[0m
+[   7% ] [90m[1mreimport[22m | studio_before_jobs_final_special_320x712.png[39m[0m
+[   9% ] [90m[1mreimport[22m | studio_before_jobs_final_special_360x720.png[39m[0m
+[  11% ] [90m[1mreimport[22m | studio_before_museum_final_320x712.png[39m[0m
+[  12% ] [90m[1mreimport[22m | studio_before_museum_final_360x720.png[39m[0m
+[  14% ] [90m[1mreimport[22m | studio_before_pause_320x712.png[39m[0m
+[  16% ] [90m[1mreimport[22m | studio_before_pause_360x720.png[39m[0m
+[  18% ] [90m[1mreimport[22m | studio_before_settings_320x712.png[39m[0m
+[  20% ] [90m[1mreimport[22m | studio_before_settings_360x720.png[39m[0m
+[  22% ] [90m[1mreimport[22m | studio_before_special_320x712.png[39m[0m
+[  24% ] [90m[1mreimport[22m | studio_before_special_360x720.png[39m[0m
+[  25% ] [90m[1mreimport[22m | studio_before_stats_320x712.png[39m[0m
+[  27% ] [90m[1mreimport[22m | studio_before_stats_360x720.png[39m[0m
+[  29% ] [90m[1mreimport[22m | studio_before_success_320x712.png[39m[0m
+[  31% ] [90m[1mreimport[22m | studio_before_success_360x720.png[39m[0m
+[  33% ] [90m[1mreimport[22m | studio_before_trophy_320x712.png[39m[0m
+[  35% ] [90m[1mreimport[22m | studio_before_trophy_360x720.png[39m[0m
+[  37% ] [90m[1mreimport[22m | studio_before_tutorial_320x712.png[39m[0m
+[  38% ] [90m[1mreimport[22m | studio_before_tutorial_360x720.png[39m[0m
+[  40% ] [90m[1mreimport[22m | studio_before_upgrades_320x712.png[39m[0m
+[  42% ] [90m[1mreimport[22m | studio_before_upgrades_360x720.png[39m[0m
+[  44% ] [90m[1mreimport[22m | studio_before_upgrade_details_320x712.png[39m[0m
+[  46% ] [90m[1mreimport[22m | studio_before_upgrade_details_360x720.png[39m[0m
+[  48% ] [90m[1mreimport[22m | busted.svg[39m[0m
+[  50% ] [90m[1mreimport[22m | studio_before_abandoned_320x712.png[39m[0m
+[  51% ] [90m[1mreimport[22m | studio_before_abandoned_360x720.png[39m[0m
+[  53% ] [90m[1mreimport[22m | studio_before_busted_320x712.png[39m[0m
+[  55% ] [90m[1mreimport[22m | studio_before_busted_360x720.png[39m[0m
+[  57% ] [90m[1mreimport[22m | studio_before_chapter_locked_320x712.png[39m[0m
+[  59% ] [90m[1mreimport[22m | studio_before_chapter_locked_360x720.png[39m[0m
+[  61% ] [90m[1mreimport[22m | studio_before_collection_empty_320x712.png[39m[0m
+[  62% ] [90m[1mreimport[22m | studio_before_collection_empty_360x720.png[39m[0m
+[  64% ] [90m[1mreimport[22m | studio_before_collection_owned_320x712.png[39m[0m
+[  66% ] [90m[1mreimport[22m | studio_before_collection_owned_360x720.png[39m[0m
+[  68% ] [90m[1mreimport[22m | studio_before_cosmetics_320x712.png[39m[0m
+[  70% ] [90m[1mreimport[22m | studio_before_cosmetics_360x720.png[39m[0m
+[  72% ] [90m[1mreimport[22m | studio_before_duplication_320x712.png[39m[0m
+[  74% ] [90m[1mreimport[22m | studio_before_duplication_360x720.png[39m[0m
+[  75% ] [90m[1mreimport[22m | studio_before_final_job_320x712.png[39m[0m
+[  77% ] [90m[1mreimport[22m | studio_before_final_job_360x720.png[39m[0m
+[  79% ] [90m[1mreimport[22m | studio_before_full_clear_320x712.png[39m[0m
+[  81% ] [90m[1mreimport[22m | studio_before_full_clear_360x720.png[39m[0m
+[  83% ] [90m[1mreimport[22m | studio_before_home_320x712.png[39m[0m
+[  85% ] [90m[1mreimport[22m | studio_before_home_360x720.png[39m[0m
+[  87% ] [90m[1mreimport[22m | studio_before_hud_alarm_320x712.png[39m[0m
+[  88% ] [90m[1mreimport[22m | studio_before_hud_alarm_360x720.png[39m[0m
+[  90% ] [90m[1mreimport[22m | studio_before_hud_full_320x712.png[39m[0m
+[  92% ] [90m[1mreimport[22m | studio_before_hud_full_360x720.png[39m[0m
+[  94% ] [90m[1mreimport[22m | studio_before_hud_ready_320x712.png[39m[0m
+[  96% ] [90m[1mreimport[22m | studio_before_hud_ready_360x720.png[39m[0m
+[  98% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (53 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[  33% ] [90m[1mloading_editor_layout[22m | Reopening scenes...[39m[0m
+[  50% ] [90m[1mloading_editor_layout[22m | Loading central editor layout...[39m[0m
+[  66% ] [90m[1mloading_editor_layout[22m | Loading plugin window layout...[39m[0m
+[  83% ] [90m[1mloading_editor_layout[22m | Editor layout ready.[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m

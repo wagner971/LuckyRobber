@@ -1,0 +1,32 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Home uses its nighttime backdrop with no cartoon post-process
+PASS: Home background is the same live 3D scene as the player, with a gentle UI vignette
+PASS: Home preview uses warm motivated light and a cool rear rim
+PASS: Thief has a contact shadow on the display platform
+PASS: Home has its own 3D garage and batched rising platform particles
+PASS: Two visible floor projectors frame the thief
+PASS: Home keeps a clear Play action and small Settings access
+PASS: New profile shows the available secondary destinations
+PASS: Trophy Collection remains available
+PASS: Play remains larger than the three Home shortcuts
+PASS: Stats, duplicate trophy and DEV actions do not clutter Home
+PASS: Home Play always leads to job selection
+PASS: Home uses three shortcuts instead of a duplicate bottom navigation
+PASS: Unaffordable upgrades have no red dot
+PASS: Affordable upgrade gets a red dot on the Home shortcut
+PASS: Home target uses the actual next loot and required upgrade
+PASS: Play, shortcuts and target remain visible on compact portrait
+PASS: Compact layout keeps the target below all shortcuts
+PASS: Upgrade target opens the dedicated shop
+PASS: Final Job first explains the missing van space
+PASS: Van-space target focuses the Van upgrade
+PASS: Ready Final Job does not bypass job selection
+PASS: Home Play opens Jobs even with a Final Job ready
+PASS: Stats moved into Settings
+PASS: Profile shortcut opens the existing stats page
+PASS: DEV controls start collapsed in Settings
+PASS: Developer drawer exposes the existing max-all tool
+PASS: Max-all still works from Settings
+PASS: Production Settings have no developer drawer
+HOME V2: 0 failures

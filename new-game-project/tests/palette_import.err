@@ -1,0 +1,8 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+SCRIPT ERROR: Parse Error: Could not parse global class "GameUI" from "res://scripts/game_ui.gd".
+   at: GDScript::reload (res://scripts/main.gd:6)
+SCRIPT ERROR: Parse Error: Could not resolve class "GameUI", because of a parser error.
+   at: GDScript::reload (res://scripts/main.gd:38)
+ERROR: Failed to load script "res://scripts/main.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

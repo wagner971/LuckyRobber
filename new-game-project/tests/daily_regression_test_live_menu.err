@@ -1,0 +1,4 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+ERROR: Resumed function 'travel()' after await, but class instance is gone. At script: res://scripts/screen_motion.gd:78
+   at: resume (modules/gdscript/gdscript_function.cpp:323)

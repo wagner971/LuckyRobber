@@ -1,0 +1,34 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Rotation day 0 shows exactly three distinct cosmetics
+PASS: Rotation day 1 shows exactly three distinct cosmetics
+PASS: Rotation day 2 shows exactly three distinct cosmetics
+PASS: Rotation day 3 shows exactly three distinct cosmetics
+PASS: Rotation day 4 shows exactly three distinct cosmetics
+PASS: Rotation day 5 shows exactly three distinct cosmetics
+PASS: Rotation day 6 shows exactly three distinct cosmetics
+PASS: Rotation day 7 shows exactly three distinct cosmetics
+PASS: Rotation day 8 shows exactly three distinct cosmetics
+PASS: Rotation day 9 shows exactly three distinct cosmetics
+PASS: Rotation day 10 shows exactly three distinct cosmetics
+PASS: Rotation day 11 shows exactly three distinct cosmetics
+PASS: Rotation day 12 shows exactly three distinct cosmetics
+PASS: Every cosmetic returns in the rotation cycle
+PASS: Today's Shop refreshes at the next UTC day
+PASS: Off-rotation cosmetic cannot be purchased
+PASS: Featured diamond cosmetic is purchasable at its regular price
+PASS: Owned cosmetics stay usable outside their rotation
+PASS: Idle or empty run does not advance the crate
+PASS: First loaded escape advances to one of three
+PASS: Failure does not erase the player's progress
+PASS: Second loaded escape advances to two of three
+PASS: Third loaded escape grants the disclosed fixed crate reward and resets progress
+PASS: Next cycle starts on the following successful escape
+PASS: Schema 11 profile migrates with a backup
+PASS: Cosmetics displays exactly three featured shop cards
+PASS: A real loaded escape updates the app's play reward
+PASS: Third actual loaded escape pays one crate and resets the track
+PASS: Crate and progress survive a persistent relaunch
+PASS: Crate diamonds survive a fresh DEV launch through the shared ledger
+PASS: Repeated escape signal cannot pay the crate twice
+PLAY REWARDS SUMMARY: 31 checks, 0 failures

@@ -1,0 +1,137 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: First two speed upgrades cost $550 combined
+PASS: Grip 2 cuts Quantum Core pickup from 2.8s to 2.5s
+PASS: Carry 2 raises heaviest-loot speed from 3 to 3.519 m/s (+17.28%)
+PASS: Every Carry purchase helps LIGHT without exceeding empty speed
+PASS: Every Carry purchase helps MEDIUM without exceeding empty speed
+PASS: Every Carry purchase helps HEAVY without exceeding empty speed
+PASS: Every Carry purchase helps VERY_HEAVY without exceeding empty speed
+PASS: Required speed levels increase once per location: apartment
+PASS: Missing grip cannot clear apartment even through direct settlement
+PASS: Blocked career clear still pays every original: apartment grip
+PASS: Missing grip cannot open next location after apartment
+PASS: Both speed requirements permit the real clear: apartment
+PASS: Both speed requirements permit advancement: apartment
+PASS: Missing carry cannot clear apartment even through direct settlement
+PASS: Blocked career clear still pays every original: apartment carry
+PASS: Missing carry cannot open next location after apartment
+PASS: Both speed requirements permit the real clear: apartment
+PASS: Both speed requirements permit advancement: apartment
+PASS: Required speeds can be purchased before leaving apartment
+MEASURE speed_minimum_apartment 39.08s / 60s | $1210 | cargo 17
+PASS: Physical clear works with required minimum speed levels: apartment
+PASS: Required speed levels increase once per location: house
+PASS: Missing grip cannot clear house even through direct settlement
+PASS: Blocked career clear still pays every original: house grip
+PASS: Missing grip cannot open next location after house
+PASS: Both speed requirements permit the real clear: house
+PASS: Both speed requirements permit advancement: house
+PASS: Missing carry cannot clear house even through direct settlement
+PASS: Blocked career clear still pays every original: house carry
+PASS: Missing carry cannot open next location after house
+PASS: Both speed requirements permit the real clear: house
+PASS: Both speed requirements permit advancement: house
+PASS: Required speeds can be purchased before leaving house
+MEASURE speed_minimum_house 56.30s / 60s | $2140 | cargo 23
+PASS: Physical clear works with required minimum speed levels: house
+PASS: Required speed levels increase once per location: villa
+PASS: Missing grip cannot clear villa even through direct settlement
+PASS: Blocked career clear still pays every original: villa grip
+PASS: Missing grip cannot open next location after villa
+PASS: Both speed requirements permit the real clear: villa
+PASS: Both speed requirements permit advancement: villa
+PASS: Missing carry cannot clear villa even through direct settlement
+PASS: Blocked career clear still pays every original: villa carry
+PASS: Missing carry cannot open next location after villa
+PASS: Both speed requirements permit the real clear: villa
+PASS: Both speed requirements permit advancement: villa
+PASS: Required speeds can be purchased before leaving villa
+MEASURE speed_minimum_villa 62.63s / 70s | $3260 | cargo 28
+PASS: Physical clear works with required minimum speed levels: villa
+PASS: Required speed levels increase once per location: electronics
+PASS: Missing grip cannot clear electronics even through direct settlement
+PASS: Blocked career clear still pays every original: electronics grip
+PASS: Missing grip cannot open next location after electronics
+PASS: Both speed requirements permit the real clear: electronics
+PASS: Both speed requirements permit advancement: electronics
+PASS: Missing carry cannot clear electronics even through direct settlement
+PASS: Blocked career clear still pays every original: electronics carry
+PASS: Missing carry cannot open next location after electronics
+PASS: Both speed requirements permit the real clear: electronics
+PASS: Both speed requirements permit advancement: electronics
+PASS: Required speeds can be purchased before leaving electronics
+MEASURE speed_minimum_electronics 55.02s / 60s | $4060 | cargo 32
+PASS: Physical clear works with required minimum speed levels: electronics
+PASS: Required speed levels increase once per location: mansion
+PASS: Missing grip cannot clear mansion even through direct settlement
+PASS: Blocked career clear still pays every original: mansion grip
+PASS: Missing grip cannot open next location after mansion
+PASS: Both speed requirements permit the real clear: mansion
+PASS: Both speed requirements permit advancement: mansion
+PASS: Missing carry cannot clear mansion even through direct settlement
+PASS: Blocked career clear still pays every original: mansion carry
+PASS: Missing carry cannot open next location after mansion
+PASS: Both speed requirements permit the real clear: mansion
+PASS: Both speed requirements permit advancement: mansion
+PASS: Required speeds can be purchased before leaving mansion
+MEASURE speed_minimum_mansion 75.23s / 80s | $5170 | cargo 38
+PASS: Physical clear works with required minimum speed levels: mansion
+PASS: Required speed levels increase once per location: laboratory
+PASS: Missing grip cannot clear laboratory even through direct settlement
+PASS: Blocked career clear still pays every original: laboratory grip
+PASS: Missing grip cannot open next location after laboratory
+PASS: Both speed requirements permit the real clear: laboratory
+PASS: Both speed requirements permit advancement: laboratory
+PASS: Missing carry cannot clear laboratory even through direct settlement
+PASS: Blocked career clear still pays every original: laboratory carry
+PASS: Missing carry cannot open next location after laboratory
+PASS: Both speed requirements permit the real clear: laboratory
+PASS: Both speed requirements permit advancement: laboratory
+PASS: Required speeds can be purchased before leaving laboratory
+MEASURE speed_minimum_laboratory 68.65s / 85s | $7250 | cargo 39
+PASS: Physical clear works with required minimum speed levels: laboratory
+PASS: Required speed levels increase once per location: museum
+PASS: Missing grip cannot clear museum even through direct settlement
+PASS: Blocked career clear still pays every original: museum grip
+PASS: Missing grip cannot open next location after museum
+PASS: Both speed requirements permit the real clear: museum
+PASS: Both speed requirements permit advancement: museum
+PASS: Missing carry cannot clear museum even through direct settlement
+PASS: Blocked career clear still pays every original: museum carry
+PASS: Missing carry cannot open next location after museum
+PASS: Both speed requirements permit the real clear: museum
+PASS: Both speed requirements permit advancement: museum
+PASS: Required speeds can be purchased before leaving museum
+MEASURE speed_minimum_museum 61.02s / 80s | $9700 | cargo 45
+PASS: Physical clear works with required minimum speed levels: museum
+PASS: Required speed levels increase once per location: pyramid
+PASS: Missing grip cannot clear pyramid even through direct settlement
+PASS: Blocked career clear still pays every original: pyramid grip
+PASS: Missing grip cannot open next location after pyramid
+PASS: Both speed requirements permit the real clear: pyramid
+PASS: Both speed requirements permit advancement: pyramid
+PASS: Missing carry cannot clear pyramid even through direct settlement
+PASS: Blocked career clear still pays every original: pyramid carry
+PASS: Missing carry cannot open next location after pyramid
+PASS: Both speed requirements permit the real clear: pyramid
+PASS: Both speed requirements permit advancement: pyramid
+PASS: Required speeds can be purchased before leaving pyramid
+MEASURE speed_minimum_pyramid 45.60s / 60s | $10500 | cargo 44
+PASS: Physical clear works with required minimum speed levels: pyramid
+PASS: Required speed levels increase once per location: castle
+PASS: Missing grip cannot clear castle even through direct settlement
+PASS: Blocked career clear still pays every original: castle grip
+PASS: Missing grip cannot open next location after castle
+PASS: Both speed requirements permit the real clear: castle
+PASS: Both speed requirements permit advancement: castle
+PASS: Missing carry cannot clear castle even through direct settlement
+PASS: Blocked career clear still pays every original: castle carry
+PASS: Missing carry cannot open next location after castle
+PASS: Both speed requirements permit the real clear: castle
+PASS: Both speed requirements permit advancement: castle
+PASS: Required speeds can be purchased before leaving castle
+MEASURE speed_minimum_castle 47.50s / 60s | $10900 | cargo 44
+PASS: Physical clear works with required minimum speed levels: castle
+PASS: Last required purchase unlocks an already-earned ordinary map immediately
+SPEED PROGRESSION: 125 checks, 0 failures

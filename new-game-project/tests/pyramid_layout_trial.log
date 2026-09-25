@@ -1,0 +1,106 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Pyramid comes right after Museum
+PASS: Pyramid exactly 44 cargo / $10500
+PASS: Expected totals and 11 loot instances
+PASS: Fits Van L19, below Van MAX 46, no new upgrade
+PASS: 100 base Noise, fixed 65 alarm threshold
+PASS: Normal 60s timer and 12s alarm, no Pyramid override
+PASS: Everything but Throne + Sarcophagus = 64 Noise, one under the alarm
+PASS: Pharaoh Bust is MEDIUM on purpose
+PASS: Economy grows ~+28.5%, not exponentially (x1.285)
+PASS: Signature is the $1800 Sarcophagus
+PASS: One Museum objective keeps Pyramid locked
+PASS: Two Museum objectives open Pyramid (Chapter 2)
+PASS: Pyramid tier reuses MAX caps
+PASS: Next goal points at Pyramid: NEXT GOAL · STRENGTH 5 for SARCOPHAGUS in PYRAMID
+PASS: Pyramid unlock and objectives survive reload
+PASS: Pyramid has no mastery contracts yet; mastery 18 medals unchanged
+PASS: Noise L1: 64-noise loot stays under alarm (64.00 / 65)
+PASS: Noise L1: SARCOPHAGUS trips the alarm as penultimate big piece (82.00)
+PASS: Noise L1: 64-noise loot stays under alarm (64.00 / 65)
+PASS: Noise L1: GOLDEN THRONE trips the alarm as penultimate big piece (82.00)
+PASS: Noise L20: 64-noise loot stays under alarm (51.84 / 65)
+PASS: Noise L20: SARCOPHAGUS trips the alarm as penultimate big piece (66.42)
+PASS: Noise L20: 64-noise loot stays under alarm (51.84 / 65)
+PASS: Noise L20: GOLDEN THRONE trips the alarm as penultimate big piece (66.42)
+PASS: Visible model canopic_jar
+PASS: Loot clear of walls pyramid.jar_a
+PASS: Reachable approach pyramid.jar_a
+PASS: Visible model canopic_jar
+PASS: Loot clear of walls pyramid.jar_b
+PASS: Reachable approach pyramid.jar_b
+PASS: Visible model treasure_chest
+FAIL: Loot clear of walls pyramid.chest_a
+PASS: Reachable approach pyramid.chest_a
+PASS: Visible model treasure_chest
+FAIL: Loot clear of walls pyramid.chest_b
+PASS: Reachable approach pyramid.chest_b
+PASS: Visible model pharaoh_mask
+PASS: Loot clear of walls pyramid.mask
+PASS: Reachable approach pyramid.mask
+PASS: Visible model giant_scarab
+PASS: Loot clear of walls pyramid.scarab
+PASS: Reachable approach pyramid.scarab
+PASS: Visible model giant_anubis
+PASS: Loot clear of walls pyramid.anubis
+PASS: Reachable approach pyramid.anubis
+PASS: Visible model obelisk_fragment
+PASS: Loot clear of walls pyramid.obelisk
+PASS: Reachable approach pyramid.obelisk
+PASS: Visible model pharaoh_bust
+PASS: Loot clear of walls pyramid.bust
+PASS: Reachable approach pyramid.bust
+PASS: Visible model sarcophagus
+PASS: Loot clear of walls pyramid.sarcophagus
+PASS: Reachable approach pyramid.sarcophagus
+PASS: Visible model golden_throne
+PASS: Loot clear of walls pyramid.throne
+PASS: Reachable approach pyramid.throne
+FAIL: Sarcophagus remains inside the Burial Chamber, within a practical van route (5.01)
+PASS: pyramid has 16 visible torches (10 emit real light)
+PASS: Sun skips the interior layer: inside stays dark
+PASS: Every interior spot within 75% of a torch's range (604 samples, worst 0.59 at (-2.4, 0.0, -2.2))
+PASS: Loot lit by a torch pyramid.jar_a
+PASS: Loot inside uses the interior layer pyramid.jar_a
+PASS: Loot lit by a torch pyramid.jar_b
+PASS: Loot inside uses the interior layer pyramid.jar_b
+PASS: Loot lit by a torch pyramid.chest_a
+PASS: Loot inside uses the interior layer pyramid.chest_a
+PASS: Loot lit by a torch pyramid.chest_b
+PASS: Loot inside uses the interior layer pyramid.chest_b
+PASS: Loot lit by a torch pyramid.mask
+PASS: Loot inside uses the interior layer pyramid.mask
+PASS: Loot lit by a torch pyramid.scarab
+PASS: Loot inside uses the interior layer pyramid.scarab
+PASS: Loot lit by a torch pyramid.anubis
+PASS: Loot inside uses the interior layer pyramid.anubis
+PASS: Loot lit by a torch pyramid.obelisk
+PASS: Loot inside uses the interior layer pyramid.obelisk
+PASS: Loot lit by a torch pyramid.bust
+PASS: Loot inside uses the interior layer pyramid.bust
+PASS: Loot lit by a torch pyramid.sarcophagus
+PASS: Loot inside uses the interior layer pyramid.sarcophagus
+PASS: Loot lit by a torch pyramid.throne
+PASS: Loot inside uses the interior layer pyramid.throne
+PASS: Thief switches to the interior layer inside
+PASS: Thief is sunlit again outside the breach
+FAIL: Treasury Throne is near the exit; Sarcophagus stays in Burial Chamber (7.11)
+MEASURE pyramid.harness_no_speed 49.95s / 60s | $10500 | cargo 44
+PYRAMID pyramid.harness_no_speed: success=true full_clear=true remaining 3.87s | alarm with 9 loaded, 12.00s left
+PASS: Full clear possible without speed upgrades (S5 G1 C1 V19 N1)
+FAIL: Physical full clear has a playable >=4.5s margin without speed upgrades (3.87s)
+PASS: Alarm fires only once 9/11 pieces (~80%% of the heist) are loaded
+MEASURE pyramid.throne_first_pair 49.93s / 60s | $10500 | cargo 44
+PYRAMID pyramid.throne_first_pair: success=true full_clear=true remaining 4.40s | alarm with 9 loaded, 12.00s left
+PASS: Throne-first finish is never easier than the smart route (4.40s left)
+MEASURE pyramid.greedy_prizes_first 43.55s / 60s | $8300 | cargo 33
+PYRAMID pyramid.greedy_prizes_first: success=false full_clear=false remaining 0.00s | alarm with 7 loaded, 12.00s left
+PASS: Grabbing both big prizes first triggers an early alarm and costs the full clear
+MEASURE pyramid.grip8_carry8 47.18s / 60s | $10500 | cargo 44
+PYRAMID pyramid.grip8_carry8: success=true full_clear=true remaining 4.35s | alarm with 9 loaded, 12.00s left
+PASS: A few Grip/Carry levels buy extra seconds (4.35s)
+MEASURE pyramid.max 44.25s / 60s | $10500 | cargo 44
+PYRAMID pyramid.max: success=true full_clear=true remaining 4.78s | alarm with 9 loaded, 12.00s left
+FAIL: MAX clears with >=5.5s and the largest margin (4.78s)
+PYRAMID V1 SUMMARY: 93 checks, 6 failures

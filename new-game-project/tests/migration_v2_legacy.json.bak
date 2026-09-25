@@ -1,0 +1,169 @@
+{
+	"apartment_final_job_completed": false,
+	"bonuses": [],
+	"contract_bonuses": [],
+	"contracts": {
+		"apartment.client_order": false,
+		"apartment.rush": false,
+		"apartment.small_van": false,
+		"electronics.client_order": false,
+		"electronics.rush": false,
+		"electronics.small_van": false,
+		"house.client_order": false,
+		"house.rush": false,
+		"house.small_van": false,
+		"laboratory.client_order": false,
+		"laboratory.rush": false,
+		"laboratory.small_van": false,
+		"mansion.client_order": false,
+		"mansion.rush": false,
+		"mansion.small_van": false,
+		"museum.client_order": false,
+		"museum.rush": false,
+		"museum.small_van": false,
+		"villa.client_order": false,
+		"villa.rush": false,
+		"villa.small_van": false
+	},
+	"cosmetics": {
+		"equipped": {
+			"set": "",
+			"suit": "",
+			"van": ""
+		},
+		"owned": []
+	},
+	"failures": 0,
+	"first_job_at": 1,
+	"hideout_returned": true,
+	"loot_economy": {
+		"kept": [],
+		"last_tick": 0,
+		"next_id": 1,
+		"order": {},
+		"order_index": 0,
+		"pawn_level": 1,
+		"pending": [],
+		"pending_result": {},
+		"register": 0,
+		"shelves": [],
+		"slots": {
+			"curio": 0,
+			"gaming": 0,
+			"kitchen": 0,
+			"screen": 0,
+			"seat": 0,
+			"wildcard": 0
+		}
+	},
+	"mode_stats": {
+		"FINAL_JOB": {
+			"failures": 0,
+			"successes": 0
+		},
+		"client_order": {
+			"failures": 0,
+			"successes": 0
+		},
+		"normal": {
+			"failures": 0,
+			"successes": 0
+		},
+		"rush": {
+			"failures": 0,
+			"successes": 0
+		},
+		"small_van": {
+			"failures": 0,
+			"successes": 0
+		},
+		"special": {
+			"failures": 0,
+			"successes": 0
+		}
+	},
+	"museum_final_job_completed": false,
+	"noise_tutorial_completed": true,
+	"objectives": {
+		"apartment": {
+			"cash": true,
+			"full_clear": false,
+			"signature": true
+		},
+		"castle": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"electronics": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"house": {
+			"cash": true,
+			"full_clear": true,
+			"signature": true
+		},
+		"laboratory": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"mansion": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"museum": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"pyramid": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"villa": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		}
+	},
+	"records": {
+		"FINAL_JOB": {},
+		"client_order": {},
+		"normal": {
+			"house": 37.2833
+		},
+		"rush": {},
+		"small_van": {},
+		"special": {}
+	},
+	"runs_since_special": 0,
+	"schema_version": 7,
+	"special_in_progress": false,
+	"special_interval": 3,
+	"special_location_id": "",
+	"special_pending": false,
+	"special_type": "RUSH_HOUR",
+	"successes": 0,
+	"trophies": [
+		"flamingo",
+		"duck"
+	],
+	"tutorial_completed": true,
+	"unlocked": [
+		"apartment",
+		"villa"
+	],
+	"upgrades": {
+		"capacity": 12,
+		"carry": 15,
+		"grip": 15,
+		"noise": 1,
+		"strength": 3
+	},
+	"wallet": 4700
+}

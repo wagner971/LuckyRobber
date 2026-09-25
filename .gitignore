@@ -1,0 +1,15 @@
+# Build outputs (regenerate via Godot export; too large for git anyway)
+/builds/
+
+# Manual dev snapshots (redundant now that git tracks history)
+/checkpoints/
+
+# Godot caches
+new-game-project/.godot/
+new-game-project/.godot_sandbox_appdata/
+new-game-project/.godot_sandbox_local/
+new-game-project/android/
+
+# OS junk
+Thumbs.db
+.DS_Store

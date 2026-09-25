@@ -1,0 +1,16 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: One toon pass is attached to the gameplay camera below HUD
+PASS: HUD is drawn after the toon pass
+PASS: Camera uses a full-screen shader
+PASS: The screen shader is the single toon source
+PASS: Camera shader never blocks touch input
+PASS: Complete level geometry inspected
+PASS: No level mesh has the old per-object toon shader
+PASS: Character uses an ordinary surface material
+PASS: Cosmetic recolour still updates the character
+PASS: Gameplay marker has no custom toon material
+PASS: Animated van-zone colour still updates
+CAMERA TOON CHECKS 11; FAILURES 0

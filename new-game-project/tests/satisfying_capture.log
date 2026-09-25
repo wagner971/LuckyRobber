@@ -1,0 +1,9 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+CASE chair_50 $50 LIGHT bounce 0.600 cash 9
+CASE fridge_340 $340 HEAVY bounce 1.450 cash 12
+CASE safe_500 $500 VERY_HEAVY bounce 1.800 cash 16
+CASE piano_1000 $1000 VERY_HEAVY bounce 1.800 cash 16
+CASE artifact_2500 $2500 VERY_HEAVY bounce 1.800 cash 19
+SATISFYING CAPTURE COMPLETE

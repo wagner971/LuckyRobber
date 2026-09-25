@@ -1,0 +1,14 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Only Normal Villa gets the longer timer and alarm window
+MEASURE villa_v2_full_clear 61.17s / 70s | $3260 | cargo 28
+VILLA DIAGNOSTIC circuits=[9.37, 8.2, 7.88, 6.02, 6.92, 5.6, 5.57, 6.72, 4.9] types=["piano", "bathtub", "toilet", "sofa", "small_safe", "gaming_pc", "small_tv", "chair", "monitor"] alarm_at=41.5333333333323 remaining=6.36666666666684
+PASS: Every Villa room is reachable and full clear fits the timer
+PASS: New premium inventory matches its cargo and value budget
+MEASURE villa_v2_rush 27.90s / 35s | $2400 | cargo 18
+PASS: Villa rush contract remains physically solvable
+MEASURE villa_v2_small_van 22.85s / 60s | $1670 | cargo 12
+PASS: Villa small_van contract remains physically solvable
+MEASURE villa_v2_client_order 20.93s / 35s | $1590 | cargo 13
+PASS: Villa client_order contract remains physically solvable
+VILLA V2 ROUTES: 6 checks, 0 failures

@@ -1,0 +1,28 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Two objectives unlock Final Job, not Suburban directly
+PASS: Final Job and Normal build the identical canonical Apartment layout
+PASS: Van L5 (16 cargo) is short of Apartment's 17
+PASS: Van L6 (18 cargo) covers Apartment's 17
+PASS: Final Job unlocked but van still mathematically too small at L5
+PASS: Last item picked up but not yet loaded
+PASS: Cannot Escape while still carrying the last item (must load, not just carry)
+PASS: Reaching the van loads the carried item into cargo
+PASS: Loading the final item then Escaping completes Final Job and unlocks Suburban
+PASS: Result flags final_job_completed on first completion
+PASS: Timeout does not complete Final Job or unlock Suburban despite full cargo
+PASS: Replay does not re-trigger the one-time completion flag
+PASS: Replay does not unlock Suburban again / no duplicate entries
+PASS: Replay pays loot normally, with no duplicate one-time bonus
+PASS: Existing save with Suburban already unlocked is grandfathered, not relocked
+PASS: Fresh save starts without Final Job completed or Suburban unlocked
+PASS: Normal Apartment keeps the 12s Alarm window
+PASS: Final Job uses the 16s Alarm-escape window override
+PASS: Mastery contract keeps the 12s Alarm window
+PASS: Special Job keeps the 12s Alarm window
+PASS: Global ALARM_WINDOW constant itself is never changed
+PASS: Two House objectives alone cannot bypass the speed requirements
+PASS: Two House objectives plus both speed levels 3 open Villa
+PASS: Final Job does not advance the Special Job scheduler
+PASS: Final Job does not register as a Mastery Contract medal
+FINAL JOB V1 SUMMARY: 25 checks, 0 failures

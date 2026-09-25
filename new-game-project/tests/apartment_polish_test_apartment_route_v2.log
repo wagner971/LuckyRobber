@@ -1,0 +1,8 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+MEASURE apartment_v2_full_clear 36.37s / 60s | $1210 | cargo 17
+PASS: Every Apartment item remains reachable and loadable through real movement
+PASS: Short return to the centered van still completes full cargo
+MEASURE apartment_v2_final_job_tier 39.35s / 60s | $1210 | cargo 17
+PASS: Final Job remains physically completable at its entry upgrade tier
+APARTMENT V2 ROUTE: 3 checks, 0 failures

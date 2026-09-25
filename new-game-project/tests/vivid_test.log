@@ -1,0 +1,24 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 592.00 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2050
+
+PASS: Neutral white/gray/black retained in rendered color pass
+PASS: Neutral white/gray/black retained in rendered color pass
+PASS: Neutral white/gray/black retained in rendered color pass
+PASS: Colored scene swatch gains visible saturation
+PASS: Color boost does not burn highlights
+PASS: Colored scene swatch gains visible saturation
+PASS: Color boost does not burn highlights
+PASS: Colored scene swatch gains visible saturation
+PASS: Color boost does not burn highlights
+PASS: Fully saturated colors remain intact without invalid pixels
+PASS: Fully saturated colors remain intact without invalid pixels
+PASS: Fully saturated colors remain intact without invalid pixels
+PASS: HUD drawn after the grade retains its own colors
+PASS: World pass is disabled behind menus and wheel art
+PASS: Color pass precedes atmospheric effects and never intercepts movement
+PASS: Vivid menu opens: home
+PASS: Vivid menu opens: shop
+PASS: Vivid menu opens: garage
+PASS: Vivid menu opens: cosmetics
+PASS: Vivid menu opens: locations
+VIVID COLOR: 20 checks, 0 failures

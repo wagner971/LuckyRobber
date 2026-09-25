@@ -1,0 +1,14 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Mansion keeps its original loot, cargo and value
+MEASURE mansion_v2_full_clear 76.60s / 80s | $5170 | cargo 38
+MANSION DIAGNOSTIC circuits=[10.72, 10.78, 9.32, 9.87, 5.72, 6.42, 6.4, 3.97, 6.83, 6.58] types=["large_statue", "piano", "small_safe", "small_safe", "fridge", "gaming_pc", "gaming_pc", "small_tv", "toilet", "monitor"] alarm_at=56.3499999999981 remaining=3.40000000000326
+PASS: Every Mansion wing and its heavy loot can be cleared physically
+PASS: Full clear banks the unchanged Mansion inventory
+MEASURE mansion_v2_rush 44.02s / 55s | $3880 | cargo 26
+PASS: Mansion rush contract remains physically solvable
+MEASURE mansion_v2_small_van 21.50s / 60s | $2500 | cargo 14
+PASS: Mansion small_van contract remains physically solvable
+MEASURE mansion_v2_client_order 40.68s / 50s | $3500 | cargo 22
+PASS: Mansion client_order contract remains physically solvable
+MANSION V2 ROUTES: 6 checks, 0 failures

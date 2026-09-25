@@ -1,0 +1,8 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+FAIL: Repickup adds no noise for same instance
+FAIL: Repeated callback is idempotent
+FAIL: Threshold equality triggers alarm; 30 becomes exactly12
+FAIL: Paused alarm timer does not decrease
+FAIL: Escape after alarm banks both items
+FAIL: No later sale pays the same loot twice

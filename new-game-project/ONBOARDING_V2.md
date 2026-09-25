@@ -1,0 +1,9 @@
+# ONBOARDING V2 — 0.9.28
+
+Pe profil nou, jocul pornește direct într-un garaj mic, diferit de Apartment. Primul cadru arată personajul, televizorul iluminat și gestul de mișcare. Tutorialul cere, în ordine, TV, PC și scaun. Nu consumă timp și nu poate declanșa alarma. După prima livrare apare suma din van; după a doua, când vanul este aproape plin, apare capacitatea; după a treia apare butonul Escape. Vanul pleacă scurt pe ecran, apoi începe automat primul Apartment, fără un ecran „Tutorial Complete”. Replay-ul din Settings rămâne disponibil și nu acordă bani suplimentari.
+
+Apartment este împărțit în trei lecții prin primele trei joburi normale reușite. Primul are timerul de 60 s, fără zgomot activ și fără obiectele care cer Strength 2. Al doilea adaugă zgomotul și o fereastră iertătoare de 10 s după alarmă. Al treilea folosește regulile normale și arată obiectele încuiate de Strength. Pentru profilurile cu progres anterior, aceste etape sunt sărite; obiectivele și salvarea veche sunt păstrate.
+
+La primul haul, Sell este singura decizie disponibilă și are un indicator vizual. După prima sau a doua reușită, Results recomandă un singur upgrade, Carry Speed; cumpărarea lui duce direct înapoi la Apartment. Amanetul devine accesibil după al treilea jaf. Hideout-ul apare la prima relansare după un jaf sau la 24 h de la primul jaf, astfel încât se păstrează motivul de revenire fără blocarea permanentă a colecției. Profilele vechi rămân cu Pawn și Hideout accesibile. Buildul DEV resetează progresul la fiecare lansare, conform setării proiectului, iar buildul persistent salvează progresul.
+
+Verificări: 35 de aserțiuni pentru progresie, HUD, economie și relansare; ruta fizică a celor trei livrări; primul launch automat; teste de gameplay, UI și salvare. Capturi: [început 450×800](tests/onboarding_v2_move_450x800.png), [TV 450×800](tests/onboarding_v2_tv_450x800.png), [TV 720×1280](tests/onboarding_v2_tv_720x1280.png).

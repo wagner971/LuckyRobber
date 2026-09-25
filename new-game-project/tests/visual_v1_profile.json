@@ -1,0 +1,116 @@
+{
+	"bonuses": [],
+	"contract_bonuses": [],
+	"contracts": {
+		"apartment.client_order": false,
+		"apartment.rush": false,
+		"apartment.small_van": false,
+		"electronics.client_order": false,
+		"electronics.rush": false,
+		"electronics.small_van": false,
+		"house.client_order": false,
+		"house.rush": false,
+		"house.small_van": false,
+		"mansion.client_order": false,
+		"mansion.rush": false,
+		"mansion.small_van": false,
+		"museum.client_order": false,
+		"museum.rush": false,
+		"museum.small_van": false,
+		"villa.client_order": false,
+		"villa.rush": false,
+		"villa.small_van": false
+	},
+	"cosmetics": {
+		"equipped": {
+			"set": "set_midnight",
+			"suit": "",
+			"van": ""
+		},
+		"owned": [
+			"set_midnight"
+		]
+	},
+	"failures": 2,
+	"mode_stats": {
+		"client_order": {
+			"failures": 1,
+			"successes": 0
+		},
+		"normal": {
+			"failures": 0,
+			"successes": 0
+		},
+		"rush": {
+			"failures": 0,
+			"successes": 0
+		},
+		"small_van": {
+			"failures": 1,
+			"successes": 0
+		}
+	},
+	"objectives": {
+		"apartment": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"electronics": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"house": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"mansion": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		},
+		"museum": {
+			"cash": true,
+			"full_clear": false,
+			"signature": true
+		},
+		"villa": {
+			"cash": false,
+			"full_clear": false,
+			"signature": false
+		}
+	},
+	"records": {
+		"client_order": {},
+		"normal": {},
+		"rush": {},
+		"small_van": {}
+	},
+	"schema_version": 3,
+	"successes": 0,
+	"trophies": [
+		"flamingo",
+		"bust",
+		"villa_piano",
+		"electronics_vending",
+		"mansion_statue",
+		"museum_crown"
+	],
+	"unlocked": [
+		"apartment",
+		"house",
+		"villa",
+		"electronics",
+		"mansion",
+		"museum"
+	],
+	"upgrades": {
+		"capacity": 6,
+		"carry": 5,
+		"grip": 5,
+		"strength": 5
+	},
+	"wallet": 20000
+}

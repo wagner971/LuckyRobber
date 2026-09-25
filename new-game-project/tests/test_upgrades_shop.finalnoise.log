@@ -1,0 +1,26 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Five compact power-up cards are present
+PASS: Next target states the loot goal
+PASS: Strength teases the next recognizable loot
+PASS: Strength advertises its immediate handling benefit
+PASS: Cards show the stronger immediate benefit without formulas
+PASS: Technical formulas and DEV controls stay out of the default shop
+PASS: Live 3D preview responds to Strength
+PASS: Selecting Carry updates the live preview
+PASS: Selecting Van Space switches preview focus
+PASS: Van Space shows current cargo boxes and the next box
+PASS: Selecting Noise shows a live noise meter
+PASS: Next Target jumps to the needed power-up
+PASS: Detailed formulas start collapsed
+PASS: Formula remains available on demand
+PASS: Buying Strength keeps progression and price intact
+PASS: Purchase keeps focus and shows an unlock celebration
+PASS: Strength purchase names all three newly unlocked items
+PASS: Selected level progress starts at the previous value
+PASS: Progress and wallet animate to the purchased state
+PASS: Power-up reveal clears itself after about 0.8 seconds
+PASS: Higher tiers reveal only their newly unlocked loot
+PASS: Leaving the shop immediately clears the power-up effect
+PASS: Shop fits a larger portrait viewport
+UPGRADES SHOP SUMMARY: 23 checks, 0 failures

@@ -1,0 +1,18 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Dev launches use memory-only profile
+PASS: Every dev launch starts with zero money and fresh progress
+PASS: DEV button visible on location screen
+PASS: DEV maxes all five abilities, bypassing tier caps
+PASS: DEV only changes abilities, not money or campaign
+PASS: Button confirms MAX and disables repeated use
+PASS: MAX abilities apply to actual next round
+PASS: DEV action cannot change abilities during a round
+PASS: DEV also available in shop
+PASS: Progress survives menu and round changes within current session
+PASS: Second launch resets abilities, wallet and objectives
+PASS: Dev save leaves existing disk data untouched
+PASS: Session-only load ignores existing disk data
+PASS: DEV hidden when development mode disabled
+PASS: DEV disabled action cannot bypass progression
+DEV SUMMARY: 15 checks, 0 failures

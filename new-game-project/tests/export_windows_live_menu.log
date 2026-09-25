@@ -1,0 +1,307 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+[   0% ] _update_scan_actions | Started Scanning actions... (81 steps)
+[   0% ] _update_scan_actions | frame_000.png
+[   1% ] _update_scan_actions | frame_001.png
+[   2% ] _update_scan_actions | frame_002.png
+[   3% ] _update_scan_actions | frame_003.png
+[   4% ] _update_scan_actions | frame_004.png
+[   6% ] _update_scan_actions | frame_005.png
+[   7% ] _update_scan_actions | frame_006.png
+[   8% ] _update_scan_actions | frame_007.png
+[   9% ] _update_scan_actions | frame_008.png
+[  10% ] _update_scan_actions | frame_009.png
+[  12% ] _update_scan_actions | frame_010.png
+[  13% ] _update_scan_actions | frame_011.png
+[  14% ] _update_scan_actions | frame_012.png
+[  15% ] _update_scan_actions | frame_013.png
+[  17% ] _update_scan_actions | frame_014.png
+[  18% ] _update_scan_actions | frame_015.png
+[  19% ] _update_scan_actions | frame_016.png
+[  20% ] _update_scan_actions | frame_017.png
+[  21% ] _update_scan_actions | frame_018.png
+[  23% ] _update_scan_actions | frame_019.png
+[  24% ] _update_scan_actions | frame_020.png
+[  25% ] _update_scan_actions | frame_021.png
+[  26% ] _update_scan_actions | frame_022.png
+[  28% ] _update_scan_actions | frame_023.png
+[  29% ] _update_scan_actions | frame_024.png
+[  30% ] _update_scan_actions | frame_025.png
+[  31% ] _update_scan_actions | frame_026.png
+[  32% ] _update_scan_actions | frame_027.png
+[  34% ] _update_scan_actions | frame_028.png
+[  35% ] _update_scan_actions | frame_029.png
+[  36% ] _update_scan_actions | frame_030.png
+[  37% ] _update_scan_actions | frame_031.png
+[  39% ] _update_scan_actions | frame_032.png
+[  40% ] _update_scan_actions | frame_033.png
+[  41% ] _update_scan_actions | frame_034.png
+[  42% ] _update_scan_actions | frame_035.png
+[  43% ] _update_scan_actions | frame_036.png
+[  45% ] _update_scan_actions | frame_037.png
+[  46% ] _update_scan_actions | frame_038.png
+[  47% ] _update_scan_actions | frame_039.png
+[  48% ] _update_scan_actions | frame_040.png
+[  50% ] _update_scan_actions | frame_041.png
+[  51% ] _update_scan_actions | frame_042.png
+[  52% ] _update_scan_actions | frame_043.png
+[  53% ] _update_scan_actions | frame_044.png
+[  54% ] _update_scan_actions | frame_045.png
+[  56% ] _update_scan_actions | frame_046.png
+[  57% ] _update_scan_actions | frame_047.png
+[  58% ] _update_scan_actions | frame_048.png
+[  59% ] _update_scan_actions | frame_049.png
+[  60% ] _update_scan_actions | frame_050.png
+[  62% ] _update_scan_actions | frame_051.png
+[  63% ] _update_scan_actions | frame_052.png
+[  64% ] _update_scan_actions | frame_053.png
+[  65% ] _update_scan_actions | frame_054.png
+[  67% ] _update_scan_actions | frame_055.png
+[  68% ] _update_scan_actions | frame_056.png
+[  69% ] _update_scan_actions | frame_057.png
+[  70% ] _update_scan_actions | frame_058.png
+[  71% ] _update_scan_actions | frame_059.png
+[  73% ] _update_scan_actions | frame_060.png
+[  74% ] _update_scan_actions | frame_061.png
+[  75% ] _update_scan_actions | frame_062.png
+[  76% ] _update_scan_actions | frame_063.png
+[  78% ] _update_scan_actions | frame_064.png
+[  79% ] _update_scan_actions | frame_065.png
+[  80% ] _update_scan_actions | frame_066.png
+[  81% ] _update_scan_actions | frame_067.png
+[  82% ] _update_scan_actions | frame_068.png
+[  84% ] _update_scan_actions | frame_069.png
+[  85% ] _update_scan_actions | frame_070.png
+[  86% ] _update_scan_actions | frame_071.png
+[  87% ] _update_scan_actions | frame_072.png
+[  89% ] _update_scan_actions | frame_073.png
+[  90% ] _update_scan_actions | frame_074.png
+[  91% ] _update_scan_actions | menu_collection_midnight.png
+[  92% ] _update_scan_actions | menu_collection_plum.png
+[  93% ] _update_scan_actions | menu_home.png
+[  95% ] _update_scan_actions | menu_home_midnight.png
+[  96% ] _update_scan_actions | menu_jobs_special.png
+[  97% ] _update_scan_actions | menu_upgrades.png
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started (Re)Importing Assets (79 steps)
+[   0% ] reimport | Preparing files to reimport...
+[   1% ] reimport | Preparing files to reimport...
+[   2% ] reimport | Preparing files to reimport...
+[   3% ] reimport | Preparing files to reimport...
+[   5% ] reimport | Preparing files to reimport...
+[   6% ] reimport | Preparing files to reimport...
+[   7% ] reimport | Preparing files to reimport...
+[   8% ] reimport | Preparing files to reimport...
+[  10% ] reimport | Preparing files to reimport...
+[  11% ] reimport | Preparing files to reimport...
+[  12% ] reimport | Preparing files to reimport...
+[  13% ] reimport | Preparing files to reimport...
+[  15% ] reimport | Preparing files to reimport...
+[  16% ] reimport | Preparing files to reimport...
+[  17% ] reimport | Preparing files to reimport...
+[  18% ] reimport | Preparing files to reimport...
+[  20% ] reimport | Preparing files to reimport...
+[  21% ] reimport | Preparing files to reimport...
+[  22% ] reimport | Preparing files to reimport...
+[  23% ] reimport | Preparing files to reimport...
+[  25% ] reimport | Preparing files to reimport...
+[  26% ] reimport | Preparing files to reimport...
+[  27% ] reimport | Preparing files to reimport...
+[  28% ] reimport | Preparing files to reimport...
+[  30% ] reimport | Preparing files to reimport...
+[  31% ] reimport | Preparing files to reimport...
+[  32% ] reimport | Preparing files to reimport...
+[  33% ] reimport | Preparing files to reimport...
+[  35% ] reimport | Preparing files to reimport...
+[  36% ] reimport | Preparing files to reimport...
+[  37% ] reimport | Preparing files to reimport...
+[  38% ] reimport | Preparing files to reimport...
+[  40% ] reimport | Preparing files to reimport...
+[  41% ] reimport | Preparing files to reimport...
+[  42% ] reimport | Preparing files to reimport...
+[  43% ] reimport | Preparing files to reimport...
+[  45% ] reimport | Preparing files to reimport...
+[  46% ] reimport | Preparing files to reimport...
+[  47% ] reimport | Preparing files to reimport...
+[  48% ] reimport | Preparing files to reimport...
+[  50% ] reimport | Preparing files to reimport...
+[  51% ] reimport | Preparing files to reimport...
+[  52% ] reimport | Preparing files to reimport...
+[  53% ] reimport | Preparing files to reimport...
+[  55% ] reimport | Preparing files to reimport...
+[  56% ] reimport | Preparing files to reimport...
+[  57% ] reimport | Preparing files to reimport...
+[  58% ] reimport | Preparing files to reimport...
+[  60% ] reimport | Preparing files to reimport...
+[  61% ] reimport | Preparing files to reimport...
+[  62% ] reimport | Preparing files to reimport...
+[  63% ] reimport | Preparing files to reimport...
+[  65% ] reimport | Preparing files to reimport...
+[  66% ] reimport | Preparing files to reimport...
+[  67% ] reimport | Preparing files to reimport...
+[  68% ] reimport | Preparing files to reimport...
+[  70% ] reimport | Preparing files to reimport...
+[  71% ] reimport | Preparing files to reimport...
+[  72% ] reimport | Preparing files to reimport...
+[  73% ] reimport | Preparing files to reimport...
+[  75% ] reimport | Preparing files to reimport...
+[  76% ] reimport | Preparing files to reimport...
+[  77% ] reimport | Preparing files to reimport...
+[  78% ] reimport | Preparing files to reimport...
+[  80% ] reimport | Preparing files to reimport...
+[  81% ] reimport | Preparing files to reimport...
+[  82% ] reimport | Preparing files to reimport...
+[  83% ] reimport | Preparing files to reimport...
+[  85% ] reimport | Preparing files to reimport...
+[  86% ] reimport | Preparing files to reimport...
+[  87% ] reimport | Preparing files to reimport...
+[  88% ] reimport | Preparing files to reimport...
+[  90% ] reimport | Preparing files to reimport...
+[  91% ] reimport | Preparing files to reimport...
+[  92% ] reimport | Preparing files to reimport...
+[  93% ] reimport | Preparing files to reimport...
+[  95% ] reimport | Preparing files to reimport...
+[  96% ] reimport | Preparing files to reimport...
+[  97% ] reimport | Preparing files to reimport...
+[   0% ] reimport | Executing pre-reimport operations...
+[   0% ] reimport | frame_058.png
+[   1% ] reimport | frame_057.png
+[   2% ] reimport | frame_056.png
+[   3% ] reimport | frame_055.png
+[   5% ] reimport | frame_054.png
+[   6% ] reimport | frame_053.png
+[   7% ] reimport | frame_052.png
+[   8% ] reimport | frame_051.png
+[  10% ] reimport | frame_050.png
+[  11% ] reimport | frame_049.png
+[  12% ] reimport | frame_048.png
+[  13% ] reimport | frame_047.png
+[  15% ] reimport | frame_046.png
+[  16% ] reimport | frame_045.png
+[  17% ] reimport | frame_044.png
+[  18% ] reimport | frame_043.png
+[  20% ] reimport | frame_042.png
+[  21% ] reimport | frame_041.png
+[  22% ] reimport | frame_040.png
+[  23% ] reimport | menu_upgrades.png
+[  25% ] reimport | menu_home_midnight.png
+[  26% ] reimport | menu_collection_plum.png
+[  27% ] reimport | menu_collection_midnight.png
+[  28% ] reimport | frame_074.png
+[  30% ] reimport | frame_073.png
+[  31% ] reimport | frame_072.png
+[  32% ] reimport | frame_071.png
+[  33% ] reimport | frame_070.png
+[  35% ] reimport | frame_069.png
+[  36% ] reimport | frame_068.png
+[  37% ] reimport | frame_067.png
+[  38% ] reimport | frame_066.png
+[  40% ] reimport | frame_065.png
+[  41% ] reimport | frame_064.png
+[  42% ] reimport | frame_063.png
+[  43% ] reimport | frame_062.png
+[  45% ] reimport | frame_061.png
+[  46% ] reimport | frame_060.png
+[  47% ] reimport | frame_059.png
+[  48% ] reimport | frame_019.png
+[  50% ] reimport | frame_018.png
+[  51% ] reimport | frame_017.png
+[  52% ] reimport | frame_016.png
+[  53% ] reimport | frame_015.png
+[  55% ] reimport | frame_014.png
+[  56% ] reimport | frame_013.png
+[  57% ] reimport | frame_012.png
+[  58% ] reimport | frame_011.png
+[  60% ] reimport | frame_010.png
+[  61% ] reimport | frame_009.png
+[  62% ] reimport | frame_008.png
+[  63% ] reimport | frame_007.png
+[  65% ] reimport | frame_006.png
+[  66% ] reimport | frame_005.png
+[  67% ] reimport | frame_004.png
+[  68% ] reimport | frame_003.png
+[  70% ] reimport | frame_002.png
+[  71% ] reimport | frame_001.png
+[  72% ] reimport | frame_000.png
+[  73% ] reimport | frame_039.png
+[  75% ] reimport | frame_038.png
+[  76% ] reimport | frame_037.png
+[  77% ] reimport | frame_036.png
+[  78% ] reimport | frame_035.png
+[  80% ] reimport | frame_034.png
+[  81% ] reimport | frame_033.png
+[  82% ] reimport | frame_032.png
+[  83% ] reimport | frame_031.png
+[  85% ] reimport | frame_030.png
+[  86% ] reimport | frame_029.png
+[  87% ] reimport | frame_028.png
+[  88% ] reimport | frame_027.png
+[  90% ] reimport | frame_026.png
+[  91% ] reimport | frame_025.png
+[  92% ] reimport | frame_024.png
+[  93% ] reimport | frame_023.png
+[  95% ] reimport | frame_022.png
+[  96% ] reimport | frame_021.png
+[  97% ] reimport | frame_020.png
+[  98% ] reimport | Finalizing Asset Import...
+[ DONE ] reimport
+
+[   0% ] reimport | Started (Re)Importing Assets (79 steps)
+[   0% ] reimport | Executing post-reimport operations...
+[ DONE ] reimport
+
+[   0% ] savepack | Started Packing (102 steps)
+[   1% ] savepack | Storing File: res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
+[   6% ] savepack | Storing File: res://scripts/balance.gdc
+[  11% ] savepack | Storing File: res://scripts/game_ui.gdc
+[  16% ] savepack | Storing File: res://scripts/level.gdc
+[  22% ] savepack | Storing File: res://scripts/local_log.gdc
+[  27% ] savepack | Storing File: res://scripts/loot_item.gdc
+[  32% ] savepack | Storing File: res://scripts/main.gdc
+[  36% ] savepack | Storing File: res://scripts/menu_character_preview.gdc
+[  42% ] savepack | Storing File: res://scripts/models.gdc
+[  47% ] savepack | Storing File: res://scripts/move_input.gdc
+[  52% ] savepack | Storing File: res://scripts/player.gdc
+[  57% ] savepack | Storing File: res://scripts/progression.gdc
+[  63% ] savepack | Storing File: res://scripts/run_manager.gdc
+[  67% ] savepack | Storing File: res://scripts/save_store.gdc
+[  72% ] savepack | Storing File: res://scripts/sound_bank.gdc
+[  77% ] savepack | Storing File: res://scripts/special_jobs.gdc
+[  83% ] savepack | Storing File: res://scripts/thief_visual.gdc
+[  88% ] savepack | Storing File: res://scripts/van.gdc
+[  93% ] savepack | Storing File: res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex
+[  93% ] savepack | Storing File: res://icon.svg.import
+[  93% ] savepack | Storing File: res://scenes/main.tscn.remap
+[  93% ] savepack | Storing File: res://scripts/balance.gd.remap
+[  93% ] savepack | Storing File: res://scripts/game_ui.gd.remap
+[  93% ] savepack | Storing File: res://scripts/level.gd.remap
+[  93% ] savepack | Storing File: res://scripts/local_log.gd.remap
+[  93% ] savepack | Storing File: res://scripts/loot_item.gd.remap
+[  93% ] savepack | Storing File: res://scripts/main.gd.remap
+[  93% ] savepack | Storing File: res://scripts/menu_character_preview.gd.remap
+[  93% ] savepack | Storing File: res://scripts/models.gd.remap
+[  93% ] savepack | Storing File: res://scripts/move_input.gd.remap
+[  93% ] savepack | Storing File: res://scripts/player.gd.remap
+[  93% ] savepack | Storing File: res://scripts/progression.gd.remap
+[  93% ] savepack | Storing File: res://scripts/run_manager.gd.remap
+[  93% ] savepack | Storing File: res://scripts/save_store.gd.remap
+[  93% ] savepack | Storing File: res://scripts/sound_bank.gd.remap
+[  93% ] savepack | Storing File: res://scripts/special_jobs.gd.remap
+[  93% ] savepack | Storing File: res://scripts/thief_visual.gd.remap
+[  93% ] savepack | Storing File: res://scripts/van.gd.remap
+[  93% ] savepack | Storing File: res://.godot/global_script_class_cache.cfg
+[  93% ] savepack | Storing File: res://icon.svg
+[  93% ] savepack | Storing File: res://.godot/uid_cache.bin
+[  93% ] savepack | Storing File: res://project.binary
+[ DONE ] savepack
+

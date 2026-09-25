@@ -1,0 +1,17 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Fresh player can claim immediately
+PASS: Gift pays exactly $300 and one diamond
+PASS: Gift cannot be claimed twice within 24 hours
+PASS: Countdown tracks elapsed seconds from claim
+PASS: Cooldown and diamonds persist after relaunch
+PASS: DEV fresh progress keeps gift cooldown without retaining cash
+PASS: Skipping a week does not reset or punish the gift
+PASS: Next countdown starts when gift is claimed
+PASS: Every fourth total claim gives a second diamond without a streak
+PASS: Schema 10 save migrates safely with backup
+PASS: Home shows the standalone gift icon without a text panel
+PASS: Home gift button claims the reward
+PASS: Claimed gift dims with no visible timer or caption
+PASS: Cooldown remains available in the tooltip
+DAILY GIFT SUMMARY: 14 checks, 0 failures

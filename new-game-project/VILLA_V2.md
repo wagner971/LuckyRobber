@@ -1,0 +1,9 @@
+# Villa V2 — prezentare și traseu
+
+Villa are acum un plan distinct de Suburban House. Am eliminat compartimentarea comună în patru pătrate egale și am construit un hol central continuu, cu patru camere accesibile direct: Lounge în față-stânga, Study în față-dreapta, Music Room în spate-stânga și Master Bath în spate-dreapta. Clădirea are o amprentă interioară de 12 × 12,35 unități față de 10 × 10,95 la Suburban House. Vanul rămâne cu spatele spre intrare.
+
+Camera de muzică pune pianul în centru, pe un covor, cu fotoliu și tablou. Lounge-ul are sofa, TV și o măsuță joasă. Study-ul adună safe-ul, PC-ul și monitorul lângă birou și raft. Master Bath are cada, WC-ul, două lavoare și oglinzi. Decorul nu are coliziuni și nu blochează loot-ul. Exteriorul înlocuiește garajul și gazonul domestic cu portic, coloane, grădini geometrice, curte pavată, alee lungă și poartă; compoziția ocupă ecranul portret până jos.
+
+Cele nouă obiecte furabile au tipuri diferite: piano, bathtub, toilet, sofa, small safe, gaming PC, small TV, chair și monitor. Valoarea totală este $3260, cu 28 cargo. Piano rămâne obiectivul semnătură și trofeul. Client Order cere piano + sofa + small TV. Pragul normal de $1600, Rush $2400 și Small Van $1600 rămân. Pentru traseul mai lung, Normal are 70 s și Villa are o fereastră de 26 s după alarmă; contractele își păstrează propriile durate.
+
+Trasee verificate cu deplasare, pickup, încărcare și escape reale: full clear la MAX 59,45/70 s; Rush 26,87/35 s; Small Van 22,00/60 s; Client Order 20,25/35 s. Fereastra lărgită a alarmei se aplică doar modului Normal, nu contractelor ori Special Job. Testul dedicat are 6/6, suitele de bază 79/79, Variety 194/194, Challenge V2 567/567 și orientarea vanului 8/8. [Captură 720×1280](tests/villa_v2_720x1280.png), [captură 450×800](tests/villa_v2_450x800.png) și [preview Jobs](assets/ui/jobs/villa.png).

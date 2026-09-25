@@ -1,0 +1,35 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Idle breath is visible but subtle
+PASS: Idle head gently turns
+PASS: Run alternates legs +25/-25 degrees
+PASS: Run arms oppose legs with wider swing
+PASS: Second half-step reverses legs
+PASS: Alarm speeds visuals by13 percent only
+PASS: Carry raises both arms
+PASS: Carry retains walking legs
+PASS: Heavy gait has larger, slower steps
+PASS: Heavy body leans backward and sways
+PASS: Carried object bounces with same step phase
+PASS: Pause freezes pose and carried object
+PASS: Cosmetics tint outfit while preserving face
+PASS: Cosmetic materials do not leak across characters
+PASS: Real player exposes named CarryAnchor
+PASS: Original movement collider unchanged
+PASS: Final150ms of real pickup crouches torso
+PASS: Pickup moves real loot into anchor exactly once
+PASS: Pickup animation adds no gameplay delay and arms recover
+PASS: Live alarm changes presentation without touching velocity
+PASS: Live loading sends arms forward
+PASS: Cargo commits before visual arc without early wallet credit
+PASS: Flight uses actual loaded item, no visual duplicate
+PASS: Load travels on a raised arc
+PASS: Pause freezes in-flight loot and delays WHAM
+PASS: Loaded object lands in exact existing cargo slot
+PASS: WHAM fires once and flight releases tween
+PASS: Van returns to neutral after impact
+PASS: Escape economy unaffected by new presentation
+PASS: Fridge activates comic heavy pose in live run
+PASS: Drop restores free arms and clears heavy pose
+PASS: Landing has a distinct short impact sound
+CHARACTER SUMMARY: 32 checks, 0 failures

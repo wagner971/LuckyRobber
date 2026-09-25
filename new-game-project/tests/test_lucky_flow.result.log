@@ -1,0 +1,16 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Block is loaded without using cargo or cash
+PASS: Loud Load adds real alarm noise
+PASS: Full Clear counts standard loot with a bonus block on board
+PASS: Big Haul pays 50% extra loot cash
+PASS: Success persists a single unrevealed effect
+PASS: Lucky effect appears after success Results
+PASS: Short reveal reaches Continue
+PASS: Acknowledge keeps the same next-run effect
+PASS: Level-completion gift follows without overlaying Lucky reveal
+PASS: Preparing a run keeps effect until movement
+PASS: First movement consumes effect
+PASS: Busted loses block and does not restore consumed effect
+PASS: Following run returns to standard rules
+LUCKY FLOW SUMMARY: 13 checks, 0 failures

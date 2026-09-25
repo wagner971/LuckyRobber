@@ -1,0 +1,6 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+SCRIPT ERROR: Invalid access to property or key 'custom_minimum_size' on a base object of type 'Nil'.
+   at: run_test (res://tests/test_jobs_v1.gd:171)
+   GDScript backtrace (most recent call first):
+       [0] run_test (res://tests/test_jobs_v1.gd:171)

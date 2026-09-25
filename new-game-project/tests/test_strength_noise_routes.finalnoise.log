@@ -1,0 +1,12 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+MEASURE strength_noise_min_speeds_apartment 39.08s / 60s | $1210 | cargo 17
+PASS: Full clear at legal Strength and minimum speed requirements: apartment
+ALARM apartment triggered at 27.4333333333331, left 4.34999999999962
+MEASURE strength_noise_min_speeds_house 56.30s / 60s | $2140 | cargo 23
+PASS: Full clear at legal Strength and minimum speed requirements: house
+ALARM house triggered at 44.4666666666654, left 0.16666666666649
+MEASURE strength_noise_min_speeds_villa 62.63s / 70s | $3260 | cargo 28
+PASS: Full clear at legal Strength and minimum speed requirements: villa
+ALARM villa triggered at 36.6999999999992, left 0.06666666666686
+STRENGTH ROUTES: 3 checks, 0 failures

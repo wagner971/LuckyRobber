@@ -1,0 +1,42 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Locked lab cannot start
+PASS: Earlier stolen originals become blueprints without unlocking the lab
+PASS: An empty lab escape does not unlock technology
+PASS: Lab unlocks autonomous production without scans
+PASS: Unknown blueprints cannot start
+PASS: Invalid and locked chambers cannot start
+PASS: First automatic cycle starts
+PASS: Repeated start cannot reset or duplicate a job
+PASS: Nothing paid before the exact first cycle
+PASS: First microscope replica pays $40 after 20 seconds
+PASS: Collect cannot pay twice
+PASS: Cycles restart automatically and partial progress survives collect
+PASS: Frequent claims do not delay or accelerate the next cycle
+PASS: Long absence fills only three copies, then pauses
+PASS: Blueprint swap cannot erase stored rewards
+PASS: Offline payout is capped at actual buffer contents
+PASS: No hidden offline backlog bursts after collect
+PASS: Changing blueprint explicitly restarts the cycle
+PASS: Clock rollback cannot pay or reset the high-water mark
+PASS: Clock catches up without double accrual
+PASS: Cannot buy a chamber without its full cost
+PASS: Chambers cost exactly $1,200 and $2,400
+PASS: Three chambers is the limit
+PASS: Additional chambers run concurrently
+PASS: Quantum Core replica pays $174 every 34 seconds in each chamber
+PASS: Idle state saves successfully
+PASS: Reload preserves accrued copies and partial progress
+PASS: Offline time across restart completes the next cycle exactly
+PASS: Schema 8 is backed up; unused scans convert once at $50 each
+PASS: Migration compensation cannot pay twice
+PASS: Existing in-flight copy retains its promised full original value
+PASS: Legacy reward settles once, then normal idle pricing applies
+PASS: Malformed jobs and counters are bounded during load
+PASS: Old pawn compensation still migrates exactly once
+PASS: Every blueprint obeys the 6%/chamber rate ceiling and 20% replica price ceiling
+PASS: Every first copy completes in 20–45 seconds
+PASS: Every blueprint is capped at nine stored copies total even after 24 hours
+PASS: 30-minute frequent collecting stays under 18% of the full-haul benchmark
+IDLE ECONOMY core: $174 / 34s; 3 slots $921.176470588235 per minute; buffer $1566
+DUPLICATION IDLE: 38 checks, 0 failures

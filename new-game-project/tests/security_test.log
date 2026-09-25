@@ -1,0 +1,61 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Security only in requested maps: apartment
+PASS: Security only in requested maps: house
+PASS: Security only in requested maps: villa
+PASS: Security only in requested maps: electronics
+PASS: Gentle sensor count: electronics
+PASS: Patrol stays clear of fixed furniture and walls: electronics
+PASS: Patrol does not cross loot: electronics
+PASS: Security only in requested maps: mansion
+PASS: Gentle sensor count: mansion
+PASS: Patrol stays clear of fixed furniture and walls: mansion
+PASS: Patrol does not cross loot: mansion
+PASS: Security only in requested maps: laboratory
+PASS: Gentle sensor count: laboratory
+PASS: Patrol stays clear of fixed furniture and walls: laboratory
+PASS: Patrol does not cross loot: laboratory
+PASS: Security only in requested maps: museum
+PASS: Gentle sensor count: museum
+PASS: Patrol stays clear of fixed furniture and walls: museum
+PASS: Patrol does not cross loot: museum
+PASS: Security only in requested maps: pyramid
+PASS: Security only in requested maps: castle
+PASS: Camera sees a player in its clear cone
+PASS: Camera cannot see behind itself
+PASS: Camera has finite range
+PASS: Camera cannot see outside its cone
+PASS: A real wall blocks detection
+PASS: Displayed vision cone stops at the same wall
+PASS: A brief crossing only raises suspicion
+PASS: Leaving sight clears suspicion quickly
+PASS: Continuous detection costs exactly two seconds
+PASS: Detection neither triggers police nor loses the run
+PASS: Pause freezes patrol and cooldown
+PASS: Shared cooldown prevents overlapping sensors from chaining penalties
+PASS: Electronics has at most four seconds of security penalties
+PASS: Reached budget disables further catches
+PASS: Police countdown suspends security penalties
+PASS: Last ten seconds never get an extra security penalty
+PASS: Short challenge modes permit only one catch
+MEASURE security_live_electronics 55.02s / 65s | $4060 | cargo 32
+PASS: Full physical route with live security at required speed levels: electronics
+SECURITY CATCHES electronics 0 time_lost=0.0 remaining=2.88333333333307
+MEASURE security_worst_electronics 55.02s / 65s | $4060 | cargo 32
+PASS: Full clear remains possible after maximum penalty budget: electronics
+MEASURE security_live_mansion 75.23s / 85s | $5170 | cargo 38
+PASS: Full physical route with live security at required speed levels: mansion
+SECURITY CATCHES mansion 0 time_lost=0.0 remaining=9.76666666667028
+MEASURE security_worst_mansion 75.23s / 85s | $5170 | cargo 38
+PASS: Full clear remains possible after maximum penalty budget: mansion
+MEASURE security_live_laboratory 68.65s / 90s | $7250 | cargo 39
+PASS: Full physical route with live security at required speed levels: laboratory
+SECURITY CATCHES laboratory 0 time_lost=0.0 remaining=16.2500000000008
+MEASURE security_worst_laboratory 68.65s / 90s | $7250 | cargo 39
+PASS: Full clear remains possible after maximum penalty budget: laboratory
+MEASURE security_live_museum 61.02s / 85s | $9700 | cargo 45
+PASS: Full physical route with live security at required speed levels: museum
+SECURITY CATCHES museum 0 time_lost=0.0 remaining=17.1666666666671
+MEASURE security_worst_museum 61.02s / 85s | $9700 | cargo 45
+PASS: Full clear remains possible after maximum penalty budget: museum
+SECURITY CHECKS 46; FAILURES 0

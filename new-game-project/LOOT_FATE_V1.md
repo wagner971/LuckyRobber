@@ -1,0 +1,13 @@
+# Loot Fate V1 — 0.9.21
+
+După fiecare evadare reușită, fiecare obiect încărcat în van apare separat, cu modelul lui 3D. Jucătorul alege **Sell Now** (valoarea de bază intră imediat în wallet), **Pawn** (obiectul ocupă un raft și se vinde singur mai scump după un timp) sau **Keep in Hideout** (obiectul intră în stash). Rezultatul apare după ultimul obiect și arată câte au fost vândute, amanetate și păstrate. Bonusurile de obiectiv, contract și Rush se plătesc la evadare; obiectivele continuă să se bazeze pe valoarea loot-ului scăpat, indiferent de soarta lui.
+
+Ecranul Collection a devenit **Hideout**, cu o cameră 3D și șase sloturi fixe: screen, seat, kitchen, gaming, curio și wildcard. Tap pe un slot trece prin obiectele compatibile păstrate. Home Comfort (screen + seat + kitchen) adaugă 10% la prețurile viitoare de amanet; Game Den (screen + gaming + curio) scurtează vânzările viitoare cu 10%. Camera își schimbă stilul din garaj în apartament, vilă și buncăr după progresia capitolelor. Trophy Shelf rămâne accesibil din Hideout și din popup-ul de trofeu.
+
+Amanetul pornește cu două rafturi. Upgrade-urile la Clerk și Black Market adaugă rafturi și reduc timpul de vânzare; ultimul nivel crește și prețul. Un obiect listat se vinde o singură dată și dispare de pe raft; venitul așteaptă în cash register până când jucătorul apasă **Collect Cash**. Obiectele păstrate pot fi listate ulterior, fiind scoase atunci din slotul de decor. Timpul offline este limitat la 6 ore per revenire. Amanetul nu creează obiecte noi și nu poate înlocui jafurile.
+
+Starea obiectelor, rafturile, timerul, banii din casă și alegerea incompletă sunt salvate. Schema 6 migrează la schema 7 cu backup al profilului original. DEV continuă să pornească de la zero la fiecare lansare conform setării de dezvoltare; progresul offline persistent se poate verifica într-un build cu DEV dezactivat. Butonul de dublare prin reclamă rămâne neimplementat până la alegerea și integrarea unui furnizor de rewarded ads; nu apare o promisiune nefuncțională în UI.
+
+Run-ul introductiv plătește încă automat, ca parte a tutorialului; alegerile încep odată cu jafurile normale. Buildurile persistente se află în `../builds/windows/STEAL EVERYTHING Persistent.exe` și `../builds/android/steal-everything-persistent-debug.apk`; cele DEV se resetează la fiecare pornire. Pe Android, variantele folosesc același identificator de aplicație și se instalează alternativ.
+
+Validare: [testul dedicat](tests/test_loot_economy.gd) acoperă alegerile, plata o singură dată, vânzarea offline, colectarea, salvarea și migrarea. Capturi: [alegerea obiectului](tests/loot_choice.png), [Hideout](tests/loot_hideout.png), [amanet](tests/loot_pawn.png), [rezultate](tests/loot_results.png).

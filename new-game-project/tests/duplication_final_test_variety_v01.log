@@ -1,0 +1,214 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+PASS: Fresh interval valid, empty cycle
+PASS: Exact threshold 2, normal 1
+PASS: Exact threshold 2, normal 2
+PASS: Offer belongs to triggering location
+PASS: Ignoring eight normals freezes one identical pending offer
+PASS: READY special abandon preserves offer
+PASS: Started special cannot be launched twice
+PASS: Consumed offer begins fresh 2-4 cycle
+PASS: No consecutive special after one normal
+PASS: Fresh interval valid, empty cycle
+PASS: Exact threshold 3, normal 1
+PASS: Exact threshold 3, normal 2
+PASS: Exact threshold 3, normal 3
+PASS: Offer belongs to triggering location
+PASS: Ignoring eight normals freezes one identical pending offer
+PASS: READY special abandon preserves offer
+PASS: Started special cannot be launched twice
+PASS: Consumed offer begins fresh 2-4 cycle
+PASS: No consecutive special after one normal
+PASS: Fresh interval valid, empty cycle
+PASS: Exact threshold 4, normal 1
+PASS: Exact threshold 4, normal 2
+PASS: Exact threshold 4, normal 3
+PASS: Exact threshold 4, normal 4
+PASS: Offer belongs to triggering location
+PASS: Ignoring eight normals freezes one identical pending offer
+PASS: READY special abandon preserves offer
+PASS: Started special cannot be launched twice
+PASS: Consumed offer begins fresh 2-4 cycle
+PASS: No consecutive special after one normal
+PASS: Mastery and READY normal never advance scheduler
+PASS: Only Rush Hour implemented
+PASS: First ever launch saves chosen interval immediately
+PASS: First-launch interval survives restart without playing
+PASS: Unfinished NORMAL restart neither counts nor rerolls
+PASS: V2.1 schema4 safely migrates to5 with backup
+PASS: Existing money, levels, unlocks, medals, records, cosmetics, trophies and statistics identical
+PASS: Migration creates valid fresh special cycle
+PASS: Reload never rerolls migration interval
+PASS: Reload never rerolls migration interval
+PASS: Reload never rerolls migration interval
+PASS: Reload never rerolls migration interval
+PASS: Reload never rerolls migration interval
+PASS: Pending offer and permanent progress survive full reload
+PASS: Pending offer and permanent progress survive full reload
+PASS: Pending offer and permanent progress survive full reload
+PASS: Pending offer and permanent progress survive full reload
+PASS: Pending offer and permanent progress survive full reload
+PASS: Hard-close after special starts consumes attempt without reward
+PASS: Recovery persisted once; next restart does not consume or reroll again
+PASS: NORMAL success counts once
+PASS: Duplicate result cannot count again
+PASS: Second completed NORMAL announces job in same location
+PASS: Actual normal still playable while offer frozen
+PASS: Rush35 with full normal capacity, no mastery contract
+PASS: Started job remains reserved until outcome
+PASS: SPECIAL success consumes and resets
+PASS: Duplicate finish cannot reroll special cycle
+PASS: NORMAL failure counts once
+PASS: Duplicate result cannot count again
+PASS: Second completed NORMAL announces job in same location
+PASS: Actual normal still playable while offer frozen
+PASS: Rush35 with full normal capacity, no mastery contract
+PASS: Started job remains reserved until outcome
+PASS: SPECIAL failure consumes and resets
+PASS: Duplicate finish cannot reroll special cycle
+PASS: NORMAL abandon counts once
+PASS: Duplicate result cannot count again
+PASS: Second completed NORMAL announces job in same location
+PASS: Actual normal still playable while offer frozen
+PASS: Rush35 with full normal capacity, no mastery contract
+PASS: Started job remains reserved until outcome
+PASS: SPECIAL abandon consumes and resets
+PASS: Duplicate finish cannot reroll special cycle
+PASS: READY pause and abandon do not consume
+PASS: Actual NORMAL READY abandon excluded
+PASS: Actual Mastery rush excluded
+PASS: Actual Mastery small_van excluded
+PASS: Actual Mastery client_order excluded
+PASS: Sofa, bathtub and Rush bonus bank immediately
+PASS: No extra sale can pay the same items
+PASS: Base loot awards career cash, never Mastery medals or rewards
+PASS: Base650 + bonus260 does not complete $800 objective
+PASS: Only loaded loot banks for carried object
+PASS: Only loaded loot banks for dropped object
+PASS: Only loaded loot banks for loading object
+PASS: Timeout loses all secured and carried loot; bonus zero
+PASS: Full clear requires every loaded instance and successful escape
+PASS: Special full clear grants career objectives and actual trophy
+PASS: Rush484, unique250 and base1210 bank together
+PASS: No extra full-haul payment remains
+PASS: Special full-clear record cannot overwrite NORMAL or Mastery record
+PASS: Rush alarm remaining min(20,12)
+PASS: Special noise generated once per instance
+PASS: Rush alarm remaining min(8,12)
+PASS: Special noise generated once per instance
+PASS: Only timer changes in special rules apartment
+PASS: Same noise threshold and all upgrades apartment
+PASS: Only timer changes in special rules house
+PASS: Same noise threshold and all upgrades house
+PASS: Only timer changes in special rules villa
+PASS: Same noise threshold and all upgrades villa
+PASS: Only timer changes in special rules electronics
+PASS: Same noise threshold and all upgrades electronics
+PASS: Only timer changes in special rules mansion
+PASS: Same noise threshold and all upgrades mansion
+PASS: Only timer changes in special rules laboratory
+PASS: Same noise threshold and all upgrades laboratory
+PASS: Only timer changes in special rules museum
+PASS: Same noise threshold and all upgrades museum
+PASS: Only timer changes in special rules pyramid
+PASS: Same noise threshold and all upgrades pyramid
+PASS: Only timer changes in special rules castle
+PASS: Same noise threshold and all upgrades castle
+PASS: Simulation outcome 1 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 2 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation interval 2 before special 3
+PASS: Simulation specials never consecutive
+PASS: Simulation outcome 3 complete
+PASS: Simulation outcome 4 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 5 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 6 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 7 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation interval 4 before special 8
+PASS: Simulation specials never consecutive
+PASS: Simulation outcome 8 complete
+PASS: Simulation outcome 9 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 10 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation interval 2 before special 11
+PASS: Simulation specials never consecutive
+PASS: Simulation outcome 11 complete
+PASS: Simulation outcome 12 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 13 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 14 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 15 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation interval 4 before special 16
+PASS: Simulation specials never consecutive
+PASS: Simulation outcome 16 complete
+PASS: Simulation outcome 17 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 18 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation interval 2 before special 19
+PASS: Simulation specials never consecutive
+PASS: Simulation outcome 19 complete
+PASS: Simulation outcome 20 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 21 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 22 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation interval 3 before special 23
+PASS: Simulation specials never consecutive
+PASS: Simulation outcome 23 complete
+PASS: Simulation outcome 24 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 25 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 26 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 27 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation interval 4 before special 28
+PASS: Simulation specials never consecutive
+PASS: Simulation outcome 28 complete
+PASS: Simulation outcome 29 complete
+PASS: Simulation threshold stable and exact
+PASS: Simulation outcome 30 complete
+PASS: Simulation threshold stable and exact
+PASS: Thirty real round lifecycle outcomes; no long drought
+MEASURE apartment.rush_hour 16.78s / 35s | $840 | cargo 11
+PASS: Physical Rush Hour escape in apartment
+PASS: Physical route pays exact bonus and consumes job
+MEASURE house.rush_hour 26.78s / 35s | $1430 | cargo 14
+PASS: Physical Rush Hour escape in house
+PASS: Physical route pays exact bonus and consumes job
+MEASURE villa.rush_hour 26.87s / 35s | $2400 | cargo 18
+PASS: Physical Rush Hour escape in villa
+PASS: Physical route pays exact bonus and consumes job
+MEASURE electronics.rush_hour 29.73s / 35s | $3050 | cargo 21
+PASS: Physical Rush Hour escape in electronics
+PASS: Physical route pays exact bonus and consumes job
+MEASURE mansion.rush_hour 19.08s / 35s | $2000 | cargo 12
+PASS: Physical Rush Hour escape in mansion
+PASS: Physical route pays exact bonus and consumes job
+MEASURE laboratory.rush_hour 9.80s / 35s | $1600 | cargo 7
+PASS: Physical Rush Hour escape in laboratory
+PASS: Physical route pays exact bonus and consumes job
+MEASURE museum.rush_hour 27.18s / 35s | $6000 | cargo 24
+PASS: Physical Rush Hour escape in museum
+PASS: Physical route pays exact bonus and consumes job
+MEASURE pyramid.rush_hour 27.15s / 35s | $7750 | cargo 35
+PASS: Physical Rush Hour escape in pyramid
+PASS: Physical route pays exact bonus and consumes job
+MEASURE castle.rush_hour 29.48s / 35s | $8050 | cargo 35
+PASS: Physical Rush Hour escape in castle
+PASS: Physical route pays exact bonus and consumes job
+VARIETY SEQUENCE: N N S N N N N S N N S N N N N S N N S N N N S N N N N S N N
+VARIETY INTERVALS: [2, 4, 2, 4, 2, 3, 4]
+VARIETY SUMMARY: 200 checks, 0 failures
