@@ -1,3 +1,5 @@
+> **0.9.85:** textul copt în cadrele generate („LUCKY BLOCK / ONE HEIST. ONE TWIST.”) a fost șters din PNG-uri; titlul este acum text simplu desenat de `lucky_reveal.gd`, fără outline. Aceeași regulă pentru ESCAPED!/BUSTED! (Results), logo-ul Home și scena Lucky Wheel: fără text generat de AI în imagini.
+
 # Purple Lucky Blocks — 0.9.83
 
 Same layout, animation timings, interactions, spawn probability and effect mechanics. Positive card background, cube and ring recolored purple with ImageGen. Negative card retains warning red, with purple cracked cube and fragments. Live 3D model and run marker now purple with white question marks.

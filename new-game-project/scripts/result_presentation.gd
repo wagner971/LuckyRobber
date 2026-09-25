@@ -13,12 +13,12 @@ var replay: Button
 var home: Button
 var notice: Button
 var font: Font
-var reward_title: TextureRect
+var reward_title: Label
 var reward_cash: CashVisual
 var money_rain: ResultMoneyRain
 var animation_time := 0.0
 var celebrates := false
-var failure_title: TextureRect
+var failure_title: Label
 var failure_emblem: TextureRect
 var failure_sparks: CPUParticles2D
 
@@ -151,7 +151,7 @@ func create_failure() -> void:
 	failure_sparks.color_ramp = fade
 	canvas.add_child(failure_sparks)
 	failure_emblem = failure_sprite(preload("res://assets/ui/results/busted-emblem.png"),Rect2(306,488,329,334),"AnimatedFailureEmblem")
-	failure_title = failure_sprite(preload("res://assets/ui/results/busted-title.png"),Rect2(80,290,781,240),"AnimatedBusted")
+	failure_title = title_label("BUSTED!",Rect2(80,290,781,240),HudStyle.RED,"AnimatedBusted")
 
 func create_celebration() -> void:
 	var rays := ColorRect.new()
@@ -173,17 +173,24 @@ func create_celebration() -> void:
 	reward_cash.size = Vector2(540,340)
 	reward_cash.pivot_offset = reward_cash.size*0.5
 	canvas.add_child(reward_cash)
-	reward_title = TextureRect.new()
-	reward_title.name = "AnimatedEscaped"
-	reward_title.texture = preload("res://assets/ui/results/escaped-title.png")
-	reward_title.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	reward_title.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	reward_title.texture_filter = TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
-	reward_title.position = Vector2(80,290)
-	reward_title.size = Vector2(781,240)
-	reward_title.pivot_offset = reward_title.size*0.5
-	reward_title.mouse_filter = MOUSE_FILTER_IGNORE
-	canvas.add_child(reward_title)
+	reward_title = title_label("ESCAPED!",Rect2(80,290,781,240),Color("5cffb0"),"AnimatedEscaped")
+
+# Plain lettering, no outline: the headline is a real label, not baked artwork.
+func title_label(value: String, rect: Rect2, color: Color, node_name: String) -> Label:
+	var label := Label.new()
+	label.name = node_name
+	label.text = value
+	label.position = rect.position
+	label.size = rect.size
+	label.pivot_offset = rect.size*0.5
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	label.add_theme_font_override("font",font)
+	label.add_theme_font_size_override("font_size",150)
+	label.add_theme_color_override("font_color",color)
+	label.mouse_filter = MOUSE_FILTER_IGNORE
+	canvas.add_child(label)
+	return label
 
 func _process(delta: float) -> void:
 	if not is_visible_in_tree(): return
@@ -252,8 +259,6 @@ func label_at(value: String, rect: Rect2, pixels: int, color: Color) -> Label:
 	label.add_theme_font_size_override("font_size",pixels)
 	fit_text(label,rect.size.x,pixels)
 	label.add_theme_color_override("font_color",color)
-	label.add_theme_color_override("font_outline_color",Color("160423"))
-	label.add_theme_constant_override("outline_size",4)
 	label.mouse_filter = MOUSE_FILTER_IGNORE
 	canvas.add_child(label)
 	return label

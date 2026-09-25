@@ -40,8 +40,6 @@ func setup(profile: Dictionary, font: Font) -> void:
 		caption.add_theme_font_override("font", font)
 		caption.add_theme_font_size_override("font_size", 30)
 		caption.add_theme_color_override("font_color", Color.WHITE)
-		caption.add_theme_color_override("font_outline_color", Color("071533"))
-		caption.add_theme_constant_override("outline_size", 8)
 		caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		caption.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		caption.mouse_filter = Control.MOUSE_FILTER_IGNORE

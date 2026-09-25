@@ -58,8 +58,6 @@ func _ready() -> void:
 	question.text = "?"
 	question.add_theme_font_override("font",font)
 	question.add_theme_color_override("font_color",Color.WHITE)
-	question.add_theme_color_override("font_outline_color",Color("16123b"))
-	question.add_theme_constant_override("outline_size",12)
 	question.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	question.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(question)
@@ -222,8 +220,6 @@ func update_visual() -> void:
 
 func caption(value: String, center: Vector2, pixels: int, color: Color) -> void:
 	var at := center-Vector2(font.get_string_size(value,HORIZONTAL_ALIGNMENT_LEFT,-1,pixels).x/2,0)
-	var outline: Color = Color("100b35") if daily else LevelGifts.COLORS[rarity if revealed else int(elapsed/0.105)%4].darkened(0.94)
-	draw_string_outline(font,at,value,HORIZONTAL_ALIGNMENT_LEFT,-1,pixels,7,outline)
 	draw_string(font,at,value,HORIZONTAL_ALIGNMENT_LEFT,-1,pixels,color)
 
 func star(at: Vector2, radius: float, color: Color) -> void:

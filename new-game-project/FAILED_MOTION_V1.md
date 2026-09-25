@@ -24,7 +24,7 @@ Capture command: Godot --path . --script tests/capture_result_motion.gd -- --fai
 ## Assets and prompts
 Built-in image_gen.imagegen, edited from assets/ui/results/busted.png (the user's
 previous failure-screen reference). Saved assets:
-- assets/ui/results/busted-title.png
+- ESCAPED!/BUSTED! sunt acum Label-uri simple, fără outline (fără text generat de AI)
 - assets/ui/results/busted-emblem.png
 The existing assets/ui/results/alley-clean.png is reused as the background.
 

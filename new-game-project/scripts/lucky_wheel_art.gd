@@ -28,6 +28,7 @@ func setup(profile: Dictionary, font: Font, on_spin: Callable) -> void:
 	var material := ShaderMaterial.new()
 	material.shader = preload("res://assets/shaders/wheel_frame.gdshader")
 	front.material = material
+	label_at("LUCKY WHEEL", Rect2(120, 60, 701, 120), 92, font).add_theme_color_override("font_color", Color("ffd34d"))
 	result = label_at("Spin for rewards", Rect2(249, 200, 444, 48), 35, font)
 	var plate := StyleBoxFlat.new()
 	plate.bg_color = Color("10235c")
@@ -46,6 +47,9 @@ func setup(profile: Dictionary, font: Font, on_spin: Callable) -> void:
 		spin.add_theme_stylebox_override(state, style)
 	spin.pressed.connect(on_spin)
 	canvas.add_child(spin)
+	var spin_caption := label_at("SPIN", Rect2(160, 1300, 620, 196), 96, font)
+	spin_caption.add_theme_color_override("font_color", Color("f4fff0"))
+	spin_caption.name = "DailySpinCaption"
 	reset = label_at("1 FREE SPIN", Rect2(181, 1523, 578, 75), 38, font)
 	var status_plate := StyleBoxFlat.new()
 	status_plate.bg_color = Color("112858")
@@ -74,8 +78,6 @@ func label_at(value: String, rect: Rect2, pixels: int, font: Font) -> Label:
 	label.add_theme_font_override("font", font)
 	label.add_theme_font_size_override("font_size", pixels)
 	label.add_theme_color_override("font_color", Color("d5f7ff"))
-	label.add_theme_color_override("font_outline_color", Color("071332"))
-	label.add_theme_constant_override("outline_size", 5)
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	canvas.add_child(label)
 	return label

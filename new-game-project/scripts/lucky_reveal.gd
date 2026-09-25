@@ -92,11 +92,8 @@ func update_visual() -> void:
 	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE if gift.visible else SubViewport.UPDATE_DISABLED
 	queue_redraw()
 
-func lettering(value: String, baseline: Vector2, pixels: int, color: Color, edge: Color) -> void:
+func lettering(value: String, baseline: Vector2, pixels: int, color: Color, _edge: Color) -> void:
 	var at := baseline-Vector2(font.get_string_size(value,HORIZONTAL_ALIGNMENT_LEFT,-1,pixels).x/2,0)
-	var stroke := maxi(2,int(card.size.x*0.008))
-	draw_string_outline(font,at+Vector2(0,card.size.x*0.006),value,HORIZONTAL_ALIGNMENT_LEFT,-1,pixels,stroke+2,edge.darkened(0.45))
-	draw_string_outline(font,at,value,HORIZONTAL_ALIGNMENT_LEFT,-1,pixels,stroke,edge)
 	draw_string(font,at,value,HORIZONTAL_ALIGNMENT_LEFT,-1,pixels,color)
 
 func _draw() -> void:
@@ -108,6 +105,8 @@ func _draw() -> void:
 	var h := card.size.y
 	var center := card.position+card.size*Vector2(0.5,0.39)
 	var glow := Color("cf7aff") if good else Color("ffb124")
+	lettering("LUCKY BLOCK",Vector2(card.get_center().x,card.position.y+h*0.118),int(w*0.105),Color("f6e7ff") if good else Color("ffd7c4"),Color.BLACK)
+	lettering("ONE HEIST. ONE TWIST.",Vector2(card.get_center().x,card.position.y+h*0.160),int(w*0.040),Color("e2c4ff") if good else Color("ffc4ad"),Color.BLACK)
 	# Bounded animated rays and a separate hero; effect text remains live.
 	for i in range(14):
 		var angle := i*TAU/14+elapsed*0.045

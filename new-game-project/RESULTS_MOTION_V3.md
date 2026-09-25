@@ -24,8 +24,8 @@ captured frames; tests/capture_result_motion.gd can reproduce the capture.
 
 ## Art tools / saved assets
 Built-in image_gen.imagegen edited the previously supplied result reference.
-assets/ui/results/alley-clean.png and assets/ui/results/escaped-title.png are the
-new background and separate alpha sprite. The cash is the existing 3D mesh;
+assets/ui/results/alley-clean.png is the
+new background; the ESCAPED!/BUSTED! headlines are plain labels without outline (no AI-generated text). The cash is the existing 3D mesh;
 assets/ui/results/banknote.svg is a native vector currency particle.
 
 Background prompt:

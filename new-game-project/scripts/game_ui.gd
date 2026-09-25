@@ -1077,13 +1077,16 @@ func home(store: SaveStore) -> void:
 	settings.add_theme_constant_override("icon_max_width", 47)
 	settings.add_theme_stylebox_override("normal", menu_style(Color("7b09cb"), Color("b54bff"), 20))
 	settings.size_flags_horizontal = Control.SIZE_SHRINK_END
-	var logo = TextureRect.new()
+	var logo = Label.new()
 	logo.name = "HomeLogo"
-	logo.texture = MenuArt.texture("title")
-	logo.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	logo.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	logo.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
-	logo.custom_minimum_size.y = 235
+	logo.text = "LUCKY\nROBBER"
+	logo.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	logo.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	logo.add_theme_font_override("font", heavy_font)
+	logo.add_theme_font_size_override("font_size", 78)
+	logo.add_theme_color_override("font_color", PAPER)
+	logo.add_theme_constant_override("line_spacing", -18)
+	logo.custom_minimum_size.y = 200
 	logo.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	body.add_child(logo)
 	var preview = add_preview(body,store,"home",290)
