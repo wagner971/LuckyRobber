@@ -22,14 +22,12 @@ func test() -> void:
 		profile.data.objectives[location].cash = true
 		profile.data.objectives[location].signature = true
 	profile.data.apartment_final_job_completed = true
-	profile.data.upgrades.grip = 6
-	profile.data.upgrades.carry = 6
+	for key in Balance.UPGRADE_KEYS: profile.data.upgrades[key] = Balance.required_level(key, "mansion")
 	Progression.refresh(profile.data)
 	check(profile.unlocked("laboratory") and not profile.unlocked("museum"), "Mansion progression opens Laboratory before Museum")
 	profile.data.objectives.laboratory.cash = true
 	profile.data.objectives.laboratory.signature = true
-	profile.data.upgrades.grip = 7
-	profile.data.upgrades.carry = 7
+	for key in Balance.UPGRADE_KEYS: profile.data.upgrades[key] = Balance.required_level(key, "laboratory")
 	Progression.refresh(profile.data)
 	check(profile.unlocked("museum") and not profile.unlocked("pyramid"), "Two Laboratory objectives open Museum but not Chapter 2")
 	var legacy = SaveStore.new("res://tests/laboratory_legacy_profile.json")

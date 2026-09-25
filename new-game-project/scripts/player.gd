@@ -32,8 +32,11 @@ func _physics_process(delta: float) -> void:
 	if not enabled:
 		velocity = Vector3.ZERO
 		return
-	var desired = Vector3(direction.x, 0, direction.y) * Balance.BASE_SPEED * speed_factor
-	var rate = Balance.BASE_SPEED / (Balance.STOP_TIME if direction == Vector2.ZERO else Balance.ACCEL_TIME)
+	var top_speed = Balance.BASE_SPEED * speed_factor
+	var desired = Vector3(direction.x, 0, direction.y) * top_speed
+	# Acceleration and braking scale with the current top speed so stopping for a
+	# pickup takes the same 0.10 s at every Carry level.
+	var rate = top_speed / (Balance.STOP_TIME if direction == Vector2.ZERO else Balance.ACCEL_TIME)
 	velocity = velocity.move_toward(desired, rate * delta)
 	move_and_slide()
 	position.y = 0

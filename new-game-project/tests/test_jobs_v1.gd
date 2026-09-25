@@ -165,9 +165,8 @@ func run_test() -> void:
 	await create_timer(0.55).timeout
 	check(game.screen == "run" and game.current_mode == "normal", "Primary Play still starts a normal heist when the Final Job is blocked")
 	game.cleanup_run()
+	for key in Balance.UPGRADE_KEYS: game.store.data.upgrades[key] = Balance.required_level(key, "apartment")
 	game.store.data.upgrades.capacity = 10
-	game.store.data.upgrades.grip = 2
-	game.store.data.upgrades.carry = 2
 	game.ui.jobs_index = 0
 	game.action("locations")
 	await process_frame

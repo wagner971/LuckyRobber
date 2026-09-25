@@ -20,7 +20,7 @@ func test() -> void:
 	profile.data.objectives.castle.signature = true
 	Progression.refresh(profile.data)
 	check("pirate_ship" in profile.data.unlocked, "Castle completion opens Pirate Ship")
-	check(Balance.powerup_requirement("pirate_ship") == 11 and Balance.purchase_cap("carry",profile.data) == 20, "New tier has safe upgrade caps")
+	check(Balance.powerup_requirement("pirate_ship") == 14 and Balance.purchase_cap("carry",profile.data) == Balance.required_level("carry","pirate_ship"), "New tier caps match its loadout")
 	var old_save = profile.data.duplicate(true)
 	old_save.objectives.erase("pirate_ship")
 	old_save.unlocked.erase("pirate_ship")
@@ -34,8 +34,8 @@ func test() -> void:
 		check(row[1] not in seen and str(row[1]).begins_with("pirate_"), "Distinct thematic loot: "+row[1])
 		seen.append(row[1])
 		check(Duplication.source_location(row[1]) == "pirate_ship" and Duplication.duration(row[1]) <= 45, "Pirate loot uses bounded idle economy: "+row[1])
-	for speed in [20,11]:
-		profile.data.upgrades = {"strength":5,"grip":speed,"carry":speed,"capacity":20,"noise":1}
+	for speed in [20,Balance.required_level("grip","pirate_ship")]:
+		profile.data.upgrades = {"strength":5,"grip":speed,"carry":speed,"capacity":20,"noise":Balance.required_level("noise","pirate_ship")}
 		await new_session("pirate_ship","normal",profile)
 		check(not world.valid_drop(Vector3(6,0,-4),0.4), "Cannot drop cargo into the sea")
 		check(world.valid_drop(Vector3(1.0,0,-5),0.3), "Clear deck lane")

@@ -43,7 +43,7 @@ func test() -> void:
 		game.store.data.objectives[location_id].signature = true
 	game.store.data.objectives.museum.cash = true
 	game.store.data.objectives.museum.signature = true
-	game.store.data.upgrades.strength = 5
+	for key in Balance.UPGRADE_KEYS: game.store.data.upgrades[key] = Balance.required_level(key, "museum")
 	game.store.data.upgrades.capacity = 19
 	root.add_child(game)
 	game.ui.jobs_index = Balance.LOCATION_ORDER.find("museum")

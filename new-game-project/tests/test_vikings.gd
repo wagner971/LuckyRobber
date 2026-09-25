@@ -20,7 +20,7 @@ func test() -> void:
 	profile.data.objectives.pirate_ship.signature = true
 	Progression.refresh(profile.data)
 	check("vikings" in profile.data.unlocked, "Pirate Ship completion opens Viking Hall")
-	check(Balance.powerup_requirement("vikings") == 12 and Balance.purchase_cap("carry",profile.data) == 20, "New tier has safe upgrade caps")
+	check(Balance.powerup_requirement("vikings") == 16 and Balance.purchase_cap("carry",profile.data) == Balance.required_level("carry","vikings"), "New tier caps match its loadout")
 	var old_save = profile.data.duplicate(true)
 	old_save.objectives.erase("vikings")
 	old_save.unlocked.erase("vikings")
@@ -34,8 +34,8 @@ func test() -> void:
 		check(row[1] not in seen and str(row[1]).begins_with("viking_"), "Distinct thematic loot: "+row[1])
 		seen.append(row[1])
 		check(Duplication.source_location(row[1]) == "vikings" and Duplication.duration(row[1]) <= 45, "Viking loot uses bounded idle economy: "+row[1])
-	for speed in [20,12]:
-		profile.data.upgrades = {"strength":5,"grip":speed,"carry":speed,"capacity":20,"noise":1}
+	for speed in [20,Balance.required_level("grip","vikings")]:
+		profile.data.upgrades = {"strength":5,"grip":speed,"carry":speed,"capacity":20,"noise":Balance.required_level("noise","vikings")}
 		await new_session("vikings","normal",profile)
 		check(world.valid_drop(Vector3(1.15,0,-3),0.3), "Clear lane beside hearth")
 		for item in world.items: check(item.model.get_child_count()>0, "Visible model: "+item.data.type_id)

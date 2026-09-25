@@ -40,7 +40,7 @@ func run_test() -> void:
 	check(copy.contains("STEAL THE FRIDGE") and copy.contains("NEXT TARGET"), "Next target states the loot goal")
 	check(copy.contains("FRIDGE") and copy.contains("TOILET") and copy.contains("SOFA"), "Strength teases the next recognizable loot")
 	check(copy.contains("45% less noise"), "Strength advertises its immediate handling benefit")
-	check(copy.contains("+12% PICKUP SPEED") and copy.contains("HEAVIEST LOOT +17% SPEED") and copy.contains("8  →  10 CARGO") and copy.contains("-1% NOISE"), "Cards show the stronger immediate benefit without formulas")
+	check(copy.contains("+12% PICKUP SPEED") and copy.contains("WALK +2% · HEAVY LOOT +20%") and copy.contains("8  →  10 CARGO") and copy.contains("-1% NOISE"), "Cards show the stronger immediate benefit without formulas")
 	check(not copy.contains("m/s") and not copy.contains("+3% PER LEVEL") and not copy.contains("DEV ·"), "Technical formulas and DEV controls stay out of the default shop")
 	check(game.ui.shop_preview != null and game.ui.shop_preview.upgrade_focus == "strength" and game.ui.shop_preview.actor.carrying, "Live 3D preview responds to Strength")
 	if DisplayServer.get_name() != "headless":
@@ -79,7 +79,7 @@ func run_test() -> void:
 	var progress: ProgressBar = game.ui.upgrade_cards.strength.get_meta("progress_bar")
 	check(progress.value < 40.0, "Selected level progress starts at the previous value")
 	await create_timer(0.46).timeout
-	check(is_equal_approx(progress.value, 40.0) and game.ui.menu_wallet_label.text == "$1,500", "Progress and wallet animate to the purchased state")
+	check(is_equal_approx(progress.value, 40.0) and game.ui.menu_wallet_label.text == "$1,150", "Progress and wallet animate to the purchased state")
 	await create_timer(0.58).timeout
 	await process_frame
 	check(get_nodes_in_group("ui_juice_overlay").is_empty(), "Power-up reveal clears itself after about 0.8 seconds")

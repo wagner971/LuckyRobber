@@ -20,7 +20,7 @@ func test() -> void:
 	profile.data.objectives.english_pub.signature = true
 	Progression.refresh(profile.data)
 	check("prehistoric" in profile.data.unlocked, "English Pub completion opens Prehistoric Era")
-	check(Balance.powerup_requirement("prehistoric") == 14 and Balance.purchase_cap("carry",profile.data) == 20, "New tier has safe upgrade caps")
+	check(Balance.powerup_requirement("prehistoric") == 20 and Balance.purchase_cap("carry",profile.data) == Balance.required_level("carry","prehistoric"), "New tier caps match its loadout")
 	var old_save = profile.data.duplicate(true)
 	old_save.objectives.erase("prehistoric")
 	old_save.unlocked.erase("prehistoric")
@@ -34,8 +34,8 @@ func test() -> void:
 		check(row[1] not in seen and str(row[1]).begins_with("prehistoric_"), "Distinct thematic loot: "+row[1])
 		seen.append(row[1])
 		check(Duplication.source_location(row[1]) == "prehistoric" and Duplication.duration(row[1]) <= 45, "Prehistoric loot uses bounded idle economy: "+row[1])
-	for speed in [20,14]:
-		profile.data.upgrades = {"strength":5,"grip":speed,"carry":speed,"capacity":20,"noise":1}
+	for speed in [20,Balance.required_level("grip","prehistoric")]:
+		profile.data.upgrades = {"strength":5,"grip":speed,"carry":speed,"capacity":20,"noise":Balance.required_level("noise","prehistoric")}
 		await new_session("prehistoric","normal",profile)
 		check(world.valid_drop(Vector3(1.15,0,-3),0.3), "Clear cave travel lane")
 		for item in world.items: check(item.model.get_child_count()>0, "Visible model: "+item.data.type_id)

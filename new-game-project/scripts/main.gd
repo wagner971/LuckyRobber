@@ -85,7 +85,7 @@ func start_run(location: String, mode: String = "normal", training: bool = false
 		if not SpecialJobs.can_play(store.data, location): return
 	elif mode == "FINAL_JOB":
 		if not Progression.powerups_ready(store.data,location):
-			ui.shop_selected_key = "carry" if store.data.upgrades.carry < Balance.powerup_requirement(location) else "grip"
+			ui.shop_selected_key = Progression.missing_loadout(store.data, location)[0]
 			open_menu("shop")
 			return
 		if location == "apartment":
@@ -479,10 +479,12 @@ func action(kind: String) -> void:
 		"dev_max":
 			if not development_mode or screen not in ["home", "locations", "shop", "settings"]: return
 			for key in Balance.UPGRADE_KEYS: store.data.upgrades[key] = Balance.max_level(key)
-			# DEV testing can skip Chapter 1 grind, but Museum must still clear to open Chapter 2.
+			# Both finales count as done so Progression.refresh keeps every location, Chapter 2 included.
+			store.data.apartment_final_job_completed = true
+			store.data.museum_final_job_completed = true
 			for location in Balance.LOCATION_ORDER:
-				if Balance.LOCATION_ORDER.find(location) >= Balance.LOCATION_ORDER.find("pyramid") and not Progression.chapter_two_unlocked(store.data): continue
 				if location not in store.data.unlocked: store.data.unlocked.append(location)
+			Progression.refresh(store.data)
 			store.save_progress()
 			sound.play("upgrade")
 			if screen == "home": ui.home(store)

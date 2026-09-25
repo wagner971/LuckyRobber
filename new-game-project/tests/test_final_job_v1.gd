@@ -5,7 +5,7 @@ func _initialize() -> void: call_deferred("test")
 func apartment_tier_profile(unlocked: Array = ["apartment"]) -> SaveStore:
 	var profile = SaveStore.new("res://tests/final_job_v1_profile.json")
 	profile.data.unlocked = unlocked.duplicate()
-	profile.data.upgrades = {"strength": 2, "grip": 4, "carry": 4, "capacity": 4, "noise": 4}
+	profile.data.upgrades = {"strength": 2, "grip": 4, "carry": 4, "capacity": 6, "noise": 4}
 	return profile
 
 func test() -> void:
@@ -32,7 +32,7 @@ func test() -> void:
 	p3.data.objectives.apartment.cash = true
 	p3.data.objectives.apartment.signature = true
 	p3.data.upgrades.capacity = 5
-	check(Progression.final_job_unlocked(p3.data) and Balance.van_capacity(p3.data.upgrades.capacity) < Balance.LOCATIONS.apartment.expected_cargo, "Final Job unlocked but van still mathematically too small at L5")
+	check(not Progression.final_job_unlocked(p3.data) and Balance.van_capacity(p3.data.upgrades.capacity) < Balance.LOCATIONS.apartment.expected_cargo, "Final Job waits for the Van L6 loadout level; L5 is also mathematically too small")
 
 	# 5. Carrying the last item is NOT enough — it must be loaded, not just carried.
 	var p5 = apartment_tier_profile()
@@ -109,11 +109,14 @@ func test() -> void:
 	p11.data.objectives.house.cash = true
 	p11.data.objectives.house.signature = true
 	Progression.refresh(p11.data)
-	check(not p11.unlocked("villa"), "Two House objectives alone cannot bypass the speed requirements")
+	check(not p11.unlocked("villa"), "Two House objectives alone cannot bypass the loadout requirements")
 	p11.data.upgrades.grip = 3
 	p11.data.upgrades.carry = 3
 	Progression.refresh(p11.data)
-	check(p11.unlocked("villa"), "Two House objectives plus both speed levels 3 open Villa")
+	check(not p11.unlocked("villa"), "Speed levels alone do not open Villa without the rest of the House loadout")
+	for key in Balance.UPGRADE_KEYS: p11.data.upgrades[key] = Balance.required_level(key, "house")
+	Progression.refresh(p11.data)
+	check(p11.unlocked("villa"), "Two House objectives plus the full House loadout open Villa")
 
 	# 12. Final Job is its own mode, not counted as a Special Job or Mastery Contract.
 	var p12 = apartment_tier_profile()

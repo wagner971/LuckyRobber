@@ -124,7 +124,7 @@ var wheel_reset: Label
 var wheel_tickets: Label
 var wheel_busy := false
 const SHOP_TITLES = {"strength":"STRENGTH", "grip":"PICKUP SPEED", "carry":"CARRY SPEED", "capacity":"VAN SPACE", "noise":"NOISE CONTROL"}
-const SHOP_DESCRIPTIONS = {"strength":"UNLOCKS NEXT", "grip":"Pick up faster", "carry":"Move faster with loot", "capacity":"Fit more in the van", "noise":"Make less noise"}
+const SHOP_DESCRIPTIONS = {"strength":"UNLOCKS NEXT", "grip":"Pick up faster", "carry":"Walk and carry faster", "capacity":"Fit more in the van", "noise":"Make less noise"}
 const SHOP_COLORS = {"strength":HudStyle.INFO, "grip":HudStyle.INFO, "carry":HudStyle.INFO, "capacity":HudStyle.INFO, "noise":HudStyle.INFO}
 const SHOP_ICONS = {"strength":"strength", "grip":"grip", "carry":"carry", "capacity":"capacity", "noise":"noise"}
 const STRENGTH_FEATURED = {2:["fridge","toilet","sofa"], 3:["small_safe","arcade_machine"], 4:["piano","vending_machine"], 5:["large_statue","museum_artifact","sarcophagus"]}
@@ -1603,19 +1603,24 @@ func jobs_secondary_button(parent: HBoxContainer, label: String, callback: Calla
 	return chip
 
 func jobs_powerup_requirements(parent: VBoxContainer, store: SaveStore, location: String) -> void:
-	var required = Balance.powerup_requirement(location)
 	var block = column(parent, 3)
-	text(block,"CLEAR REQUIREMENTS · TAP TO UPGRADE",13,MUTED)
+	var missing := Progression.missing_loadout(store.data, location)
+	var done := Balance.UPGRADE_KEYS.size() - missing.size()
+	text(block, "LOADOUT %d/%d · TAP TO UPGRADE" % [done, Balance.UPGRADE_KEYS.size()] if not missing.is_empty() else "LOADOUT COMPLETE · READY TO CLEAR", 13, MUTED if not missing.is_empty() else MINT)
+	var short_names := {"grip": "PICKUP", "carry": "CARRY", "capacity": "VAN", "noise": "NOISE", "strength": "STR"}
 	var line = row(block, 8)
-	for key in ["grip", "carry"]:
+	# One row keeps the card height stable; the next three missing stats are enough to act on.
+	for key in (missing.slice(0, 3) if not missing.is_empty() else ["carry"]):
+		var required: int = Balance.required_level(key, location)
 		var current: int = store.data.upgrades[key]
 		var ready = current >= required
-		var label = "%s %d/%d  %s" % ["PICKUP" if key == "grip" else "CARRY",mini(current,required),required,"✓" if ready else "›"]
+		var label = "%s %d/%d  %s" % [short_names[key],mini(current,required),required,"✓" if ready else "›"]
+		if missing.is_empty(): label = "LOADOUT %d/%d  ✓" % [done, Balance.UPGRADE_KEYS.size()]
 		var chip = blue_button(line, label, func():
 			shop_selected_key = key
 			action_requested.emit("shop"), 42)
 		chip.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		chip.add_theme_font_size_override("font_size", 18)
+		chip.add_theme_font_size_override("font_size", 18 if missing.size() < 3 else 15)
 		chip.add_theme_color_override("font_color", MINT if ready else HudStyle.FINAL)
 		chip.tooltip_text = "Required to clear %s and advance" % Balance.LOCATIONS[location].name
 		chip.add_to_group("jobs_powerup_requirement")
@@ -1672,7 +1677,7 @@ func jobs_objective(parent: HBoxContainer, icon_name: String, label: String, don
 		lock_hint.offset_top = 94
 		lock_hint.offset_bottom = 119
 	elif focus:
-		var ready = headline(item, ("FINAL JOB READY" if has_final_job else "READY TO CLEAR") if powerups_ready else "UPGRADE SPEEDS", 16, HudStyle.FINAL)
+		var ready = headline(item, ("FINAL JOB READY" if has_final_job else "READY TO CLEAR") if powerups_ready else "UPGRADE LOADOUT", 16, HudStyle.FINAL)
 		ready.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		ready.anchor_right = 1.0
 		ready.offset_top = 92
@@ -2334,9 +2339,9 @@ func shop(body: VBoxContainer, store: SaveStore) -> void:
 		name.autowrap_mode = TextServer.AUTOWRAP_OFF
 		var level_label := text(info, "LEVEL %d / %d" % [level, Balance.max_level(key)], 15, SHOP_COLORS[key])
 		c.set_meta("level_label", level_label)
-		var speed_target = Progression.powerup_target(store.data)
-		if key in ["grip", "carry"] and not speed_target.is_empty() and level < int(speed_target.required):
-			level_label.text += " · NEED %d" % int(speed_target.required)
+		var required_now: int = Balance.required_level(key, Balance.LOCATION_ORDER[Balance.unlocked_tier(store.data)])
+		if level < required_now:
+			level_label.text += " · NEED %d" % required_now
 			level_label.add_theme_color_override("font_color", HudStyle.FINAL)
 		var desc = text(info, SHOP_DESCRIPTIONS[key], 15, MUTED)
 		if key == "strength":
@@ -2430,7 +2435,7 @@ func shop_benefit(key: String, level: int) -> String:
 	var next_level = mini(level + 1, Balance.max_level(key))
 	match key:
 		"grip": return "+%d%% PICKUP SPEED" % roundi((Balance.grip_speed(next_level) / Balance.grip_speed(level) - 1.0) * 100) if next_level > level else "PICKUP SPEED MAXED"
-		"carry": return "HEAVIEST LOOT +%d%% SPEED" % roundi((Balance.carry_factor("VERY_HEAVY",next_level) / Balance.carry_factor("VERY_HEAVY",level) - 1.0) * 100) if next_level > level else "CARRY SPEED MAXED"
+		"carry": return "WALK +%d%% · HEAVY LOOT +%d%%" % [roundi((Balance.walk_factor(next_level) / Balance.walk_factor(level) - 1.0) * 100), roundi((Balance.carry_speed("VERY_HEAVY",next_level) / Balance.carry_speed("VERY_HEAVY",level) - 1.0) * 100)] if next_level > level else "CARRY SPEED MAXED"
 		"capacity": return "%d  →  %d CARGO" % [Balance.van_capacity(level), Balance.van_capacity(next_level)] if next_level > level else "%d CARGO · MAX" % Balance.van_capacity(level)
 		"noise": return "-%d%% NOISE" % roundi((Balance.noise_multiplier(level) - Balance.noise_multiplier(next_level)) * 100) if next_level > level else "NOISE CONTROL MAXED"
 	return ""
@@ -2721,9 +2726,8 @@ func loot_preview(parent: Node, type_id: String, width: int, height: int, zoom: 
 
 func dev_button(body: VBoxContainer, store: SaveStore) -> void:
 	if not development_mode: return
-	var available_count := Balance.LOCATION_ORDER.size() if Progression.chapter_two_unlocked(store.data) else Balance.LOCATION_ORDER.find("pyramid")
-	var done: bool = Progression.upgrades_maxed(store.data) and store.data.unlocked.size() == available_count
-	var label := "DEV · MAXED + AVAILABLE LEVELS UNLOCKED" if done else "DEV · MAX ALL + UNLOCK AVAILABLE LEVELS"
+	var done: bool = Progression.upgrades_maxed(store.data) and store.data.unlocked.size() == Balance.LOCATION_ORDER.size()
+	var label := "DEV · MAXED + ALL LEVELS UNLOCKED" if done else "DEV · MAX ALL + UNLOCK ALL LEVELS"
 	var b = button(body, label, func(): action_requested.emit("dev_max"), 56)
 	b.add_theme_stylebox_override("normal", panel(Color("ffd086")))
 	b.disabled = done

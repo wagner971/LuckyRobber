@@ -36,17 +36,18 @@ func test() -> void:
 		data.noise_tutorial_completed = true
 		data.first_job_at = 1
 		data.successes = 3
-		data.wallet = 1000
+		data.wallet = 2000
 		data.objectives.apartment.cash = true
 		data.objectives.apartment.signature = true
 		data.upgrades.capacity = 6
 		data.upgrades.strength = 2
+		data.upgrades.noise = 2
 		root.add_child(game)
 		game.ui.set_safe_area_override(Vector4(0,56,0,40))
 		game.action("locations")
 		await shot("blocked_jobs")
 		check(find_button("PLAY FINAL JOB  ▶") == null and find_button("PLAY  ▶") != null,"Farming stays available; Final Job is withheld before the speed purchases")
-		check(all_text(game.ui.menu).contains("UPGRADE SPEEDS") and all_text(game.ui.menu).contains("PICKUP 1/2"),"Jobs explicitly explains the two speed requirements")
+		check(all_text(game.ui.menu).contains("UPGRADE LOADOUT") and all_text(game.ui.menu).contains("PICKUP 1/2"),"Jobs explicitly explains the missing loadout levels")
 		var requirements = get_nodes_in_group("jobs_powerup_requirement")
 		for chip in requirements:
 			if game.ui.menu.is_ancestor_of(chip) and chip.get_meta("upgrade_key") == "carry":
@@ -54,18 +55,18 @@ func test() -> void:
 				break
 		check(game.screen == "shop" and game.ui.shop_selected_key == "carry","Requirement chip opens Carry Speed directly")
 		await shot("shop_required")
-		check(all_text(game.ui.menu).contains("NEED 2") and all_text(game.ui.menu).contains("BUY  $300"),"Shop exposes the required level and affordable price")
+		check(all_text(game.ui.menu).contains("NEED 2") and all_text(game.ui.menu).contains("BUY  $850"),"Shop exposes the required level and affordable price")
 		game.action("home")
 		await shot("home_target")
-		check(all_text(game.ui.menu).contains("MOVE FASTER WITH LOOT"),"Home target recommends the actual missing upgrade")
+		check(all_text(game.ui.menu).contains("MOVE FASTER"),"Home target recommends the actual missing upgrade")
 		game.action("play_final_job")
 		check(game.screen == "shop" and not is_instance_valid(game.run),"Direct Final Job action also enforces requirements")
 		var carry_button: Button = game.ui.upgrade_cards.carry.get_meta("buy_button")
 		carry_button.pressed.emit()
-		check(data.upgrades.carry == 2 and data.wallet == 700 and not Progression.final_job_unlocked(data),"Buying only Carry does not bypass Pickup requirement")
+		check(data.upgrades.carry == 2 and data.wallet == 1150 and not Progression.final_job_unlocked(data),"Buying only Carry does not bypass Pickup requirement")
 		var grip_button: Button = game.ui.upgrade_cards.grip.get_meta("buy_button")
 		grip_button.pressed.emit()
-		check(data.upgrades.grip == 2 and data.wallet == 450 and Progression.final_job_unlocked(data),"Both actual purchases enable Final Job for exactly $550")
+		check(data.upgrades.grip == 2 and data.wallet == 300 and Progression.final_job_unlocked(data),"Both actual purchases enable Final Job for exactly $1,700")
 		game.action("locations")
 		await shot("ready_jobs")
 		var play = find_button("PLAY FINAL JOB  ▶")

@@ -2,6 +2,8 @@
 
 Pornește **[STEAL EVERYTHING.exe](builds/windows/STEAL%20EVERYTHING.exe)** pentru testare rapidă cu resetare la fiecare lansare. Pentru a testa amanetul offline și salvarea între sesiuni, folosește **[STEAL EVERYTHING Persistent.exe](builds/windows/STEAL%20EVERYTHING%20Persistent.exe)**. Cele două variante au profiluri de salvare separate.
 
+**ECONOMY V3:** fiecare locație are un loadout (Strength, Pickup, Carry, Van, Noise) care trebuie atins înainte să se deschidă următoarea; prețurile depind de locația în care nivelul devine cumpărabil, deci o achiziție costă 1–3 run-uri și un nivel durează ~20 de run-uri, inclusiv în Chapter 2. Carry Speed crește și viteza de mers (+2%/nivel). Butonul DEV deblochează acum și Chapter 2. [Reguli, tabele și pacing simulat](new-game-project/ECONOMY_V3.md).
+
 **GAMEPLAY READABILITY V1:** camera este mai apropiată și urmărește personajul, obiectele blocate au lacăt în lume, iar un van plin cere clar evadarea. Mesajele centrale sunt rezervate pentru alarmă și van plin; alarma are countdown și margini roșii pulsante. Home are o singură acțiune PLAY, meniurile au navigare comună și Results integrează trofeul după numărarea recompensei. [Capturi și detalii](new-game-project/GAMEPLAY_READABILITY_V1.md).
 
 **LOOT FATE V1:** după un jaf reușit, fiecare obiect primește o alegere: vinde-l acum, pune-l la amanet pentru mai mulți bani după un timp sau păstrează-l în Hideout. Obiectele nu mai creditează automat wallet-ul; bonusurile de obiectiv se plătesc separat. Collection deschide Hideout-ul 3D cu poziții fixe, seturi cu bonusuri și acces la Trophy Shelf. Amanetul are rafturi, casă de marcat, upgrade-uri și cel mult 6 ore de progres offline. [Capturi, reguli și verificări](new-game-project/LOOT_FATE_V1.md).
@@ -58,7 +60,7 @@ Personajul principal urmează referința blocky: fes, mască, zâmbet, tricou î
 
 După 2–4 runde NORMAL terminate apare un **RUSH HOUR** în aceeași locație: 35 de secunde și +40% pentru loot-ul cu care evadezi. Îl poți juca sau poți continua NORMAL. În producție, oferta rămâne disponibilă identic la relansare; în DEV, sesiunea se resetează la pornire. După o încercare începută, oferta se consumă și începe un nou ciclu.
 
-Butonul **DEV · MAX ALL + UNLOCK ALL LEVELS**, din **Settings → DEV TOOLS**, setează Strength 5, Grip 20, Carry 20, Van 20 (46 cargo), Noise 20 și deblochează toate cele 8 niveluri, inclusiv Pyramid și Castle, pentru sesiunea curentă. Sertarul este închis implicit și lipsește complet când DEV este dezactivat. Nu acordă bani sau obiective.
+Butonul **DEV · MAX ALL + UNLOCK ALL LEVELS**, din **Settings → DEV TOOLS**, setează Strength 5, Grip 20, Carry 20, Van 20 (46 cargo), Noise 20, marchează ambele Final Job-uri ca finalizate și deblochează toate cele 13 niveluri, inclusiv întreg Chapter 2, pentru sesiunea curentă. Sertarul este închis implicit și lipsește complet când DEV este dezactivat. Nu acordă bani sau obiective.
 
 Control: WASD/săgeți sau click și tragere. Oprire lângă obiect pentru pickup, apoi în cercul dubei pentru load. DROP lasă obiectul; ESCAPE contextual încasează lângă dubă, cu mâinile libere. Escape de pe tastatură pune pauză.
 

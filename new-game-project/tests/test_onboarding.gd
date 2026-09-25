@@ -133,6 +133,7 @@ func test() -> void:
 	check(store.data.successes == 1 and game.screen == "results" and store.data.wallet == 780, "First Apartment pays real loot and returns to Results")
 	game.action("guided_upgrade")
 	check(game.screen == "shop" and ui.shop_selected_key == "carry", "Optional guide focuses Carry Speed")
+	store.data.wallet = Balance.upgrade_cost("carry", 1)
 	game.buy("carry")
 	check(store.data.upgrades.carry == 2 and game.screen == "shop" and not is_instance_valid(game.run), "Buying an upgrade stays in the shop, never auto-starts a run")
 	game.action("locations")

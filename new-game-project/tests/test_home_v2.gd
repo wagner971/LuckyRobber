@@ -53,7 +53,7 @@ func test() -> void:
 	game.ui.home(game.store)
 	check(find_button(game.ui.menu, "COLLECTION") != null, "Trophy Collection remains available")
 	check(find_button(game.ui.menu, "PLAY").custom_minimum_size.y > find_button(game.ui.menu, "UPGRADES").custom_minimum_size.y, "Play remains larger than the three Home shortcuts")
-	check(find_button(game.ui.menu, "STATS") == null and find_button(game.ui.menu, "TROPHIES · 0/7") == null and find_button(game.ui.menu, "DEV · MAX ALL + UNLOCK AVAILABLE LEVELS") == null, "Stats, duplicate trophy and DEV actions do not clutter Home")
+	check(find_button(game.ui.menu, "STATS") == null and find_button(game.ui.menu, "TROPHIES · 0/7") == null and find_button(game.ui.menu, "DEV · MAX ALL + UNLOCK ALL LEVELS") == null, "Stats, duplicate trophy and DEV actions do not clutter Home")
 	check(find_label(game.ui.menu, "FIRST JOB") != null and find_button(game.ui.menu, "START ›") == null and find_button(game.ui.menu, "PLAY").tooltip_text == "CHOOSE YOUR NEXT JOB", "Home Play always leads to job selection")
 	check(find_button(game.ui.menu, "HOME") == null and find_button(game.ui.menu, "JOBS") == null, "Home uses three shortcuts instead of a duplicate bottom navigation")
 	check(game.ui.menu.find_child("UpgradeNotice", true, false) == null, "Unaffordable upgrades have no red dot")
@@ -77,8 +77,7 @@ func test() -> void:
 	game.store.data.objectives.apartment.cash = true
 	game.store.data.objectives.apartment.signature = true
 	# Isolate the van-space gate after satisfying the current speed requirements.
-	game.store.data.upgrades.grip = Balance.powerup_requirement("apartment")
-	game.store.data.upgrades.carry = Balance.powerup_requirement("apartment")
+	for key in ["strength", "grip", "carry", "noise"]: game.store.data.upgrades[key] = Balance.required_level(key, "apartment")
 	game.ui.home(game.store)
 	await process_frame
 	check(find_label(game.ui.menu, "STEAL EVERYTHING") != null and find_button(game.ui.menu, "UPGRADE ›") != null, "Final Job first explains the missing van space")
@@ -101,10 +100,10 @@ func test() -> void:
 	await process_frame
 	check(game.screen == "stats", "Profile shortcut opens the existing stats page")
 	game.action("settings")
-	check(find_button(game.ui.menu, "DEV TOOLS ▾") != null and find_button(game.ui.menu, "DEV · MAX ALL + UNLOCK AVAILABLE LEVELS") != null and not find_button(game.ui.menu, "DEV · MAX ALL + UNLOCK AVAILABLE LEVELS").is_visible_in_tree(), "DEV controls start collapsed in Settings")
+	check(find_button(game.ui.menu, "DEV TOOLS ▾") != null and find_button(game.ui.menu, "DEV · MAX ALL + UNLOCK ALL LEVELS") != null and not find_button(game.ui.menu, "DEV · MAX ALL + UNLOCK ALL LEVELS").is_visible_in_tree(), "DEV controls start collapsed in Settings")
 	find_button(game.ui.menu, "DEV TOOLS ▾").pressed.emit()
-	check(find_button(game.ui.menu, "DEV · MAX ALL + UNLOCK AVAILABLE LEVELS").is_visible_in_tree(), "Developer drawer exposes the existing max-all tool")
-	find_button(game.ui.menu, "DEV · MAX ALL + UNLOCK AVAILABLE LEVELS").pressed.emit()
+	check(find_button(game.ui.menu, "DEV · MAX ALL + UNLOCK ALL LEVELS").is_visible_in_tree(), "Developer drawer exposes the existing max-all tool")
+	find_button(game.ui.menu, "DEV · MAX ALL + UNLOCK ALL LEVELS").pressed.emit()
 	await process_frame
 	check(Progression.upgrades_maxed(game.store.data) and game.screen == "settings", "Max-all still works from Settings")
 	game.ui.development_mode = false

@@ -62,7 +62,9 @@ func test_budget() -> void:
 	check(config.special == "sarcophagus" and Balance.ITEMS.sarcophagus.cash_value == 1800, "Signature is the $1800 Sarcophagus")
 
 func test_progression() -> void:
-	var profile = profile_with({"strength": 1, "grip": 1, "carry": 1, "capacity": 1, "noise": 1})
+	var museum_loadout := {}
+	for key in Balance.UPGRADE_KEYS: museum_loadout[key] = Balance.required_level(key, "museum")
+	var profile = profile_with(museum_loadout)
 	profile.data.unlocked = Balance.LOCATION_ORDER.slice(0, Balance.LOCATION_ORDER.find("pyramid"))
 	profile.data.apartment_final_job_completed = true
 	for location in Balance.LOCATION_ORDER.slice(0, Balance.LOCATION_ORDER.find("museum")):
@@ -130,22 +132,23 @@ func measure(label: String, upgrades: Dictionary, order: Array) -> Dictionary:
 	await new_session(loc, "normal", profile_with(upgrades))
 	var ok = await drive_indices(order, label)
 	var entry: Dictionary = measurements.back()
-	entry.merge({"remaining": snappedf(run.remaining, 0.01), "alarm_remaining": snappedf(alarm_remaining, 0.01), "loaded_at_alarm": alarm_loaded, "full_clear": run.result.get("full_clear", false)})
+	# "cleared" is the physical result; the career full_clear flag also needs the tier loadout.
+	entry.merge({"remaining": snappedf(run.remaining, 0.01), "alarm_remaining": snappedf(alarm_remaining, 0.01), "loaded_at_alarm": alarm_loaded, "full_clear": run.result.get("full_clear", false), "cleared": run.result.get("success", false) and run.standard_cargo_count() == world.items.size()})
 	print(loc.to_upper() + " %s: success=%s full_clear=%s remaining %.2fs | alarm with %d loaded, %.2fs left" % [label, ok, entry.full_clear, run.remaining, alarm_loaded, alarm_remaining])
 	return entry
 
 func test_routes_measured() -> void:
 	var base = {"strength": 5, "grip": 1, "carry": 1, "capacity": 19, "noise": 1}
 	var target = await measure("pyramid.harness_no_speed", base, THRONE_FIRST_PAIR)
-	check(target.full_clear, "Full clear possible without speed upgrades (S5 G1 C1 V19 N1)")
+	check(target.cleared, "Full clear possible without speed upgrades (S5 G1 C1 V19 N1)")
 	check(target.remaining >= 4.5, "Physical full clear has a playable >=4.5s margin without speed upgrades (%.2fs)" % target.remaining)
 	check(target.loaded_at_alarm == 9, "Alarm fires only once 9/11 pieces (~80%% of the heist) are loaded")
 	var alt = await measure("pyramid.sarcophagus_first_pair", base, SMART_ROUTE)
-	check(alt.full_clear or alt.remaining < target.remaining, "Sarcophagus-first finish is harder than the central Throne-first route (%.2fs left)" % alt.remaining)
+	check(alt.cleared or alt.remaining < target.remaining, "Sarcophagus-first finish is harder than the central Throne-first route (%.2fs left)" % alt.remaining)
 	var greedy = await measure("pyramid.greedy_prizes_first", base, GREEDY_ROUTE)
-	check(not greedy.full_clear and greedy.loaded_at_alarm < 9, "Grabbing both big prizes first triggers an early alarm and costs the full clear")
+	check(not greedy.cleared and greedy.loaded_at_alarm < 9, "Grabbing both big prizes first triggers an early alarm and costs the full clear")
 	var helped = await measure("pyramid.grip8_carry8", {"strength": 5, "grip": 8, "carry": 8, "capacity": 19, "noise": 1}, THRONE_FIRST_PAIR)
-	check(helped.full_clear and helped.remaining > target.remaining, "A few Grip/Carry levels buy extra seconds (%.2fs)" % helped.remaining)
+	check(helped.cleared and helped.remaining > target.remaining, "A few Grip/Carry levels buy extra seconds (%.2fs)" % helped.remaining)
 	var maxed = await measure("pyramid.max", MAXED, THRONE_FIRST_PAIR)
 	check(maxed.full_clear and maxed.remaining >= 5.5 and maxed.remaining > helped.remaining, "MAX clears with >=5.5s and the largest margin (%.2fs)" % maxed.remaining)
 

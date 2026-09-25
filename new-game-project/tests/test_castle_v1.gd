@@ -24,7 +24,9 @@ func test_budget() -> void:
 	check(Balance.ITEMS.dracula_coffin.cash_value == 2000 and config.special == "dracula_coffin", "Coffin is the $2000 main WTF piece")
 
 func test_progression() -> void:
-	var profile = profile_with({"strength": 5, "grip": 1, "carry": 1, "capacity": 19, "noise": 1})
+	var pyramid_loadout := {}
+	for key in Balance.UPGRADE_KEYS: pyramid_loadout[key] = Balance.required_level(key, "pyramid")
+	var profile = profile_with(pyramid_loadout)
 	profile.data.unlocked = Balance.LOCATION_ORDER.slice(0, Balance.LOCATION_ORDER.find("castle"))
 	profile.data.apartment_final_job_completed = true
 	profile.data.museum_final_job_completed = true
@@ -80,14 +82,14 @@ func test_layout() -> void:
 func test_routes_measured() -> void:
 	var base = {"strength": 5, "grip": 1, "carry": 1, "capacity": 19, "noise": 1}
 	var target = await measure("castle.harness_no_speed", base, SMART_ROUTE)
-	check(target.full_clear, "Full clear possible without speed upgrades (S5 G1 C1 V19 N1)")
+	check(target.cleared, "Full clear possible without speed upgrades (S5 G1 C1 V19 N1)")
 	check(target.remaining >= 4.0 and target.remaining <= 6.5, "Harness leaves 4-6s after full clear without speed upgrades (%.2fs)" % target.remaining)
 	check(target.loaded_at_alarm == 9, "Alarm fires on the Throne, with 9/11 pieces loaded")
 	var coffin_first = await measure("castle.coffin_before_throne", base, THRONE_FIRST_PAIR)
 	check(coffin_first.remaining < target.remaining, "Coffin before Throne is the harder finish (%.2fs)" % coffin_first.remaining)
 	var greedy = await measure("castle.greedy_prizes_first", base, GREEDY_ROUTE)
-	check(not greedy.full_clear and greedy.loaded_at_alarm < 9, "Grabbing Throne + Coffin first triggers an early alarm and costs the full clear")
+	check(not greedy.cleared and greedy.loaded_at_alarm < 9, "Grabbing Throne + Coffin first triggers an early alarm and costs the full clear")
 	var helped = await measure("castle.grip8_carry8", {"strength": 5, "grip": 8, "carry": 8, "capacity": 19, "noise": 1}, SMART_ROUTE)
-	check(helped.full_clear and helped.remaining >= target.remaining, "A few Grip/Carry levels buy extra seconds (%.2fs)" % helped.remaining)
+	check(helped.cleared and helped.remaining >= target.remaining, "A few Grip/Carry levels buy extra seconds (%.2fs)" % helped.remaining)
 	var maxed = await measure("castle.max", MAXED, SMART_ROUTE)
 	check(maxed.full_clear and maxed.remaining >= helped.remaining, "MAX clears with the largest margin (%.2fs)" % maxed.remaining)

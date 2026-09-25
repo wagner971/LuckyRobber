@@ -41,7 +41,7 @@ func test() -> void:
 	main.run.abandon()
 	await process_frame
 	check(find_button(main.ui.menu, "RETRY") != null and find_button(main.ui.menu, "UPGRADES") != null and find_button(main.ui.menu, "JOBS") != null, "Results offers one primary retry and two smaller destinations")
-	check(not has_scroll(main.ui.menu) and find_button(main.ui.menu, "DEV · MAX ALL + UNLOCK AVAILABLE LEVELS") == null and count_buy_buttons(main.ui.menu) == 0, "Results fits one screen without Shop or DEV controls")
+	check(not has_scroll(main.ui.menu) and find_button(main.ui.menu, "DEV · MAX ALL + UNLOCK ALL LEVELS") == null and count_buy_buttons(main.ui.menu) == 0, "Results fits one screen without Shop or DEV controls")
 	check(all_text(main.ui.menu).contains("STEAL THE FRIDGE") and all_text(main.ui.menu).contains("Upgrade Strength to Level 2"), "Next Target names the loot and the action needed")
 	check(find_button(main.ui.menu, "RETRY").get_global_rect().end.y <= main.ui.root.size.y, "Primary result action stays inside the portrait viewport")
 	find_button(main.ui.menu, "RETRY").pressed.emit()
@@ -86,17 +86,17 @@ func test() -> void:
 	main.store.data.successes = 4
 	main.store.data.first_job_at = 1
 	main.store.data.wallet = 10000
-	main.store.data.upgrades.grip = 4
+	main.store.data.upgrades.grip = 2
 	main.action("shop")
 	await process_frame
 	check(find_button(main.ui.menu, "LOCKED").disabled, "Shop tier lock is visible and disabled")
 	check(all_text(main.ui.menu).contains("UNLOCK SUBURBAN HOUSE"), "Shop explains next tier unlock in player-facing language")
 	var before = main.store.data.wallet
 	main.buy("grip")
-	check(main.store.data.wallet == before and main.store.data.upgrades.grip == 4, "Tier bypass via direct buy signal cannot charge")
+	check(main.store.data.wallet == before and main.store.data.upgrades.grip == 2, "Tier bypass via direct buy signal cannot charge")
 	main.store.data.unlocked.append("house")
 	main.buy("grip")
-	check(main.store.data.upgrades.grip == 5 and main.store.data.wallet == before - Balance.upgrade_cost("grip", 4), "Unlock opens global purchase tier")
+	check(main.store.data.upgrades.grip == 3 and main.store.data.wallet == before - Balance.upgrade_cost("grip", 2), "Unlock opens global purchase tier")
 	var body_text = all_text(main.ui.menu)
 	var five = true
 	for key in Balance.UPGRADE_KEYS: five = five and body_text.contains(GameUI.SHOP_TITLES[key])

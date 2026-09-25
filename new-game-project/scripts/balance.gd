@@ -11,12 +11,23 @@ const LOAD_DURATION = 0.30
 const CLEAR_BONUS = 250
 const WEIGHTS = {"LIGHT": 0.95, "MEDIUM": 0.85, "HEAVY": 0.70, "VERY_HEAVY": 0.60}
 const UPGRADE_KEYS = ["strength", "grip", "carry", "capacity", "noise"]
-const STRENGTH_COSTS = [1000, 2400, 5800, 13800]
-const BASE_COSTS = {"grip": 250, "carry": 300, "capacity": 900, "noise": 700}
-const POWERUP_REQUIREMENTS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-# Laboratory adds one Chapter 1 tier; Chapter 2 reuses the Museum MAX caps.
-const GRANULAR_CAPS = [4, 7, 10, 13, 16, 18, 20, 20, 20, 20, 20, 20, 20]
-const STRENGTH_CAPS = [2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+# Economy V3: every location is a tier. A tier caps what the shop sells, and the
+# next location opens only once every stat has reached its tier cap (the tier
+# "loadout"). The 80 purchases are spread over the 13 locations so each one
+# takes roughly 20 runs; a level's cash never outgrows what it must buy.
+const TIER_CAPS = {
+	"strength": [2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+	"grip": [2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18, 20],
+	"carry": [2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18, 20],
+	"capacity": [6, 8, 10, 12, 14, 16, 20, 20, 20, 20, 20, 20, 20],
+	"noise": [2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18, 20]
+}
+const STRENGTH_CAPS = TIER_CAPS.strength
+# A purchase costs its tier's price index times the stat's weight, so prices grow
+# with the location's income (about 16 average hauls per tier loadout).
+const TIER_PRICE = [850, 3600, 4500, 8500, 8500, 16500, 16500, 25000, 27000, 32000, 41000, 51000, 62000]
+const UPGRADE_UNIT = {"strength": 1.6, "grip": 1.0, "carry": 1.0, "capacity": 1.3, "noise": 0.8}
+const WALK_SPEED_STEP = 0.02
 const NOISE = {"LIGHT": 4.0, "MEDIUM": 7.0, "HEAVY": 12.0, "VERY_HEAVY": 18.0}
 # Awkward lifting at STR 1 makes even a small haul risky. STR 2 removes the
 # largest penalty; subsequent upgrades refine handling without silencing clears.
@@ -31,11 +42,8 @@ const LAB_ALARM_WINDOW = 30.0 # A symmetric three-bay route still leaves time to
 const MUSEUM_ALARM_WINDOW = 24.0 # Enough for the final circuit, but the alarm still forces an exit.
 const ALARM_WARNING_FACTOR = 0.75
 # Apartment Final Job pilot: a session-specific Alarm-escape window override (never
-# changes the global ALARM_WINDOW used by every other mode/location) and a
-# per-location Van Capacity purchase-cap override (never changes the global
-# van_capacity() formula or the Grip/Carry/Noise/Strength caps).
+# changes the global ALARM_WINDOW used by every other mode/location).
 const APARTMENT_FINAL_JOB_ALARM_WINDOW = 16.0
-const APARTMENT_FINAL_JOB_VAN_CAP = 6
 const NAMES = {"strength": "STRENGTH", "grip": "GRIP", "carry": "CARRY SPEED", "capacity": "VAN CAPACITY", "noise": "NOISE CONTROL"}
 # Derived compatibility view; prices are calculated, never maintained as 76 literals.
 static var COSTS: Dictionary = build_costs()
@@ -1262,6 +1270,15 @@ static func carry_factor(weight: String, level: int) -> float:
 	# two purchases. Every level helps every class; heavy loot gains the most.
 	return 1.0 - (1.0 - WEIGHTS[weight]) / carry_multiplier(level)
 
+static func walk_factor(level: int) -> float:
+	return 1.0 + WALK_SPEED_STEP * (clampi(level, 1, 20) - 1)
+
+static func walk_speed(level: int) -> float:
+	return BASE_SPEED * walk_factor(level)
+
+static func carry_speed(weight: String, level: int) -> float:
+	return walk_speed(level) * carry_factor(weight, level)
+
 static func pickup_time(base: float, level: int) -> float:
 	return maxf(MIN_PICKUP, base / grip_speed(level))
 
@@ -1331,10 +1348,12 @@ static func effect(key: String, level: int) -> String:
 			return "PICKUP SPEED %d%% → %d%%" % [roundi(grip_speed(level) * 100), roundi(grip_speed(next_level) * 100)]
 		"carry":
 			var parts = PackedStringArray()
+			if level == max_level(key): parts.append("WALK %.2f m/s · MAX" % walk_speed(level))
+			else: parts.append("WALK %.2f → %.2f m/s" % [walk_speed(level), walk_speed(next_level)])
 			for weight in WEIGHTS:
-				if level == max_level(key): parts.append("%s %.2f m/s · MAX" % [weight, BASE_SPEED * carry_factor(weight, level)])
-				else: parts.append("%s %.2f → %.2f m/s" % [weight, BASE_SPEED * carry_factor(weight, level), BASE_SPEED * carry_factor(weight, next_level)])
-			return "\n".join(parts) + "\nCAPPED AT %.1f m/s · EMPTY SPEED UNCHANGED" % BASE_SPEED
+				if level == max_level(key): parts.append("%s %.2f m/s · MAX" % [weight, carry_speed(weight, level)])
+				else: parts.append("%s %.2f → %.2f m/s" % [weight, carry_speed(weight, level), carry_speed(weight, next_level)])
+			return "\n".join(parts) + "\nEVERY LEVEL: +%d%% WALK SPEED, LESS LOOT DRAG" % roundi(WALK_SPEED_STEP * 100)
 		"noise":
 			if level == max_level(key): return "NOISE GENERATED %d%% · MAX" % roundi(noise_multiplier(level) * 100)
 			return "NOISE GENERATED %d%% → %d%%" % [roundi(noise_multiplier(level) * 100), roundi(noise_multiplier(next_level) * 100)]
@@ -1349,8 +1368,18 @@ static func round_to_50(value: float) -> int:
 
 static func upgrade_cost(key: String, level: int) -> int:
 	if key not in UPGRADE_KEYS or level < 1 or level >= max_level(key): return 0
-	if key == "strength": return STRENGTH_COSTS[level - 1]
-	return round_to_50(BASE_COSTS[key] * pow(1.18 if key in ["grip", "carry"] else 1.13, level - 1))
+	return round_to_50(float(UPGRADE_UNIT[key]) * TIER_PRICE[tier_of(key, level + 1)])
+
+# The tier (location index) whose loadout first includes this level.
+static func tier_of(key: String, level: int) -> int:
+	var caps: Array = TIER_CAPS[key]
+	for i in range(caps.size()):
+		if caps[i] >= level: return i
+	return caps.size() - 1
+
+static func required_level(key: String, location: String) -> int:
+	var index = LOCATION_ORDER.find(location)
+	return TIER_CAPS[key][index] if index >= 0 else 1
 
 static func build_costs() -> Dictionary:
 	var costs: Dictionary = {}
@@ -1366,8 +1395,7 @@ static func carry_multiplier(level: int) -> float:
 	return 1.0 + 0.35 * (clampi(level, 1, 20) - 1)
 
 static func powerup_requirement(location: String) -> int:
-	var index = LOCATION_ORDER.find(location)
-	return POWERUP_REQUIREMENTS[index] if index >= 0 else 1
+	return required_level("grip", location)
 
 static func van_capacity(level: int) -> int:
 	return 8 + 2 * (clampi(level, 1, 20) - 1)
@@ -1400,18 +1428,11 @@ static func unlocked_tier(data: Dictionary) -> int:
 	return tier
 
 static func purchase_cap(key: String, data: Dictionary) -> int:
-	var tier = unlocked_tier(data)
-	# Van Capacity only: the Apartment Final Job needs 18 cargo (level 6) to fit
-	# all 17 loot instances, above the tier-0 granular cap of 4. This raises ONLY
-	# the "capacity" cap, ONLY while Apartment is the sole unlocked location; the
-	# global van_capacity() formula and the Grip/Carry/Noise/Strength caps are untouched.
-	if key == "capacity" and tier == 0:
-		return maxi(GRANULAR_CAPS[0], APARTMENT_FINAL_JOB_VAN_CAP)
-	return (STRENGTH_CAPS if key == "strength" else GRANULAR_CAPS)[tier]
+	return TIER_CAPS[key][unlocked_tier(data)]
 
 static func tier_message(key: String, data: Dictionary) -> String:
 	var level: int = data.upgrades[key]
-	var caps: Array = STRENGTH_CAPS if key == "strength" else GRANULAR_CAPS
+	var caps: Array = TIER_CAPS[key]
 	for i in range(unlocked_tier(data) + 1, LOCATION_ORDER.size()):
 		if caps[i] > level:
 			return "UNLOCK %s FOR LEVEL %d–%d" % [LOCATIONS[LOCATION_ORDER[i]].name, level + 1, caps[i]]

@@ -10,19 +10,27 @@ static func objective_count(data: Dictionary, location: String) -> int:
 static func campaign_cleared(data: Dictionary) -> bool:
 	return data.get("museum_final_job_completed",false) == true or (objective_count(data, "museum") >= 2 and powerups_ready(data, "museum"))
 
+# Carry first: its first purchase is noticeable on the very next delivery.
+const LOADOUT_ORDER = ["carry", "grip", "capacity", "noise", "strength"]
+const LOADOUT_TITLES = {"carry": "MOVE FASTER", "grip": "PICK UP FASTER", "capacity": "FIT MORE IN THE VAN", "noise": "MAKE LESS NOISE", "strength": "LIFT HEAVIER LOOT"}
+const LOADOUT_LABELS = {"carry": "Carry Speed", "grip": "Pickup Speed", "capacity": "Van Space", "noise": "Noise Control", "strength": "Strength"}
+
+static func missing_loadout(data: Dictionary, location: String) -> Array:
+	var missing: Array = []
+	for key in LOADOUT_ORDER:
+		if int(data.upgrades[key]) < Balance.required_level(key, location): missing.append(key)
+	return missing
+
 static func powerups_ready(data: Dictionary, location: String) -> bool:
-	var required = Balance.powerup_requirement(location)
-	return int(data.upgrades.grip) >= required and int(data.upgrades.carry) >= required
+	return missing_loadout(data, location).is_empty()
 
 static func powerup_target(data: Dictionary) -> Dictionary:
 	var location: String = Balance.LOCATION_ORDER[Balance.unlocked_tier(data)]
-	var required = Balance.powerup_requirement(location)
-	# Carry first: its first purchase is noticeable on the very next delivery.
-	for key in ["carry", "grip"]:
-		if int(data.upgrades[key]) < required:
-			var label = "Carry Speed" if key == "carry" else "Pickup Speed"
-			return {"title":"MOVE FASTER WITH LOOT" if key == "carry" else "PICK UP FASTER", "hint":"Upgrade %s to Level %d" % [label,required], "type_id":"", "upgrade_key":key, "location":location, "required":required}
-	return {}
+	var missing := missing_loadout(data, location)
+	if missing.is_empty(): return {}
+	var key: String = missing[0]
+	var required: int = Balance.required_level(key, location)
+	return {"title": LOADOUT_TITLES[key], "hint": "Upgrade %s to Level %d" % [LOADOUT_LABELS[key], required], "type_id": "", "upgrade_key": key, "location": location, "required": required}
 
 static func upgrades_maxed(data: Dictionary) -> bool:
 	for key in Balance.UPGRADE_KEYS:

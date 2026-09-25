@@ -1,3 +1,5 @@
+> **Economy V3 (0.9.85):** cerințele de nivel, tier cap-urile și prețurile din acest document sunt înlocuite de [ECONOMY_V3.md](ECONOMY_V3.md) (loadout complet pe fiecare locație, prețuri pe tier, Carry Speed crește și viteza de mers). Formulele Pickup/Carry și verificările fizice de mai jos rămân valabile ca istoric.
+
 # Required, useful speed upgrades — 0.9.52
 
 Pickup Speed (the former `GRIP` shop title) and Carry Speed now have larger early effects, lower entry prices and explicit campaign requirements. Internal upgrade IDs and saved levels remain unchanged; there is no save reset, automatic purchase, retroactive charge or change to loot prices/timers.

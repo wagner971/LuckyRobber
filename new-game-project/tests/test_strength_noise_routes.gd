@@ -8,7 +8,7 @@ func test() -> void:
 		var tier := Balance.LOCATION_ORDER.find(location)
 		var profile := SaveStore.new()
 		profile.session_only = true
-		profile.data.upgrades = {"strength": Balance.STRENGTH_CAPS[tier], "grip": Balance.powerup_requirement(location), "carry": Balance.powerup_requirement(location), "capacity": 20, "noise": Balance.GRANULAR_CAPS[tier]}
+		profile.data.upgrades = {"strength": Balance.required_level("strength", location), "grip": Balance.required_level("grip", location), "carry": Balance.required_level("carry", location), "capacity": 20, "noise": Balance.required_level("noise", location)}
 		await new_session(location, "FINAL_JOB" if location == "apartment" else "normal", profile)
 		var solved := await drive_indices(range(world.items.size()), "strength_noise_min_speeds_" + location)
 		check(solved and run.result.get("full_clear", false), "Full clear at legal Strength and minimum speed requirements: " + location)

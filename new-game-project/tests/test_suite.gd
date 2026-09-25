@@ -163,9 +163,9 @@ func test() -> void:
 
 func test_economy() -> void:
 	var save = SaveStore.new("res://tests/save_roundtrip.json")
-	save.data.wallet = 1250
-	check(not save.purchase("strength", false) and save.data.wallet == 1250, "Upgrades blocked during rounds")
-	check(save.purchase("strength", true) and save.data.wallet == 250 and save.data.upgrades.strength == 2, "Strength purchase costs exactly $1000")
+	save.data.wallet = 1600
+	check(not save.purchase("strength", false) and save.data.wallet == 1600, "Upgrades blocked during rounds")
+	check(save.purchase("strength", true) and save.data.wallet == 250 and save.data.upgrades.strength == 2, "Strength purchase costs exactly $1350")
 	check(not save.purchase("strength", true) and save.data.wallet == 250, "Insufficient funds never go negative")
 	check(save.save_progress(), "Atomic save succeeds")
 	var readback = SaveStore.new(save.path)
@@ -187,9 +187,11 @@ func test_economy() -> void:
 	run.upgrades.grip = 4
 	check(run.movement_factor(world.items[7]) == speed and is_equal_approx(Balance.grip_speed(4), 1.36), "Grip affects pickup only")
 	run.upgrades.carry = 20
-	check(is_equal_approx(run.movement_factor(world.items[7]), 0.9607843137) and is_equal_approx(run.movement_factor(world.items[1]), 0.9934640523), "Carry speed improves every weight while staying below unladen speed")
+	check(is_equal_approx(run.movement_factor(world.items[7]), 1.38 * 0.9607843137) and is_equal_approx(run.movement_factor(world.items[1]), 1.38 * 0.9934640523) and is_equal_approx(run.movement_factor(null), 1.38), "Carry speed raises walking speed and recovers every weight penalty")
 	run.upgrades = untouched
-	save.data.wallet = 300000
+	save.data.wallet = 2000000
+	save.data.apartment_final_job_completed = true
+	save.data.museum_final_job_completed = true
 	save.data.unlocked = Balance.LOCATION_ORDER.duplicate()
 	for key in Balance.COSTS:
 		for i in range(20): save.purchase(key, true)
@@ -285,6 +287,8 @@ func test_success_progression() -> void:
 	check(store.data.trophies.is_empty() and store.data.objectives.apartment == {"cash": false, "signature": false, "full_clear": false}, "Failed run grants no trophies or objectives")
 
 func go_to(point: Vector3) -> bool:
+	# Braking distance grows with the square of walk speed; slow down earlier at high Carry levels.
+	var slowdown := 0.12 * pow(Balance.walk_factor(run.upgrades.carry), 2)
 	for i in range(900):
 		var difference = Vector2(point.x - world.player.position.x, point.z - world.player.position.z)
 		if difference.length() < 0.08:
@@ -292,7 +296,7 @@ func go_to(point: Vector3) -> bool:
 			return true
 		if run.phase == RunManager.Phase.FINISHED: return false
 		await physics_frame
-		run.intention = difference.normalized() * minf(1.0, difference.length() / 0.12)
+		run.intention = difference.normalized() * minf(1.0, difference.length() / slowdown)
 		run._physics_process(1.0 / 60)
 		world.player._physics_process(1.0 / 60)
 	return false

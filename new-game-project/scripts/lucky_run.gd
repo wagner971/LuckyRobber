@@ -109,14 +109,14 @@ func mark(item: LootItem, text: String, color: Color, through: bool) -> void:
 		item.rarity_marker = visual
 
 func movement(item: LootItem) -> float:
-	var factor := 1.0
+	var factor := Balance.walk_factor(run.upgrades.carry)
 	if item != null:
 		var weight: String = item.data.weight_class
 		if id == "feather": weight = "LIGHT"
 		if id == "world":
 			var classes := ["LIGHT","MEDIUM","HEAVY","VERY_HEAVY"]
 			weight = classes[mini(3,classes.find(weight)+1)]
-		factor = Balance.carry_factor(weight,run.upgrades.carry)
+		factor *= Balance.carry_factor(weight,run.upgrades.carry)
 		if id == "hands" or (id == "panic" and run.alarm_active): factor *= 0.8
 	if id == "speed": factor *= 1.3
 	if id == "slow": factor *= 0.7

@@ -5,7 +5,16 @@ func test() -> void:
 	Engine.time_scale = 16
 	Engine.physics_ticks_per_second = 960
 	Engine.max_physics_steps_per_frame = 64
-	check(Balance.upgrade_cost("grip",1) == 250 and Balance.upgrade_cost("carry",1) == 300,"First two speed upgrades cost $550 combined")
+	check(Balance.upgrade_cost("grip",1) == 850 and Balance.upgrade_cost("carry",1) == 850,"First two speed upgrades cost $1,700 combined")
+	var total_cost := 0
+	for key in Balance.UPGRADE_KEYS:
+		for level in range(1, Balance.max_level(key)):
+			check(Balance.upgrade_cost(key, level) > 0 and Balance.upgrade_cost(key, level + 1) >= Balance.upgrade_cost(key, level) or level + 1 >= Balance.max_level(key), "Prices never fall as %s levels rise" % key)
+			total_cost += Balance.upgrade_cost(key, level)
+	check(total_cost == 1725300, "All 80 purchases cost $1,725,300")
+	var walk_monotonic = true
+	for level in range(1, 20): walk_monotonic = walk_monotonic and Balance.walk_factor(level + 1) > Balance.walk_factor(level)
+	check(walk_monotonic and is_equal_approx(Balance.walk_factor(20), 1.38), "Every Carry level walks faster, up to +38% at MAX")
 	check(is_equal_approx(Balance.pickup_time(2.8,2),2.5),"Grip 2 cuts Quantum Core pickup from 2.8s to 2.5s")
 	check(is_equal_approx(Balance.carry_factor("VERY_HEAVY",2)*5,3.5185185185),"Carry 2 raises heaviest-loot speed from 3 to 3.519 m/s (+17.28%)")
 	for weight in Balance.WEIGHTS:
@@ -18,8 +27,8 @@ func test() -> void:
 	var accumulated = 0
 	for index in range(Balance.LOCATION_ORDER.size()):
 		var location: String = Balance.LOCATION_ORDER[index]
-		var required = index+2
-		check(Balance.powerup_requirement(location) == required,"Required speed levels increase once per location: "+location)
+		var required: int = Balance.required_level("grip", location)
+		check(required == Balance.required_level("carry", location) and (index == 0 or required > Balance.required_level("grip", Balance.LOCATION_ORDER[index-1])),"Required speed levels increase at every location: "+location)
 		var counts = {}
 		for spawn in Balance.LOCATIONS[location].items: counts[spawn[1]] = counts.get(spawn[1],0)+1
 		var types = counts.keys()
@@ -29,23 +38,24 @@ func test() -> void:
 		special_data.museum_final_job_completed = index > Balance.LOCATION_ORDER.find("museum")
 		Progression.settle(special_data,location,SpecialJobs.MODE,counts,[],Balance.totals(location).value,true,20.0)
 		check(not special_data.objectives[location].full_clear and (index == Balance.LOCATION_ORDER.size()-1 or Balance.LOCATION_ORDER[index+1] not in special_data.unlocked),"Special Job cannot bypass required speed purchases: "+location)
-		for missing in ["grip","carry"]:
+		for missing in Balance.UPGRADE_KEYS:
 			var data = SaveStore.new("res://tests/speed_unused.json").data
 			data.unlocked = Balance.LOCATION_ORDER.slice(0,index+1)
 			data.apartment_final_job_completed = index > 0
 			data.museum_final_job_completed = index > Balance.LOCATION_ORDER.find("museum")
-			data.upgrades.grip = required
-			data.upgrades.carry = required
-			data.upgrades[missing] = required-1
+			for key in Balance.UPGRADE_KEYS: data.upgrades[key] = Balance.required_level(key, location)
 			var mode = "FINAL_JOB" if location in ["apartment","museum"] else "normal"
-			var result = Progression.settle(data,location,mode,counts,[],Balance.totals(location).value,true,20.0)
-			check(not data.objectives[location].full_clear and result.bonus == 0 and not result.get("final_job_completed",false),"Missing %s cannot clear %s even through direct settlement" % [missing,location])
-			check(data.wallet == Balance.totals(location).value,"Blocked career clear still pays every original: %s %s" % [location,missing])
-			check(index == Balance.LOCATION_ORDER.size()-1 or Balance.LOCATION_ORDER[index+1] not in data.unlocked,"Missing %s cannot open next location after %s" % [missing,location])
-			data.upgrades[missing] = required
+			var result: Dictionary
+			if index == 0 or Balance.required_level(missing, location) > Balance.required_level(missing, Balance.LOCATION_ORDER[index-1]):
+				data.upgrades[missing] = Balance.required_level(missing, location)-1
+				result = Progression.settle(data,location,mode,counts,[],Balance.totals(location).value,true,20.0)
+				check(not data.objectives[location].full_clear and result.bonus == 0 and not result.get("final_job_completed",false),"Missing %s cannot clear %s even through direct settlement" % [missing,location])
+				check(data.wallet == Balance.totals(location).value,"Blocked career clear still pays every original: %s %s" % [location,missing])
+				check(index == Balance.LOCATION_ORDER.size()-1 or Balance.LOCATION_ORDER[index+1] not in data.unlocked,"Missing %s cannot open next location after %s" % [missing,location])
+				data.upgrades[missing] = Balance.required_level(missing, location)
 			result = Progression.settle(data,location,mode,counts,[],Balance.totals(location).value,true,20.0)
-			check(data.objectives[location].full_clear and result.bonus == Balance.CLEAR_BONUS,"Both speed requirements permit the real clear: "+location)
-			check(index == Balance.LOCATION_ORDER.size()-1 or Balance.LOCATION_ORDER[index+1] in data.unlocked,"Both speed requirements permit advancement: "+location)
+			check(data.objectives[location].full_clear and result.bonus == Balance.CLEAR_BONUS,"Complete loadout permits the real clear: "+location)
+			check(index == Balance.LOCATION_ORDER.size()-1 or Balance.LOCATION_ORDER[index+1] in data.unlocked,"Complete loadout permits advancement: "+location)
 		var profile = SaveStore.new("res://tests/speed_route.json")
 		profile.session_only = true
 		profile.data.unlocked = Balance.LOCATION_ORDER.slice(0,index+1)
@@ -67,9 +77,9 @@ func test() -> void:
 	purchase_store.data.apartment_final_job_completed = true
 	purchase_store.data.objectives.house.cash = true
 	purchase_store.data.objectives.house.signature = true
-	purchase_store.data.upgrades.grip = 3
+	for key in Balance.UPGRADE_KEYS: purchase_store.data.upgrades[key] = Balance.required_level(key, "house")
 	purchase_store.data.upgrades.carry = 2
-	purchase_store.data.wallet = 350
+	purchase_store.data.wallet = Balance.upgrade_cost("carry", 2)
 	check(purchase_store.purchase("carry",true) and "villa" in purchase_store.data.unlocked,"Last required purchase unlocks an already-earned ordinary map immediately")
 	print("SPEED PROGRESSION: %d checks, %d failures" % [checks,failures])
 	quit(1 if failures else 0)
