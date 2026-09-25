@@ -27,6 +27,7 @@ var pickup_amount = 0.0
 var loading = false
 var pickup_release = 0.0
 var load_release = 0.0
+var squash_tween: Tween
 var carry_blend = 0.0
 var heavy_blend = 0.0
 var animation_state = "IDLE"
@@ -138,9 +139,19 @@ func reset_suit() -> void:
 
 func picked_up() -> void:
 	pickup_release = 0.18
+	squash(0.86, 1.10)
 
 func loaded() -> void:
 	load_release = 0.24
+	squash(1.12, 0.92)
+
+# Quick squash-and-stretch on the whole figure; the pose animation keeps running underneath.
+func squash(vertical: float, horizontal: float) -> void:
+	if not is_instance_valid(body): return
+	if is_instance_valid(squash_tween) and squash_tween.is_valid(): squash_tween.kill()
+	body.scale = Vector3(horizontal, vertical, horizontal)
+	squash_tween = body.create_tween()
+	squash_tween.tween_property(body, "scale", Vector3.ONE, 0.16).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 func animate(delta: float, speed: float) -> void:
 	if paused: return

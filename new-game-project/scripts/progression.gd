@@ -86,7 +86,7 @@ static func refresh(data: Dictionary) -> Array:
 	data.unlocked = ordered
 	for id in Balance.COSMETICS:
 		var cosmetic: Dictionary = Balance.COSMETICS[id]
-		if cosmetic.reward == "": continue
+		if cosmetic.reward in ["", "lucky"]: continue
 		var count = data.trophies.size() if cosmetic.reward == "trophies" else contract_count(data)
 		if count >= int(cosmetic.target) and id not in data.cosmetics.owned:
 			data.cosmetics.owned.append(id)

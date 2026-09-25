@@ -3,7 +3,7 @@ extends RefCounted
 
 signal appearance_changed
 
-const SCHEMA = 16
+const SCHEMA = 17
 const DAILY_GIFT_COOLDOWN := 86400
 var data: Dictionary
 var path = "user://progress.json"
@@ -34,6 +34,8 @@ func defaults() -> Dictionary:
 	clean.garage_owned = []
 	clean.level_gifts = {}
 	clean.lucky_pending = {}
+	clean.merge({"lucky_meter": 0, "lucky_tokens": 0, "lucky_owned": [], "lucky_equipped": {}, "upgrade_tokens": 0, "lucky_blocks_found": 0, "last_location": ""})
+	for kind in LuckyShop.SLOTS: clean.lucky_equipped[kind] = ""
 	clean.merge({"apartment_final_job_completed": false, "museum_final_job_completed": false})
 	return clean
 
@@ -52,13 +54,13 @@ func load_progress() -> void:
 		file.close()
 		if not parsed is Dictionary or not parsed.has("schema_version"): continue
 		var schema = number(parsed.schema_version, -1, 999)
-		if schema not in [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, SCHEMA]:
+		if schema not in [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, SCHEMA]:
 			read_only = true
 			last_error = "Unsupported save schema. Original file preserved; saving disabled."
 			return
 		if candidate.ends_with(".bak") and FileAccess.file_exists(path):
 			DirAccess.copy_absolute(path, path + ".corrupt")
-		if schema in [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]:
+		if schema in [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]:
 			var backup = candidate + ".schema%d.bak" % schema
 			if not FileAccess.file_exists(backup):
 				var copy_error = DirAccess.copy_absolute(candidate, backup)
@@ -129,6 +131,19 @@ func validate(raw: Dictionary) -> Dictionary:
 	var lucky := dictionary(raw.get("lucky_pending",{}))
 	if LuckyEffects.CATALOG.has(lucky.get("id","")):
 		clean.lucky_pending = {"id":str(lucky.id),"seen":lucky.get("seen",false) == true}
+		if lucky.has("source"): clean.lucky_pending.source = str(lucky.source)
+		if lucky.has("tokens"): clean.lucky_pending.tokens = number(lucky.tokens, 0, 10)
+	clean.lucky_meter = number(raw.get("lucky_meter", 0), 0, LuckyMeter.TARGET)
+	clean.lucky_tokens = number(raw.get("lucky_tokens", 0), 0, 1000000)
+	clean.upgrade_tokens = number(raw.get("upgrade_tokens", 0), 0, 1000)
+	clean.lucky_blocks_found = number(raw.get("lucky_blocks_found", 0), 0, 1000000)
+	clean.lucky_owned = unique_ids(raw.get("lucky_owned", []), LuckyShop.CATALOG.keys())
+	var lucky_equipped := dictionary(raw.get("lucky_equipped", {}))
+	for kind in LuckyShop.SLOTS:
+		var id := str(lucky_equipped.get(kind, ""))
+		clean.lucky_equipped[kind] = id if id in clean.lucky_owned and str(LuckyShop.CATALOG[id].kind) == kind else ""
+	var last := str(raw.get("last_location", ""))
+	clean.last_location = last if last in Balance.LOCATION_ORDER else ""
 	clean.garage_owned = unique_ids(raw.get("garage_owned", []), GarageDecor.CATALOG.keys())
 	for key in ["wallet", "successes", "failures"]: clean[key] = number(raw.get(key, 0), 0, 1000000000)
 	clean.diamonds = number(raw.get("diamonds", 0), 0, 1000000)
@@ -320,7 +335,7 @@ func save_progress() -> bool:
 		var old = FileAccess.open(path, FileAccess.READ)
 		var raw: Variant = parse_json(old.get_as_text()) if old != null else null
 		if old != null: old.close()
-		if raw is Dictionary and number(raw.get("schema_version", 0), -1, 999) in [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, SCHEMA]:
+		if raw is Dictionary and number(raw.get("schema_version", 0), -1, 999) in [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, SCHEMA]:
 			error = DirAccess.copy_absolute(path, path + ".bak")
 			if error != OK: return write_error("backup", error)
 	error = DirAccess.rename_absolute(temp, path)
@@ -347,8 +362,10 @@ func purchase(key: String, between_rounds: bool) -> bool:
 	var level: int = data.upgrades[key]
 	if level >= Balance.max_level(key) or level >= Balance.purchase_cap(key, data): return false
 	var cost: int = Balance.upgrade_cost(key, level)
-	if data.wallet < cost: return false
-	data.wallet -= cost
+	# Lucky Shop upgrade tokens are spent first; they are the rarer currency by design.
+	if int(data.get("upgrade_tokens", 0)) > 0: data.upgrade_tokens -= 1
+	elif data.wallet < cost: return false
+	else: data.wallet -= cost
 	data.upgrades[key] += 1
 	Progression.refresh(data)
 	save_progress()

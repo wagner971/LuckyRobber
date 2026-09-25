@@ -5,10 +5,13 @@ const PURPLE_FRAME := preload("res://assets/ui/reward_cards/purple-lucky-frame.p
 const RED_FRAME := preload("res://assets/ui/reward_cards/unlucky-frame.png")
 const PURPLE_CUBE := preload("res://assets/ui/reward_cards/purple-lucky-cube.png")
 const CRACKED_CUBE := preload("res://assets/ui/reward_cards/purple-unlucky-cube.png")
+signal play_now
 var effect_id := ""
 var description: Label
 var block_model: Node3D
 var button_fill: ColorRect
+var play_button: Button
+var play_fill: ColorRect
 
 func _ready() -> void:
 	effect_id = str(prize.lucky)
@@ -28,23 +31,43 @@ func _ready() -> void:
 	description.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	description.text = LuckyEffects.CATALOG[effect_id][1]
 	add_child(description)
-	claim.text = "NEXT RUN · GOT IT"
+	claim.text = "GOT IT · BACK"
 	for state in ["normal","hover","pressed","disabled"]:
 		claim.add_theme_stylebox_override(state,StyleBoxEmpty.new())
 	for state in ["font_color","font_hover_color","font_pressed_color"]:
-		claim.add_theme_color_override(state,Color("003e19"))
-	button_fill = ColorRect.new()
-	button_fill.show_behind_parent = true
-	button_fill.mouse_filter = MOUSE_FILTER_IGNORE
-	var mat := ShaderMaterial.new()
-	mat.shader = preload("res://assets/shaders/result_button.gdshader")
-	mat.set_shader_parameter("top_color",Color("56ff42"))
-	mat.set_shader_parameter("bottom_color",Color("00e42c"))
-	button_fill.material = mat
-	claim.add_child(button_fill)
+		claim.add_theme_color_override(state,Color("f3e4ff"))
+	button_fill = fill_for(claim,Color("6a2aa6"),Color("46156f"))
+	play_button = Button.new()
+	play_button.name = "LuckyPlayNow"
+	play_button.text = "PLAY NOW  ▶"
+	play_button.add_theme_font_override("font",font)
+	for state in ["normal","hover","pressed","disabled"]:
+		play_button.add_theme_stylebox_override(state,StyleBoxEmpty.new())
+	for state in ["font_color","font_hover_color","font_pressed_color"]:
+		play_button.add_theme_color_override(state,Color("003e19"))
+	play_button.visible = false
+	play_button.pressed.connect(func():
+		play_button.disabled = true
+		claim.disabled = true
+		play_now.emit())
+	add_child(play_button)
+	play_fill = fill_for(play_button,Color("56ff42"),Color("00e42c"))
 	UiJuice.button_touch(claim)
+	UiJuice.button_touch(play_button)
 	layout()
 	update_visual()
+
+func fill_for(target: Button, top: Color, bottom: Color) -> ColorRect:
+	var fill := ColorRect.new()
+	fill.show_behind_parent = true
+	fill.mouse_filter = MOUSE_FILTER_IGNORE
+	var mat := ShaderMaterial.new()
+	mat.shader = preload("res://assets/shaders/result_button.gdshader")
+	mat.set_shader_parameter("top_color",top)
+	mat.set_shader_parameter("bottom_color",bottom)
+	fill.material = mat
+	target.add_child(fill)
+	return fill
 
 func layout() -> void:
 	if claim == null: return
@@ -52,12 +75,18 @@ func layout() -> void:
 	var w := minf(usable.x-16,(usable.y-16)*9.0/16.0)
 	var h := w*16.0/9.0
 	card = Rect2(Vector2(insets.x+(usable.x-w)/2,insets.y+(usable.y-h)/2),Vector2(w,h))
-	claim.position = card.position+card.size*Vector2(0.075,0.856)
-	claim.size = card.size*Vector2(0.85,0.096)
-	claim.add_theme_font_size_override("font_size",int(w*0.059))
+	claim.position = card.position+card.size*Vector2(0.075,0.895)
+	claim.size = card.size*Vector2(0.85,0.052)
+	claim.add_theme_font_size_override("font_size",int(w*0.040))
 	if button_fill != null:
 		button_fill.size = claim.size
 		button_fill.material.set_shader_parameter("bounds",claim.size)
+	if play_button != null:
+		play_button.position = card.position+card.size*Vector2(0.075,0.800)
+		play_button.size = card.size*Vector2(0.85,0.085)
+		play_button.add_theme_font_size_override("font_size",int(w*0.062))
+		play_fill.size = play_button.size
+		play_fill.material.set_shader_parameter("bounds",play_button.size)
 	queue_redraw()
 
 func update_visual() -> void:
@@ -69,6 +98,7 @@ func update_visual() -> void:
 		revealed = true
 		cue.emit("special_reveal")
 	claim.visible = elapsed >= 2.1
+	if play_button != null: play_button.visible = elapsed >= 2.1
 	actor.hide()
 	question.hide()
 	confetti.hide()
@@ -82,7 +112,7 @@ func update_visual() -> void:
 	picture.size = card.size*Vector2(0.8,0.38)
 	if description != null:
 		description.visible = revealed
-		description.position = card.position+card.size*Vector2(0.10,0.685)
+		description.position = card.position+card.size*Vector2(0.10,0.690)
 		var pixels := int(card.size.x*0.052)
 		while font.get_multiline_string_size(description.text,HORIZONTAL_ALIGNMENT_LEFT,card.size.x*0.80,pixels).y > card.size.y*0.092 and pixels > 12:
 			pixels -= 1
@@ -137,16 +167,17 @@ func _draw() -> void:
 	var pixels := int(w*0.10)
 	while font.get_string_size(title,HORIZONTAL_ALIGNMENT_LEFT,-1,pixels).x > w*0.87: pixels -= 1
 	lettering(title,Vector2(card.get_center().x,card.position.y+h*0.666),pixels,Color("fffaf2"),edge)
-	var line_y := card.position.y+h*0.791
+	var line_y := card.position.y+h*0.772
 	draw_line(Vector2(card.position.x+w*0.14,line_y),Vector2(card.position.x+w*0.43,line_y),Color(edge,0.45),1.5,true)
 	draw_line(Vector2(card.position.x+w*0.57,line_y),Vector2(card.position.x+w*0.86,line_y),Color(edge,0.45),1.5,true)
 	star(Vector2(card.get_center().x,line_y),w*0.014,Color("dfafff"))
-	var footer := "APPLIES TO YOUR NEXT RUN ONLY"
+	var tokens := int(prize.get("tokens",LuckyMeter.tokens_for(effect_id)))
+	var footer := "+%d LUCKY TOKEN%s · NEXT RUN ONLY" % [tokens,"" if tokens == 1 else "S"]
 	var footer_size := int(w*0.034)
-	var at := Vector2(card.get_center().x-font.get_string_size(footer,HORIZONTAL_ALIGNMENT_LEFT,-1,footer_size).x/2,card.position.y+h*0.825)
+	var at := Vector2(card.get_center().x-font.get_string_size(footer,HORIZONTAL_ALIGNMENT_LEFT,-1,footer_size).x/2,card.position.y+h*0.793)
 	draw_string(font,at,footer,HORIZONTAL_ALIGNMENT_LEFT,-1,footer_size,Color("f5dbff") if good else Color("ffd0b9"))
-	if claim.visible:
-		var shadow := claim.get_rect()
+	if play_button != null and play_button.visible:
+		var shadow := play_button.get_rect()
 		shadow.position.y += h*0.007
 		draw_style_box(plate(Color("006d19"),Color("b9ff7a"),20,2),shadow)
 

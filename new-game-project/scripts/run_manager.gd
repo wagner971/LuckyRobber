@@ -450,7 +450,7 @@ func finish(success: bool, abandoned: bool = false) -> void:
 			var haul_bonus := roundi(cargo_value*0.5)
 			store.data.wallet += haul_bonus
 			changes.bonus += haul_bonus
-		if lucky.collected: store.data.lucky_pending = {"id":LuckyEffects.roll(),"seen":false}
+		if lucky.collected: LuckyMeter.award_block(store.data, "heist")
 		# Every escaped object banks immediately and unlocks its blueprint
 		# for the automatic duplication lab.
 		Duplication.register_heist(store.data, location_id, escaped_types)
@@ -461,10 +461,13 @@ func finish(success: bool, abandoned: bool = false) -> void:
 		store.data.failures += 1
 		store.data.mode_stats[mode].failures += 1
 	var special_unlocked = SpecialJobs.finish(store.data, mode, location_id, started)
+	var meter := LuckyMeter.settle(store.data, {"success": success, "items": standard_cargo_count(), "new_objectives": changes.new_objectives, "full_clear": full_clear})
+	store.data.last_location = location_id
 	var saved = store.save_progress()
 	var lost = cargo_value + (int(carried.data.cash_value) if carried != null else 0)
 	result = changes.duplicate(true)
 	result.merge({"success": success, "abandoned": abandoned, "mode": mode, "earned": cargo_value + changes.bonus + changes.contract_bonus + changes.rush_bonus if success else 0, "loot_value": cargo_value, "loot_types": escaped_types.duplicate(), "new_rare_loot": new_rare_loot, "pending_loot": 0, "lost": lost if not success else 0, "items": standard_cargo_count(), "lost_items": standard_cargo_count() + (1 if carried != null and carried.data.type_id != "lucky_block" else 0) if not success else 0, "elapsed": elapsed, "full_clear": full_clear and mode in ["normal", SpecialJobs.MODE, "FINAL_JOB"], "saved": saved, "special_unlocked": special_unlocked, "special_type": rules.get("special_type", "")})
+	result.merge({"lucky_meter": meter, "lucky_collected": lucky.collected})
 	result.merge({"final_noise": current_noise, "alarm_threshold": alarm_threshold, "alarm_triggered": alarm_active, "time_when_alarm_triggered": time_when_alarm_triggered, "remaining_time_at_escape": remaining if success else 0.0})
 	if is_instance_valid(level.security):
 		result.merge({"security_detections":level.security.detections,"security_time_lost":level.security.time_lost})

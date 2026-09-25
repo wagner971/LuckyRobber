@@ -82,6 +82,8 @@ var noise_gain_time = 0.0
 var development_mode = false
 var menu_previews_active = true
 var cosmetics_list: VBoxContainer
+var lucky_shop_list: VBoxContainer
+const LUCKY_CUBE := preload("res://assets/ui/reward_cards/purple-lucky-cube.png")
 var garage_selected := ""
 var garage_live_preview: MenuCharacterPreview
 var garage_buy: Button
@@ -705,6 +707,7 @@ func show_cash_load(run: RunManager, amount: int) -> void:
 		cash_effect = CashBurst3D.new()
 		run.level.add_child(cash_effect)
 		cash_effect.setup(run)
+		cash_effect.tint(LuckyShop.accent(run.store.data, "load_vfx", Color("50ed88")))
 		cash_effect.collected.connect(on_cash_collected)
 	var visible_value: int = roundi(lerpf(float(cash_count_from), float(cash_count_to), cash_count_elapsed)) if cash_count_elapsed < 1.0 else run.cargo_value - amount
 	cash_count_from = visible_value
@@ -718,6 +721,7 @@ func show_cash_amount(run: RunManager, amount: int) -> void:
 	if cash_text_tween != null and cash_text_tween.is_valid(): cash_text_tween.kill()
 	cash_text_paused = false
 	cash_amount.text = "+$%d" % amount
+	cash_amount.add_theme_color_override("font_color", LuckyShop.accent(run.store.data, "cash_vfx", HudStyle.GREEN))
 	cash_amount_panel.reset_size()
 	position_cash_amount(run)
 	cash_amount_panel.show()
@@ -1137,8 +1141,58 @@ func home(store: SaveStore) -> void:
 	home_shortcut(shortcuts, "UPGRADES", "dumbbell", func(): action_requested.emit("shop"), store)
 	home_shortcut(shortcuts, "GARAGE", "garage", func(): action_requested.emit("garage"), store)
 	home_shortcut(shortcuts, "COSMETICS", "cap", func(): action_requested.emit("cosmetics"), store)
+	lucky_meter_panel(body, store)
 	home_next_target(body, store)
 	if store.last_error != "": text(body,store.last_error,18,Color("ffac94"))
+
+# The one progress bar that is always moving: every heist fills it, a full bar is a Lucky Block.
+func lucky_meter_panel(body: VBoxContainer, store: SaveStore, compact: bool = false) -> PanelContainer:
+	var shell = PanelContainer.new()
+	shell.name = "LuckyMeterPanel"
+	var style = panel(Color("2d0b47eb"), 18)
+	style.set_content_margin_all(10 if compact else 12)
+	style.border_color = HudStyle.SPECIAL.darkened(0.25)
+	style.set_border_width_all(2)
+	shell.add_theme_stylebox_override("panel", style)
+	body.add_child(shell)
+	var line = row(shell, 12)
+	var cube = TextureRect.new()
+	cube.texture = LUCKY_CUBE
+	cube.custom_minimum_size = Vector2(52, 52) if compact else Vector2(66, 66)
+	cube.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	cube.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	cube.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	line.add_child(cube)
+	var copy = column(line, 3)
+	copy.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var head = row(copy, 8)
+	var title = headline(head, "LUCKY METER", 18 if compact else 20, HudStyle.SPECIAL)
+	title.autowrap_mode = TextServer.AUTOWRAP_OFF
+	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var value = headline(head, "%d/%d" % [int(store.data.lucky_meter), LuckyMeter.TARGET], 18 if compact else 20, PAPER)
+	value.name = "LuckyMeterValue"
+	value.autowrap_mode = TextServer.AUTOWRAP_OFF
+	var bar = ProgressBar.new()
+	bar.name = "LuckyMeterBar"
+	bar.custom_minimum_size.y = 12
+	bar.show_percentage = false
+	bar.value = 100.0 * int(store.data.lucky_meter) / LuckyMeter.TARGET
+	bar.add_theme_stylebox_override("background", noise_style(Color("1a0630")))
+	bar.add_theme_stylebox_override("fill", noise_style(HudStyle.SPECIAL))
+	copy.add_child(bar)
+	var foot = row(copy, 8)
+	var tokens = text(foot, "%d TOKEN%s · FULL METER = LUCKY BLOCK" % [int(store.data.lucky_tokens), "" if int(store.data.lucky_tokens) == 1 else "S"], 14, MUTED)
+	tokens.name = "LuckyTokensLabel"
+	tokens.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	tokens.autowrap_mode = TextServer.AUTOWRAP_OFF
+	var open_shop = blue_button(line, "LUCKY\nSHOP ›", func(): action_requested.emit("lucky_shop"), 52 if compact else 66)
+	open_shop.name = "LuckyShopButton"
+	open_shop.add_theme_font_size_override("font_size", 15)
+	open_shop.custom_minimum_size.x = 92
+	open_shop.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	open_shop.add_theme_color_override("font_color", Color("f3e4ff"))
+	open_shop.add_theme_stylebox_override("normal", menu_style(Color("6a2aa6"), Color("b578ff"), 16))
+	return shell
 
 func home_reward_icon(parent: Control, artwork: Texture2D, callback: Callable) -> Button:
 	var control := Button.new()
@@ -1526,23 +1580,8 @@ func jobs_playable_content(content: VBoxContainer, store: SaveStore, location: S
 	var special_offer: bool = store.data.special_pending and store.data.special_location_id == location
 	var totals: Dictionary = Balance.totals(location)
 	var capacity: int = Balance.van_capacity(store.data.upgrades.capacity)
-	var facts = row(content, 9)
-	jobs_fact(facts, "res://assets/hud/cash.png", "$" + cash_text(totals.value), "LOOT")
-	jobs_fact(facts, "res://assets/hud/box.png", str(config.items.size()), "ITEMS")
-	jobs_fact(facts, "res://assets/hud/clock.png", "%ds" % config.duration, "TIME")
-	jobs_van_capacity(content, capacity, int(totals.cargo))
-	jobs_powerup_requirements(content, store, location)
-	var objectives_heading = headline(content, "OBJECTIVES", 19, Color("caadde"))
-	objectives_heading.custom_minimum_size.y = 27
-	var objectives = row(content, 8)
 	var focus_full_clear: bool = store.data.objectives[location].cash and store.data.objectives[location].signature and not store.data.objectives[location].full_clear
-	var signature_name := str(Balance.ITEMS[config.special].display_name).to_upper()
-	if signature_name.length() > 12: signature_name = {"vending_machine":"VENDING", "large_statue":"STATUE", "museum_artifact":"DIAMOND", "dracula_coffin":"COFFIN"}.get(config.special, signature_name)
-	var short_names = ["$%s" % cash_text(config.threshold), signature_name, "STEAL EVERYTHING"]
-	var icon_paths = ["cash", str(config.special), "crown"]
-	for i in range(3):
-		var done: bool = store.data.objectives[location][Balance.OBJECTIVE_IDS[i]]
-		jobs_objective(objectives, str(icon_paths[i]), str(short_names[i]), done, i == 2 and focus_full_clear, capacity, int(totals.cargo), location in ["apartment", "museum"], Progression.powerups_ready(store.data, location))
+	# Reading order: what to steal, what it pays, PLAY. Stats, loadout and objectives follow.
 	var target_info := {} if focus_full_clear else jobs_location_target(store, location)
 	if not target_info.is_empty():
 		var target_panel = PanelContainer.new()
@@ -1565,6 +1604,9 @@ func jobs_playable_content(content: VBoxContainer, store: SaveStore, location: S
 		var target_title = headline(target_copy, str(target_info.title), 21, PAPER)
 		target_title.autowrap_mode = TextServer.AUTOWRAP_OFF
 		text(target_copy, str(target_info.hint), 15, MUTED)
+	var reward_line = text(content, "$%s LOOT  ·  %d ITEMS  ·  %ds" % [cash_text(totals.value), config.items.size(), config.duration], 17, HudStyle.GOLD)
+	reward_line.name = "JobsRewardLine"
+	reward_line.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	var final_playable: bool = final_ready and capacity >= config.expected_cargo
 	var play_callback: Callable = func(): start_requested.emit(location, "normal")
 	if final_playable: play_callback = func(): action_requested.emit(final_action)
@@ -1594,6 +1636,18 @@ func jobs_playable_content(content: VBoxContainer, store: SaveStore, location: S
 		content.move_child(offer_row, secondary.get_index())
 		offer_row.add_child(offer)
 	if secondary.get_child_count() == 0: secondary.queue_free()
+	jobs_van_capacity(content, capacity, int(totals.cargo))
+	jobs_powerup_requirements(content, store, location)
+	var objectives_heading = headline(content, "OBJECTIVES", 17, Color("caadde"))
+	objectives_heading.custom_minimum_size.y = 24
+	var objectives = row(content, 8)
+	var signature_name := str(Balance.ITEMS[config.special].display_name).to_upper()
+	if signature_name.length() > 12: signature_name = {"vending_machine":"VENDING", "large_statue":"STATUE", "museum_artifact":"DIAMOND", "dracula_coffin":"COFFIN"}.get(config.special, signature_name)
+	var short_names = ["$%s" % cash_text(config.threshold), signature_name, "STEAL EVERYTHING"]
+	var icon_paths = ["cash", str(config.special), "crown"]
+	for i in range(3):
+		var done: bool = store.data.objectives[location][Balance.OBJECTIVE_IDS[i]]
+		jobs_objective(objectives, str(icon_paths[i]), str(short_names[i]), done, i == 2 and focus_full_clear, capacity, int(totals.cargo), location in ["apartment", "museum"], Progression.powerups_ready(store.data, location))
 
 func jobs_secondary_button(parent: HBoxContainer, label: String, callback: Callable, color: Color = PAPER) -> Button:
 	var chip = blue_button(parent, label, callback, 54)
@@ -2068,6 +2122,68 @@ func animate_daily_spin(prize: Dictionary, store: SaveStore) -> void:
 		wheel_reward_revealed.emit(prize)
 	)
 
+func lucky_shop_page(store: SaveStore) -> void:
+	var frame = base_menu()
+	menu_header(frame, "LUCKY SHOP", store.data.wallet, "Permanent rewards for Lucky Tokens", store.data.diamonds)
+	lucky_meter_panel(frame, store, true)
+	lucky_shop_list = scroll_body(frame)
+	refresh_lucky_shop(store)
+	navigation(frame, "home", 68, store)
+
+func refresh_lucky_shop(store: SaveStore) -> void:
+	if not is_instance_valid(lucky_shop_list): return
+	for child in lucky_shop_list.get_children():
+		lucky_shop_list.remove_child(child)
+		child.queue_free()
+	text(lucky_shop_list, "Every Lucky Block pays tokens. Unlucky twists pay double.", 16, MUTED)
+	var groups := {"block_skin": "BLOCK SKINS", "load_vfx": "LOAD EFFECTS", "cash_vfx": "CASH EFFECTS", "escape_vfx": "ESCAPE EFFECTS", "cosmetic": "LOOKS", "upgrade_token": "BOOSTS", "diamonds": "BOOSTS"}
+	var shown := {}
+	for id in LuckyShop.CATALOG:
+		var kind: String = str(LuckyShop.CATALOG[id].kind)
+		if not shown.has(groups[kind]):
+			shown[groups[kind]] = true
+			text(lucky_shop_list, groups[kind], 20, HudStyle.SPECIAL)
+		lucky_shop_card(lucky_shop_list, store, id)
+	if store.last_error != "": text(lucky_shop_list, store.last_error, 18, Color("ffac94"))
+
+func lucky_shop_card(parent: VBoxContainer, store: SaveStore, id: String) -> void:
+	var entry: Dictionary = LuckyShop.CATALOG[id]
+	var kind: String = str(entry.kind)
+	var owned := LuckyShop.owned(store.data, id)
+	var equipped := kind in LuckyShop.SLOTS and LuckyShop.equipped(store.data, kind) == id
+	var c = card(parent, Color("3b1059") if equipped else Color("321049"))
+	c.name = "LuckyShopCard_" + id
+	var line = row(c)
+	var swatch = ColorRect.new()
+	swatch.color = Color(str(entry.get("color", Balance.COSMETICS.get(str(entry.get("cosmetic", "")), {}).get("color", "b578ff"))))
+	swatch.custom_minimum_size = Vector2(12, 66)
+	line.add_child(swatch)
+	var info = column(line, 3)
+	info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	headline(info, str(entry.name), 22)
+	text(info, str(entry.description), 15, MUTED)
+	var status := ""
+	if kind == "upgrade_token" and int(store.data.upgrade_tokens) > 0: status = "YOU HAVE %d" % int(store.data.upgrade_tokens)
+	elif equipped: status = "EQUIPPED"
+	elif owned: status = "OWNED · IN WARDROBE" if kind == "cosmetic" else "OWNED"
+	if status != "": text(info, status, 15, MINT)
+	var repeatable: bool = entry.get("repeatable", false)
+	var label := "✦ %d" % int(entry.price)
+	var action := "lucky_buy:" + id
+	if owned and not repeatable:
+		if kind in LuckyShop.SLOTS:
+			label = "UNEQUIP" if equipped else "EQUIP"
+			action = "lucky_equip:" + id
+		else:
+			label = "WARDROBE"
+			action = "cosmetics"
+	var b = button(line, label, func(): action_requested.emit(action), 56)
+	b.name = "LuckyBuy_" + id
+	b.size_flags_horizontal = Control.SIZE_SHRINK_END
+	b.custom_minimum_size.x = 110
+	b.add_theme_font_size_override("font_size", 18)
+	b.disabled = (not owned or repeatable) and not LuckyShop.can_buy(store.data, id)
+
 func cosmetics_page(store: SaveStore) -> void:
 	var frame = base_menu()
 	cosmetic_wallet = menu_header(frame,"COSMETICS",store.data.wallet,"Your thief. Your getaway. Your style.",store.data.diamonds)
@@ -2102,7 +2218,7 @@ func refresh_cosmetics(store: SaveStore) -> void:
 	text(cosmetics_list,"YOUR WARDROBE & REWARDS",20,HudStyle.CYAN)
 	for id in Balance.COSMETICS:
 		var config: Dictionary = Balance.COSMETICS[id]
-		if config.reward != "" or (id in store.data.cosmetics.owned and id not in today):
+		if (config.reward != "" and config.reward != "lucky") or (id in store.data.cosmetics.owned and id not in today):
 			cosmetic_card(cosmetics_list,store,id)
 	if store.last_error != "": text(cosmetics_list,store.last_error,18,Color("ffac94"))
 
@@ -2141,7 +2257,8 @@ func cosmetic_card(parent: VBoxContainer, store: SaveStore, id: String, featured
 	b.size_flags_horizontal = Control.SIZE_SHRINK_END
 	b.add_theme_font_size_override("font_size",18)
 	b.disabled = equipped or (not owned and (config.reward != "" or (store.data.diamonds < gem_price if gem_price > 0 else store.data.wallet < int(config.price))))
-	if config.reward != "": text(c,"EXCLUSIVE · %d %s" % [config.target,config.reward.to_upper()],16,MUTED)
+	if config.reward == "lucky": text(c,"LUCKY SHOP REWARD",16,HudStyle.SPECIAL)
+	elif config.reward != "": text(c,"EXCLUSIVE · %d %s" % [config.target,config.reward.to_upper()],16,MUTED)
 
 func garage_page(store: SaveStore) -> void:
 	if garage_selected not in GarageDecor.CATALOG: garage_selected = ""
@@ -2340,18 +2457,19 @@ func shop(body: VBoxContainer, store: SaveStore) -> void:
 		info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		var name = headline(info, SHOP_TITLES[key], 20, PAPER)
 		name.autowrap_mode = TextServer.AUTOWRAP_OFF
-		var level_label := text(info, "LEVEL %d / %d" % [level, Balance.max_level(key)], 15, SHOP_COLORS[key])
+		var level_label := text(info, "LEVEL %d / %d" % [level, Balance.max_level(key)], 13, SHOP_COLORS[key])
 		c.set_meta("level_label", level_label)
 		var required_now: int = Balance.required_level(key, Balance.LOCATION_ORDER[Balance.unlocked_tier(store.data)])
 		if level < required_now:
 			level_label.text += " · NEED %d" % required_now
 			level_label.add_theme_color_override("font_color", HudStyle.FINAL)
-		var desc = text(info, SHOP_DESCRIPTIONS[key], 15, MUTED)
-		if key == "strength":
-			desc.text = "Lift more · %d%% less noise" % Balance.strength_noise_reduction(level) if not maxed else "Quietest lifting"
-		desc.autowrap_mode = TextServer.AUTOWRAP_OFF
+		# One benefit line per card; the description and formulas stay behind the info button.
+		if key == "strength" and not maxed:
+			var desc = text(info, "%d%% less noise" % Balance.strength_noise_reduction(level), 13, MUTED)
+			desc.autowrap_mode = TextServer.AUTOWRAP_OFF
 		var cost = Balance.upgrade_cost(key, level)
-		var label = "MAXED" if maxed else ("LOCKED" if tier_locked else "BUY  $%s" % cash_text(cost))
+		var free_token: bool = int(store.data.get("upgrade_tokens", 0)) > 0 and not maxed and not tier_locked
+		var label = "MAXED" if maxed else ("LOCKED" if tier_locked else ("FREE · TOKEN" if free_token else "BUY  $%s" % cash_text(cost)))
 		var b = button(top, label, func():
 			shop_selected_key = key
 			buy_requested.emit(key)
@@ -2360,7 +2478,7 @@ func shop(body: VBoxContainer, store: SaveStore) -> void:
 		b.custom_minimum_size.x = 118
 		b.size_flags_horizontal = Control.SIZE_SHRINK_END
 		b.add_theme_font_size_override("font_size", 18 if label.length() < 16 else 13)
-		b.disabled = maxed or tier_locked or store.data.wallet < cost
+		b.disabled = maxed or tier_locked or (store.data.wallet < cost and not free_token)
 		var effect_line = row(c, 5)
 		if key == "strength":
 			shop_strength_unlocks(effect_line, mini(level + 1, Balance.max_level(key)), maxed)
@@ -2790,6 +2908,8 @@ func present_result(result: Dictionary, store: SaveStore, location: String) -> v
 	if not training: view.notice.pressed.connect(func(): result_details(result,store,location))
 	else: view.notice.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	view.notice.modulate.a = 0.0
+	if not training: view.add_meter(result.get("lucky_meter", {}), store.data.lucky_meter, LuckyMeter.TARGET)
+	view.set_escape_style(LuckyShop.accent(store.data, "cash_vfx", Color.WHITE), LuckyShop.equipped(store.data, "escape_vfx") != "")
 	var reveal := view.create_tween()
 	reveal.tween_interval(0.70)
 	reveal.tween_property(view.notice,"modulate:a",1.0,0.22)

@@ -45,7 +45,7 @@ func run_test() -> void:
 		run.elapsed=0
 		var original: Dictionary = item.data.duplicate(true)
 		match id:
-			"speed","slow": check(is_equal_approx(run.lucky.movement(null),1.3 if id=="speed" else 0.7),id+" movement modifier")
+			"speed","slow": check(is_equal_approx((run.lucky.movement(null)/Balance.walk_factor(run.upgrades.carry)),1.3 if id=="speed" else 0.7),id+" movement modifier")
 			"silent","noise":
 				run.add_noise(5)
 				check(run.current_noise==(0 if id=="silent" else 10),id+" affects real noise")
@@ -69,12 +69,12 @@ func run_test() -> void:
 				run.alarm_active=id=="panic"
 				var weight := "LIGHT" if id=="feather" else ("HEAVY" if id=="world" else "MEDIUM")
 				var expected: float = Balance.carry_factor(weight,run.upgrades.carry)*(0.8 if id in ["hands","panic"] else 1)
-				check(is_equal_approx(run.lucky.movement(item),expected),id+" carry modifier")
+				check(is_equal_approx((run.lucky.movement(item)/Balance.walk_factor(run.upgrades.carry)),expected),id+" carry modifier")
 			"sticky":
 				run.elapsed=5.1
-				check(run.lucky.movement(null)==0.45,"Sticky slowdown")
+				check((run.lucky.movement(null)/Balance.walk_factor(run.upgrades.carry))==0.45,"Sticky slowdown")
 				run.elapsed=5.6
-				check(run.lucky.movement(null)==1,"Sticky recovery")
+				check((run.lucky.movement(null)/Balance.walk_factor(run.upgrades.carry))==1,"Sticky recovery")
 			"ghost":
 				var reduced := false
 				for child in world.player.get_children():

@@ -22,6 +22,9 @@ func setup(target: Camera3D, player: Node3D = null) -> void:
 func impact_punch(intensity: float) -> void:
 	start(clampf(intensity, 0, 1), 0.10)
 
+func pickup_kick() -> void:
+	start(0.16, 0.07)
+
 func alarm_pulse() -> void:
 	start(0.72, 0.16)
 

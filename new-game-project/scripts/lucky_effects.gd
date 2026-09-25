@@ -49,12 +49,12 @@ static func roll() -> String: return CATALOG.keys()[randi_range(0,CATALOG.size()
 static func spawns(draw: float) -> bool: return draw < CHANCE
 static func positive(id: String) -> bool: return CATALOG.get(id,["","",true])[2]
 
-static func model() -> Node3D:
+static func model(tint: Color = Color("9822ed")) -> Node3D:
 	var root := Node3D.new()
-	Models.box(root,Vector3.ONE*0.78,Vector3(0,0.4,0),Color("9822ed"))
-	for y in [0.07,0.75]: Models.box(root,Vector3(0.85,0.075,0.85),Vector3(0,y,0),Color("c467ff"))
+	Models.box(root,Vector3.ONE*0.78,Vector3(0,0.4,0),tint)
+	for y in [0.07,0.75]: Models.box(root,Vector3(0.85,0.075,0.85),Vector3(0,y,0),tint.lightened(0.28))
 	for x in [-0.39,0.39]:
-		for z in [-0.39,0.39]: Models.box(root,Vector3(0.065,0.76,0.065),Vector3(x,0.4,z),Color("501181"))
+		for z in [-0.39,0.39]: Models.box(root,Vector3(0.065,0.76,0.065),Vector3(x,0.4,z),tint.darkened(0.45))
 	# Pixel question mark, on all four faces and the top, with a darker offset.
 	var pixels := [Vector2(1,0),Vector2(2,0),Vector2(3,0),Vector2(0,1),Vector2(4,1),Vector2(4,2),Vector2(3,3),Vector2(2,3),Vector2(2,4),Vector2(2,6)]
 	for side in range(5):
@@ -64,7 +64,7 @@ static func model() -> Node3D:
 		else: face.rotation.y = side*PI/2; face.position = Vector3(sin(side*PI/2)*0.40,0.40,cos(side*PI/2)*0.40)
 		for pixel in pixels:
 			var at := Vector3((pixel.x-2)*0.075,(3-pixel.y)*0.075,0)
-			Models.box(face,Vector3(0.083,0.083,0.023),at+Vector3(0.018,-0.018,0),Color("581485"))
+			Models.box(face,Vector3(0.083,0.083,0.023),at+Vector3(0.018,-0.018,0),tint.darkened(0.4))
 			Models.box(face,Vector3(0.071,0.071,0.025),at+Vector3(0,0,0.015),Color("f9efff"))
 	# Bake the pixel details into shared-color surfaces, rather than 100 draw calls.
 	var surfaces := {}
@@ -100,16 +100,30 @@ static func fits(world: HeistLevel, point: Vector3, radius: float) -> bool:
 	query.transform = Transform3D(Basis.IDENTITY,point+Vector3.UP*0.6)
 	return world.get_world_3d().direct_space_state.intersect_shape(query,1).is_empty()
 
-static func spawn(world: HeistLevel, point: Vector3) -> LootItem:
+static func spawn(world: HeistLevel, point: Vector3, tint: Color = Color("9822ed")) -> LootItem:
 	var item := LootItem.new()
 	world.add_child(item)
 	item.setup("chair",world.location_id+".lucky_block")
 	item.data = item.data.duplicate(true)
 	item.data.merge({"type_id":"lucky_block","display_name":"LUCKY BLOCK · NEXT-RUN SURPRISE","cash_value":0,"cargo_space":0,"required_strength":1,"pickup_duration":0.35,"weight_class":"LIGHT","radius":0.4},true)
 	item.model.free()
-	item.model = model()
+	item.model = model(tint)
 	item.add_child(item.model)
 	item.position = point
+	# Rare enough to be an event: a glow light and a slow pulse make it read across the map.
+	var glow := OmniLight3D.new()
+	glow.name = "LuckyGlow"
+	glow.light_color = tint.lightened(0.35)
+	glow.light_energy = 1.6
+	glow.omni_range = 2.6
+	glow.shadow_enabled = false
+	glow.position.y = 0.9
+	item.model.add_child(glow)
+	var pulse := item.model.create_tween().set_loops()
+	pulse.tween_property(item.model, "scale", Vector3.ONE * 1.09, 0.55).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	pulse.parallel().tween_property(glow, "light_energy", 2.6, 0.55).set_trans(Tween.TRANS_SINE)
+	pulse.tween_property(item.model, "scale", Vector3.ONE, 0.55).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	pulse.parallel().tween_property(glow, "light_energy", 1.6, 0.55).set_trans(Tween.TRANS_SINE)
 	world.items.append(item)
 	return item
 

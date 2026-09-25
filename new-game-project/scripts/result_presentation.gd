@@ -21,6 +21,10 @@ var celebrates := false
 var failure_title: Label
 var failure_emblem: TextureRect
 var failure_sparks: CPUParticles2D
+var meter_bar: ProgressBar
+var meter_value: Label
+var meter_title: Label
+var fireworks: CPUParticles2D
 
 func setup(success: bool, location_name: String, heavy: Font, replay_text: String, replay_action: Callable, home_action: Callable) -> void:
 	font = heavy
@@ -93,6 +97,66 @@ func setup(success: bool, location_name: String, heavy: Font, replay_text: Strin
 	fit.call_deferred()
 	set_process(true)
 	animate_at(0.0)
+
+# LUCKY METER row: the one number that always moves after a heist, win or lose.
+func add_meter(info: Dictionary, current: int, target: int) -> void:
+	var before := int(info.get("before", current))
+	var after := int(info.get("after", current))
+	var awarded: bool = info.get("awarded", false)
+	var plate := Panel.new()
+	plate.name = "ResultLuckyMeter"
+	plate.position = Vector2(100,132)
+	plate.size = Vector2(741,72)
+	plate.mouse_filter = MOUSE_FILTER_IGNORE
+	plate.add_theme_stylebox_override("panel", HudStyle.plate(Color("22093ae6"),Color("8d47c9"),22))
+	canvas.add_child(plate)
+	meter_title = label_at("LUCKY BLOCK!" if awarded else "LUCKY METER",Rect2(118,140,300,56),30,HudStyle.GOLD if awarded else HudStyle.SPECIAL)
+	meter_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	meter_bar = ProgressBar.new()
+	meter_bar.name = "ResultLuckyMeterBar"
+	meter_bar.position = Vector2(420,158)
+	meter_bar.size = Vector2(300,20)
+	meter_bar.show_percentage = false
+	meter_bar.value = 100.0*before/target
+	meter_bar.mouse_filter = MOUSE_FILTER_IGNORE
+	meter_bar.add_theme_stylebox_override("background",HudStyle.track(Color("140428")))
+	meter_bar.add_theme_stylebox_override("fill",HudStyle.track(HudStyle.GOLD if awarded else HudStyle.SPECIAL))
+	canvas.add_child(meter_bar)
+	meter_value = label_at("+%d" % int(info.get("gain",0)),Rect2(724,140,105,56),28,HudStyle.GREEN)
+	var fill := create_tween()
+	fill.tween_interval(0.85)
+	if awarded:
+		fill.tween_property(meter_bar,"value",100.0,0.45).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		fill.tween_callback(func(): UiJuice.pulse(meter_title,1.12,0.25))
+		fill.tween_interval(0.25)
+		fill.tween_property(meter_bar,"value",100.0*after/target,0.35)
+	else:
+		fill.tween_property(meter_bar,"value",100.0*after/target,0.55).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	fill.tween_callback(func(): meter_value.text = "%d/%d" % [after,target])
+
+func set_escape_style(cash_tint: Color, celebrate_more: bool) -> void:
+	if is_instance_valid(money_rain): money_rain.modulate = cash_tint
+	if not celebrates or not celebrate_more: return
+	fireworks = CPUParticles2D.new()
+	fireworks.name = "EscapeFireworks"
+	fireworks.position = Vector2(470,520)
+	fireworks.amount = 46
+	fireworks.lifetime = 1.4
+	fireworks.one_shot = true
+	fireworks.explosiveness = 0.95
+	fireworks.spread = 180.0
+	fireworks.gravity = Vector2(0,260)
+	fireworks.initial_velocity_min = 260.0
+	fireworks.initial_velocity_max = 520.0
+	fireworks.scale_amount_min = 4.0
+	fireworks.scale_amount_max = 9.0
+	var burst := Gradient.new()
+	burst.set_color(0,Color("ff7ad9"))
+	burst.add_point(0.5,Color("ffd14a"))
+	burst.set_color(burst.get_point_count()-1,Color("ff7ad900"))
+	fireworks.color_ramp = burst
+	canvas.add_child(fireworks)
+	fireworks.emitting = true
 
 func failure_sprite(texture: Texture2D, rect: Rect2, node_name: String) -> TextureRect:
 	var sprite := TextureRect.new()

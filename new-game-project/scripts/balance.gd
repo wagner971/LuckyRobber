@@ -1200,6 +1200,8 @@ const COSMETICS = {
 		"color": "ed847a",
 		"reward": ""
 	},
+	"suit_lucky": {"name":"LUCKY SUIT", "slot":"suit", "price":0, "color":"7d1fd6", "reward":"lucky", "description":"Only from the Lucky Shop."},
+	"van_lucky": {"name":"LUCKY VAN", "slot":"van", "price":0, "color":"9822ed", "reward":"lucky", "description":"Only from the Lucky Shop."},
 	"suit_plum": {
 		"name": "PLUM SUIT",
 		"slot": "suit",

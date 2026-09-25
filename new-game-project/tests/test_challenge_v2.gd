@@ -29,7 +29,7 @@ func test_v2_config() -> void:
 	for key in Balance.UPGRADE_KEYS:
 		var sum = 0
 		for level in range(1, Balance.max_level(key)):
-			var independent = [1000, 2400, 5800, 13800][level - 1] if key == "strength" else int(floor(Balance.BASE_COSTS[key] * pow(1.13, level - 1) / 50 + 0.5)) * 50
+			var independent = [1000, 2400, 5800, 13800][level - 1] if key == "strength" else int(floor({"grip":250,"carry":300,"capacity":900,"noise":700}[key] * pow(1.13, level - 1) / 50 + 0.5)) * 50
 			check(Balance.upgrade_cost(key, level) == independent, "Exact formula price %s L%d" % [key, level])
 			count += 1
 			sum += Balance.upgrade_cost(key, level)
@@ -236,11 +236,11 @@ func campaign_v2() -> void:
 			# Suburban now gates on the Final Job, not on 2 objectives: earn Van L6
 			# (the pilot's own separate Apartment cap) before attempting it, exactly
 			# like a real player saving up, then run STEAL EVERYTHING physically.
-			while profile.data.upgrades.capacity < Balance.APARTMENT_FINAL_JOB_VAN_CAP:
+			while profile.data.upgrades.capacity < 6:
 				var van_cost = Balance.upgrade_cost("capacity", profile.data.upgrades.capacity)
 				if not profile.purchase("capacity", true): break
 				purchases_log.append({"before_round": round_number, "key": "capacity", "level": profile.data.upgrades.capacity, "cost": van_cost, "wallet_after": profile.data.wallet})
-			if profile.data.upgrades.capacity >= Balance.APARTMENT_FINAL_JOB_VAN_CAP:
+			if profile.data.upgrades.capacity >= 6:
 				await new_session("apartment", "FINAL_JOB", profile)
 				var order = [1, 3, 4, 8, 0, 2, 5, 6, 7] # light items first, heavy mid, short final leg — the pilot's best-tested route.
 				var final_job_success = await drive_indices(order, "campaign_v2_final_job_%02d" % round_number)

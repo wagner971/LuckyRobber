@@ -33,6 +33,10 @@ func setup(owner_run: RunManager) -> void:
 	face_material = make_material(Color("50ed88"))
 	band_material = make_material(Color("f2dfaa"))
 
+func tint(color: Color) -> void:
+	face_material.albedo_color = color
+	body_material.albedo_color = color.darkened(0.5)
+
 func make_material(color: Color) -> StandardMaterial3D:
 	var material := StandardMaterial3D.new()
 	material.albedo_color = color

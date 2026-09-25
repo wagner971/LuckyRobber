@@ -206,7 +206,11 @@ func on_feedback(kind: String, message: String) -> void:
 			var heavy: bool = is_instance_valid(run) and is_instance_valid(run.carried) and run.carried.data.weight_class in ["HEAVY", "VERY_HEAVY"]
 			sound.play("pickup_heavy" if heavy else "pickup_light")
 			haptics.play("pickup_heavy" if heavy else "pickup_light")
+			if is_instance_valid(camera_juice): camera_juice.pickup_kick()
 		"rare_found": sound.play("special_reveal")
+		"lucky_spawn":
+			sound.play("special_reveal")
+			haptics.play("upgrade")
 		"load": sound.play("cash_burst")
 		"wham":
 			var weight := str(level.van.last_impact_weight) if is_instance_valid(level) else "MEDIUM"
@@ -292,21 +296,31 @@ func present_lucky() -> void:
 	if is_instance_valid(ui.gift_reveal) or store.data.lucky_pending.is_empty(): return
 	ui.set_previews_active(false)
 	var reveal := LuckyReveal.new()
-	reveal.configure(false,{"lucky":store.data.lucky_pending.id},ui.heavy_font,ui.safe_insets)
+	reveal.configure(false,{"lucky":store.data.lucky_pending.id,"tokens":store.data.lucky_pending.get("tokens",LuckyMeter.tokens_for(store.data.lucky_pending.id))},ui.heavy_font,ui.safe_insets)
 	ui.gift_reveal = reveal
 	ui.root.add_child(reveal)
 	reveal.cue.connect(func(kind: String): sound.play(kind))
-	reveal.collected.connect(func():
+	var acknowledge := func() -> bool:
 		store.data.lucky_pending.seen = true
 		if not store.save_progress():
 			store.data.lucky_pending.seen = false
 			reveal.claim.text = "SAVE FAILED · RETRY"
 			reveal.claim.disabled = false
-			return
+			reveal.play_button.disabled = false
+			return false
 		ui.gift_reveal = null
 		reveal.queue_free()
 		ui.set_previews_active(true)
-		present_pending_gift()
+		return true
+	reveal.collected.connect(func():
+		if acknowledge.call(): present_pending_gift()
+	)
+	# The twist is the hook: one tap goes straight back into the last heist.
+	reveal.play_now.connect(func():
+		if not acknowledge.call(): return
+		var target := str(store.data.get("last_location", ""))
+		if target == "" or not store.unlocked(target): target = current_location if current_location != "" and store.unlocked(current_location) else "apartment"
+		present_run(func(): start_run(target, "normal"))
 	)
 
 func present_gift(daily: bool, reward: Dictionary) -> void:
@@ -406,6 +420,23 @@ func action(kind: String) -> void:
 			sound.play("cash_collect")
 			ui.duplication_lab(store)
 		return
+	if kind.begins_with("lucky_buy:") and screen == "lucky_shop":
+		var reward_id := kind.trim_prefix("lucky_buy:")
+		var before := store.data.duplicate(true)
+		if LuckyShop.buy(store.data, reward_id):
+			if store.save_progress():
+				sound.play("upgrade")
+				haptics.play("upgrade")
+				if LuckyShop.CATALOG[reward_id].kind == "cosmetic": store.equip_cosmetic(str(LuckyShop.CATALOG[reward_id].cosmetic), true)
+			else: store.data = before
+			ui.lucky_shop_page(store)
+		return
+	if kind.begins_with("lucky_equip:") and screen == "lucky_shop":
+		if LuckyShop.equip(store.data, kind.trim_prefix("lucky_equip:")):
+			store.save_progress()
+			sound.play("upgrade")
+			ui.lucky_shop_page(store)
+		return
 	if kind.begins_with("sfx_volume:") and screen == "settings":
 		sfx_volume = clampf(float(kind.trim_prefix("sfx_volume:")), 0, 1)
 		sound.set_sfx_volume(sfx_volume)
@@ -491,7 +522,7 @@ func action(kind: String) -> void:
 			elif screen == "shop": ui.shop_page(store)
 			elif screen == "settings": ui.settings_page(store,sound_muted,sfx_volume,haptics_enabled,camera_effects_enabled)
 			else: ui.locations(store)
-		"home", "garage", "shop", "cosmetics", "collection", "trophies", "duplication", "locations", "stats", "settings", "daily_wheel":
+		"home", "garage", "shop", "cosmetics", "collection", "trophies", "duplication", "locations", "stats", "settings", "daily_wheel", "lucky_shop":
 			open_menu(kind)
 		"toggle_sound":
 			if screen != "settings": return
@@ -611,5 +642,6 @@ func open_menu(destination: String) -> void:
 		"stats": ui.stats_page(store)
 		"settings": ui.settings_page(store,sound_muted,sfx_volume,haptics_enabled,camera_effects_enabled)
 		"daily_wheel": ui.daily_wheel_page(store)
+		"lucky_shop": ui.lucky_shop_page(store)
 	if destination == "home": present_pending_gift()
 

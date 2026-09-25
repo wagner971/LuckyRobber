@@ -83,8 +83,10 @@ func prepare_world(points: Array[Vector3], spawn_block: bool) -> void:
 		loot_bounds = loot_bounds.grow(0.35)
 		for point in points:
 			if loot_bounds.has_point(Vector2(point.x,point.z)) and point.distance_to(run.level.van.load_position)>3 and LuckyEffects.fits(run.level,point,0.4): indoor.append(point)
-		block = LuckyEffects.spawn(run.level,indoor.pick_random() if not indoor.is_empty() else points.pick_random())
-		mark(block,"LUCKY BLOCK",Color("bd49ff"),false)
+		var tint := LuckyShop.block_color(run.store.data)
+		block = LuckyEffects.spawn(run.level,indoor.pick_random() if not indoor.is_empty() else points.pick_random(),tint)
+		mark(block,"LUCKY BLOCK",tint.lightened(0.3),true)
+		run.feedback.emit("lucky_spawn","LUCKY BLOCK ON THE MAP · GRAB IT!")
 	for item in run.level.items:
 		if item.data.type_id == "lucky_block": continue
 		if id == "dark": item.set_meta("suppress_highlight",true)
