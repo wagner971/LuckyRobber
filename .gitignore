@@ -13,3 +13,6 @@ new-game-project/android/
 # OS junk
 Thumbs.db
 .DS_Store
+
+# Claude Code local session state
+.claude/
