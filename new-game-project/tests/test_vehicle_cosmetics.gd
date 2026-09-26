@@ -17,7 +17,8 @@ func run_test() -> void:
 	store.data.wallet = 1000000
 	store.data.diamonds = 42
 	var upgrades: Dictionary = store.data.upgrades.duplicate(true)
-	var prices := [8000,15000,25000,50000,80000,100000,120000,150000]
+	# Prices follow each vehicle's rarity (Balance.RARITY_PRICES).
+	var prices := [8000,15000,15000,50000,50000,120000,120000,120000]
 	var details := ["BlackWindow","BedRail","BoxRib","ArmorPanel","PanoramaGlass","HearseGlass","PirateSkull","PharaohCrown"]
 	var van := LootVan.new()
 	root.add_child(van)
@@ -31,7 +32,7 @@ func run_test() -> void:
 		var id: String = Balance.VEHICLE_ORDER[i]
 		var config: Dictionary = Balance.COSMETICS[id]
 		var day := PlayRewards.shop_pool().find(id) * 86400
-		check(config.price == prices[i], id + " has the requested cash price")
+		check(Balance.cosmetic_price(id) == prices[i] and Balance.RARITY_PRICES[config.rarity] == prices[i], id + " is priced by its rarity")
 		check(not store.purchase_cosmetic(id,false,day,true), "No in-run purchase: " + id)
 		var wallet: int = store.data.wallet
 		check(store.purchase_cosmetic(id,true,day,true), "Featured purchase succeeds: " + id)

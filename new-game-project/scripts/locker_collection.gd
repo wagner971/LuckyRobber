@@ -44,15 +44,7 @@ static func kind_label(id: String) -> String:
 
 static func rarity(id: String) -> String:
 	if id in [ORIGINAL_SUIT, ORIGINAL_VAN] or id not in Balance.COSMETICS: return "COMMON"
-	var config: Dictionary = Balance.COSMETICS[id]
-	if config.reward in ["contracts", "trophies"]: return "LEGENDARY"
-	if config.reward == "lucky" or int(config.get("gem_price", 0)) > 0: return "RARE"
-	var price := int(config.get("price", 0))
-	if price <= 5000: return "COMMON"
-	if price <= 10000: return "UNCOMMON"
-	if price <= 30000: return "RARE"
-	if price <= 100000: return "EPIC"
-	return "LEGENDARY"
+	return Balance.cosmetic_rarity(id)
 
 static func tint(id: String) -> Color:
 	if id in Balance.COSMETICS: return Color(str(Balance.COSMETICS[id].color))

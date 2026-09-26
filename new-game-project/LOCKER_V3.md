@@ -9,6 +9,10 @@ Pagina Locker (cosmetice) urmează macheta de referință, fără textele decora
 
 Cod: `scripts/locker_collection.gd` (sloturi, raritate, nume, stare), `MenuCharacterPreview.preview_cosmetic/show_van` (preview de skin fără van), acțiunile `reset_suit` / `reset_van` în `main.gd`. Capturi: `tests/locker_v3_top.png`, `tests/locker_v3_collection.png`, `tests/locker_v3_narrow.png` (din `tests/capture_locker_v3.gd`).
 
-## Raritate pe carduri
+## Raritate pe carduri și prețuri automate
 
-Fiecare card ia culoarea rarității look-ului (`LockerCollection.RARITY_COLORS`): COMMON gri, UNCOMMON verde, RARE cyan, EPIC violet, LEGENDARY portocaliu. Ofertele din shop, panourile echipate și sloturile deținute din colecție au chenar și glow în culoarea rarității, fundal ușor nuanțat, eticheta de raritate sub tip/nume și butoanele (VIEW / EQUIP / CUSTOMIZE) în aceeași culoare; BUY rămâne galben. Praguri actuale după preț: ≤ $5.000 COMMON, ≤ $10.000 UNCOMMON, ≤ $30.000 RARE, ≤ $100.000 EPIC, peste LEGENDARY; diamante și Lucky Shop = RARE; recompensele din contracte/trofee = LEGENDARY. Modelele 3D nu se schimbă.
+Fiecare look din `Balance.COSMETICS` are un câmp **`rarity`** (COMMON / UNCOMMON / RARE / EPIC / LEGENDARY); prețul în cash nu se mai scrie, ci vine din **`Balance.RARITY_PRICES`** (`Balance.cosmetic_price(id)`): COMMON $5.000 · UNCOMMON $8.000 · RARE $15.000 · EPIC $50.000 · LEGENDARY $120.000. Excepții: `gem_price` (se plătește în diamante), `reward` + `target` (se câștigă, nu se vinde) și, dacă e nevoie, un `price` explicit care bate tabelul.
+
+Ca să adaugi un model nou: o intrare în catalog cu `name`, `slot` (`suit` / `van` / `set`), `rarity`, `color` și, pentru vehicule cu shell 3D, `vehicle_style`. Prețul, culoarea cardului, eticheta și butoanele urmează raritatea automat; slotul din colecție apare în ordinea catalogului.
+
+Cardurile (ofertele din shop, panourile echipate, sloturile deținute) au chenar și glow în culoarea rarității (`LockerCollection.RARITY_COLORS`: gri, verde, cyan, violet, portocaliu), fundal ușor nuanțat, eticheta de raritate și butoanele VIEW / EQUIP / CUSTOMIZE în aceeași culoare; BUY rămâne galben. Modelele 3D nu se schimbă.

@@ -382,8 +382,8 @@ func purchase_cosmetic(id: String, between_rounds: bool, now: int = -1, equip_on
 		if data.diamonds < gem_price: return false
 		data.diamonds -= gem_price
 	else:
-		if data.wallet < int(cosmetic.price): return false
-		data.wallet -= int(cosmetic.price)
+		if data.wallet < Balance.cosmetic_price(id): return false
+		data.wallet -= Balance.cosmetic_price(id)
 	data.cosmetics.owned.append(id)
 	if equip_on_purchase and cosmetic.has("vehicle_style"):
 		data.cosmetics.equipped.van = id

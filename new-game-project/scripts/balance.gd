@@ -1182,86 +1182,45 @@ const CONTRACTS = {
 	}
 }
 const VEHICLE_ORDER = ["vehicle_black", "vehicle_pickup", "vehicle_box", "vehicle_armored", "vehicle_luxury", "vehicle_hearse", "vehicle_pirate", "vehicle_pharaoh"]
+# Cosmetics: give a look a rarity and its cash price follows RARITY_PRICES.
+# Optional keys: "gem_price" (diamonds instead of cash), "price" (explicit override),
+# "reward" + "target" (earned, never sold), "vehicle_style" (3D shell).
+const RARITY_ORDER = ["COMMON", "UNCOMMON", "RARE", "EPIC", "LEGENDARY"]
+const RARITY_PRICES = {"COMMON": 5000, "UNCOMMON": 8000, "RARE": 15000, "EPIC": 50000, "LEGENDARY": 120000}
 const COSMETICS = {
-	"vehicle_black": {"name":"BLACK VAN", "slot":"van", "price":8000, "color":"252d39", "reward":"", "vehicle_style":"black", "description":"Midnight paint. Chrome details."},
-	"vehicle_pickup": {"name":"PICKUP", "slot":"van", "price":15000, "color":"cf6245", "reward":"", "vehicle_style":"pickup", "description":"Open bed. Ready for another haul."},
-	"vehicle_box": {"name":"BOX VAN", "slot":"van", "price":25000, "color":"cbdce3", "reward":"", "vehicle_style":"box", "description":"A proper moving-day disguise."},
-	"vehicle_armored": {"name":"ARMORED VAN", "slot":"van", "price":50000, "color":"53706b", "reward":"", "vehicle_style":"armored", "description":"Heavy steel. Serious presence."},
-	"vehicle_luxury": {"name":"LUXURY GETAWAY VAN", "slot":"van", "price":80000, "color":"eee2bc", "reward":"", "vehicle_style":"luxury", "description":"Pearl paint and champagne gold."},
-	"vehicle_hearse": {"name":"DRACULA HEARSE", "slot":"van", "price":100000, "color":"644766", "reward":"", "vehicle_style":"hearse", "description":"Gothic glass. A very quiet exit."},
-	"vehicle_pirate": {"name":"PIRATE VAN", "slot":"van", "price":120000, "color":"318f99", "reward":"", "vehicle_style":"pirate", "description":"Wooden sides. A flag worth flying."},
-	"vehicle_pharaoh": {"name":"PHARAOH VAN", "slot":"van", "price":150000, "color":"e3ba51", "reward":"", "vehicle_style":"pharaoh", "description":"Royal blue. Gold fit for a king."},
-	"van_mint": {
-		"name": "MINT GETAWAY",
-		"slot": "van",
-		"price": 5000,
-		"color": "70dabc",
-		"reward": ""
-	},
-	"van_coral": {
-		"name": "CORAL GETAWAY",
-		"slot": "van",
-		"price": 5000,
-		"color": "ed847a",
-		"reward": ""
-	},
-	"suit_lucky": {"name":"LUCKY SUIT", "slot":"suit", "price":0, "color":"7d1fd6", "reward":"lucky", "description":"Only from the Lucky Shop."},
-	"van_lucky": {"name":"LUCKY VAN", "slot":"van", "price":0, "color":"9822ed", "reward":"lucky", "description":"Only from the Lucky Shop."},
-	"suit_plum": {
-		"name": "PLUM SUIT",
-		"slot": "suit",
-		"price": 0,
-		"gem_price": 50,
-		"color": "945bca",
-		"reward": ""
-	},
-	"set_midnight": {
-		"name": "MIDNIGHT SET",
-		"slot": "set",
-		"price": 20000,
-		"color": "5481ba",
-		"reward": ""
-	},
-	"set_sunrise": {
-		"name": "SUNRISE SET",
-		"slot": "set",
-		"price": 30000,
-		"color": "ff9463",
-		"reward": ""
-	},
-	"trophy_gold": {
-		"name": "COLLECTOR GOLD",
-		"slot": "set",
-		"price": 0,
-		"color": "e8bf4d",
-		"reward": "trophies",
-		"target": 7
-	},
-	"contract_6": {
-		"name": "SILVER VAN",
-		"slot": "van",
-		"price": 0,
-		"color": "c3cddd",
-		"reward": "contracts",
-		"target": 6
-	},
-	"contract_12": {
-		"name": "MASTER SUIT",
-		"slot": "suit",
-		"price": 0,
-		"color": "74d9ef",
-		"reward": "contracts",
-		"target": 12
-	},
-	"contract_18": {
-		"name": "LEGEND SET",
-		"slot": "set",
-		"price": 0,
-		"color": "d788ef",
-		"reward": "contracts",
-		"target": 18
-	}
+	"vehicle_black": {"name":"BLACK VAN", "slot":"van", "rarity":"UNCOMMON", "color":"252d39", "reward":"", "vehicle_style":"black", "description":"Midnight paint. Chrome details."},
+	"vehicle_pickup": {"name":"PICKUP", "slot":"van", "rarity":"RARE", "color":"cf6245", "reward":"", "vehicle_style":"pickup", "description":"Open bed. Ready for another haul."},
+	"vehicle_box": {"name":"BOX VAN", "slot":"van", "rarity":"RARE", "color":"cbdce3", "reward":"", "vehicle_style":"box", "description":"A proper moving-day disguise."},
+	"vehicle_armored": {"name":"ARMORED VAN", "slot":"van", "rarity":"EPIC", "color":"53706b", "reward":"", "vehicle_style":"armored", "description":"Heavy steel. Serious presence."},
+	"vehicle_luxury": {"name":"LUXURY GETAWAY VAN", "slot":"van", "rarity":"EPIC", "color":"eee2bc", "reward":"", "vehicle_style":"luxury", "description":"Pearl paint and champagne gold."},
+	"vehicle_hearse": {"name":"DRACULA HEARSE", "slot":"van", "rarity":"LEGENDARY", "color":"644766", "reward":"", "vehicle_style":"hearse", "description":"Gothic glass. A very quiet exit."},
+	"vehicle_pirate": {"name":"PIRATE VAN", "slot":"van", "rarity":"LEGENDARY", "color":"318f99", "reward":"", "vehicle_style":"pirate", "description":"Wooden sides. A flag worth flying."},
+	"vehicle_pharaoh": {"name":"PHARAOH VAN", "slot":"van", "rarity":"LEGENDARY", "color":"e3ba51", "reward":"", "vehicle_style":"pharaoh", "description":"Royal blue. Gold fit for a king."},
+	"van_mint": {"name": "MINT GETAWAY", "slot": "van", "rarity": "COMMON", "color": "70dabc", "reward": ""},
+	"van_coral": {"name": "CORAL GETAWAY", "slot": "van", "rarity": "COMMON", "color": "ed847a", "reward": ""},
+	"suit_lucky": {"name":"LUCKY SUIT", "slot":"suit", "rarity":"RARE", "color":"7d1fd6", "reward":"lucky", "description":"Only from the Lucky Shop."},
+	"van_lucky": {"name":"LUCKY VAN", "slot":"van", "rarity":"RARE", "color":"9822ed", "reward":"lucky", "description":"Only from the Lucky Shop."},
+	"suit_plum": {"name": "PLUM SUIT", "slot": "suit", "rarity": "RARE", "gem_price": 50, "color": "945bca", "reward": ""},
+	"set_midnight": {"name": "MIDNIGHT SET", "slot": "set", "rarity": "RARE", "color": "5481ba", "reward": ""},
+	"set_sunrise": {"name": "SUNRISE SET", "slot": "set", "rarity": "EPIC", "color": "ff9463", "reward": ""},
+	"trophy_gold": {"name": "COLLECTOR GOLD", "slot": "set", "rarity": "LEGENDARY", "color": "e8bf4d", "reward": "trophies", "target": 7},
+	"contract_6": {"name": "SILVER VAN", "slot": "van", "rarity": "EPIC", "color": "c3cddd", "reward": "contracts", "target": 6},
+	"contract_12": {"name": "MASTER SUIT", "slot": "suit", "rarity": "LEGENDARY", "color": "74d9ef", "reward": "contracts", "target": 12},
+	"contract_18": {"name": "LEGEND SET", "slot": "set", "rarity": "LEGENDARY", "color": "d788ef", "reward": "contracts", "target": 18}
 }
+
+static func cosmetic_rarity(id: String) -> String:
+	var rarity := str(COSMETICS.get(id, {}).get("rarity", "COMMON"))
+	return rarity if rarity in RARITY_ORDER else "COMMON"
+
+# Cash price of a look: 0 for earned rewards and diamond looks, an explicit
+# "price" when set, otherwise the rarity's price.
+static func cosmetic_price(id: String) -> int:
+	if id not in COSMETICS: return 0
+	var config: Dictionary = COSMETICS[id]
+	if str(config.get("reward", "")) != "" or int(config.get("gem_price", 0)) > 0: return 0
+	if config.has("price"): return int(config.price)
+	return int(RARITY_PRICES[cosmetic_rarity(id)])
 
 static func item(type_id: String) -> Dictionary:
 	var data: Dictionary = ITEMS[type_id].duplicate(true)

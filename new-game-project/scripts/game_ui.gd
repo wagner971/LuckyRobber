@@ -2499,7 +2499,7 @@ func locker_offer_card(parent: HBoxContainer, store: SaveStore, id: String) -> v
 		jobs_label(price_line, str(gem_price), 20, Color("8fd6ff"), true, 2)
 	else:
 		jobs_icon(price_line, "res://assets/hud/cash.png", 28)
-		jobs_label(price_line, "$" + cash_text(int(config.price)), 20, HudStyle.MONEY, true, 2)
+		jobs_label(price_line, "$" + cash_text(Balance.cosmetic_price(id)), 20, HudStyle.MONEY, true, 2)
 	var is_vehicle: bool = config.has("vehicle_style")
 	var label := "VIEW" if is_vehicle else ("EQUIPPED" if wearing else ("EQUIP" if owned else "BUY"))
 	var action = button(body, label, func():
@@ -2516,7 +2516,7 @@ func locker_offer_card(parent: HBoxContainer, store: SaveStore, id: String) -> v
 		action.add_theme_stylebox_override("pressed", jobs_style(HudStyle.MONEY.darkened(0.15), Color("ffe680"), 16, 4, 5))
 		action.add_theme_stylebox_override("disabled", jobs_style(Color("3c204f"), Color("5a3a73"), 16, 4, 5))
 	else: locker_tint_button(action, rarity)
-	action.disabled = (wearing and not is_vehicle) or (buy_now and (store.data.diamonds < gem_price if gem_price > 0 else store.data.wallet < int(config.price)))
+	action.disabled = (wearing and not is_vehicle) or (buy_now and (store.data.diamonds < gem_price if gem_price > 0 else store.data.wallet < Balance.cosmetic_price(id)))
 
 # A live look: the van shell for vehicles, the thief wearing the suit or set otherwise.
 func locker_preview(parent: Node, store: SaveStore, id: String, height: float) -> Control:
@@ -2775,9 +2775,10 @@ func refresh_vehicle(store: SaveStore) -> void:
 	var featured: bool = selected_vehicle in PlayRewards.today_shop()
 	vehicle_wallet.text = "$" + cash_text(int(store.data.wallet))
 	vehicle_status.text = "YOUR GETAWAY · EQUIPPED" if equipped else ("OWNED · EQUIP ANY TIME" if owned else ("IN TODAY'S SHOP" if featured else "RETURNS TO TODAY'S SHOP"))
-	vehicle_buy.text = "EQUIPPED" if equipped else ("EQUIP" if owned else ("BUY & EQUIP · $" + cash_text(int(config.price)) if featured else "BACK IN A FUTURE ROTATION"))
-	vehicle_buy.disabled = equipped or (not owned and (not featured or int(store.data.wallet) < int(config.price)))
-	if not owned and featured and int(store.data.wallet) < int(config.price): vehicle_status.text = "$%s MORE TO GO" % cash_text(int(config.price)-int(store.data.wallet))
+	var price := Balance.cosmetic_price(selected_vehicle)
+	vehicle_buy.text = "EQUIPPED" if equipped else ("EQUIP" if owned else ("BUY & EQUIP · $" + cash_text(price) if featured else "BACK IN A FUTURE ROTATION"))
+	vehicle_buy.disabled = equipped or (not owned and (not featured or int(store.data.wallet) < price))
+	if not owned and featured and int(store.data.wallet) < price: vehicle_status.text = "$%s MORE TO GO" % cash_text(price-int(store.data.wallet))
 	if store.last_error != "": vehicle_status.text = store.last_error
 
 func animate_vehicle_purchase(previous_wallet: int, store: SaveStore) -> void:

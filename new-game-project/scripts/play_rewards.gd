@@ -10,7 +10,7 @@ static func shop_pool() -> Array[String]:
 	var other: Array[String] = []
 	for id in Balance.COSMETICS:
 		var config: Dictionary = Balance.COSMETICS[id]
-		if config.reward != "" or (int(config.get("price", 0)) <= 0 and int(config.get("gem_price", 0)) <= 0): continue
+		if config.reward != "" or (Balance.cosmetic_price(id) <= 0 and int(config.get("gem_price", 0)) <= 0): continue
 		if config.has("vehicle_style"): vehicles.append(id)
 		else: other.append(id)
 	var pool: Array[String] = []
