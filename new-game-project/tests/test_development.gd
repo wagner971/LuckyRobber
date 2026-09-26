@@ -60,7 +60,7 @@ func test() -> void:
 	var button = find_button(game.ui.menu, "DEV · MAX ALL + UNLOCK ALL LEVELS")
 	check(button != null and not button.disabled, "DEV max is available inside the Settings drawer")
 	button.pressed.emit()
-	check(game.store.data.upgrades == {"strength":5,"grip":20,"carry":20,"capacity":20,"noise":20}, "DEV maxes all five abilities, bypassing tier caps")
+	check(game.store.data.upgrades == {"strength":Balance.max_level("strength"),"grip":20,"carry":20,"capacity":20,"noise":20}, "DEV maxes all five abilities, bypassing tier caps")
 	check(game.store.data.unlocked == Balance.LOCATION_ORDER, "DEV unlocks every location, Chapter 2 included")
 	game.start_run("pyramid")
 	check(game.screen in ["run", "heist_briefing"] and is_instance_valid(game.run) and game.current_location == "pyramid", "Direct Pyramid launch works after DEV unlock")
@@ -69,7 +69,7 @@ func test() -> void:
 	check(game.store.data.wallet == 0 and Progression.objective_count(game.store.data, "museum") == 0, "DEV grants no money or objectives")
 	check(find_button(game.ui.menu, "DEV · MAXED + ALL LEVELS UNLOCKED").disabled, "Button confirms MAX and disables repeated use")
 	game.start_run("apartment")
-	check(game.run.capacity() == 46 and game.run.upgrades.noise == 20 and game.run.upgrades.strength == 5, "MAX abilities apply to actual next round")
+	check(game.run.capacity() == Balance.van_capacity(20) and game.run.upgrades.noise == 20 and game.run.upgrades.strength == Balance.max_level("strength"), "MAX abilities apply to actual next round")
 	game.store.data.upgrades.noise = 1
 	game.action("dev_max")
 	check(game.store.data.upgrades.noise == 1, "DEV action cannot change abilities during a round")
@@ -84,7 +84,7 @@ func test() -> void:
 	game.free()
 	await process_frame
 	game = fresh_game(true)
-	check(game.store.data.wallet == 1234 and game.store.data.objectives.apartment.cash and game.store.data.upgrades.strength == 5, "Second DEV launch retains abilities, wallet and objectives")
+	check(game.store.data.wallet == 1234 and game.store.data.objectives.apartment.cash and game.store.data.upgrades.strength == Balance.max_level("strength"), "Second DEV launch retains abilities, wallet and objectives")
 	game.free()
 	await process_frame
 	# Prove the session-only store never reads or overwrites an existing save.

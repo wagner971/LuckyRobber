@@ -19,7 +19,7 @@ func test() -> void:
 	var game = load("res://scenes/main.tscn").instantiate()
 	game.store = SaveStore.new("res://tests/camera_toon_profile.json")
 	game.store.session_only = true
-	game.store.data.upgrades = {"strength":5,"grip":20,"carry":20,"capacity":20,"noise":20}
+	game.store.data.upgrades = {"strength":Balance.max_level("strength"),"grip":20,"carry":20,"capacity":20,"noise":20}
 	root.add_child(game)
 	game.set_physics_process(false)
 	game.start_run("apartment")

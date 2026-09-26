@@ -503,7 +503,7 @@ func action(kind: String) -> void:
 			# gate, so a tester can jump straight to the challenge itself without
 			# grinding. Never exposed as a real UI button outside development_mode.
 			if not development_mode or screen not in ["home", "locations", "shop"]: return
-			store.data.upgrades = {"strength": 2, "grip": 4, "carry": 4, "capacity": 6, "noise": 4}
+			for key in Balance.UPGRADE_KEYS: store.data.upgrades[key] = Balance.required_level(key, "apartment")
 			store.data.objectives.apartment.cash = true
 			store.data.objectives.apartment.signature = true
 			start_run("apartment", "FINAL_JOB")

@@ -53,7 +53,7 @@ func run_test() -> void:
 			"bottomless","tiny": check(run.capacity()==(99999 if id=="bottomless" else floori(baseline.capacity*0.7)),id+" cargo")
 			"time","short": check(run.rules.duration==baseline.duration+(20 if id=="time" else -15),id+" start clock")
 			"delay","rush": check(run.rules.alarm_window==baseline.alarm_window+(8 if id=="delay" else -4),id+" alarm clock")
-			"strength","weak": check(run.upgrades.strength==(5 if id=="strength" else 4),id+" temporary strength")
+			"strength","weak": check(run.upgrades.strength==(Balance.max_level("strength") if id=="strength" else Balance.max_level("strength")-1),id+" temporary strength")
 			"quick_load","door": check(is_equal_approx(run.lucky.load_duration(),0 if id=="quick_load" else Balance.LOAD_DURATION+1),id+" load duration")
 			"golden","bad_luck","lucky_house":
 				var valid := true
@@ -117,7 +117,7 @@ func run_test() -> void:
 				run.lucky.tick(8.1,true)
 				check(run.lucky.slipped and run.carried==null,"Slippery drops carried item once")
 		item.data=original
-		check(store.data.upgrades.strength==5,"Permanent upgrades unchanged: "+id)
+		check(store.data.upgrades.strength==Balance.max_level("strength"),"Permanent upgrades unchanged: "+id)
 	# Final Job deliberately has no protection against curses.
 	run.mode="FINAL_JOB"
 	run.rules=baseline.duplicate(true)

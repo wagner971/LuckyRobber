@@ -16,22 +16,26 @@ const UPGRADE_KEYS = ["strength", "grip", "carry", "capacity", "noise"]
 # "loadout"). The 80 purchases are spread over the 13 locations so each one
 # takes roughly 20 runs; a level's cash never outgrows what it must buy.
 const TIER_CAPS = {
-	"strength": [2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+	"strength": [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27],
 	"grip": [2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18, 20],
 	"carry": [2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18, 20],
-	"capacity": [6, 8, 10, 12, 14, 16, 20, 20, 20, 20, 20, 20, 20],
+	"capacity": [4, 6, 8, 9, 11, 12, 14, 15, 16, 17, 18, 19, 20],
 	"noise": [2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 18, 20]
 }
 const STRENGTH_CAPS = TIER_CAPS.strength
 # A purchase costs its tier's price index times the stat's weight, so prices grow
 # with the location's income (about 16 average hauls per tier loadout).
-const TIER_PRICE = [850, 3600, 4500, 8500, 8500, 16500, 16500, 25000, 27000, 32000, 41000, 51000, 62000]
+const TIER_PRICE = [900, 2200, 3000, 4200, 5250, 8750, 9750, 10250, 10500, 11500, 15500, 20000, 23500]
 const UPGRADE_UNIT = {"strength": 1.6, "grip": 1.0, "carry": 1.0, "capacity": 1.3, "noise": 0.8}
 const WALK_SPEED_STEP = 0.02
 const NOISE = {"LIGHT": 4.0, "MEDIUM": 7.0, "HEAVY": 12.0, "VERY_HEAVY": 18.0}
-# Awkward lifting at STR 1 makes even a small haul risky. STR 2 removes the
-# largest penalty; subsequent upgrades refine handling without silencing clears.
-const STRENGTH_NOISE = [2.0, 1.10, 1.04, 1.0, 0.96]
+# Handling noise: each Strength level trims 1%, floored so a MAX full haul still
+# alarms. On top, a thief below a location's top Strength requirement handles what
+# they can lift clumsily (+30% noise per missing level), so a short haul at low
+# Strength still races the alarm, and the pressure eases exactly as Strength grows.
+const STRENGTH_MAX = 27
+const STRENGTH_NOISE_FLOOR = 0.85
+const STRENGTH_GAP_NOISE = 0.30
 const ALARM_THRESHOLD_FACTOR = 0.65
 const ALARM_WINDOW = 12.0
 const PYRAMID_ALARM_WINDOW = 13.0 # The throne now sits at the back of the tomb.
@@ -51,46 +55,46 @@ const OBJECTIVE_IDS = ["cash", "signature", "full_clear"]
 const LOCATION_ORDER = ["apartment","house","villa","electronics","mansion","laboratory","museum","pyramid","castle","pirate_ship","vikings","english_pub","prehistoric"]
 const MODES = ["normal", "rush", "small_van", "client_order", "special", "FINAL_JOB"]
 const ITEMS = {
-	"prehistoric_skull": {"display_name":"MAMMOTH SKULL", "cash_value":5200, "cargo_space":8, "required_strength":5, "pickup_duration":3.0, "weight_class":"VERY_HEAVY", "radius":1.0},
-	"prehistoric_saber": {"display_name":"SABER-TOOTH SKULL", "cash_value":4300, "cargo_space":7, "required_strength":5, "pickup_duration":2.8, "weight_class":"VERY_HEAVY", "radius":0.65},
-	"prehistoric_mortar": {"display_name":"STONE MORTAR", "cash_value":2500, "cargo_space":6, "required_strength":4, "pickup_duration":2.0, "weight_class":"HEAVY", "radius":0.60},
-	"prehistoric_hide": {"display_name":"HIDE DRYING RACK", "cash_value":2800, "cargo_space":6, "required_strength":4, "pickup_duration":2.0, "weight_class":"HEAVY", "radius":0.72},
-	"prehistoric_spear": {"display_name":"FLINT SPEAR", "cash_value":1100, "cargo_space":2, "required_strength":2, "pickup_duration":0.9, "weight_class":"MEDIUM", "radius":0.4},
-	"prehistoric_drum": {"display_name":"HIDE DRUM", "cash_value":1700, "cargo_space":3, "required_strength":2, "pickup_duration":1.1, "weight_class":"MEDIUM", "radius":0.45},
-	"prehistoric_amber": {"display_name":"ANCIENT AMBER", "cash_value":1900, "cargo_space":1, "required_strength":1, "pickup_duration":0.6, "weight_class":"LIGHT", "radius":0.34},
-	"prehistoric_painting": {"display_name":"CAVE PAINTING", "cash_value":3600, "cargo_space":6, "required_strength":4, "pickup_duration":2.2, "weight_class":"HEAVY", "radius":0.65},
-	"prehistoric_fur": {"display_name":"FUR BEDROLL", "cash_value":1400, "cargo_space":3, "required_strength":2, "pickup_duration":1.0, "weight_class":"MEDIUM", "radius":0.45},
-	"prehistoric_necklace": {"display_name":"SHELL NECKLACE", "cash_value":1200, "cargo_space":2, "required_strength":1, "pickup_duration":0.7, "weight_class":"LIGHT", "radius":0.34},
-	"pub_billiards": {"display_name":"BILLIARD TABLE", "cash_value":4200, "cargo_space":8, "required_strength":5, "pickup_duration":3.0, "weight_class":"VERY_HEAVY", "radius":1.12},
-	"pub_clock": {"display_name":"GRANDFATHER CLOCK", "cash_value":3600, "cargo_space":7, "required_strength":4, "pickup_duration":2.3, "weight_class":"HEAVY", "radius":0.57},
-	"pub_settee": {"display_name":"LEATHER SETTEE", "cash_value":2800, "cargo_space":7, "required_strength":4, "pickup_duration":2.0, "weight_class":"HEAVY", "radius":0.85},
-	"pub_register": {"display_name":"BRASS CASH REGISTER", "cash_value":2400, "cargo_space":5, "required_strength":3, "pickup_duration":1.8, "weight_class":"HEAVY", "radius":0.45},
-	"pub_beer_engine": {"display_name":"BEER ENGINE", "cash_value":2000, "cargo_space":5, "required_strength":3, "pickup_duration":1.8, "weight_class":"HEAVY", "radius":0.45},
-	"pub_gramophone": {"display_name":"GRAMOPHONE", "cash_value":1500, "cargo_space":3, "required_strength":2, "pickup_duration":1.1, "weight_class":"MEDIUM", "radius":0.45},
-	"pub_radio": {"display_name":"VALVE RADIO", "cash_value":900, "cargo_space":2, "required_strength":1, "pickup_duration":0.8, "weight_class":"LIGHT", "radius":0.43},
-	"pub_darts": {"display_name":"DARTBOARD", "cash_value":800, "cargo_space":2, "required_strength":1, "pickup_duration":0.8, "weight_class":"LIGHT", "radius":0.50},
-	"pub_tankard": {"display_name":"GOLDEN TANKARD", "cash_value":1200, "cargo_space":1, "required_strength":1, "pickup_duration":0.7, "weight_class":"LIGHT", "radius":0.32},
-	"pub_sign": {"display_name":"BRASS FOX SIGN", "cash_value":1600, "cargo_space":4, "required_strength":2, "pickup_duration":1.2, "weight_class":"MEDIUM", "radius":0.6},
-	"viking_runestone": {"display_name":"RUNIC STONE", "cash_value":3200, "cargo_space":8, "required_strength":5, "pickup_duration":2.8, "weight_class":"VERY_HEAVY", "radius":0.65},
-	"viking_anvil": {"display_name":"FORGE ANVIL", "cash_value":2400, "cargo_space":8, "required_strength":5, "pickup_duration":2.7, "weight_class":"VERY_HEAVY", "radius":0.65},
-	"viking_shield": {"display_name":"ROUND SHIELD", "cash_value":1000, "cargo_space":3, "required_strength":2, "pickup_duration":1.0, "weight_class":"MEDIUM", "radius":0.5},
-	"viking_axe": {"display_name":"BEARDED AXE", "cash_value":850, "cargo_space":2, "required_strength":2, "pickup_duration":0.9, "weight_class":"MEDIUM", "radius":0.40},
-	"viking_helmet": {"display_name":"IRON HELMET", "cash_value":650, "cargo_space":1, "required_strength":1, "pickup_duration":0.6, "weight_class":"LIGHT", "radius":0.34},
-	"viking_horn": {"display_name":"DRINKING HORN", "cash_value":600, "cargo_space":1, "required_strength":1, "pickup_duration":0.55, "weight_class":"LIGHT", "radius":0.32},
-	"viking_cauldron": {"display_name":"FEAST CAULDRON", "cash_value":1600, "cargo_space":5, "required_strength":4, "pickup_duration":1.7, "weight_class":"HEAVY", "radius":0.57},
-	"viking_loom": {"display_name":"NORDIC LOOM", "cash_value":1800, "cargo_space":5, "required_strength":4, "pickup_duration":1.8, "weight_class":"HEAVY", "radius":0.6},
-	"viking_throne": {"display_name":"JARL'S THRONE", "cash_value":3600, "cargo_space":8, "required_strength":5, "pickup_duration":3.2, "weight_class":"VERY_HEAVY", "radius":0.75},
-	"viking_raven": {"display_name":"GILDED RAVEN", "cash_value":1300, "cargo_space":3, "required_strength":2, "pickup_duration":1.1, "weight_class":"MEDIUM", "radius":0.5},
-	"pirate_spyglass": {"display_name":"SPYGLASS", "cash_value":350, "cargo_space":1, "required_strength":1, "pickup_duration":0.55, "weight_class":"LIGHT", "radius":0.30},
-	"pirate_sextant": {"display_name":"BRASS SEXTANT", "cash_value":450, "cargo_space":1, "required_strength":1, "pickup_duration":0.65, "weight_class":"LIGHT", "radius":0.35},
-	"pirate_compass": {"display_name":"CAPTAIN'S COMPASS", "cash_value":500, "cargo_space":1, "required_strength":1, "pickup_duration":0.6, "weight_class":"LIGHT", "radius":0.35},
-	"pirate_parrot": {"display_name":"PIRATE PARROT", "cash_value":850, "cargo_space":2, "required_strength":2, "pickup_duration":1.0, "weight_class":"MEDIUM", "radius":0.40},
-	"pirate_rum": {"display_name":"AGED RUM", "cash_value":750, "cargo_space":3, "required_strength":2, "pickup_duration":1.0, "weight_class":"MEDIUM", "radius":0.55},
-	"pirate_cannon": {"display_name":"DECK CANNON", "cash_value":1900, "cargo_space":8, "required_strength":5, "pickup_duration":2.5, "weight_class":"VERY_HEAVY", "radius":0.85},
-	"pirate_anchor": {"display_name":"IRON ANCHOR", "cash_value":1800, "cargo_space":8, "required_strength":5, "pickup_duration":2.5, "weight_class":"VERY_HEAVY", "radius":0.70},
-	"pirate_wheel": {"display_name":"SHIP'S WHEEL", "cash_value":1400, "cargo_space":5, "required_strength":4, "pickup_duration":1.6, "weight_class":"HEAVY", "radius":0.62},
-	"pirate_chest": {"display_name":"CAPTAIN'S CHEST", "cash_value":3000, "cargo_space":8, "required_strength":5, "pickup_duration":3.2, "weight_class":"VERY_HEAVY", "radius":0.80},
-	"pirate_figurehead": {"display_name":"GOLDEN KRAKEN", "cash_value":2200, "cargo_space":7, "required_strength":4, "pickup_duration":1.9, "weight_class":"HEAVY", "radius":0.65},
+	"prehistoric_skull": {"display_name":"MAMMOTH SKULL", "cash_value":5200, "cargo_space":12, "required_strength":27, "pickup_duration":3.0, "weight_class":"VERY_HEAVY", "radius":1.0},
+	"prehistoric_saber": {"display_name":"SABER-TOOTH SKULL", "cash_value":4300, "cargo_space":11, "required_strength":26, "pickup_duration":2.8, "weight_class":"VERY_HEAVY", "radius":0.65},
+	"prehistoric_mortar": {"display_name":"STONE MORTAR", "cash_value":2500, "cargo_space":8, "required_strength":22, "pickup_duration":2.0, "weight_class":"HEAVY", "radius":0.60},
+	"prehistoric_hide": {"display_name":"HIDE DRYING RACK", "cash_value":2800, "cargo_space":8, "required_strength":23, "pickup_duration":2.0, "weight_class":"HEAVY", "radius":0.72},
+	"prehistoric_spear": {"display_name":"FLINT SPEAR", "cash_value":1100, "cargo_space":3, "required_strength":18, "pickup_duration":0.9, "weight_class":"MEDIUM", "radius":0.4},
+	"prehistoric_drum": {"display_name":"HIDE DRUM", "cash_value":1700, "cargo_space":5, "required_strength":20, "pickup_duration":1.1, "weight_class":"MEDIUM", "radius":0.45},
+	"prehistoric_amber": {"display_name":"ANCIENT AMBER", "cash_value":1900, "cargo_space":2, "required_strength":17, "pickup_duration":0.6, "weight_class":"LIGHT", "radius":0.34},
+	"prehistoric_painting": {"display_name":"CAVE PAINTING", "cash_value":3600, "cargo_space":9, "required_strength":24, "pickup_duration":2.2, "weight_class":"HEAVY", "radius":0.65},
+	"prehistoric_fur": {"display_name":"FUR BEDROLL", "cash_value":1400, "cargo_space":4, "required_strength":19, "pickup_duration":1.0, "weight_class":"MEDIUM", "radius":0.45},
+	"prehistoric_necklace": {"display_name":"SHELL NECKLACE", "cash_value":1200, "cargo_space":3, "required_strength":16, "pickup_duration":0.7, "weight_class":"LIGHT", "radius":0.34},
+	"pub_billiards": {"display_name":"BILLIARD TABLE", "cash_value":4200, "cargo_space":12, "required_strength":25, "pickup_duration":3.0, "weight_class":"VERY_HEAVY", "radius":1.12},
+	"pub_clock": {"display_name":"GRANDFATHER CLOCK", "cash_value":3600, "cargo_space":10, "required_strength":24, "pickup_duration":2.3, "weight_class":"HEAVY", "radius":0.57},
+	"pub_settee": {"display_name":"LEATHER SETTEE", "cash_value":2800, "cargo_space":10, "required_strength":22, "pickup_duration":2.0, "weight_class":"HEAVY", "radius":0.85},
+	"pub_register": {"display_name":"BRASS CASH REGISTER", "cash_value":2400, "cargo_space":7, "required_strength":21, "pickup_duration":1.8, "weight_class":"HEAVY", "radius":0.45},
+	"pub_beer_engine": {"display_name":"BEER ENGINE", "cash_value":2000, "cargo_space":7, "required_strength":20, "pickup_duration":1.8, "weight_class":"HEAVY", "radius":0.45},
+	"pub_gramophone": {"display_name":"GRAMOPHONE", "cash_value":1500, "cargo_space":4, "required_strength":18, "pickup_duration":1.1, "weight_class":"MEDIUM", "radius":0.45},
+	"pub_radio": {"display_name":"VALVE RADIO", "cash_value":900, "cargo_space":3, "required_strength":16, "pickup_duration":0.8, "weight_class":"LIGHT", "radius":0.43},
+	"pub_darts": {"display_name":"DARTBOARD", "cash_value":800, "cargo_space":2, "required_strength":15, "pickup_duration":0.8, "weight_class":"LIGHT", "radius":0.50},
+	"pub_tankard": {"display_name":"GOLDEN TANKARD", "cash_value":1200, "cargo_space":2, "required_strength":17, "pickup_duration":0.7, "weight_class":"LIGHT", "radius":0.32},
+	"pub_sign": {"display_name":"BRASS FOX SIGN", "cash_value":1600, "cargo_space":5, "required_strength":19, "pickup_duration":1.2, "weight_class":"MEDIUM", "radius":0.6},
+	"viking_runestone": {"display_name":"RUNIC STONE", "cash_value":3200, "cargo_space":11, "required_strength":22, "pickup_duration":2.8, "weight_class":"VERY_HEAVY", "radius":0.65},
+	"viking_anvil": {"display_name":"FORGE ANVIL", "cash_value":2400, "cargo_space":10, "required_strength":21, "pickup_duration":2.7, "weight_class":"VERY_HEAVY", "radius":0.65},
+	"viking_shield": {"display_name":"ROUND SHIELD", "cash_value":1000, "cargo_space":4, "required_strength":17, "pickup_duration":1.0, "weight_class":"MEDIUM", "radius":0.5},
+	"viking_axe": {"display_name":"BEARDED AXE", "cash_value":850, "cargo_space":3, "required_strength":16, "pickup_duration":0.9, "weight_class":"MEDIUM", "radius":0.40},
+	"viking_helmet": {"display_name":"IRON HELMET", "cash_value":650, "cargo_space":1, "required_strength":15, "pickup_duration":0.6, "weight_class":"LIGHT", "radius":0.34},
+	"viking_horn": {"display_name":"DRINKING HORN", "cash_value":600, "cargo_space":1, "required_strength":14, "pickup_duration":0.55, "weight_class":"LIGHT", "radius":0.32},
+	"viking_cauldron": {"display_name":"FEAST CAULDRON", "cash_value":1600, "cargo_space":7, "required_strength":19, "pickup_duration":1.7, "weight_class":"HEAVY", "radius":0.57},
+	"viking_loom": {"display_name":"NORDIC LOOM", "cash_value":1800, "cargo_space":7, "required_strength":20, "pickup_duration":1.8, "weight_class":"HEAVY", "radius":0.6},
+	"viking_throne": {"display_name":"JARL'S THRONE", "cash_value":3600, "cargo_space":11, "required_strength":23, "pickup_duration":3.2, "weight_class":"VERY_HEAVY", "radius":0.75},
+	"viking_raven": {"display_name":"GILDED RAVEN", "cash_value":1300, "cargo_space":4, "required_strength":18, "pickup_duration":1.1, "weight_class":"MEDIUM", "radius":0.5},
+	"pirate_spyglass": {"display_name":"SPYGLASS", "cash_value":350, "cargo_space":1, "required_strength":12, "pickup_duration":0.55, "weight_class":"LIGHT", "radius":0.30},
+	"pirate_sextant": {"display_name":"BRASS SEXTANT", "cash_value":450, "cargo_space":1, "required_strength":13, "pickup_duration":0.65, "weight_class":"LIGHT", "radius":0.35},
+	"pirate_compass": {"display_name":"CAPTAIN'S COMPASS", "cash_value":500, "cargo_space":1, "required_strength":14, "pickup_duration":0.6, "weight_class":"LIGHT", "radius":0.35},
+	"pirate_parrot": {"display_name":"PIRATE PARROT", "cash_value":850, "cargo_space":3, "required_strength":15, "pickup_duration":1.0, "weight_class":"MEDIUM", "radius":0.40},
+	"pirate_rum": {"display_name":"AGED RUM", "cash_value":750, "cargo_space":4, "required_strength":16, "pickup_duration":1.0, "weight_class":"MEDIUM", "radius":0.55},
+	"pirate_cannon": {"display_name":"DECK CANNON", "cash_value":1900, "cargo_space":10, "required_strength":19, "pickup_duration":2.5, "weight_class":"VERY_HEAVY", "radius":0.85},
+	"pirate_anchor": {"display_name":"IRON ANCHOR", "cash_value":1800, "cargo_space":10, "required_strength":18, "pickup_duration":2.5, "weight_class":"VERY_HEAVY", "radius":0.70},
+	"pirate_wheel": {"display_name":"SHIP'S WHEEL", "cash_value":1400, "cargo_space":6, "required_strength":17, "pickup_duration":1.6, "weight_class":"HEAVY", "radius":0.62},
+	"pirate_chest": {"display_name":"CAPTAIN'S CHEST", "cash_value":3000, "cargo_space":11, "required_strength":21, "pickup_duration":3.2, "weight_class":"VERY_HEAVY", "radius":0.80},
+	"pirate_figurehead": {"display_name":"GOLDEN KRAKEN", "cash_value":2200, "cargo_space":9, "required_strength":20, "pickup_duration":1.9, "weight_class":"HEAVY", "radius":0.65},
 	"floor_lamp": {"display_name":"FLOOR LAMP", "cash_value":140, "cargo_space":2, "required_strength":1, "pickup_duration":0.8, "weight_class":"MEDIUM", "radius":0.55},
 	"table_fan": {"display_name":"DESK FAN", "cash_value":50, "cargo_space":1, "required_strength":1, "pickup_duration":0.5, "weight_class":"LIGHT", "radius":0.35},
 	"laptop": {"display_name":"LAPTOP", "cash_value":70, "cargo_space":1, "required_strength":1, "pickup_duration":0.5, "weight_class":"LIGHT", "radius":0.38},
@@ -162,7 +166,7 @@ const ITEMS = {
 		"display_name": "FRIDGE",
 		"cash_value": 340,
 		"cargo_space": 4,
-		"required_strength": 2,
+		"required_strength": 3,
 		"pickup_duration": 1.5,
 		"weight_class": "HEAVY",
 		"radius": 0.52
@@ -171,7 +175,7 @@ const ITEMS = {
 		"display_name": "SMALL SAFE",
 		"cash_value": 500,
 		"cargo_space": 4,
-		"required_strength": 3,
+		"required_strength": 6,
 		"pickup_duration": 2.5,
 		"weight_class": "VERY_HEAVY",
 		"radius": 0.48
@@ -180,7 +184,7 @@ const ITEMS = {
 		"display_name": "TOOL CABINET",
 		"cash_value": 380,
 		"cargo_space": 3,
-		"required_strength": 2,
+		"required_strength": 4,
 		"pickup_duration": 1.1,
 		"weight_class": "HEAVY",
 		"radius": 0.47
@@ -189,7 +193,7 @@ const ITEMS = {
 		"display_name": "BATHTUB",
 		"cash_value": 380,
 		"cargo_space": 3,
-		"required_strength": 2,
+		"required_strength": 3,
 		"pickup_duration": 1.3,
 		"weight_class": "HEAVY",
 		"radius": 0.62
@@ -198,7 +202,7 @@ const ITEMS = {
 		"display_name": "SOFA",
 		"cash_value": 450,
 		"cargo_space": 5,
-		"required_strength": 2,
+		"required_strength": 5,
 		"pickup_duration": 1.7,
 		"weight_class": "VERY_HEAVY",
 		"radius": 0.70
@@ -207,7 +211,7 @@ const ITEMS = {
 		"display_name": "ARCADE MACHINE",
 		"cash_value": 650,
 		"cargo_space": 5,
-		"required_strength": 3,
+		"required_strength": 8,
 		"pickup_duration": 2,
 		"weight_class": "HEAVY",
 		"radius": 0.6
@@ -216,7 +220,7 @@ const ITEMS = {
 		"display_name": "VENDING MACHINE",
 		"cash_value": 850,
 		"cargo_space": 5,
-		"required_strength": 4,
+		"required_strength": 9,
 		"pickup_duration": 2,
 		"weight_class": "HEAVY",
 		"radius": 0.62
@@ -225,16 +229,17 @@ const ITEMS = {
 		"display_name": "PIANO",
 		"cash_value": 1000,
 		"cargo_space": 6,
-		"required_strength": 4,
+		"required_strength": 7,
 		"pickup_duration": 3,
 		"weight_class": "VERY_HEAVY",
 		"radius": 0.8
 	},
+	"grand_piano": {"display_name":"GRAND PIANO", "cash_value":1000, "cargo_space":6, "required_strength":10, "pickup_duration":3.0, "weight_class":"VERY_HEAVY", "radius":0.8},
 	"large_statue": {
 		"display_name": "LARGE STATUE",
 		"cash_value": 1500,
 		"cargo_space": 8,
-		"required_strength": 5,
+		"required_strength": 11,
 		"pickup_duration": 3.5,
 		"weight_class": "VERY_HEAVY",
 		"radius": 0.6
@@ -252,7 +257,7 @@ const ITEMS = {
 		"display_name": "GIANT DIAMOND",
 		"cash_value": 2500,
 		"cargo_space": 8,
-		"required_strength": 5,
+		"required_strength": 15,
 		"pickup_duration": 3.5,
 		"weight_class": "VERY_HEAVY",
 		"radius": 0.72
@@ -261,7 +266,7 @@ const ITEMS = {
 		"display_name": "TIME MACHINE",
 		"cash_value": 2000,
 		"cargo_space": 8,
-		"required_strength": 5,
+		"required_strength": 14,
 		"pickup_duration": 3.5,
 		"weight_class": "VERY_HEAVY",
 		"radius": 0.78
@@ -270,7 +275,7 @@ const ITEMS = {
 		"display_name": "ANCIENT RELIC",
 		"cash_value": 650,
 		"cargo_space": 3,
-		"required_strength": 3,
+		"required_strength": 8,
 		"pickup_duration": 1.2,
 		"weight_class": "MEDIUM",
 		"radius": 0.43
@@ -279,7 +284,7 @@ const ITEMS = {
 		"display_name": "CANOPIC JAR",
 		"cash_value": 300,
 		"cargo_space": 1,
-		"required_strength": 1,
+		"required_strength": 12,
 		"pickup_duration": 0.5,
 		"weight_class": "LIGHT",
 		"radius": 0.3
@@ -288,7 +293,7 @@ const ITEMS = {
 		"display_name": "GOLDEN PHARAOH MASK",
 		"cash_value": 900,
 		"cargo_space": 1,
-		"required_strength": 1,
+		"required_strength": 14,
 		"pickup_duration": 0.8,
 		"weight_class": "LIGHT",
 		"radius": 0.32
@@ -297,7 +302,7 @@ const ITEMS = {
 		"display_name": "TREASURE CHEST",
 		"cash_value": 600,
 		"cargo_space": 3,
-		"required_strength": 2,
+		"required_strength": 9,
 		"pickup_duration": 1,
 		"weight_class": "MEDIUM",
 		"radius": 0.45
@@ -306,7 +311,7 @@ const ITEMS = {
 		"display_name": "GIANT SCARAB",
 		"cash_value": 650,
 		"cargo_space": 3,
-		"required_strength": 2,
+		"required_strength": 13,
 		"pickup_duration": 1,
 		"weight_class": "MEDIUM",
 		"radius": 0.45
@@ -315,7 +320,7 @@ const ITEMS = {
 		"display_name": "PHARAOH BUST",
 		"cash_value": 900,
 		"cargo_space": 5,
-		"required_strength": 3,
+		"required_strength": 14,
 		"pickup_duration": 1.2,
 		"weight_class": "MEDIUM",
 		"radius": 0.42
@@ -323,8 +328,8 @@ const ITEMS = {
 	"obelisk_fragment": {
 		"display_name": "OBELISK FRAGMENT",
 		"cash_value": 1300,
-		"cargo_space": 6,
-		"required_strength": 4,
+		"cargo_space": 7,
+		"required_strength": 15,
 		"pickup_duration": 2,
 		"weight_class": "HEAVY",
 		"radius": 0.45
@@ -332,8 +337,8 @@ const ITEMS = {
 	"giant_anubis": {
 		"display_name": "GIANT ANUBIS",
 		"cash_value": 1450,
-		"cargo_space": 6,
-		"required_strength": 4,
+		"cargo_space": 7,
+		"required_strength": 15,
 		"pickup_duration": 2,
 		"weight_class": "HEAVY",
 		"radius": 0.5
@@ -341,8 +346,8 @@ const ITEMS = {
 	"golden_throne": {
 		"display_name": "GOLDEN THRONE",
 		"cash_value": 1700,
-		"cargo_space": 7,
-		"required_strength": 5,
+		"cargo_space": 9,
+		"required_strength": 16,
 		"pickup_duration": 1.4,
 		"weight_class": "VERY_HEAVY",
 		"radius": 0.6
@@ -350,8 +355,8 @@ const ITEMS = {
 	"sarcophagus": {
 		"display_name": "SARCOPHAGUS",
 		"cash_value": 1800,
-		"cargo_space": 8,
-		"required_strength": 5,
+		"cargo_space": 10,
+		"required_strength": 17,
 		"pickup_duration": 1.4,
 		"weight_class": "VERY_HEAVY",
 		"radius": 0.7
@@ -360,7 +365,7 @@ const ITEMS = {
 		"display_name": "CROWN DISPLAY",
 		"cash_value": 700,
 		"cargo_space": 1,
-		"required_strength": 1,
+		"required_strength": 12,
 		"pickup_duration": 0.8,
 		"weight_class": "LIGHT",
 		"radius": 0.32
@@ -369,7 +374,7 @@ const ITEMS = {
 		"display_name": "BLOOD CHALICE",
 		"cash_value": 400,
 		"cargo_space": 1,
-		"required_strength": 1,
+		"required_strength": 10,
 		"pickup_duration": 0.5,
 		"weight_class": "LIGHT",
 		"radius": 0.28
@@ -378,7 +383,7 @@ const ITEMS = {
 		"display_name": "VAMPIRE PORTRAIT",
 		"cash_value": 600,
 		"cargo_space": 2,
-		"required_strength": 1,
+		"required_strength": 12,
 		"pickup_duration": 0.6,
 		"weight_class": "LIGHT",
 		"radius": 0.38
@@ -386,8 +391,8 @@ const ITEMS = {
 	"relic_chest": {
 		"display_name": "RELIC CHEST",
 		"cash_value": 850,
-		"cargo_space": 3,
-		"required_strength": 2,
+		"cargo_space": 4,
+		"required_strength": 14,
 		"pickup_duration": 1,
 		"weight_class": "MEDIUM",
 		"radius": 0.45
@@ -395,8 +400,8 @@ const ITEMS = {
 	"bat_idol": {
 		"display_name": "BAT IDOL",
 		"cash_value": 650,
-		"cargo_space": 3,
-		"required_strength": 2,
+		"cargo_space": 4,
+		"required_strength": 13,
 		"pickup_duration": 1,
 		"weight_class": "MEDIUM",
 		"radius": 0.42
@@ -404,8 +409,8 @@ const ITEMS = {
 	"gargoyle_statue": {
 		"display_name": "GARGOYLE STATUE",
 		"cash_value": 900,
-		"cargo_space": 5,
-		"required_strength": 3,
+		"cargo_space": 6,
+		"required_strength": 15,
 		"pickup_duration": 1.2,
 		"weight_class": "MEDIUM",
 		"radius": 0.45
@@ -413,8 +418,8 @@ const ITEMS = {
 	"gothic_mirror": {
 		"display_name": "GOTHIC MIRROR",
 		"cash_value": 1200,
-		"cargo_space": 6,
-		"required_strength": 4,
+		"cargo_space": 7,
+		"required_strength": 16,
 		"pickup_duration": 2,
 		"weight_class": "HEAVY",
 		"radius": 0.45
@@ -422,8 +427,8 @@ const ITEMS = {
 	"pipe_organ": {
 		"display_name": "PIPE ORGAN",
 		"cash_value": 1400,
-		"cargo_space": 6,
-		"required_strength": 4,
+		"cargo_space": 7,
+		"required_strength": 17,
 		"pickup_duration": 2,
 		"weight_class": "HEAVY",
 		"radius": 0.6
@@ -432,7 +437,7 @@ const ITEMS = {
 		"display_name": "SKULL CANDELABRUM",
 		"cash_value": 500,
 		"cargo_space": 2,
-		"required_strength": 1,
+		"required_strength": 11,
 		"pickup_duration": 0.6,
 		"weight_class": "LIGHT",
 		"radius": 0.3
@@ -440,8 +445,8 @@ const ITEMS = {
 	"vampire_throne": {
 		"display_name": "VAMPIRE THRONE",
 		"cash_value": 1700,
-		"cargo_space": 7,
-		"required_strength": 5,
+		"cargo_space": 9,
+		"required_strength": 18,
 		"pickup_duration": 2.5,
 		"weight_class": "VERY_HEAVY",
 		"radius": 0.6
@@ -449,21 +454,21 @@ const ITEMS = {
 	"dracula_coffin": {
 		"display_name": "DRACULA COFFIN",
 		"cash_value": 2000,
-		"cargo_space": 8,
-		"required_strength": 5,
+		"cargo_space": 10,
+		"required_strength": 19,
 		"pickup_duration": 2.0,
 		"weight_class": "VERY_HEAVY",
 		"radius": 0.7
 	},
-	"lab_microscope": {"display_name":"MICROSCOPE", "cash_value":200, "cargo_space":1, "required_strength":1, "pickup_duration":0.6, "weight_class":"LIGHT", "radius":0.36},
-	"lab_analyzer": {"display_name":"CHEMICAL ANALYZER", "cash_value":350, "cargo_space":2, "required_strength":2, "pickup_duration":0.9, "weight_class":"MEDIUM", "radius":0.44},
-	"lab_centrifuge": {"display_name":"CENTRIFUGE", "cash_value":650, "cargo_space":4, "required_strength":3, "pickup_duration":1.5, "weight_class":"HEAVY", "radius":0.58},
-	"lab_server": {"display_name":"DATA RACK", "cash_value":600, "cargo_space":4, "required_strength":3, "pickup_duration":1.4, "weight_class":"MEDIUM", "radius":0.53},
-	"lab_robot_arm": {"display_name":"ROBOTIC ARM", "cash_value":750, "cargo_space":5, "required_strength":4, "pickup_duration":1.8, "weight_class":"HEAVY", "radius":0.58},
-	"lab_laser": {"display_name":"LASER EMITTER", "cash_value":850, "cargo_space":4, "required_strength":4, "pickup_duration":1.7, "weight_class":"HEAVY", "radius":0.55},
-	"lab_specimen": {"display_name":"SPECIMEN TANK", "cash_value":950, "cargo_space":5, "required_strength":4, "pickup_duration":1.9, "weight_class":"HEAVY", "radius":0.60},
-	"lab_cryo_pod": {"display_name":"CRYO POD", "cash_value":1300, "cargo_space":7, "required_strength":5, "pickup_duration":2.5, "weight_class":"VERY_HEAVY", "radius":0.68},
-	"lab_quantum_core": {"display_name":"QUANTUM CORE", "cash_value":1600, "cargo_space":7, "required_strength":5, "pickup_duration":2.8, "weight_class":"VERY_HEAVY", "radius":0.70}
+	"lab_microscope": {"display_name":"MICROSCOPE", "cash_value":200, "cargo_space":1, "required_strength":2, "pickup_duration":0.6, "weight_class":"LIGHT", "radius":0.36},
+	"lab_analyzer": {"display_name":"CHEMICAL ANALYZER", "cash_value":350, "cargo_space":2, "required_strength":4, "pickup_duration":0.9, "weight_class":"MEDIUM", "radius":0.44},
+	"lab_centrifuge": {"display_name":"CENTRIFUGE", "cash_value":650, "cargo_space":4, "required_strength":6, "pickup_duration":1.5, "weight_class":"HEAVY", "radius":0.58},
+	"lab_server": {"display_name":"DATA RACK", "cash_value":600, "cargo_space":4, "required_strength":7, "pickup_duration":1.4, "weight_class":"MEDIUM", "radius":0.53},
+	"lab_robot_arm": {"display_name":"ROBOTIC ARM", "cash_value":750, "cargo_space":5, "required_strength":9, "pickup_duration":1.8, "weight_class":"HEAVY", "radius":0.58},
+	"lab_laser": {"display_name":"LASER EMITTER", "cash_value":850, "cargo_space":4, "required_strength":10, "pickup_duration":1.7, "weight_class":"HEAVY", "radius":0.55},
+	"lab_specimen": {"display_name":"SPECIMEN TANK", "cash_value":950, "cargo_space":5, "required_strength":11, "pickup_duration":1.9, "weight_class":"HEAVY", "radius":0.60},
+	"lab_cryo_pod": {"display_name":"CRYO POD", "cash_value":1300, "cargo_space":7, "required_strength":12, "pickup_duration":2.5, "weight_class":"VERY_HEAVY", "radius":0.68},
+	"lab_quantum_core": {"display_name":"QUANTUM CORE", "cash_value":1600, "cargo_space":7, "required_strength":13, "pickup_duration":2.8, "weight_class":"VERY_HEAVY", "radius":0.70}
 }
 # Spawn row: stable instance ID, type ID, x, z, optional independent trophy ID.
 # Pyramid (Chapter 2) is designed backward from its Final Job budget: 44 cargo (fits Van
@@ -480,7 +485,7 @@ const LOCATIONS = {
 	"prehistoric": {
 		"name":"PREHISTORIC ERA", "duration":85, "threshold":10000, "special":"prehistoric_skull",
 		"objectives":["ESCAPE WITH $10000","STEAL THE MAMMOTH SKULL","STEAL EVERYTHING"],
-		"expected_cargo":44, "expected_value":25700,
+		"expected_cargo":65, "expected_value":25700,
 		"items":[
 			["mammoth","prehistoric_skull",0,-8.9],
 			["saber","prehistoric_saber",-4.25,-7.25],
@@ -497,7 +502,7 @@ const LOCATIONS = {
 	"english_pub": {
 		"name":"ENGLISH PUB · 1932", "duration":85, "threshold":8500, "special":"pub_billiards",
 		"objectives":["ESCAPE WITH $8500","STEAL THE BILLIARD TABLE","STEAL EVERYTHING"],
-		"expected_cargo":44, "expected_value":21000,
+		"expected_cargo":62, "expected_value":21000,
 		"items":[
 			["billiards","pub_billiards",-3.9,-6.9],
 			["clock","pub_clock",4.8,-8.3],
@@ -514,7 +519,7 @@ const LOCATIONS = {
 	"vikings": {
 		"name":"VIKING HALL", "duration":85, "threshold":7000, "special":"viking_throne",
 		"objectives":["ESCAPE WITH $7000","STEAL THE JARL'S THRONE","STEAL EVERYTHING"],
-		"expected_cargo":44, "expected_value":17000,
+		"expected_cargo":59, "expected_value":17000,
 		"items":[
 			["throne","viking_throne",0,-8.05],
 			["runestone","viking_runestone",-4.6,-7.9],
@@ -531,7 +536,7 @@ const LOCATIONS = {
 	"pirate_ship": {
 		"name": "PIRATE SHIP", "duration": 80, "threshold": 5500,
 		"special": "pirate_chest", "objectives": ["ESCAPE WITH $5500", "STEAL THE CAPTAIN'S CHEST", "STEAL EVERYTHING"],
-		"expected_cargo": 44, "expected_value": 13200,
+		"expected_cargo":56, "expected_value": 13200,
 		"items": [
 			["anchor","pirate_anchor",2.3,-5.9],
 			["cannon","pirate_cannon",-3.7,-4.4],
@@ -658,7 +663,7 @@ const LOCATIONS = {
 		"expected_value": 5170,
 		"items": [
 			["statue", "large_statue", -4.80, -8.70, "mansion_statue"],
-			["piano", "piano", 4.80, -9.15],
+			["piano", "grand_piano", 4.80, -9.15],
 			["safe_a", "small_safe", -5.90, -5.40],
 			["safe_b", "small_safe", 6.10, -6.40],
 			["fridge", "fridge", 6.44, 2.13],
@@ -765,7 +770,7 @@ const LOCATIONS = {
 			"ESCAPE WITH SARCOPHAGUS",
 			"STEAL EVERYTHING"
 		],
-		"expected_cargo": 44,
+		"expected_cargo": 50,
 		"expected_value": 10500,
 		"items": [
 			[
@@ -850,7 +855,7 @@ const LOCATIONS = {
 			"STEAL THRONE + COFFIN IN ONE RUN",
 			"STEAL EVERYTHING"
 		],
-		"expected_cargo": 44,
+		"expected_cargo": 53,
 		"expected_value": 10900,
 		"items": [
 			[
@@ -1122,7 +1127,7 @@ const CONTRACTS = {
 		"threshold": 0,
 		"order": {
 			"large_statue": 1,
-			"piano": 1,
+			"grand_piano": 1,
 			"small_safe": 2
 		},
 		"bonus": 1500
@@ -1265,7 +1270,7 @@ static func item(type_id: String) -> Dictionary:
 	return data
 
 static func max_level(key: String) -> int:
-	return 5 if key == "strength" else 20
+	return STRENGTH_MAX if key == "strength" else 20
 
 static func carry_factor(weight: String, level: int) -> float:
 	# Recover the carrying penalty rather than hit the empty-speed cap after
@@ -1400,20 +1405,31 @@ static func powerup_requirement(location: String) -> int:
 	return required_level("grip", location)
 
 static func van_capacity(level: int) -> int:
-	return 8 + 2 * (clampi(level, 1, 20) - 1)
+	return 8 + 3 * (clampi(level, 1, 20) - 1)
 
 static func noise_multiplier(level: int) -> float:
 	return maxf(0.81, 1.0 - 0.01 * (clampi(level, 1, 20) - 1))
 
 static func strength_noise_multiplier(level: int) -> float:
-	return 2.4 if level <= 0 else float(STRENGTH_NOISE[clampi(level, 1, 5) - 1])
+	if level <= 0: return 2.4
+	if level == 1: return 1.20
+	return maxf(STRENGTH_NOISE_FLOOR, 1.10 - 0.01 * (mini(level, STRENGTH_MAX) - 2))
+
+static func top_strength(location: String) -> int:
+	var top := 1
+	for spawn in LOCATIONS.get(location, {}).get("items", []): top = maxi(top, int(ITEMS[spawn[1]].required_strength))
+	return top
+
+static func handling_gap(location: String, strength: int) -> float:
+	if location == "": return 1.0
+	return 1.0 + STRENGTH_GAP_NOISE * maxi(0, top_strength(location) - strength)
 
 static func strength_noise_reduction(level: int) -> int:
 	var next_level := mini(level + 1, max_level("strength"))
 	return roundi((1.0 - strength_noise_multiplier(next_level) / strength_noise_multiplier(level)) * 100)
 
-static func pickup_noise(weight: String, strength: int, noise: int) -> float:
-	return float(NOISE[weight]) * strength_noise_multiplier(strength) * noise_multiplier(noise)
+static func pickup_noise(weight: String, strength: int, noise: int, location: String = "") -> float:
+	return float(NOISE[weight]) * strength_noise_multiplier(strength) * noise_multiplier(noise) * handling_gap(location, strength)
 
 static func location_noise(location: String) -> float:
 	var total = 0.0

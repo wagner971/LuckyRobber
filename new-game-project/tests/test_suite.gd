@@ -24,7 +24,7 @@ func create_run(location: String = "apartment", maxed: bool = false) -> void:
 	if is_instance_valid(run): run.free()
 	if is_instance_valid(world): world.free()
 	store = SaveStore.new("res://tests/suite_profile.json")
-	if maxed: store.data.upgrades = {"strength": 5, "grip": 20, "carry": 20, "capacity": 20, "noise": 20}
+	if maxed: store.data.upgrades = {"strength": Balance.max_level("strength"), "grip": 20, "carry": 20, "capacity": 20, "noise": 20}
 	world = HeistLevel.new()
 	root.add_child(world)
 	world.setup(location, store.data.upgrades.capacity)
@@ -124,7 +124,7 @@ func test() -> void:
 	begin()
 	stand_by(world.items[7])
 	tick(2)
-	check(run.carried == null and run.block_reason(world.items[7]) == "STRENGTH 2 REQUIRED", "Fridge locked by Strength")
+	check(run.carried == null and run.block_reason(world.items[7]) == "STRENGTH 3 REQUIRED", "Fridge locked by Strength")
 	run.cargo_used = 7
 	check(run.block_reason(world.items[0]) == "NOT ENOUGH VAN SPACE", "Insufficient van space blocks pickup")
 	run.cargo_used = 8
@@ -163,9 +163,9 @@ func test() -> void:
 
 func test_economy() -> void:
 	var save = SaveStore.new("res://tests/save_roundtrip.json")
-	save.data.wallet = 1600
-	check(not save.purchase("strength", false) and save.data.wallet == 1600, "Upgrades blocked during rounds")
-	check(save.purchase("strength", true) and save.data.wallet == 250 and save.data.upgrades.strength == 2, "Strength purchase costs exactly $1350")
+	save.data.wallet = 1700
+	check(not save.purchase("strength", false) and save.data.wallet == 1700, "Upgrades blocked during rounds")
+	check(save.purchase("strength", true) and save.data.wallet == 250 and save.data.upgrades.strength == 2, "Strength purchase costs exactly $1450")
 	check(not save.purchase("strength", true) and save.data.wallet == 250, "Insufficient funds never go negative")
 	check(save.save_progress(), "Atomic save succeeds")
 	var readback = SaveStore.new(save.path)
@@ -177,7 +177,7 @@ func test_economy() -> void:
 	readback.load_progress()
 	check(readback.data.wallet == 250 and readback.notice.contains("backup"), "Corrupted save recovers backup")
 	var invalid = save.validate({"wallet": -9, "upgrades": {"strength": 900, "grip": "bad"}, "trophies": ["bust", "bust", "bad"]})
-	check(invalid.wallet == 0 and invalid.upgrades.strength == 5 and invalid.upgrades.grip == 1 and invalid.trophies.size() == 1, "Save validation clamps levels, wallet and duplicate trophies")
+	check(invalid.wallet == 0 and invalid.upgrades.strength == Balance.max_level("strength") and invalid.upgrades.grip == 1 and invalid.trophies.size() == 1, "Save validation clamps levels, wallet and duplicate trophies")
 	check(invalid.trophies == ["duck"], "Existing Golden Bust trophy becomes Rubber Duck")
 	var untouched = run.upgrades.duplicate()
 	run.upgrades = {"strength": 1, "grip": 1, "carry": 1, "capacity": 1, "noise": 1}
@@ -189,12 +189,12 @@ func test_economy() -> void:
 	run.upgrades.carry = 20
 	check(is_equal_approx(run.movement_factor(world.items[7]), 1.38 * 0.9607843137) and is_equal_approx(run.movement_factor(world.items[1]), 1.38 * 0.9934640523) and is_equal_approx(run.movement_factor(null), 1.38), "Carry speed raises walking speed and recovers every weight penalty")
 	run.upgrades = untouched
-	save.data.wallet = 2000000
+	save.data.wallet = 5000000
 	save.data.apartment_final_job_completed = true
 	save.data.museum_final_job_completed = true
 	save.data.unlocked = Balance.LOCATION_ORDER.duplicate()
 	for key in Balance.COSTS:
-		for i in range(20): save.purchase(key, true)
+		for i in range(Balance.max_level(key)): save.purchase(key, true)
 		check(save.data.upgrades[key] == Balance.COSTS[key].size() + 1 and not save.purchase(key, true), "MAX enforced for " + key)
 	var missing = SaveStore.new("res://tests/does_not_exist.json")
 	missing.load_progress()

@@ -27,7 +27,7 @@ func test() -> void:
 	game.store.session_only = true
 	game.store.data.heist_briefing_seen = true
 	game.store.data.unlocked = Balance.LOCATION_ORDER.duplicate()
-	game.store.data.upgrades = {"strength":5,"grip":20,"carry":20,"capacity":16,"noise":20}
+	game.store.data.upgrades = {"strength":Balance.max_level("strength"),"grip":20,"carry":20,"capacity":11,"noise":20}
 	root.add_child(game)
 	game.set_physics_process(false)
 	game.set_process(false)

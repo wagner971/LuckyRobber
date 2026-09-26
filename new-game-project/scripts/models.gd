@@ -56,6 +56,7 @@ const LOOT_SCALE = {
 	"dracula_coffin": 1.4, "vampire_throne": 1.5, "pipe_organ": 1.35,
 	"gothic_mirror": 1.3, "gargoyle_statue": 1.1, "relic_chest": 1.1,
 	"vampire_portrait": 1.3, "time_machine": 1.1, "ancient_relic": 1.13,
+	"grand_piano": 1.12,
 }
 
 static func loot(type_id: String) -> Node3D:
@@ -215,8 +216,8 @@ static func loot_body(type_id: String) -> Node3D:
 				for y in [0.87, 1.24, 1.61]: cylinder(root, 0.07, 0.20, Vector3(x, y, 0.53), mint if x < 0 else Color("ffcf69"))
 			box(root, Vector3(0.70, 0.22, 0.04), Vector3(0, 0.33, 0.47), dark)
 			box(root, Vector3(0.12, 0.31, 0.06), Vector3(0.44, 0.94, 0.48), cream)
-		"piano":
-			box(root, Vector3(1.7, 1.23, 0.72), Vector3(0, 0.94, -0.18), Color("4c3449"))
+		"piano", "grand_piano":
+			box(root, Vector3(1.7, 1.23, 0.72), Vector3(0, 0.94, -0.18), Color("4c3449") if type_id == "piano" else Color("1d1720"))
 			box(root, Vector3(1.8, 0.15, 0.66), Vector3(0, 0.77, 0.40), dark)
 			for i in range(14):
 				box(root, Vector3(0.105, 0.06, 0.45), Vector3(-0.72 + i * 0.11, 0.88, 0.44), cream)

@@ -15,7 +15,7 @@ func test() -> void:
 	check(world.van.in_zone(world.van.load_position) and run.cargo_used == Balance.LOCATIONS.apartment.expected_cargo, "Short return to the centered van still completes full cargo")
 	var tier_profile := SaveStore.new("res://tests/apartment_v2_tier_profile.json")
 	tier_profile.session_only = true
-	tier_profile.data.upgrades = {"strength": 2, "grip": 4, "carry": 4, "capacity": 6, "noise": 4}
+	tier_profile.data.upgrades = {"strength": Balance.required_level("strength", "apartment"), "grip": 4, "carry": 4, "capacity": Balance.required_level("capacity", "apartment"), "noise": 4}
 	await new_session("apartment", "FINAL_JOB", tier_profile)
 	var tier_complete := await drive_indices(route, "apartment_v2_final_job_tier")
 	check(tier_complete and run.result.full_clear and run.elapsed < run.rules.duration, "Final Job remains physically completable at its entry upgrade tier")

@@ -10,31 +10,33 @@ Simulare cu un jucător care alege loot-ul optim și cumpără ce cere `NEXT GOA
 
 1. **Loadout per tier.** Fiecare locație are un plafon pentru fiecare dintre cele 5 stat-uri (`TIER_CAPS`). Următoarea locație se deschide numai când **toate cele cinci** ating plafonul tier-ului curent, plus cele două obiective (cash + obiect semnătură) și Final Job-urile existente (Apartment, Museum). `Progression.powerups_ready` verifică tot loadout-ul; `Balance.required_level(key, location)` este cerința.
 
-| Locație | STR | Pickup | Carry | Van (cargo) | Noise | Achiziții în tier |
-|---|---:|---:|---:|---:|---:|---:|
-| Apartment | 2 | 2 | 2 | 6 (18) | 2 | 9 |
-| Suburban House | 3 | 3 | 3 | 8 (22) | 3 | 6 |
-| Villa | 4 | 4 | 4 | 10 (26) | 4 | 6 |
-| Electronics Store | 4 | 5 | 5 | 12 (30) | 5 | 5 |
-| Mansion | 5 | 6 | 6 | 14 (34) | 6 | 6 |
-| Laboratory | 5 | 7 | 7 | 16 (38) | 7 | 5 |
-| Museum | 5 | 8 | 8 | 20 (46) | 8 | 7 |
-| Pyramid | 5 | 10 | 10 | 20 | 10 | 6 |
-| Dracula's Castle | 5 | 12 | 12 | 20 | 12 | 6 |
-| Pirate Ship | 5 | 14 | 14 | 20 | 14 | 6 |
-| Viking Hall | 5 | 16 | 16 | 20 | 16 | 6 |
-| English Pub | 5 | 18 | 18 | 20 | 18 | 6 |
-| Prehistoric Era | 5 | 20 | 20 | 20 | 20 | 6 |
+| Locație | STR | Pickup | Carry | Van (cargo) | Noise | Achiziții în tier | Cost tier |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Apartment | 3 | 2 | 2 | 4 (17) | 2 | 8 | $8.850 |
+| Suburban House | 5 | 3 | 3 | 6 (23) | 3 | 7 | $18.850 |
+| Villa | 7 | 4 | 4 | 8 (29) | 4 | 7 | $25.800 |
+| Electronics Store | 9 | 5 | 5 | 9 (32) | 5 | 6 | $30.600 |
+| Mansion | 11 | 6 | 6 | 11 (38) | 6 | 7 | $45.200 |
+| Laboratory | 13 | 7 | 7 | 12 (41) | 7 | 6 | $63.900 |
+| Museum | 15 | 8 | 8 | 14 (47) | 8 | 7 | $83.900 |
+| Pyramid | 17 | 10 | 10 | 15 (50) | 10 | 9 | $103.550 |
+| Dracula's Castle | 19 | 12 | 12 | 16 (53) | 12 | 9 | $106.050 |
+| Pirate Ship | 21 | 14 | 14 | 17 (56) | 14 | 9 | $116.150 |
+| Viking Hall | 23 | 16 | 16 | 18 (59) | 16 | 9 | $156.550 |
+| English Pub | 25 | 18 | 18 | 19 (62) | 18 | 9 | $202.000 |
+| Prehistoric Era | 27 | 20 | 20 | 20 (65) | 20 | 9 | $237.350 |
 
-Cele 80 de achiziții sunt consumate exact pe parcursul celor 13 locații; la finalul Prehistoric totul este MAX.
+Cele 102 achiziții (Strength 26, celelalte 19 fiecare) sunt consumate exact pe parcursul celor 13 locații; la finalul Prehistoric totul este MAX.
 
-2. **Preț pe tier, nu pe nivel.** `upgrade_cost = round50(UPGRADE_UNIT[stat] × TIER_PRICE[tier-ul în care nivelul devine cumpărabil])`. `TIER_PRICE = [850, 3600, 4500, 8500, 8500, 16500, 16500, 25000, 27000, 32000, 41000, 51000, 62000]`; ponderi: Strength 1,6 · Van 1,3 · Pickup 1,0 · Carry 1,0 · Noise 0,8. Prețul unui tier ≈ 16 haul-uri medii ale locației, împărțite pe 5–9 achiziții, deci o achiziție la 1–3 run-uri în loc de un zid de 5–7. Total campanie: **$1.725.300** (înainte: $224.700, din care Chapter 2 nu consuma aproape nimic).
+**Continuitate Strength și Van (Loadout Continuity).** Strength merge acum de la 1 la **27**: fiecare locație cere exact **două** niveluri noi, pentru două obiecte diferite — unul „mic” la primul nivel al tier-ului și obiectul-semnătură la al doilea (Apartment: Toilet 2 / Fridge 3; House: Tool Cabinet 4 / Sofa 5; Villa: Small Safe 6 / Piano 7; Electronics: Arcade 8 / Vending 9; Mansion: Grand Piano 10 / Large Statue 11; Laboratory: Cryo 12 / Core 13; Museum: Time Machine 14 / Artifact 15; Pyramid: Throne 16 / Sarcophagus 17; Castle: Throne 18 / Coffin 19; Pirate: Figurehead 20 / Chest 21; Vikings: Runestone 22 / Throne 23; Pub: Clock 24 / Billiards 25; Prehistoric: Saber 26 / Skull 27). Obiectele mai ieftine ale fiecărei locații stau la nivelurile tier-urilor anterioare, deci ajungi cu Strength-ul de sosire și poți fura o parte din inventar, dar nu semnătura. Vanul crește **3 cargo/nivel** (`van_capacity = 8 + 3 × (L − 1)`, 65 la L20) și fiecare locație cere exact nivelul care încape inventarul ei complet (Chapter 2: 50 → 53 → 56 → 59 → 62 → 65 cargo, cu `expected_cargo` și `cargo_space` ajustate pe obiecte). Strength la MAX este permis doar prin DEV, Lucky „strength” (temporar) și upgrade-uri; `Balance.STRENGTH_MAX = 27`.
+
+2. **Preț pe tier, nu pe nivel.** `upgrade_cost = round50(UPGRADE_UNIT[stat] × TIER_PRICE[tier-ul în care nivelul devine cumpărabil])`. `TIER_PRICE = [900, 2200, 3000, 4200, 5250, 8750, 9750, 10250, 10500, 11500, 15500, 20000, 23500]`; ponderi: Strength 1,6 · Van 1,3 · Pickup 1,0 · Carry 1,0 · Noise 0,8. Prețul unui tier ≈ 16 haul-uri medii ale locației, împărțite pe 6–9 achiziții, deci o achiziție la 1–3 run-uri în loc de un zid de 5–7. Total campanie: **$1.198.750** (Strength $400.900, Pickup/Carry $216.550 fiecare, Van $191.550, Noise $173.200).
 
 3. **Carry Speed = viteză de mers + viteză cu obiect.** `walk_factor = 1 + 0,02 × (L−1)` (până la +38% la L20) se aplică și fără obiect; factorul de greutate rămâne `carry_factor` (recuperare 0,35/nivel). Shop-ul arată „WALK +x% · HEAVY LOOT +y%” și detaliile listează viteza de mers și pe fiecare clasă de greutate. Pickup Speed rămâne +12%/nivel.
 
 4. **DEV · MAX ALL + UNLOCK ALL LEVELS** setează ambele Final Job-uri ca finalizate și deblochează toate cele 13 locații, inclusiv Chapter 2. Nu acordă bani sau obiective.
 
-5. **Strength ↔ alarmă (neschimbat).** Verificat numeric: cu STR-ul cu care ajungi obligatoriu într-o locație (2 la House, 4 la Electronics, 5 de la Mansion), haul-ul complet accesibil depășește pragul alarmei în toate cele 13 locații, chiar și la Noise Control MAX (ex. Pub 72 vs prag 59,8; Prehistoric 79 vs 65,7). La STR 1 multiplicatorul 2,0 face ca 4 obiecte din Apartment să declanșeze alarma. Mecanica este corectă; nu a fost modificată.
+5. **Strength ↔ alarmă.** Curba de mânuire merge acum până la 27 (1,20 la STR 1, 1,10 la STR 2, apoi −0,01/nivel până la podeaua 0,85), iar un hoț sub cerința de vârf a locației primește `handling_gap` = +30% zgomot per nivel lipsă. Verificat numeric: cu STR-ul de sosire (două niveluri sub semnătură) haul-ul accesibil depășește pragul alarmei în toate cele 13 locații (ex. Prehistoric 75,1 vs 65,7), iar la Strength + Noise MAX haul-ul complet îl depășește în continuare (69,5). Detalii în `STRENGTH_NOISE_V1.md`.
 
 ## Pacing simulat cu tabelul real
 
@@ -42,21 +44,21 @@ Simulator offline (`knapsack` pe inventar, timp pe circuit calibrat pe rutele fi
 
 | Locație | Run-uri (jucător ~85% din optim) | Run-uri (optim) | Venit mediu/run |
 |---|---:|---:|---:|
-| Apartment | 19 | 14 | $560–780 |
-| Suburban House | 16 | 14 | $1.700–1.900 |
-| Villa | 16 | 13 | $2.000–2.400 |
-| Electronics Store | 15 | 13 | $3.100–3.800 |
-| Mansion | 19 | 16 | $3.200–3.700 |
-| Laboratory | 17 | 14 | $5.600–6.600 |
-| Museum | 17 | 15 | $7.600–9.000 |
-| Pyramid | 16 | 14 | $8.900–10.500 |
-| Dracula's Castle | 17 | 14 | $9.300–10.900 |
-| Pirate Ship | 16 | 13 | $11.200–13.200 |
-| Viking Hall | 16 | 14 | $14.500–17.000 |
-| English Pub | 16 | 14 | $17.900–21.000 |
-| Prehistoric Era | 16 | 14 | $21.800–25.700 |
+| Apartment | 16 | 15 | $470–1.030 |
+| Suburban House | 17 | 13 | $1.110–1.820 |
+| Villa | 15 | 13 | $1.500–2.770 |
+| Electronics Store | 15 | 13 | $1.620–3.450 |
+| Mansion | 15 | 14 | $2.270–4.560 |
+| Laboratory | 17 | 13 | $3.700–6.160 |
+| Museum | 17 | 15 | $4.420–8.250 |
+| Pyramid | 16 | 14 | $5.950–8.930 |
+| Dracula's Castle | 16 | 11 | $6.120–9.270 |
+| Pirate Ship | 16 | 10 | $6.800–11.220 |
+| Viking Hall | 17 | 15 | $8.670–14.450 |
+| English Pub | 17 | 12 | $11.220–17.850 |
+| Prehistoric Era | 16 | 10 | $13.770–21.850 |
 
-Media: 16,6 (85%) / 14,0 (optim). Un jucător real, cu rute imperfecte și run-uri pierdute, ajunge la ~20. Rush Hour, Daily Gift, Lucky Blocks și laboratorul idle nu sunt incluse; toate scurtează ușor.
+Media: 16,2 (85%) / 12,9 (optim). Venitul pornește mai jos în fiecare locație decât înainte, pentru că la sosire lipsesc două niveluri de Strength (obiectul-semnătură nu poate fi ridicat) și vanul nu încape tot inventarul; crește pe măsură ce loadout-ul se completează. Un jucător real, cu rute imperfecte și run-uri pierdute, ajunge la ~20. Rush Hour, Daily Gift, Lucky Blocks și laboratorul idle nu sunt incluse; toate scurtează ușor.
 
 ## UI
 

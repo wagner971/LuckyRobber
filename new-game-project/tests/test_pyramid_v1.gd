@@ -47,9 +47,9 @@ func test() -> void:
 func test_budget() -> void:
 	var config: Dictionary = Balance.LOCATIONS.pyramid
 	check(Balance.LOCATION_ORDER.find("pyramid") == Balance.LOCATION_ORDER.find("museum") + 1, "Pyramid comes right after Museum")
-	check(Balance.totals("pyramid") == {"cargo": 44, "value": 10500}, "Pyramid exactly 44 cargo / $10500")
-	check(config.expected_cargo == 44 and config.expected_value == 10500 and config.items.size() == 11, "Expected totals and 11 loot instances")
-	check(Balance.van_capacity(19) == 44 and Balance.van_capacity(18) < 44 and 44 < Balance.van_capacity(20), "Fits Van L19, below Van MAX 46, no new upgrade")
+	check(Balance.totals("pyramid") == {"cargo": 50, "value": 10500}, "Pyramid exactly 50 cargo / $10500")
+	check(config.expected_cargo == 50 and config.expected_value == 10500 and config.items.size() == 11, "Expected totals and 11 loot instances")
+	check(Balance.van_capacity(Balance.required_level("capacity", "pyramid")) >= config.expected_cargo and Balance.van_capacity(Balance.required_level("capacity", "museum")) < config.expected_cargo, "Fits Van L19, below Van MAX 46, no new upgrade")
 	check(is_equal_approx(Balance.location_noise("pyramid"), 100.0) and is_equal_approx(Balance.alarm_threshold("pyramid"), 65.0), "100 base Noise, fixed 65 alarm threshold")
 	check(config.duration == 60 and Balance.ALARM_WINDOW == 12.0 and Balance.session("pyramid", "normal", {"capacity": 19}).alarm_window == 13.0, "Normal 60s timer and a 13s Pyramid escape window; global alarm remains 12s")
 	var rest = 0.0
@@ -78,7 +78,7 @@ func test_progression() -> void:
 	check(not profile.unlocked("pyramid") and Progression.museum_final_job_unlocked(profile.data), "Two Museum objectives offer Final Job but keep Chapter 2 locked")
 	Progression.settle(profile.data, "museum", "FINAL_JOB", {"museum_artifact":1,"time_machine":1}, [], 9700, true, 64.0)
 	check(profile.unlocked("pyramid") and profile.data.museum_final_job_completed, "Museum Final Job with Time Machine opens Pyramid")
-	check(Balance.purchase_cap("capacity", profile.data) == 20 and Balance.purchase_cap("strength", profile.data) == 5, "Pyramid tier reuses MAX caps")
+	check(Balance.purchase_cap("capacity", profile.data) == Balance.TIER_CAPS.capacity[7] and Balance.purchase_cap("strength", profile.data) == Balance.TIER_CAPS.strength[7], "Pyramid tier opens its own Strength and Van caps")
 	check(Progression.next_goal(profile.data).contains("PYRAMID") or Progression.next_goal(profile.data).contains("SARCOPHAGUS"), "Next goal points at Pyramid: " + Progression.next_goal(profile.data))
 	var restored = SaveStore.new("res://tests/pyramid_v1_profile.json")
 	profile.save_progress()
@@ -88,7 +88,7 @@ func test_progression() -> void:
 
 func test_alarm_math() -> void:
 	for noise_level in [1, 20]:
-		var upgrades = {"strength": 5, "grip": 20, "carry": 20, "capacity": 19, "noise": noise_level}
+		var upgrades = {"strength": Balance.max_level("strength"), "grip": 20, "carry": 20, "capacity": 19, "noise": noise_level}
 		for pair_order in [[9, 10], [10, 9]]:
 			await new_session(loc, "normal", profile_with(upgrades))
 			begin()
@@ -138,7 +138,7 @@ func measure(label: String, upgrades: Dictionary, order: Array) -> Dictionary:
 	return entry
 
 func test_routes_measured() -> void:
-	var base = {"strength": 5, "grip": 1, "carry": 1, "capacity": 19, "noise": 1}
+	var base = {"strength": Balance.max_level("strength"), "grip": 1, "carry": 1, "capacity": 19, "noise": 1}
 	var target = await measure("pyramid.harness_no_speed", base, THRONE_FIRST_PAIR)
 	check(target.cleared, "Full clear possible without speed upgrades (S5 G1 C1 V19 N1)")
 	check(target.remaining >= 4.5, "Physical full clear has a playable >=4.5s margin without speed upgrades (%.2fs)" % target.remaining)
@@ -147,7 +147,7 @@ func test_routes_measured() -> void:
 	check(alt.cleared or alt.remaining < target.remaining, "Sarcophagus-first finish is harder than the central Throne-first route (%.2fs left)" % alt.remaining)
 	var greedy = await measure("pyramid.greedy_prizes_first", base, GREEDY_ROUTE)
 	check(not greedy.cleared and greedy.loaded_at_alarm < 9, "Grabbing both big prizes first triggers an early alarm and costs the full clear")
-	var helped = await measure("pyramid.grip8_carry8", {"strength": 5, "grip": 8, "carry": 8, "capacity": 19, "noise": 1}, THRONE_FIRST_PAIR)
+	var helped = await measure("pyramid.grip8_carry8", {"strength": Balance.max_level("strength"), "grip": 8, "carry": 8, "capacity": 19, "noise": 1}, THRONE_FIRST_PAIR)
 	check(helped.cleared and helped.remaining > target.remaining, "A few Grip/Carry levels buy extra seconds (%.2fs)" % helped.remaining)
 	var maxed = await measure("pyramid.max", MAXED, THRONE_FIRST_PAIR)
 	check(maxed.full_clear and maxed.remaining >= 5.5 and maxed.remaining > helped.remaining, "MAX clears with >=5.5s and the largest margin (%.2fs)" % maxed.remaining)

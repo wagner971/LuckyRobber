@@ -129,7 +129,13 @@ const SHOP_TITLES = {"strength":"STRENGTH", "grip":"PICKUP SPEED", "carry":"CARR
 const SHOP_DESCRIPTIONS = {"strength":"UNLOCKS NEXT", "grip":"Pick up faster", "carry":"Walk and carry faster", "capacity":"Fit more in the van", "noise":"Make less noise"}
 const SHOP_COLORS = {"strength":HudStyle.INFO, "grip":HudStyle.INFO, "carry":HudStyle.INFO, "capacity":HudStyle.INFO, "noise":HudStyle.INFO}
 const SHOP_ICONS = {"strength":"strength", "grip":"grip", "carry":"carry", "capacity":"capacity", "noise":"noise"}
-const STRENGTH_FEATURED = {2:["fridge","toilet","sofa"], 3:["small_safe","arcade_machine"], 4:["piano","vending_machine"], 5:["large_statue","museum_artifact","sarcophagus"]}
+# Up to three most valuable objects a Strength level unlocks; every level unlocks something.
+static func strength_featured(level: int) -> Array:
+	var ids: Array = []
+	for id in Balance.ITEMS:
+		if int(Balance.ITEMS[id].required_strength) == level: ids.append(id)
+	ids.sort_custom(func(a, b): return int(Balance.ITEMS[a].cash_value) > int(Balance.ITEMS[b].cash_value))
+	return ids.slice(0, 3)
 const JOB_ACCENTS = {
 	"apartment": Color("58e6ce"), "house": Color("8be982"),
 	"villa": Color("ffca76"), "electronics": Color("c168ff"),
@@ -2524,7 +2530,7 @@ func shop_strength_unlocks(parent: HBoxContainer, next_level: int, maxed: bool) 
 		var all = headline(parent, "ALL LOOT UNLOCKED", 18, SHOP_COLORS.strength)
 		all.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		return
-	var featured: Array = STRENGTH_FEATURED.get(next_level, [])
+	var featured: Array = strength_featured(next_level)
 	var total := 0
 	for id in Balance.ITEMS:
 		if int(Balance.ITEMS[id].required_strength) == next_level: total += 1
@@ -2627,9 +2633,8 @@ func animate_upgrade_purchase(key: String, old_wallet: int, old_level: int, stor
 func show_strength_power_up(level: int) -> void:
 	if not is_instance_valid(menu): return
 	var unlocked: Array[String] = []
-	for id in STRENGTH_FEATURED.get(level, []):
-		if Balance.ITEMS.has(id) and int(Balance.ITEMS[id].required_strength) == level:
-			unlocked.append(id)
+	for id in strength_featured(level):
+		unlocked.append(id)
 	if unlocked.is_empty(): return
 	var overlay := Control.new()
 	overlay.name = "StrengthPowerUp"

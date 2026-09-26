@@ -156,7 +156,7 @@ func test_outcomes() -> void:
 		run.abandon()
 		check(p.data.special_location_id == "house" and p.data.runs_since_special == 2, "Actual normal still playable while offer frozen")
 		await new_session("house", "special", p)
-		check(run.remaining == 35 and run.capacity() == 46 and run.rules.contract_id == "", "Rush35 with full normal capacity, no mastery contract")
+		check(run.remaining == 35 and run.capacity() == Balance.van_capacity(20) and run.rules.contract_id == "", "Rush35 with full normal capacity, no mastery contract")
 		begin()
 		check(p.data.special_pending and p.data.special_in_progress, "Started job remains reserved until outcome")
 		if outcome == "success":

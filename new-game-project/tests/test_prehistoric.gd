@@ -5,7 +5,7 @@ func test() -> void:
 	Engine.time_scale = 16
 	Engine.physics_ticks_per_second = 960
 	Engine.max_physics_steps_per_frame = 64
-	check(Balance.totals("prehistoric") == {"cargo":44,"value":25700}, "Unique Prehistoric inventory: $25,700 / 44 cargo")
+	check(Balance.totals("prehistoric") == {"cargo":65,"value":25700}, "Unique Prehistoric inventory: $25,700 / 65 cargo")
 	var profile = SaveStore.new("res://tests/prehistoric_profile.json")
 	profile.session_only = true
 	profile.data.upgrades = MAXED.duplicate()
@@ -35,7 +35,7 @@ func test() -> void:
 		seen.append(row[1])
 		check(Duplication.source_location(row[1]) == "prehistoric" and Duplication.duration(row[1]) <= 45, "Prehistoric loot uses bounded idle economy: "+row[1])
 	for speed in [20,Balance.required_level("grip","prehistoric")]:
-		profile.data.upgrades = {"strength":5,"grip":speed,"carry":speed,"capacity":20,"noise":Balance.required_level("noise","prehistoric")}
+		profile.data.upgrades = {"strength":Balance.max_level("strength"),"grip":speed,"carry":speed,"capacity":20,"noise":Balance.required_level("noise","prehistoric")}
 		await new_session("prehistoric","normal",profile)
 		check(world.valid_drop(Vector3(1.15,0,-3),0.3), "Clear cave travel lane")
 		for item in world.items: check(item.model.get_child_count()>0, "Visible model: "+item.data.type_id)

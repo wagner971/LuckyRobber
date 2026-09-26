@@ -5,7 +5,7 @@ func test() -> void:
 	Engine.time_scale = 16
 	Engine.physics_ticks_per_second = 960
 	Engine.max_physics_steps_per_frame = 64
-	check(Balance.totals("pirate_ship") == {"cargo":44,"value":13200}, "Unique pirate inventory: $13,200 / 44 cargo")
+	check(Balance.totals("pirate_ship") == {"cargo":56,"value":13200}, "Unique pirate inventory: $13,200 / 56 cargo")
 	var profile = SaveStore.new("res://tests/pirate_profile.json")
 	profile.session_only = true
 	profile.data.upgrades = MAXED.duplicate()
@@ -35,7 +35,7 @@ func test() -> void:
 		seen.append(row[1])
 		check(Duplication.source_location(row[1]) == "pirate_ship" and Duplication.duration(row[1]) <= 45, "Pirate loot uses bounded idle economy: "+row[1])
 	for speed in [20,Balance.required_level("grip","pirate_ship")]:
-		profile.data.upgrades = {"strength":5,"grip":speed,"carry":speed,"capacity":20,"noise":Balance.required_level("noise","pirate_ship")}
+		profile.data.upgrades = {"strength":Balance.max_level("strength"),"grip":speed,"carry":speed,"capacity":20,"noise":Balance.required_level("noise","pirate_ship")}
 		await new_session("pirate_ship","normal",profile)
 		check(not world.valid_drop(Vector3(6,0,-4),0.4), "Cannot drop cargo into the sea")
 		check(world.valid_drop(Vector3(1.0,0,-5),0.3), "Clear deck lane")

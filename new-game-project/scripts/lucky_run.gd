@@ -22,7 +22,7 @@ func setup(owner_run: RunManager) -> void:
 		"short": run.rules.duration -= 15
 		"delay": run.rules.alarm_window += 8
 		"rush": run.rules.alarm_window -= 4
-		"strength": run.upgrades.strength = 5
+		"strength": run.upgrades.strength = Balance.max_level("strength")
 		"weak": run.upgrades.strength = maxi(0,run.upgrades.strength-1)
 		"ghost":
 			for child in run.level.player.get_children():

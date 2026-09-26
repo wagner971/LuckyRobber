@@ -1,38 +1,44 @@
-# Strength handling / early alarm pressure — 0.9.75
+# Strength handling / early alarm pressure — 0.9.75, revizuit în Loadout Continuity
 
-Pickup noise = weight base × Strength handling × Noise Control.
+Pickup noise = weight base × Strength handling × Noise Control × handling gap.
 
-| STR | Handling multiplier | Reduction from preceding level |
-| --- | --- | --- |
-| 1 | 2.00 | — |
-| 2 | 1.10 | 45% |
-| 3 | 1.04 | 5.45% |
-| 4 | 1.00 | 3.85% |
-| 5 | 0.96 | 4% |
+## Curba curentă (Strength 1–27)
 
-Weak Thief at STR 0 uses 2.40. Noise Control retains its independent 100–81%
-multiplier. Strength applies to object handling, not guard detection or fixed
-Lucky penalties. Silent Heist/Double Noise still apply after this calculation;
-the +35 Cursed penalty remains fixed. Tutorial still generates no pickup noise.
-No save migration, price changes, threshold changes or timer extensions.
+| STR | Handling multiplier |
+| --- | --- |
+| 0 (Weak Thief) | 2.40 |
+| 1 | 1.20 |
+| 2 | 1.10 |
+| 3 … 26 | 1.10 − 0.01 × (STR − 2), adică 1.09 … 0.86 |
+| 27 | 0.85 (podea) |
 
-Measured physical starter route (TV, chair, lamp, desk fan): 14.60 s / 6 cargo.
-STR 1: warning after the third pickup, alarm after fourth, 44 / 36.4 noise;
-10.73 s left at the van, escape succeeds.
-STR 2: same route 24.2 / 36.4 noise; no alarm, 45.40 s left.
-Shop displays the next relative handling reduction alongside heavier-loot unlocks.
+`Balance.strength_noise_multiplier(level)`; podeaua `STRENGTH_NOISE_FLOOR = 0.85`
+garantează că un haul complet la Strength MAX + Noise MAX depășește în continuare
+pragul alarmei în toate cele 13 locații.
 
-Full clear routes with minimum speed requirements and legal Strength/Noise tiers:
-Apartment STR2 / speed2 / Noise4: 39.08 s, 4.35 s alarm margin.
-House STR3 / speed3 / Noise7: 56.30 s, 0.17 s margin.
-Villa STR4 / speed4 / Noise10: 62.63 s, 0.07 s margin.
-Capacity was sufficient for each full inventory. These are deterministic optimal
-routes, not a claim of comfortable human margins: House/Villa benefit from further
-speed upgrades or route optimization. STR5 + Noise20 full inventories still exceed
-the alarm threshold in all 13 locations.
+## Handling gap (nou)
 
-Validation: 138 new handling/physical starter checks, 3 complete physical routes,
-87 core checks, 23 shop checks, 50 onboarding and 117 Lucky Blocks checks.
-Narrow portrait shop screenshot: tests/strength_noise_shop.png.
-Legacy challenge_v2 contains obsolete pre-Speed-V2 price/speed/route assertions;
-it is not a release gate for this patch. Dedicated current checks above pass.
+`Balance.handling_gap(location, strength) = 1 + 0.30 × max(0, top_strength(location) − strength)`,
+unde `top_strength` este cel mai mare `required_strength` din inventarul locației.
+Un hoț sub cerința de vârf a locației mânuiește neîndemânatic ceea ce poate ridica:
++30% zgomot per nivel lipsă. Astfel, cu Strength-ul cu care ajungi obligatoriu într-o
+locație (două niveluri sub obiectul-semnătură) haul-ul scurt accesibil tot aleargă
+contra alarmei, iar presiunea scade exact pe măsură ce cumperi Strength. Verificat
+numeric pentru toate cele 13 locații: la sosire haul-ul accesibil depășește pragul
+(ex. Prehistoric 75,1 vs 65,7), iar la MAX haul-ul complet îl depășește (69,5).
+
+Noise Control păstrează multiplicatorul independent 100–81%. Strength se aplică
+mânuirii obiectelor, nu detecției gardienilor și nici penalizărilor fixe Lucky.
+Silent Heist/Double Noise se aplică după acest calcul; +35 Cursed rămâne fix.
+Tutorialul nu generează zgomot la pickup.
+
+Shop-ul afișează reducerea relativă a următorului nivel (`strength_noise_reduction`)
+alături de loot-ul deblocat (`GameUI.strength_featured`: cele mai valoroase 3 obiecte
+cu acel `required_strength`).
+
+## Istoric (0.9.75, scară 1–5)
+
+Vechea curbă era 2.00 / 1.10 / 1.04 / 1.00 / 0.96. Rutele fizice măsurate atunci
+(starter route STR 1: alarmă după al patrulea obiect; STR 2: fără alarmă, 45,40 s)
+rămân în `tests/test_strength_noise.gd` cu așteptările recalibrate pe curba nouă.
+Legacy challenge_v2 conține aserțiuni pre-Speed-V2 și nu este gate de release.

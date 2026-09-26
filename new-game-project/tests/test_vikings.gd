@@ -5,7 +5,7 @@ func test() -> void:
 	Engine.time_scale = 16
 	Engine.physics_ticks_per_second = 960
 	Engine.max_physics_steps_per_frame = 64
-	check(Balance.totals("vikings") == {"cargo":44,"value":17000}, "Unique Viking inventory: $17,000 / 44 cargo")
+	check(Balance.totals("vikings") == {"cargo":59,"value":17000}, "Unique Viking inventory: $17,000 / 59 cargo")
 	var profile = SaveStore.new("res://tests/vikings_profile.json")
 	profile.session_only = true
 	profile.data.upgrades = MAXED.duplicate()
@@ -35,7 +35,7 @@ func test() -> void:
 		seen.append(row[1])
 		check(Duplication.source_location(row[1]) == "vikings" and Duplication.duration(row[1]) <= 45, "Viking loot uses bounded idle economy: "+row[1])
 	for speed in [20,Balance.required_level("grip","vikings")]:
-		profile.data.upgrades = {"strength":5,"grip":speed,"carry":speed,"capacity":20,"noise":Balance.required_level("noise","vikings")}
+		profile.data.upgrades = {"strength":Balance.max_level("strength"),"grip":speed,"carry":speed,"capacity":20,"noise":Balance.required_level("noise","vikings")}
 		await new_session("vikings","normal",profile)
 		check(world.valid_drop(Vector3(1.15,0,-3),0.3), "Clear lane beside hearth")
 		for item in world.items: check(item.model.get_child_count()>0, "Visible model: "+item.data.type_id)

@@ -2,7 +2,7 @@ extends "res://tests/test_suite.gd"
 
 var measurements: Array = []
 var campaign_runs: Array = []
-const MAXED = {"strength": 5, "grip": 20, "carry": 20, "capacity": 20, "noise": 20}
+const MAXED = {"strength": Balance.STRENGTH_MAX, "grip": 20, "carry": 20, "capacity": 20, "noise": 20}
 
 func new_session(location: String, mode: String = "normal", profile: SaveStore = null) -> void:
 	if is_instance_valid(run): run.free()

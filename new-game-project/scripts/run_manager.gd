@@ -271,7 +271,7 @@ func add_pickup_noise(item: LootItem) -> void:
 	if phase != Phase.ACTIVE or remaining <= 0 or item != carried or item.noise_generated_this_run: return
 	item.noise_generated_this_run = true
 	if item.data.type_id == "lucky_block": return
-	var added: float = Balance.pickup_noise(item.data.weight_class, upgrades.strength, upgrades.noise)
+	var added: float = Balance.pickup_noise(item.data.weight_class, upgrades.strength, upgrades.noise, location_id)
 	if item.get_meta("cursed",false): added += 35
 	add_noise(added)
 

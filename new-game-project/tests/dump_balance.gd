@@ -2,7 +2,7 @@ extends SceneTree
 
 # QA helper: dumps the balance tables to JSON for offline economy simulation.
 func _initialize() -> void:
-	var out := {"items": Balance.ITEMS, "locations": {}, "order": Balance.LOCATION_ORDER, "noise": Balance.NOISE, "strength_noise": Balance.STRENGTH_NOISE, "threshold_factor": Balance.ALARM_THRESHOLD_FACTOR, "tier_caps": Balance.TIER_CAPS, "tier_price": Balance.TIER_PRICE, "walk_step": Balance.WALK_SPEED_STEP, "costs": Balance.COSTS, "clear_bonus": Balance.CLEAR_BONUS}
+	var out := {"items": Balance.ITEMS, "locations": {}, "order": Balance.LOCATION_ORDER, "noise": Balance.NOISE, "strength_noise": range(1, Balance.max_level("strength") + 1).map(func(l): return Balance.strength_noise_multiplier(l)), "threshold_factor": Balance.ALARM_THRESHOLD_FACTOR, "tier_caps": Balance.TIER_CAPS, "tier_price": Balance.TIER_PRICE, "walk_step": Balance.WALK_SPEED_STEP, "costs": Balance.COSTS, "clear_bonus": Balance.CLEAR_BONUS}
 	for id in Balance.LOCATIONS:
 		var c: Dictionary = Balance.LOCATIONS[id].duplicate(true)
 		c["alarm_threshold"] = Balance.alarm_threshold(id)

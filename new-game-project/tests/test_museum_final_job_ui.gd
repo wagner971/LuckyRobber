@@ -44,7 +44,7 @@ func test() -> void:
 	game.store.data.objectives.museum.cash = true
 	game.store.data.objectives.museum.signature = true
 	for key in Balance.UPGRADE_KEYS: game.store.data.upgrades[key] = Balance.required_level(key, "museum")
-	game.store.data.upgrades.capacity = 19
+	game.store.data.upgrades.capacity = Balance.required_level("capacity", "museum") - 1
 	root.add_child(game)
 	game.ui.jobs_index = Balance.LOCATION_ORDER.find("museum")
 	game.action("locations")
@@ -53,7 +53,7 @@ func test() -> void:
 	game.action("play_museum_final_job")
 	check(game.screen != "run", "Museum finale cannot start below required van capacity")
 	await frame("res://tests/museum_final_job_need_van.png")
-	game.store.data.upgrades.capacity = 20
+	game.store.data.upgrades.capacity = Balance.required_level("capacity", "museum")
 	game.action("locations")
 	await process_frame
 	var start = find_button(game.ui.menu, "PLAY FINAL JOB  ▶")

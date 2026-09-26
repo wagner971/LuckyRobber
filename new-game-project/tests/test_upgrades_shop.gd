@@ -38,9 +38,9 @@ func run_test() -> void:
 	var copy := all_text(game.ui.menu)
 	check(game.ui.upgrade_cards.size() == 5, "Five compact power-up cards are present")
 	check(copy.contains("STEAL THE FRIDGE") and copy.contains("NEXT TARGET"), "Next target states the loot goal")
-	check(copy.contains("FRIDGE") and copy.contains("TOILET") and copy.contains("SOFA"), "Strength teases the next recognizable loot")
-	check(copy.contains("45% less noise"), "Strength advertises its immediate handling benefit")
-	check(copy.contains("+12% PICKUP SPEED") and copy.contains("WALK +2% · HEAVY LOOT +20%") and copy.contains("8  →  10 CARGO") and copy.contains("-1% NOISE"), "Cards show the stronger immediate benefit without formulas")
+	check(copy.contains("TOILET") and copy.contains("MICROSCOPE") and not copy.contains("SOFA"), "Strength teases the next recognizable loot")
+	check(copy.contains("%d%% less noise" % Balance.strength_noise_reduction(1)), "Strength advertises its immediate handling benefit")
+	check(copy.contains("+12% PICKUP SPEED") and copy.contains("WALK +2% · HEAVY LOOT +20%") and copy.contains("8  →  11 CARGO") and copy.contains("-1% NOISE"), "Cards show the stronger immediate benefit without formulas")
 	check(not copy.contains("m/s") and not copy.contains("+3% PER LEVEL") and not copy.contains("DEV ·"), "Technical formulas and DEV controls stay out of the default shop")
 	check(game.ui.shop_preview != null and game.ui.shop_preview.upgrade_focus == "strength" and game.ui.shop_preview.actor.carrying, "Live 3D preview responds to Strength")
 	if DisplayServer.get_name() != "headless":
@@ -75,18 +75,19 @@ func run_test() -> void:
 	check(game.ui.shop_selected_key == "strength" and not get_nodes_in_group("ui_juice_overlay").is_empty(), "Purchase keeps focus and shows an unlock celebration")
 	var overlay_copy := ""
 	for overlay in get_nodes_in_group("ui_juice_overlay"): overlay_copy += all_text(overlay)
-	check(overlay_copy.contains("POWER UP!") and overlay_copy.contains("STRENGTH 2") and overlay_copy.contains("FRIDGE") and overlay_copy.contains("TOILET") and overlay_copy.contains("SOFA") and overlay_copy.contains("NEW LOOT UNLOCKED"), "Strength purchase names all three newly unlocked items")
+	check(overlay_copy.contains("POWER UP!") and overlay_copy.contains("STRENGTH 2") and overlay_copy.contains("TOILET") and overlay_copy.contains("MICROSCOPE") and not overlay_copy.contains("FRIDGE") and overlay_copy.contains("NEW LOOT UNLOCKED"), "Strength purchase names the newly unlocked items")
 	var progress: ProgressBar = game.ui.upgrade_cards.strength.get_meta("progress_bar")
-	check(progress.value < 40.0, "Selected level progress starts at the previous value")
+	var target_progress := 100.0 * 2 / Balance.max_level("strength")
+	check(progress.value < target_progress, "Selected level progress starts at the previous value")
 	await create_timer(0.46).timeout
-	check(is_equal_approx(progress.value, 40.0) and game.ui.menu_wallet_label.text == "$1,150", "Progress and wallet animate to the purchased state")
+	check(absf(progress.value - target_progress) < 0.05 and game.ui.menu_wallet_label.text == "$1,050", "Progress and wallet animate to the purchased state")
 	await create_timer(0.58).timeout
 	await process_frame
 	check(get_nodes_in_group("ui_juice_overlay").is_empty(), "Power-up reveal clears itself after about 0.8 seconds")
-	game.ui.show_strength_power_up(3)
+	game.ui.show_strength_power_up(6)
 	var next_unlocks := ""
 	for overlay in get_nodes_in_group("ui_juice_overlay"): next_unlocks += all_text(overlay)
-	check(next_unlocks.contains("SMALL SAFE") and next_unlocks.contains("ARCADE MACHINE") and not next_unlocks.contains("FRIDGE"), "Higher tiers reveal only their newly unlocked loot")
+	check(next_unlocks.contains("SMALL SAFE") and next_unlocks.contains("CENTRIFUGE") and not next_unlocks.contains("FRIDGE"), "Higher tiers reveal only their newly unlocked loot")
 	game.action("home")
 	await process_frame
 	check(get_nodes_in_group("ui_juice_overlay").is_empty(), "Leaving the shop immediately clears the power-up effect")

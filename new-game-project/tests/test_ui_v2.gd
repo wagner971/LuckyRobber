@@ -124,7 +124,7 @@ func test() -> void:
 	check(main.ui.toast.text == "" and main.ui.noise_status.text.contains("POLICE IN"), "Alarm banner is brief while the countdown remains")
 	check(main.sound.clips.has("alarm") and main.sound.clips.alarm != main.sound.clips.tick, "Distinct synthesized alarm sound exists")
 	main.run.abandon()
-	main.store.data.upgrades = {"strength":5,"grip":20,"carry":20,"capacity":20,"noise":20}
+	main.store.data.upgrades = {"strength":Balance.max_level("strength"),"grip":20,"carry":20,"capacity":20,"noise":20}
 	main.store.data.unlocked = Balance.LOCATION_ORDER.duplicate()
 	main.action("shop")
 	check(count_buy_buttons(main.ui.menu) == 5 and not all_text(main.ui.menu).contains("$0") and not all_text(main.ui.menu).contains("LEVEL 21"), "MAX shop has no level21 or fake zero-price purchase")

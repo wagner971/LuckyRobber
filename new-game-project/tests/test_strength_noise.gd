@@ -44,7 +44,7 @@ func test() -> void:
 	check(run.current_noise == 0, "Silent Heist remains silent despite low Strength")
 	run.carried.noise_generated_this_run = false
 	run.lucky.id = "noise"
-	var expected := Balance.pickup_noise(run.carried.data.weight_class, 1, 1) * 2
+	var expected := Balance.pickup_noise(run.carried.data.weight_class, 1, 1, run.location_id) * 2
 	run.add_pickup_noise(run.carried)
 	check(is_equal_approx(run.current_noise, expected), "Double Noise still applies on top of handling noise")
 	run.add_pickup_noise(run.carried)

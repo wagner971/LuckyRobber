@@ -5,13 +5,13 @@ func test() -> void:
 	Engine.time_scale = 16
 	Engine.physics_ticks_per_second = 960
 	Engine.max_physics_steps_per_frame = 64
-	check(Balance.upgrade_cost("grip",1) == 850 and Balance.upgrade_cost("carry",1) == 850,"First two speed upgrades cost $1,700 combined")
+	check(Balance.upgrade_cost("grip",1) == 900 and Balance.upgrade_cost("carry",1) == 900,"First two speed upgrades cost $1,800 combined")
 	var total_cost := 0
 	for key in Balance.UPGRADE_KEYS:
 		for level in range(1, Balance.max_level(key)):
 			check(Balance.upgrade_cost(key, level) > 0 and Balance.upgrade_cost(key, level + 1) >= Balance.upgrade_cost(key, level) or level + 1 >= Balance.max_level(key), "Prices never fall as %s levels rise" % key)
 			total_cost += Balance.upgrade_cost(key, level)
-	check(total_cost == 1725300, "All 80 purchases cost $1,725,300")
+	check(total_cost == 1198750, "All 102 purchases cost $1,198,750")
 	var walk_monotonic = true
 	for level in range(1, 20): walk_monotonic = walk_monotonic and Balance.walk_factor(level + 1) > Balance.walk_factor(level)
 	check(walk_monotonic and is_equal_approx(Balance.walk_factor(20), 1.38), "Every Carry level walks faster, up to +38% at MAX")

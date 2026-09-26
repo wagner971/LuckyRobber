@@ -44,7 +44,7 @@ func test() -> void:
 	check(finished and profile.data.museum_final_job_completed and profile.unlocked("pyramid") and run.result.get("time_machine_stolen", false), "Physical Museum Final Job steals Time Machine and opens Pyramid")
 	var mid_tier = SaveStore.new("res://tests/museum_mid_tier_profile.json")
 	mid_tier.session_only = true
-	mid_tier.data.upgrades = {"strength": 5, "grip": 10, "carry": 10, "capacity": 20, "noise": 10}
+	mid_tier.data.upgrades = {"strength": Balance.max_level("strength"), "grip": 10, "carry": 10, "capacity": 20, "noise": 10}
 	mid_tier.data.objectives.museum.cash = true
 	mid_tier.data.objectives.museum.signature = true
 	await new_session("museum", "FINAL_JOB", mid_tier)

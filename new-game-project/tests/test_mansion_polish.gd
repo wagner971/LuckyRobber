@@ -9,7 +9,7 @@ func test() -> void:
 	Engine.max_physics_steps_per_frame = 64
 	var profile = SaveStore.new("res://tests/mansion_polish_profile.json")
 	profile.session_only = true
-	profile.data.upgrades = {"strength":5,"grip":16,"carry":16,"capacity":16,"noise":16}
+	profile.data.upgrades = {"strength":Balance.max_level("strength"),"grip":16,"carry":16,"capacity":16,"noise":16}
 	await new_session("mansion","normal",profile)
 	check(not world.valid_drop(Vector3(6,0,-4.83),0.1) and not world.valid_drop(Vector3(-6.24,0,-2.6),0.1),"Bed and library desk block movement/drop footprints")
 	var roots_ok = true

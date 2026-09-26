@@ -9,7 +9,7 @@ func test() -> void:
 	Engine.max_physics_steps_per_frame = 64
 	var profile = SaveStore.new("res://tests/laboratory_polish_profile.json")
 	profile.session_only = true
-	profile.data.upgrades = {"strength":5,"grip":18,"carry":18,"capacity":18,"noise":18}
+	profile.data.upgrades = {"strength":Balance.max_level("strength"),"grip":18,"carry":18,"capacity":18,"noise":18}
 	await new_session("laboratory","normal",profile)
 	check(not world.valid_drop(Vector3(-5,0,0.47),0.1) and not world.valid_drop(Vector3(5,0,0.47),0.1),"Both analysis benches have solid drop footprints")
 	check(world.items[0].position.y > 0.7 and world.items[1].position.y > 0.7 and world.items[0].model.position.y == 0,"Small instruments are supported at bench height without a carry offset")

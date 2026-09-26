@@ -11,8 +11,8 @@ func _initialize() -> void:
 func test_budget() -> void:
 	var config: Dictionary = Balance.LOCATIONS.castle
 	check(Balance.LOCATION_ORDER.find("castle") == Balance.LOCATION_ORDER.find("pyramid") + 1, "Dracula's Castle comes right after Pyramid")
-	check(Balance.totals("castle") == {"cargo": 44, "value": 10900}, "Castle exactly 44 cargo / $10900")
-	check(config.expected_cargo == 44 and config.expected_value == 10900 and config.items.size() == 11, "Expected totals and 11 loot instances")
+	check(Balance.totals("castle") == {"cargo": 53, "value": 10900}, "Castle exactly 53 cargo / $10900")
+	check(config.expected_cargo == 53 and config.expected_value == 10900 and config.items.size() == 11, "Expected totals and 11 loot instances")
 	check(is_equal_approx(Balance.location_noise("castle"), 97.0) and is_equal_approx(Balance.alarm_threshold("castle"), 63.05), "97 base Noise, 63.05 alarm threshold")
 	check(config.duration == 60 and Balance.session("castle", "normal", {"capacity": 19}).alarm_window == 12.0, "Normal 60s timer and 12s alarm")
 	var rest = 0.0
@@ -80,16 +80,16 @@ func test_layout() -> void:
 			check(entry.light.omni_range >= 2.0 and entry.light.omni_range <= 3.2 and entry.light.light_energy <= 1.3, "Interior torch is a short, low accent (%.1f)" % entry.light.omni_range)
 
 func test_routes_measured() -> void:
-	var base = {"strength": 5, "grip": 1, "carry": 1, "capacity": 19, "noise": 1}
+	var base = {"strength": Balance.required_level("strength", "castle"), "grip": 1, "carry": 1, "capacity": 19, "noise": 1}
 	var target = await measure("castle.harness_no_speed", base, SMART_ROUTE)
-	check(target.cleared, "Full clear possible without speed upgrades (S5 G1 C1 V19 N1)")
+	check(target.cleared, "Full clear possible without speed upgrades (S19 G1 C1 V19 N1)")
 	check(target.remaining >= 4.0 and target.remaining <= 6.5, "Harness leaves 4-6s after full clear without speed upgrades (%.2fs)" % target.remaining)
 	check(target.loaded_at_alarm == 9, "Alarm fires on the Throne, with 9/11 pieces loaded")
 	var coffin_first = await measure("castle.coffin_before_throne", base, THRONE_FIRST_PAIR)
 	check(coffin_first.remaining < target.remaining, "Coffin before Throne is the harder finish (%.2fs)" % coffin_first.remaining)
 	var greedy = await measure("castle.greedy_prizes_first", base, GREEDY_ROUTE)
 	check(not greedy.cleared and greedy.loaded_at_alarm < 9, "Grabbing Throne + Coffin first triggers an early alarm and costs the full clear")
-	var helped = await measure("castle.grip8_carry8", {"strength": 5, "grip": 8, "carry": 8, "capacity": 19, "noise": 1}, SMART_ROUTE)
+	var helped = await measure("castle.grip8_carry8", {"strength": Balance.required_level("strength", "castle"), "grip": 8, "carry": 8, "capacity": 19, "noise": 1}, SMART_ROUTE)
 	check(helped.cleared and helped.remaining >= target.remaining, "A few Grip/Carry levels buy extra seconds (%.2fs)" % helped.remaining)
 	var maxed = await measure("castle.max", MAXED, SMART_ROUTE)
 	check(maxed.full_clear and maxed.remaining >= helped.remaining, "MAX clears with the largest margin (%.2fs)" % maxed.remaining)

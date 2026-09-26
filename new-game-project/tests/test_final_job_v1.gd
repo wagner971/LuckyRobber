@@ -5,7 +5,7 @@ func _initialize() -> void: call_deferred("test")
 func apartment_tier_profile(unlocked: Array = ["apartment"]) -> SaveStore:
 	var profile = SaveStore.new("res://tests/final_job_v1_profile.json")
 	profile.data.unlocked = unlocked.duplicate()
-	profile.data.upgrades = {"strength": 2, "grip": 4, "carry": 4, "capacity": 6, "noise": 4}
+	profile.data.upgrades = {"strength": Balance.required_level("strength", "apartment"), "grip": 4, "carry": 4, "capacity": 6, "noise": 4}
 	return profile
 
 func test() -> void:
@@ -26,13 +26,13 @@ func test() -> void:
 	check(normal_layout == final_job_layout, "Final Job and Normal build the identical canonical Apartment layout")
 
 	# 3/4. Van capacity gate: L5 (16 cargo) is short, L6 (18 cargo) covers the 17 needed.
-	check(Balance.van_capacity(5) < Balance.LOCATIONS.apartment.expected_cargo, "Van L5 (16 cargo) is short of Apartment's 17")
-	check(Balance.van_capacity(6) >= Balance.LOCATIONS.apartment.expected_cargo, "Van L6 (18 cargo) covers Apartment's 17")
+	check(Balance.van_capacity(3) < Balance.LOCATIONS.apartment.expected_cargo, "Van L3 (14 cargo) is short of Apartment's 17")
+	check(Balance.van_capacity(4) >= Balance.LOCATIONS.apartment.expected_cargo, "Van L4 (17 cargo) covers Apartment's 17")
 	var p3 = apartment_tier_profile()
 	p3.data.objectives.apartment.cash = true
 	p3.data.objectives.apartment.signature = true
-	p3.data.upgrades.capacity = 5
-	check(not Progression.final_job_unlocked(p3.data) and Balance.van_capacity(p3.data.upgrades.capacity) < Balance.LOCATIONS.apartment.expected_cargo, "Final Job waits for the Van L6 loadout level; L5 is also mathematically too small")
+	p3.data.upgrades.capacity = 3
+	check(not Progression.final_job_unlocked(p3.data) and Balance.van_capacity(p3.data.upgrades.capacity) < Balance.LOCATIONS.apartment.expected_cargo, "Final Job waits for the Van L4 loadout level; L3 is also mathematically too small")
 
 	# 5. Carrying the last item is NOT enough — it must be loaded, not just carried.
 	var p5 = apartment_tier_profile()
