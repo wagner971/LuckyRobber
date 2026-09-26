@@ -424,6 +424,14 @@ func equip_cosmetic(id: String, between_rounds: bool) -> bool:
 	appearance_changed.emit()
 	return true
 
+func unequip_slot(slot: String, between_rounds: bool) -> void:
+	# Back to the original look for one slot; a full set covers both, so it comes off too.
+	if not between_rounds or slot not in ["suit", "van"]: return
+	data.cosmetics.equipped[slot] = ""
+	data.cosmetics.equipped.set = ""
+	save_progress()
+	appearance_changed.emit()
+
 func unequip_cosmetics(between_rounds: bool) -> void:
 	if not between_rounds: return
 	data.cosmetics.equipped = {"van": "", "suit": "", "set": ""}

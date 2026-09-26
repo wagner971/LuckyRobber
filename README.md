@@ -2,6 +2,8 @@
 
 Pornește **[STEAL EVERYTHING.exe](builds/windows/STEAL%20EVERYTHING.exe)** pentru testare rapidă cu resetare la fiecare lansare. Pentru a testa amanetul offline și salvarea între sesiuni, folosește **[STEAL EVERYTHING Persistent.exe](builds/windows/STEAL%20EVERYTHING%20Persistent.exe)**. Cele două variante au profiluri de salvare separate.
 
+**LOCKER V3:** pagina de cosmetice refăcută după machetă: TODAY'S SHOP cu rotație la 24 h și countdown, panourile THIEF SKIN / GETAWAY VEHICLE echipate cu preview 3D și CUSTOMIZE, apoi COLLECTION delimitată clar: tab-uri THIEF SKINS / VEHICLES și 30 de sloturi fixe cu „?” care se deblochează la locul lor, cu raritate și EQUIP. [Detalii și capturi](new-game-project/LOCKER_V3.md).
+
 **UPGRADES V3:** pagina Upgrades refăcută după machetă: header cu pastile și buton înapoi, NEXT TARGET cu GO, cinci carduri cu placă colorată, nivel în 5 segmente, BUY verde și linia de beneficiu (loot deblocat, +% viteză, cargo, −% zgomot). [Detalii și capturi](new-game-project/UPGRADES_V3.md).
 
 **HOME V3:** ecranul Home refăcut după machetă: logo-ul furnizat între Daily Wheel și Daily Gift, personajul pe soclu cu neon violet într-un garaj 3D construit în joc (rafturi cu Lucky Block-uri, cutie de scule, anvelope, ușă de garaj, lampă caldă) cu color grading propriu, PLAY galben, UPGRADES · GARAGE · LOCKER, Lucky Meter. [Detalii și capturi](new-game-project/HOME_V3.md).

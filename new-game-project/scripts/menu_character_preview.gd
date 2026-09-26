@@ -24,6 +24,7 @@ var home_set: HomeShowcaseSet
 var home_frame := Rect2()
 var garage: GarageDecor
 var garage_preview_id := ""
+var appearance_override: Dictionary = {} # Locker: show one look instead of the saved outfit.
 
 func configure(profile: SaveStore, kind: String, height: float) -> void:
 	store = profile
@@ -224,10 +225,20 @@ func resize_viewport() -> void:
 
 func refresh_appearance() -> void:
 	if not is_instance_valid(actor): return
-	Models.apply_appearance(actor,van.model,store.data.cosmetics.equipped)
+	Models.apply_appearance(actor,van.model,appearance_override if not appearance_override.is_empty() else store.data.cosmetics.equipped)
 	if is_instance_valid(garage): garage.build(store.data.garage_owned, garage_preview_id)
 	equipped_snapshot = store.data.cosmetics.equipped.duplicate(true)
 	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+
+func preview_cosmetic(id: String) -> void:
+	var wearing := {"van": "", "suit": "", "set": ""}
+	if id in Balance.COSMETICS: wearing[Balance.COSMETICS[id].slot] = id
+	appearance_override = wearing
+	refresh_appearance()
+
+func show_van(visible_van: bool) -> void:
+	if is_instance_valid(van): van.model.visible = visible_van
+	if viewport != null: viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 
 func suspend(value: bool) -> void:
 	suspended = value

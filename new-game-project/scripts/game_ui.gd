@@ -82,6 +82,9 @@ var noise_gain_time = 0.0
 var development_mode = false
 var menu_previews_active = true
 var cosmetics_list: VBoxContainer
+var locker_tab := "skins"
+var locker_scroll: ScrollContainer
+var locker_grid_anchor: Control
 var lucky_shop_list: VBoxContainer
 const LUCKY_CUBE := preload("res://assets/ui/reward_cards/purple-lucky-cube.png")
 var garage_selected := ""
@@ -2114,11 +2117,9 @@ func save_status(body: VBoxContainer, store: SaveStore) -> void:
 	if store.notice != "": text(body, store.notice, 18, MUTED)
 	if store.last_error != "": text(body, store.last_error, 18, Color("ffac94"))
 
-func shop_page(store: SaveStore) -> void:
-	var frame = base_menu()
-	frame.add_theme_constant_override("separation", 8)
+# Sub-page header: currency pills, a back button where Settings usually sits, then the title.
+func back_header(frame: VBoxContainer, store: SaveStore, title: String, subtitle: String) -> void:
 	var settings = currency_header(frame, store)
-	# The header's right-hand button goes back instead of opening Settings here.
 	settings.pressed.disconnect(settings.pressed.get_connections()[0].callable)
 	settings.pressed.connect(func(): action_requested.emit("home"))
 	settings.tooltip_text = "BACK"
@@ -2128,8 +2129,13 @@ func shop_page(store: SaveStore) -> void:
 	back_glyph.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	back_glyph.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	var heading = column(frame, 0)
-	jobs_label(heading, "UPGRADES", 42, PAPER, true, 6)
-	jobs_label(heading, "MAKE YOUR ROBBER STRONGER", 18, Color("c9a6ec"))
+	jobs_label(heading, title, 42, PAPER, true, 6)
+	jobs_label(heading, subtitle, 18, Color("c9a6ec"))
+
+func shop_page(store: SaveStore) -> void:
+	var frame = base_menu()
+	frame.add_theme_constant_override("separation", 8)
+	back_header(frame, store, "UPGRADES", "MAKE YOUR ROBBER STRONGER")
 	shop_next_target(frame, store)
 	var body = scroll_body(frame)
 	body.add_theme_constant_override("separation", 10)
@@ -2356,79 +2362,303 @@ func lucky_shop_card(parent: VBoxContainer, store: SaveStore, id: String) -> voi
 
 func cosmetics_page(store: SaveStore) -> void:
 	var frame = base_menu()
-	cosmetic_wallet = menu_header(frame,"COSMETICS",store.data.wallet,"Your thief. Your getaway. Your style.",store.data.diamonds)
-	cosmetic_gems_label = text(frame, "LOOKS ROTATE DAILY", 18, HudStyle.INFO)
-	add_preview(frame,store,"collection",290)
-	cosmetic_status = text(frame,"",19,Color("ffda70"))
-	cosmetic_status.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	frame.add_theme_constant_override("separation", 8)
+	back_header(frame, store, "LOCKER", "YOUR THIEF. YOUR GETAWAY. YOUR STYLE.")
 	cosmetics_list = scroll_body(frame)
-	refresh_cosmetics(store)
-	navigation(frame,"cosmetics",68,store)
+	cosmetics_list.add_theme_constant_override("separation", 12)
+	locker_scroll = cosmetics_list.get_parent() as ScrollContainer
+	locker_build(store)
+	navigation(frame, "cosmetics", 68, store)
 
 func refresh_cosmetics(store: SaveStore) -> void:
 	if not is_instance_valid(cosmetics_list): return
-	cosmetic_wallet.text = "$" + cash_text(store.data.wallet)
-	if is_instance_valid(cosmetic_gems_label): cosmetic_gems_label.text = "LOOKS ROTATE DAILY"
-	var equipped_names = PackedStringArray()
-	for id in store.data.cosmetics.equipped.values():
-		if id in Balance.COSMETICS: equipped_names.append(Balance.COSMETICS[id].name)
-	cosmetic_status.text = "EQUIPPED · " + (" + ".join(equipped_names) if not equipped_names.is_empty() else "ORIGINAL LOOK")
+	if is_instance_valid(menu_wallet_label): menu_wallet_label.text = "$" + cash_text(store.data.wallet)
+	if is_instance_valid(menu_diamond_label): menu_diamond_label.text = str(store.data.diamonds)
+	var scroll_position: int = locker_scroll.scroll_vertical if is_instance_valid(locker_scroll) else 0
 	for child in cosmetics_list.get_children():
 		cosmetics_list.remove_child(child)
 		child.queue_free()
-	var intro = row(cosmetics_list)
-	var original = blue_button(intro,"EQUIP ORIGINAL LOOK",func(): cosmetic_requested.emit("","reset"),52)
-	original.add_theme_font_size_override("font_size",18)
-	var trophies = blue_button(intro,"TROPHY SHELF",func(): action_requested.emit("trophies"),52)
-	trophies.add_theme_font_size_override("font_size",18)
-	text(cosmetics_list,"TODAY'S SHOP",23,HudStyle.GOLD)
-	text(cosmetics_list,"Three looks today · rotates daily · every look returns.",17,MUTED)
-	var today := PlayRewards.today_shop()
-	for id in today: cosmetic_card(cosmetics_list,store,id,true)
-	text(cosmetics_list,"YOUR WARDROBE & REWARDS",20,HudStyle.CYAN)
-	for id in Balance.COSMETICS:
-		var config: Dictionary = Balance.COSMETICS[id]
-		if (config.reward != "" and config.reward != "lucky") or (id in store.data.cosmetics.owned and id not in today):
-			cosmetic_card(cosmetics_list,store,id)
-	if store.last_error != "": text(cosmetics_list,store.last_error,18,Color("ffac94"))
+	locker_build(store)
+	if is_instance_valid(locker_scroll):
+		var target := locker_scroll
+		(func(): if is_instance_valid(target): target.scroll_vertical = scroll_position).call_deferred()
 
-func cosmetic_card(parent: VBoxContainer, store: SaveStore, id: String, featured: bool = false) -> void:
+func locker_build(store: SaveStore) -> void:
+	locker_shop_panel(cosmetics_list, store)
+	locker_equipped_row(cosmetics_list, store)
+	locker_divider(cosmetics_list, "COLLECTION")
+	locker_tabs(cosmetics_list, store)
+	locker_grid(cosmetics_list, store)
+	if store.last_error != "": jobs_label(cosmetics_list, store.last_error, 18, Color("ffac94"))
+
+func locker_divider(parent: VBoxContainer, title: String) -> void:
+	var line = row(parent, 12)
+	line.alignment = BoxContainer.ALIGNMENT_CENTER
+	for side in range(2):
+		var rule = ColorRect.new()
+		rule.color = Color("6b3aa8")
+		rule.custom_minimum_size = Vector2(0, 3)
+		rule.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		rule.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		if side == 1: jobs_label(line, title, 24, Color("d9b8f5"), true, 3)
+		line.add_child(rule)
+
+func locker_countdown_text() -> String:
+	var remaining := PlayRewards.shop_refresh_remaining()
+	return "New looks in %dh %02dm" % [remaining / 3600, (remaining % 3600) / 60]
+
+func locker_shop_panel(parent: VBoxContainer, store: SaveStore) -> void:
+	var shell = PanelContainer.new()
+	shell.name = "TodayShopPanel"
+	shell.add_theme_stylebox_override("panel", jobs_style(Color("2d0b47"), Color("8a44d6"), 22, 12, 5))
+	parent.add_child(shell)
+	var body = column(shell, 10)
+	var head = row(body, 10)
+	jobs_label(head, "TODAY'S SHOP", 30, HudStyle.MONEY, true, 4).size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	jobs_icon(head, "res://assets/hud/clock.png", 26)
+	var countdown = jobs_label(head, locker_countdown_text(), 17, Color("d9b8f5"))
+	countdown.name = "ShopCountdown"
+	countdown.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	countdown.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	countdown.clip_text = true
+	var ticker = Timer.new()
+	ticker.wait_time = 1.0
+	ticker.autostart = true
+	ticker.timeout.connect(func(): if is_instance_valid(countdown): countdown.text = locker_countdown_text())
+	countdown.add_child(ticker)
+	var rotates = PanelContainer.new()
+	rotates.add_theme_stylebox_override("panel", jobs_style(Color("3f1466"), Color("8a44d6"), 14, 4, 3))
+	rotates.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	head.add_child(rotates)
+	var rotate_line = row(rotates, 6)
+	jobs_label(rotate_line, "⟳", 18, Color("d9b8f5"))
+	jobs_label(rotate_line, "ROTATES DAILY", 15, Color("d9b8f5"))
+	var offers = row(body, 8)
+	for id in PlayRewards.today_shop(): locker_offer_card(offers, store, id)
+
+func locker_offer_card(parent: HBoxContainer, store: SaveStore, id: String) -> void:
 	var config: Dictionary = Balance.COSMETICS[id]
-	var owned = id in store.data.cosmetics.owned
-	var equipped = store.data.cosmetics.equipped[config.slot] == id
-	var c = card(parent,Color("3b1059") if equipped else Color("321049"))
-	if featured: c.name = "TodayShopCard_" + id
-	var line = row(c)
-	if config.has("vehicle_style"):
-		var preview := VehiclePreview.new()
-		preview.custom_minimum_size = Vector2(128,104)
-		line.add_child(preview)
-		preview.setup(str(config.vehicle_style))
-		var info = column(line,3)
-		info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		headline(info,config.name,21)
-		text(info,"EQUIPPED" if equipped else ("OWNED" if owned else "$" + cash_text(int(config.price))),19,HudStyle.PLAY if owned else HudStyle.GOLD)
-		text(info,"GETAWAY VEHICLE · COSMETIC",14,MUTED)
-		var view := blue_button(line,"VIEW",func(): action_requested.emit("vehicle_preview:"+id),60)
-		view.size_flags_horizontal = Control.SIZE_SHRINK_END
-		view.add_theme_font_size_override("font_size",18)
-		return
-	var swatch = ColorRect.new()
-	swatch.color = Color(config.color)
-	swatch.custom_minimum_size = Vector2(12,66)
-	line.add_child(swatch)
-	var info = column(line,3)
-	info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	headline(info,config.name,23)
-	text(info,config.slot.to_upper() + (" · EQUIPPED" if equipped else ""),16,MINT if equipped else MUTED)
+	var owned: bool = id in store.data.cosmetics.owned
+	var wearing := LockerCollection.equipped(id, store.data)
+	var card_shell = PanelContainer.new()
+	card_shell.name = "TodayShopCard_" + id
+	card_shell.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	card_shell.add_theme_stylebox_override("panel", jobs_style(Color("3a1160"), Color("6b3aa8"), 18, 8, 4))
+	parent.add_child(card_shell)
+	var body = column(card_shell, 4)
+	var name = jobs_label(body, str(config.name), 18, PAPER, true, 3)
+	name.clip_text = true
+	jobs_label(body, LockerCollection.kind_label(id), 13, Color("c9a6ec")).clip_text = true
+	locker_preview(body, store, id, 118)
+	var price_line = row(body, 6)
+	price_line.alignment = BoxContainer.ALIGNMENT_CENTER
 	var gem_price := int(config.get("gem_price", 0))
-	var label = "EQUIPPED" if equipped else ("EQUIP" if owned else (("BUY ◆%d" % gem_price if gem_price > 0 else "BUY $%d" % config.price) if config.reward == "" else "LOCKED"))
-	var b = button(line,label,func(): cosmetic_requested.emit(id,"equip" if owned else "buy"),56)
-	b.size_flags_horizontal = Control.SIZE_SHRINK_END
-	b.add_theme_font_size_override("font_size",18)
-	b.disabled = equipped or (not owned and (config.reward != "" or (store.data.diamonds < gem_price if gem_price > 0 else store.data.wallet < int(config.price))))
-	if config.reward == "lucky": text(c,"LUCKY SHOP REWARD",16,HudStyle.SPECIAL)
-	elif config.reward != "": text(c,"EXCLUSIVE · %d %s" % [config.target,config.reward.to_upper()],16,MUTED)
+	if wearing: jobs_label(price_line, "EQUIPPED", 18, MINT, true, 2)
+	elif owned: jobs_label(price_line, "OWNED", 18, MINT, true, 2)
+	elif gem_price > 0:
+		jobs_icon(price_line, "res://assets/ui/diamond.png", 26)
+		jobs_label(price_line, str(gem_price), 20, Color("8fd6ff"), true, 2)
+	else:
+		jobs_icon(price_line, "res://assets/hud/cash.png", 28)
+		jobs_label(price_line, "$" + cash_text(int(config.price)), 20, HudStyle.MONEY, true, 2)
+	var is_vehicle: bool = config.has("vehicle_style")
+	var label := "VIEW" if is_vehicle else ("EQUIPPED" if wearing else ("EQUIP" if owned else "BUY"))
+	var action = button(body, label, func():
+		if is_vehicle: action_requested.emit("vehicle_preview:" + id)
+		else: cosmetic_requested.emit(id, "equip" if owned else "buy")
+	, 52)
+	action.add_theme_font_override("font", body_font)
+	action.add_theme_font_size_override("font_size", 22)
+	var buy_now: bool = label == "BUY"
+	for state in ["font_color", "font_hover_color", "font_pressed_color"]: action.add_theme_color_override(state, Color("2a0a4a") if buy_now else PAPER)
+	action.add_theme_stylebox_override("normal", jobs_style(HudStyle.MONEY if buy_now else Color("8b3cf0"), Color("ffe680") if buy_now else Color("c48bff"), 16, 4, 5))
+	action.add_theme_stylebox_override("hover", jobs_style((HudStyle.MONEY if buy_now else Color("8b3cf0")).lightened(0.1), Color("ffe680") if buy_now else Color("c48bff"), 16, 4, 5))
+	action.add_theme_stylebox_override("pressed", jobs_style((HudStyle.MONEY if buy_now else Color("8b3cf0")).darkened(0.15), Color("ffe680") if buy_now else Color("c48bff"), 16, 4, 5))
+	action.add_theme_stylebox_override("disabled", jobs_style(Color("3c204f"), Color("5a3a73"), 16, 4, 5))
+	action.disabled = (wearing and not is_vehicle) or (buy_now and (store.data.diamonds < gem_price if gem_price > 0 else store.data.wallet < int(config.price)))
+
+# A live look: the van shell for vehicles, the thief wearing the suit or set otherwise.
+func locker_preview(parent: Node, store: SaveStore, id: String, height: float) -> Control:
+	var config: Dictionary = Balance.COSMETICS.get(id, {})
+	if str(config.get("slot", "")) == "van" or id == LockerCollection.ORIGINAL_VAN or (id == "" and locker_tab == "vehicles"):
+		var preview := VehiclePreview.new()
+		preview.custom_minimum_size = Vector2(0, height)
+		preview.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		parent.add_child(preview)
+		preview.setup(str(config.get("vehicle_style", "")), int(store.data.upgrades.capacity))
+		preview.suspend(not menu_previews_active)
+		if not config.has("vehicle_style") and id in Balance.COSMETICS:
+			Models.tint_palette(preview.van.model, [Color("ffbd59"), Color("ffe1a4")], Color(str(config.color)))
+		return preview
+	var thief = add_preview(parent, store, "collection", height)
+	thief.show_van(false)
+	if id != "": thief.preview_cosmetic(id)
+	return thief
+
+func locker_equipped_row(parent: VBoxContainer, store: SaveStore) -> void:
+	var line = row(parent, 10)
+	for tab in ["skins", "vehicles"]:
+		var worn := LockerCollection.worn(tab, store.data)
+		var shell = PanelContainer.new()
+		shell.name = "EquippedSkinPanel" if tab == "skins" else "EquippedVehiclePanel"
+		shell.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		shell.add_theme_stylebox_override("panel", jobs_style(Color("2d0b47"), Color("8a44d6"), 22, 12, 5))
+		line.add_child(shell)
+		var body = column(shell, 6)
+		jobs_label(body, "THIEF SKIN" if tab == "skins" else "GETAWAY VEHICLE", 15, Color("c9a6ec"))
+		var name = jobs_label(body, LockerCollection.display_name(worn), 24 if LockerCollection.display_name(worn).length() <= 12 else 19, PAPER, true, 3)
+		name.clip_text = true
+		var badge = PanelContainer.new()
+		badge.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+		badge.add_theme_stylebox_override("panel", jobs_style(Color("2a0a4a"), HudStyle.MONEY, 12, 3, 2))
+		body.add_child(badge)
+		var badge_text = jobs_label(badge, "EQUIPPED", 14, HudStyle.MONEY)
+		badge_text.name = "EquippedBadge"
+		var preview = locker_preview(body, store, worn if worn in Balance.COSMETICS else (LockerCollection.ORIGINAL_VAN if tab == "vehicles" else ""), 200)
+		if tab == "skins" and preview is MenuCharacterPreview: preview.name = "EquippedThiefPreview"
+		var customize = button(body, "CUSTOMIZE", func():
+			locker_tab = tab
+			refresh_cosmetics(store)
+			locker_focus_collection.call_deferred()
+		, 56)
+		customize.name = "CustomizeSkins" if tab == "skins" else "CustomizeVehicles"
+		customize.icon = MenuArt.texture("cosmetics") if tab == "skins" else load("res://assets/ui/menu_violet/powerups/capacity.png")
+		customize.expand_icon = true
+		customize.add_theme_constant_override("icon_max_width", 30)
+		customize.add_theme_constant_override("h_separation", 8)
+		customize.alignment = HORIZONTAL_ALIGNMENT_CENTER
+		customize.add_theme_font_override("font", body_font)
+		customize.add_theme_font_size_override("font_size", 22)
+		for state in ["font_color", "font_hover_color", "font_pressed_color"]: customize.add_theme_color_override(state, PAPER)
+		customize.add_theme_stylebox_override("normal", jobs_style(Color("8b3cf0"), Color("c48bff"), 16, 4, 5))
+		customize.add_theme_stylebox_override("hover", jobs_style(Color("9d4dff"), Color("d6a8ff"), 16, 4, 5))
+		customize.add_theme_stylebox_override("pressed", jobs_style(Color("6f2ac4"), Color("c48bff"), 16, 4, 5))
+
+func locker_focus_collection() -> void:
+	await get_tree().process_frame
+	if is_instance_valid(locker_scroll) and is_instance_valid(locker_grid_anchor):
+		locker_scroll.ensure_control_visible(locker_grid_anchor)
+
+func locker_tabs(parent: VBoxContainer, store: SaveStore) -> void:
+	var line = row(parent, 8)
+	line.name = "LockerTabs"
+	locker_grid_anchor = line
+	for entry in [["THIEF SKINS", "skins", MenuArt.texture("cosmetics")], ["VEHICLES", "vehicles", load("res://assets/ui/menu_violet/powerups/capacity.png")]]:
+		var active: bool = locker_tab == entry[1]
+		var tab = button(line, entry[0], func():
+			locker_tab = entry[1]
+			refresh_cosmetics(store)
+		, 60)
+		tab.name = "LockerTab_" + entry[1]
+		tab.icon = entry[2]
+		tab.expand_icon = true
+		tab.add_theme_constant_override("icon_max_width", 34)
+		tab.add_theme_constant_override("h_separation", 8)
+		tab.alignment = HORIZONTAL_ALIGNMENT_CENTER
+		tab.add_theme_font_override("font", body_font)
+		tab.add_theme_font_size_override("font_size", 22)
+		for state in ["font_color", "font_hover_color", "font_pressed_color"]: tab.add_theme_color_override(state, PAPER)
+		var style = jobs_style(Color("6b2bb4") if active else Color("3a1160"), HudStyle.MONEY if active else Color("6b3aa8"), 16, 4, 5)
+		tab.add_theme_stylebox_override("normal", style)
+		tab.add_theme_stylebox_override("hover", style)
+		tab.add_theme_stylebox_override("pressed", style)
+
+func locker_grid(parent: VBoxContainer, store: SaveStore) -> void:
+	var grid = GridContainer.new()
+	grid.name = "LockerGrid"
+	grid.columns = 3 if menu.size.x < 600.0 else 4
+	grid.add_theme_constant_override("h_separation", 8)
+	grid.add_theme_constant_override("v_separation", 8)
+	parent.add_child(grid)
+	var today := PlayRewards.today_shop()
+	var slots := LockerCollection.slots(locker_tab)
+	for index in range(slots.size()):
+		var id: String = slots[index]
+		var owned: bool = id != "" and LockerCollection.owned(id, store.data)
+		var wearing: bool = owned and LockerCollection.equipped(id, store.data)
+		var slot = PanelContainer.new()
+		slot.name = "LockerSlot_%d" % (index + 1)
+		slot.add_to_group("locker_slot")
+		slot.set_meta("cosmetic_id", id)
+		slot.set_meta("owned", owned)
+		slot.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		slot.custom_minimum_size.y = 214
+		slot.add_theme_stylebox_override("panel", jobs_style(Color("2d0b47") if owned else Color("22083a"), HudStyle.MONEY if wearing else (Color("8a44d6") if owned else Color("4d2a6e")), 18, 8, 4))
+		grid.add_child(slot)
+		var body = column(slot, 4)
+		body.alignment = BoxContainer.ALIGNMENT_CENTER
+		if not owned:
+			var mystery = PanelContainer.new()
+			mystery.add_theme_stylebox_override("panel", jobs_style(Color("1a0630"), Color("4d2a6e"), 14, 0, 2))
+			mystery.custom_minimum_size = Vector2(0, 108)
+			body.add_child(mystery)
+			var mark = jobs_label(mystery, "?", 60, Color("8f6bb8"), true)
+			mark.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			mark.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+			var hint = jobs_label(body, "IN TODAY'S SHOP" if id in today else "LOCKED", 13, HudStyle.MONEY if id in today else Color("8f6bb8"))
+			hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			hint.clip_text = true
+			continue
+		var art_shell = PanelContainer.new()
+		art_shell.add_theme_stylebox_override("panel", jobs_style(Color("3a1160"), Color("6b3aa8"), 14, 0, 2))
+		art_shell.custom_minimum_size = Vector2(0, 108)
+		body.add_child(art_shell)
+		var art_stage = Control.new()
+		art_stage.custom_minimum_size = Vector2(0, 108)
+		art_stage.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		art_shell.add_child(art_stage)
+		var art = jobs_icon(art_stage, "res://assets/ui/menu_violet/cosmetics.png" if locker_tab == "skins" else "res://assets/ui/menu_violet/powerups/capacity.png", 84)
+		art.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+		art.offset_left = -42
+		art.offset_right = 42
+		art.offset_top = -42
+		art.offset_bottom = 42
+		art.modulate = LockerCollection.tint(id) if id in Balance.COSMETICS else Color.WHITE
+		if wearing:
+			var tick_plate = panel(HudStyle.MONEY, 13)
+			tick_plate.set_content_margin_all(0)
+			var tick_bg = Panel.new()
+			tick_bg.add_theme_stylebox_override("panel", tick_plate)
+			tick_bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			art_stage.add_child(tick_bg)
+			tick_bg.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+			tick_bg.offset_left = -32
+			tick_bg.offset_right = -6
+			tick_bg.offset_top = 6
+			tick_bg.offset_bottom = 32
+			var tick = jobs_label(tick_bg, "✓", 20, Color("2a0a4a"))
+			tick.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+			tick.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			tick.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		var name = jobs_label(body, LockerCollection.display_name(id), 14, PAPER, false, 2)
+		name.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		name.clip_text = true
+		var rarity := LockerCollection.rarity(id)
+		var badge = PanelContainer.new()
+		badge.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+		var badge_style = panel(LockerCollection.RARITY_COLORS[rarity].darkened(0.55), 10)
+		badge_style.set_content_margin_all(2)
+		badge_style.content_margin_left = 10
+		badge_style.content_margin_right = 10
+		badge_style.border_color = LockerCollection.RARITY_COLORS[rarity]
+		badge_style.set_border_width_all(1)
+		badge.add_theme_stylebox_override("panel", badge_style)
+		body.add_child(badge)
+		jobs_label(badge, rarity, 11, LockerCollection.RARITY_COLORS[rarity].lightened(0.3))
+		var equip = button(body, "EQUIPPED" if wearing else "EQUIP", func():
+			if id == LockerCollection.ORIGINAL_SUIT: cosmetic_requested.emit("", "reset_suit")
+			elif id == LockerCollection.ORIGINAL_VAN: cosmetic_requested.emit("", "reset_van")
+			else: cosmetic_requested.emit(id, "equip")
+		, 42)
+		equip.disabled = wearing
+		equip.add_theme_font_override("font", body_font)
+		equip.add_theme_font_size_override("font_size", 17)
+		for state in ["font_color", "font_hover_color", "font_pressed_color"]: equip.add_theme_color_override(state, Color("2a0a4a") if wearing else PAPER)
+		equip.add_theme_color_override("font_disabled_color", Color("2a0a4a"))
+		equip.add_theme_stylebox_override("normal", jobs_style(Color("8b3cf0"), Color("c48bff"), 12, 2, 4))
+		equip.add_theme_stylebox_override("hover", jobs_style(Color("9d4dff"), Color("d6a8ff"), 12, 2, 4))
+		equip.add_theme_stylebox_override("pressed", jobs_style(Color("6f2ac4"), Color("c48bff"), 12, 2, 4))
+		equip.add_theme_stylebox_override("disabled", jobs_style(HudStyle.MONEY, Color("ffe680"), 12, 2, 4))
 
 func garage_page(store: SaveStore) -> void:
 	if garage_selected not in GarageDecor.CATALOG: garage_selected = ""

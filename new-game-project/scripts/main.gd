@@ -375,6 +375,8 @@ func cosmetic_action(id: String, operation: String) -> void:
 		if purchased: sound.play("upgrade")
 	elif operation == "equip": store.equip_cosmetic(id, true)
 	elif operation == "reset": store.unequip_cosmetics(true)
+	elif operation == "reset_suit": store.unequip_slot("suit", true)
+	elif operation == "reset_van": store.unequip_slot("van", true)
 	if screen == "vehicle":
 		ui.refresh_vehicle(store)
 		if purchased: ui.animate_vehicle_purchase(previous_wallet,store)

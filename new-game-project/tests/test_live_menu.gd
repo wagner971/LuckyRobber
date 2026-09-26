@@ -30,7 +30,7 @@ func find_subviewports(node: Node, out: Array) -> void:
 
 func preview() -> MenuCharacterPreview:
 	for node in get_nodes_in_group("menu_character_previews"):
-		if not node.is_queued_for_deletion() and node.is_visible_in_tree(): return node
+		if node is MenuCharacterPreview and not node.is_queued_for_deletion() and node.is_visible_in_tree(): return node
 	return null
 
 func shot(label: String) -> void:
