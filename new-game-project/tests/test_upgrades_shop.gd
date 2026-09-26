@@ -42,26 +42,26 @@ func run_test() -> void:
 	check(copy.contains("%d%% less noise" % Balance.strength_noise_reduction(1)), "Strength advertises its immediate handling benefit")
 	check(copy.contains("+12% PICKUP SPEED") and copy.contains("WALK +2% · HEAVY LOOT +20%") and copy.contains("8  →  11 CARGO") and copy.contains("-1% NOISE"), "Cards show the stronger immediate benefit without formulas")
 	check(not copy.contains("m/s") and not copy.contains("+3% PER LEVEL") and not copy.contains("DEV ·"), "Technical formulas and DEV controls stay out of the default shop")
-	check(game.ui.shop_preview != null and game.ui.shop_preview.upgrade_focus == "strength" and game.ui.shop_preview.actor.carrying, "Live 3D preview responds to Strength")
+	check(game.ui.shop_selected_key == "strength" and game.ui.upgrade_cards.has("strength"), "Strength card starts selected")
 	if DisplayServer.get_name() != "headless":
 		await create_timer(0.15).timeout
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_png("res://tests/upgrades_shop.png")
 	game.ui.shop_select("carry")
-	check(game.ui.shop_preview.upgrade_focus == "carry" and game.ui.shop_preview.actor.carrying, "Selecting Carry updates the live preview")
+	check(game.ui.shop_selected_key == "carry", "Selecting Carry moves the highlight")
 	if DisplayServer.get_name() != "headless":
 		await create_timer(0.12).timeout
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_png("res://tests/upgrades_shop_carry.png")
 	game.ui.shop_select("capacity")
-	check(game.ui.shop_preview.upgrade_focus == "capacity" and not game.ui.shop_preview.actor.carrying, "Selecting Van Space switches preview focus")
+	check(game.ui.shop_selected_key == "capacity", "Selecting Van Space moves the highlight")
 	check(get_nodes_in_group("shop_cargo_box").size() == 5, "Van Space shows current cargo boxes and the next box")
 	if DisplayServer.get_name() != "headless":
 		await create_timer(0.12).timeout
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_png("res://tests/upgrades_shop_van.png")
 	game.ui.shop_select("noise")
-	check(game.ui.shop_preview.noise_preview_bar.visible, "Selecting Noise shows a live noise meter")
+	check(game.ui.shop_selected_key == "noise", "Selecting Noise moves the highlight")
 	find_button(game.ui.menu, "GO ›").pressed.emit()
 	check(game.ui.shop_selected_key == "strength", "Next Target jumps to the needed power-up")
 	var strength_card: VBoxContainer = game.ui.upgrade_cards.strength
@@ -95,7 +95,9 @@ func run_test() -> void:
 	game.action("shop")
 	await process_frame
 	await process_frame
-	var nav: Button = find_button(game.ui.menu, "GARAGE")
+	var nav: Button = null
+	for tab in get_nodes_in_group("jobs_nav_tab"):
+		if tab.tooltip_text == "GARAGE" and game.ui.menu.is_ancestor_of(tab): nav = tab
 	check(nav != null and nav.get_global_rect().end.y <= root.size.y and game.ui.upgrade_cards.size() == 5, "Shop fits a larger portrait viewport")
 	if DisplayServer.get_name() != "headless":
 		await RenderingServer.frame_post_draw

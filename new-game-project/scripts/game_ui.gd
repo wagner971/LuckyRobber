@@ -130,6 +130,9 @@ var wheel_busy := false
 const SHOP_TITLES = {"strength":"STRENGTH", "grip":"PICKUP SPEED", "carry":"CARRY SPEED", "capacity":"VAN SPACE", "noise":"NOISE CONTROL"}
 const SHOP_DESCRIPTIONS = {"strength":"UNLOCKS NEXT", "grip":"Pick up faster", "carry":"Walk and carry faster", "capacity":"Fit more in the van", "noise":"Make less noise"}
 const SHOP_COLORS = {"strength":HudStyle.INFO, "grip":HudStyle.INFO, "carry":HudStyle.INFO, "capacity":HudStyle.INFO, "noise":HudStyle.INFO}
+const SHOP_BLURBS = {"strength":"Lift heavier objects", "grip":"Pick up items faster", "carry":"Move faster while carrying", "capacity":"Carry more items in the van", "noise":"Make less noise"}
+const SHOP_TILES = {"strength":Color("f08a16"), "grip":Color("2f8cff"), "carry":Color("2bd25c"), "capacity":Color("ef3d4a"), "noise":Color("8e3cff")}
+const SHOP_ACCENTS = {"strength":Color("ffc033"), "grip":Color("5fb2ff"), "carry":Color("5ff08a"), "capacity":Color("ff6d78"), "noise":Color("c48bff")}
 const SHOP_ICONS = {"strength":"strength", "grip":"grip", "carry":"carry", "capacity":"capacity", "noise":"noise"}
 # Up to three most valuable objects a Strength level unlocks; every level unlocks something.
 static func strength_featured(level: int) -> Array:
@@ -2113,22 +2116,26 @@ func save_status(body: VBoxContainer, store: SaveStore) -> void:
 
 func shop_page(store: SaveStore) -> void:
 	var frame = base_menu()
-	frame.add_theme_constant_override("separation", 7)
-	var header = row(frame, 8)
-	var back = blue_button(header, "‹", func(): action_requested.emit("home"), 76)
-	back.custom_minimum_size.x = 76
-	back.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
-	var title = headline(header, "UPGRADES", 30, PAPER)
-	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	wallet_chip(header, store.data.wallet, store.data.diamonds)
-	shop_preview = add_preview(frame, store, "upgrades", 150)
-	shop_preview.set_upgrade_focus(shop_selected_key)
+	frame.add_theme_constant_override("separation", 8)
+	var settings = currency_header(frame, store)
+	# The header's right-hand button goes back instead of opening Settings here.
+	settings.pressed.disconnect(settings.pressed.get_connections()[0].callable)
+	settings.pressed.connect(func(): action_requested.emit("home"))
+	settings.tooltip_text = "BACK"
+	settings.get_child(0).queue_free()
+	var back_glyph = jobs_label(settings, "<", 34, PAPER, true, 3)
+	back_glyph.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	back_glyph.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	back_glyph.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	var heading = column(frame, 0)
+	jobs_label(heading, "UPGRADES", 42, PAPER, true, 6)
+	jobs_label(heading, "MAKE YOUR ROBBER STRONGER", 18, Color("c9a6ec"))
 	shop_next_target(frame, store)
 	var body = scroll_body(frame)
-	body.add_theme_constant_override("separation", 7)
+	body.add_theme_constant_override("separation", 10)
 	shop_scroll = body.get_parent() as ScrollContainer
 	shop(body,store)
-	if store.last_error != "": text(body, store.last_error, 16, Color("ffac94"))
+	if store.last_error != "": jobs_label(body, store.last_error, 16, Color("ffac94"))
 	navigation(frame,"shop",53,store)
 
 func shop_next_target(frame: VBoxContainer, store: SaveStore) -> void:
@@ -2136,35 +2143,40 @@ func shop_next_target(frame: VBoxContainer, store: SaveStore) -> void:
 	var hint: String = str(target_info.hint)
 	var focus := str(target_info.get("upgrade_key", "strength" if hint.contains("Strength") else ("capacity" if hint.contains("van") else "")))
 	var target_panel = PanelContainer.new()
-	var style = panel(Color("3d1856"), 14)
-	style.set_content_margin_all(8)
-	style.border_color = Color("a165ca")
-	style.set_border_width_all(1)
-	target_panel.add_theme_stylebox_override("panel", style)
+	target_panel.name = "ShopTargetPanel"
+	target_panel.add_theme_stylebox_override("panel", jobs_style(Color("4a1a78"), Color("8646d3"), 18, 10, 5))
 	frame.add_child(target_panel)
-	var line = row(target_panel, 7)
+	var line = row(target_panel, 12)
 	var type_id: String = str(target_info.type_id)
-	var icon = TextureRect.new()
-	icon.texture = load("res://assets/ui/jobs/icons/%s.svg" % type_id) if ResourceLoader.exists("res://assets/ui/jobs/icons/%s.svg" % type_id) else load("res://assets/ui/jobs/icons/cash.svg")
-	if focus in ["grip","carry"]: icon.texture = load("res://assets/ui/menu_violet/powerups/%s.png" % focus)
-	icon.custom_minimum_size = Vector2(39, 39)
-	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	line.add_child(icon)
+	var icon_shell = PanelContainer.new()
+	icon_shell.add_theme_stylebox_override("panel", jobs_style(Color("331052"), Color("6b3aa8"), 14, 6, 2))
+	icon_shell.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	line.add_child(icon_shell)
+	var icon_path := "res://assets/ui/jobs/icons/%s.svg" % type_id
+	if not ResourceLoader.exists(icon_path): icon_path = "res://assets/ui/jobs/icons/cash.svg"
+	if focus in ["grip","carry","capacity","noise"] and type_id == "": icon_path = "res://assets/ui/menu_violet/powerups/%s.png" % focus
+	jobs_icon(icon_shell, icon_path, 48)
 	var copy = column(line, 0)
 	copy.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	text(copy, "NEXT TARGET", 13, Color("b570e5"))
-	var target_title = headline(copy, str(target_info.title), 18, PAPER)
-	target_title.autowrap_mode = TextServer.AUTOWRAP_OFF
-	var need = text(copy, hint.to_upper(), 13, MUTED)
-	need.autowrap_mode = TextServer.AUTOWRAP_OFF
-	var go = blue_button(line, "GO ›", func():
+	copy.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	jobs_label(copy, "NEXT TARGET", 16, Color("c9a6ec"))
+	var target_title = jobs_label(copy, str(target_info.title), 26 if str(target_info.title).length() <= 18 else 21, PAPER, true, 4)
+	target_title.clip_text = true
+	var need = jobs_label(copy, hint.to_upper(), 16, Color("b9a2ff"))
+	need.clip_text = true
+	var go = button(line, "GO ›", func():
 		if focus != "": shop_select(focus, true)
 		else: action_requested.emit("locations")
-	, 42)
-	go.custom_minimum_size.x = 67
+	, 64)
+	go.custom_minimum_size.x = 118
 	go.size_flags_horizontal = Control.SIZE_SHRINK_END
-	go.add_theme_font_size_override("font_size", 17)
+	go.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	go.add_theme_font_override("font", body_font)
+	go.add_theme_font_size_override("font_size", 26)
+	for state in ["font_color", "font_hover_color", "font_pressed_color"]: go.add_theme_color_override(state, PAPER)
+	go.add_theme_stylebox_override("normal", jobs_style(Color("8b3cf0"), Color("c48bff"), 16, 4, 5))
+	go.add_theme_stylebox_override("hover", jobs_style(Color("9d4dff"), Color("d6a8ff"), 16, 4, 5))
+	go.add_theme_stylebox_override("pressed", jobs_style(Color("6f2ac4"), Color("c48bff"), 16, 4, 5))
 
 func contracts_page(store: SaveStore, location: String) -> void:
 	if not Progression.campaign_cleared(store.data) or not Balance.CONTRACTS.has(location + ".rush"): return
@@ -2579,107 +2591,146 @@ func stats_page(store: SaveStore) -> void:
 		if store.data.records.normal.has(location):
 			text(entry,"BEST CLEAR  ·  %.2fs" % store.data.records.normal[location],20,MUTED)
 
+
 func shop(body: VBoxContainer, store: SaveStore) -> void:
 	upgrade_cards.clear()
 	for key in Balance.UPGRADE_KEYS:
 		var level: int = store.data.upgrades[key]
 		var maxed = level >= Balance.max_level(key)
 		var tier_locked = level >= Balance.purchase_cap(key, store.data)
-		var c = card(body, Color("311048"))
-		c.add_theme_constant_override("separation", 4)
-		var shell: PanelContainer = c.get_parent()
+		var shell = PanelContainer.new()
 		shell.add_theme_stylebox_override("panel", shop_card_style(key, key == shop_selected_key))
+		body.add_child(shell)
+		var c = column(shell, 8)
 		upgrade_cards[key] = c
-		var top = row(c, 8)
+		var top = row(c, 12)
+		# Coloured art tile; tapping it selects the card and toggles the formula details.
 		var icon_button = Button.new()
-		icon_button.custom_minimum_size = Vector2(70, 70)
+		icon_button.custom_minimum_size = Vector2(96, 96)
 		icon_button.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+		icon_button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		icon_button.focus_mode = Control.FOCUS_NONE
-		icon_button.add_theme_stylebox_override("normal", panel(SHOP_COLORS[key].darkened(0.70), 13))
-		icon_button.add_theme_stylebox_override("hover", panel(SHOP_COLORS[key].darkened(0.55), 13))
-		icon_button.pressed.connect(func(): shop_select(key, true))
+		icon_button.tooltip_text = "Upgrade details"
+		icon_button.add_theme_stylebox_override("normal", jobs_style(SHOP_TILES[key], SHOP_ACCENTS[key], 18, 0, 5))
+		icon_button.add_theme_stylebox_override("hover", jobs_style(SHOP_TILES[key].lightened(0.1), SHOP_ACCENTS[key], 18, 0, 5))
+		icon_button.add_theme_stylebox_override("pressed", jobs_style(SHOP_TILES[key].darkened(0.15), SHOP_ACCENTS[key], 18, 0, 5))
+		icon_button.pressed.connect(func(): shop_toggle_details(key))
 		top.add_child(icon_button)
 		var icon = TextureRect.new()
 		icon.texture = MenuArt.texture("powerups/" + SHOP_ICONS[key])
 		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		icon_button.add_child(icon)
 		icon.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-		icon.offset_left = 6
-		icon.offset_top = 6
-		icon.offset_right = -6
-		icon.offset_bottom = -6
+		icon.offset_left = 8
+		icon.offset_top = 8
+		icon.offset_right = -8
+		icon.offset_bottom = -10
 		c.set_meta("icon_button", icon_button)
-		var info = column(top, 0)
+		var info = column(top, 2)
 		info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		var name = headline(info, SHOP_TITLES[key], 20, PAPER)
-		name.autowrap_mode = TextServer.AUTOWRAP_OFF
-		var level_label := text(info, "LEVEL %d / %d" % [level, Balance.max_level(key)], 13, SHOP_COLORS[key])
+		info.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		jobs_label(info, SHOP_TITLES[key], 24, PAPER, true, 3)
+		var level_line = row(info, 8)
+		var level_label := jobs_label(level_line, "LEVEL %d / %d" % [level, Balance.max_level(key)], 16, SHOP_ACCENTS[key])
 		c.set_meta("level_label", level_label)
 		var required_now: int = Balance.required_level(key, Balance.LOCATION_ORDER[Balance.unlocked_tier(store.data)])
 		if level < required_now:
-			level_label.text += " · NEED %d" % required_now
-			level_label.add_theme_color_override("font_color", HudStyle.FINAL)
-		# One benefit line per card; the description and formulas stay behind the info button.
-		if key == "strength" and not maxed:
-			var desc = text(info, "%d%% less noise" % Balance.strength_noise_reduction(level), 13, MUTED)
-			desc.autowrap_mode = TextServer.AUTOWRAP_OFF
+			jobs_label(level_line, "·", 16, Color("8a63ad"))
+			jobs_label(level_line, "NEED %d" % required_now, 16, HudStyle.MONEY)
+		var blurb: String = SHOP_BLURBS[key]
+		if key == "strength" and not maxed: blurb += " · %d%% less noise" % Balance.strength_noise_reduction(level)
+		var desc = jobs_label(info, blurb, 16, Color("c9a6ec"))
+		desc.clip_text = true
+		# Segmented level bar: a real ProgressBar (animations tween its value) with dividers on top.
+		var progress = ProgressBar.new()
+		progress.custom_minimum_size = Vector2(0, 14)
+		progress.show_percentage = false
+		progress.value = 100.0 * level / Balance.max_level(key)
+		var track = panel(Color("210931"), 5)
+		track.set_content_margin_all(0)
+		var fill = panel(SHOP_ACCENTS[key], 5)
+		fill.set_content_margin_all(0)
+		progress.add_theme_stylebox_override("background", track)
+		progress.add_theme_stylebox_override("fill", fill)
+		info.add_child(progress)
+		for i in range(1, 5):
+			var divider = ColorRect.new()
+			divider.color = Color("2f1048")
+			divider.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			divider.anchor_left = i / 5.0
+			divider.anchor_right = i / 5.0
+			divider.anchor_bottom = 1.0
+			divider.offset_left = -2
+			divider.offset_right = 2
+			progress.add_child(divider)
+		c.set_meta("progress_bar", progress)
 		var cost = Balance.upgrade_cost(key, level)
 		var free_token: bool = int(store.data.get("upgrade_tokens", 0)) > 0 and not maxed and not tier_locked
 		var label = "MAXED" if maxed else ("LOCKED" if tier_locked else ("FREE · TOKEN" if free_token else "BUY  $%s" % cash_text(cost)))
 		var b = button(top, label, func():
 			shop_selected_key = key
 			buy_requested.emit(key)
-		, 72)
+		, 96)
 		c.set_meta("buy_button", b)
-		b.custom_minimum_size.x = 118
+		b.custom_minimum_size.x = 150
 		b.size_flags_horizontal = Control.SIZE_SHRINK_END
-		b.add_theme_font_size_override("font_size", 18 if label.length() < 16 else 13)
+		b.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		b.autowrap_mode = TextServer.AUTOWRAP_WORD
+		b.alignment = HORIZONTAL_ALIGNMENT_CENTER
+		b.add_theme_font_override("font", display_font)
+		b.add_theme_font_size_override("font_size", 22 if label.length() < 12 else 18)
+		b.add_theme_color_override("font_shadow_color", Color("0b3f24", 0.5))
+		b.add_theme_constant_override("shadow_offset_y", 2)
 		b.disabled = maxed or tier_locked or (store.data.wallet < cost and not free_token)
-		var effect_line = row(c, 5)
+		var affordable: bool = not b.disabled
+		for state in ["font_color", "font_hover_color", "font_pressed_color"]: b.add_theme_color_override(state, PAPER)
+		b.add_theme_color_override("font_disabled_color", Color("b9a2d0"))
+		b.add_theme_stylebox_override("normal", jobs_style(Color("1fc25a"), Color("7cf5a6"), 18, 4, 6))
+		b.add_theme_stylebox_override("hover", jobs_style(Color("2fd86c"), Color("9dffc0"), 18, 4, 6))
+		b.add_theme_stylebox_override("pressed", jobs_style(Color("179a47"), Color("7cf5a6"), 18, 4, 6))
+		b.add_theme_stylebox_override("disabled", jobs_style(Color("3c204f"), Color("5a3a73"), 18, 4, 6))
+		if affordable and not free_token:
+			b.icon = load("res://assets/hud/cash.png")
+			b.expand_icon = true
+			b.icon_alignment = HORIZONTAL_ALIGNMENT_LEFT
+			b.add_theme_constant_override("icon_max_width", 34)
+			b.add_theme_constant_override("h_separation", 6)
+		# Second line: what the next level gives.
+		var effect_shell = PanelContainer.new()
+		effect_shell.add_theme_stylebox_override("panel", jobs_style(Color("24093a", 0.85), Color("4d2a6e"), 12, 6, 2))
+		c.add_child(effect_shell)
+		var effect_line = row(effect_shell, 8)
+		effect_line.alignment = BoxContainer.ALIGNMENT_BEGIN
 		if key == "strength":
 			shop_strength_unlocks(effect_line, mini(level + 1, Balance.max_level(key)), maxed)
-			var spacer = Control.new()
-			spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-			effect_line.add_child(spacer)
 		else:
-			var benefit = headline(effect_line, shop_benefit(key, level), 19, SHOP_COLORS[key])
+			var benefit = jobs_label(effect_line, shop_benefit(key, level), 19, SHOP_ACCENTS[key], false, 2)
 			benefit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-			benefit.autowrap_mode = TextServer.AUTOWRAP_OFF
+			benefit.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 			if key == "capacity": shop_cargo_boxes(effect_line, level)
-		var detail_button = blue_button(effect_line, "ⓘ", func(): shop_toggle_details(key), 52)
-		detail_button.tooltip_text = "Upgrade details"
-		detail_button.custom_minimum_size.x = 52
-		detail_button.size_flags_horizontal = Control.SIZE_SHRINK_END
-		detail_button.add_theme_font_size_override("font_size", 18)
-		var details = text(c, Balance.effect(key, level), 14, MUTED)
+		var details = jobs_label(c, Balance.effect(key, level), 14, MUTED)
+		details.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		details.visible = false
 		c.set_meta("details_label", details)
-		var progress = ProgressBar.new()
-		progress.custom_minimum_size.y = 8
-		progress.show_percentage = false
-		progress.value = 100.0 * level / Balance.max_level(key)
-		progress.add_theme_stylebox_override("background", noise_style(Color("210931")))
-		progress.add_theme_stylebox_override("fill", noise_style(SHOP_COLORS[key]))
-		progress.visible = key == shop_selected_key
-		c.add_child(progress)
-		c.set_meta("progress_bar", progress)
-		if level > Balance.purchase_cap(key, store.data): text(c, "GRANDFATHERED · LEVEL STILL ACTIVE", 13, MINT)
-		if tier_locked and not maxed: text(c, Balance.tier_message(key, store.data).split(" FOR LEVEL")[0], 13, MUTED)
+		if level > Balance.purchase_cap(key, store.data): jobs_label(c, "GRANDFATHERED · LEVEL STILL ACTIVE", 13, MINT)
+		if tier_locked and not maxed: jobs_label(c, Balance.tier_message(key, store.data).split(" FOR LEVEL")[0], 13, MUTED)
 
 func shop_card_style(key: String, selected: bool) -> StyleBoxFlat:
-	var style = panel(Color("40185b") if selected else Color("311048"), 16)
-	style.set_content_margin_all(10)
-	style.border_color = SHOP_COLORS[key] if selected else Color("572c75")
-	style.set_border_width_all(2 if selected else 1)
-	style.shadow_color = Color(0.0295, 0.0000, 0.0500, 0.40)
-	style.shadow_size = 5
+	var style = jobs_style(Color("331251") if selected else Color("2b0f44"), SHOP_ACCENTS[key] if selected else Color("5a2f80"), 20, 12, 5)
+	style.set_border_width_all(3 if selected else 2)
+	style.border_width_bottom = 5
+	if selected:
+		style.shadow_color = Color(SHOP_ACCENTS[key], 0.35)
+		style.shadow_size = 8
+		style.shadow_offset = Vector2.ZERO
 	return style
 
 func shop_strength_unlocks(parent: HBoxContainer, next_level: int, maxed: bool) -> void:
 	if maxed:
-		var all = headline(parent, "ALL LOOT UNLOCKED", 18, SHOP_COLORS.strength)
+		var all = jobs_label(parent, "ALL LOOT UNLOCKED", 18, SHOP_ACCENTS.strength)
 		all.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		return
 	var featured: Array = strength_featured(next_level)
@@ -2689,26 +2740,20 @@ func shop_strength_unlocks(parent: HBoxContainer, next_level: int, maxed: bool) 
 	var shown := 0
 	for id in featured:
 		if not Balance.ITEMS.has(id): continue
-		var chip = row(parent, 3)
+		var chip = row(parent, 5)
 		chip.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
 		var path := "res://assets/ui/jobs/icons/%s.svg" % id
-		if ResourceLoader.exists(path):
-			var icon = TextureRect.new()
-			icon.texture = load(path)
-			icon.custom_minimum_size = Vector2(34, 34)
-			icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-			icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-			chip.add_child(icon)
+		if ResourceLoader.exists(path): jobs_icon(chip, path, 34)
 		var name := str(Balance.ITEMS[id].display_name).to_upper()
 		if name == "ARCADE MACHINE": name = "ARCADE"
 		if name == "GIANT DIAMOND": name = "DIAMOND"
 		if name == "LARGE STATUE": name = "STATUE"
-		var caption = text(chip, name, 15, SHOP_COLORS.strength)
-		caption.autowrap_mode = TextServer.AUTOWRAP_OFF
+		var caption = jobs_label(chip, name, 16, PAPER)
+		caption.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 		shown += 1
 	if total > shown:
-		var more = text(parent, "+%d" % (total - shown), 13, MUTED)
-		more.autowrap_mode = TextServer.AUTOWRAP_OFF
+		var more = jobs_label(parent, "+%d" % (total - shown), 15, Color("c9a6ec"))
+		more.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 
 func shop_benefit(key: String, level: int) -> String:
 	var next_level = mini(level + 1, Balance.max_level(key))
@@ -2722,15 +2767,17 @@ func shop_benefit(key: String, level: int) -> String:
 func shop_cargo_boxes(parent: HBoxContainer, level: int) -> void:
 	var current_boxes: int = Balance.van_capacity(level) / 2
 	var next_boxes: int = Balance.van_capacity(mini(level + 1, Balance.max_level("capacity"))) / 2
-	var boxes = row(parent, 2)
+	var boxes = row(parent, 4)
 	boxes.size_flags_horizontal = Control.SIZE_SHRINK_END
+	boxes.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	for i in range(maxi(0, next_boxes - 7), next_boxes):
-		var crate = TextureRect.new()
-		crate.texture = load("res://assets/hud/box.png")
-		crate.custom_minimum_size = Vector2(17, 17)
-		crate.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		crate.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		crate.modulate = SHOP_COLORS.capacity if i < current_boxes else MUTED
+		var crate = Panel.new()
+		crate.custom_minimum_size = Vector2(18, 18)
+		var crate_style = panel(SHOP_TILES.capacity if i < current_boxes else Color("3a1a55"), 4)
+		crate_style.set_content_margin_all(0)
+		crate_style.border_color = SHOP_ACCENTS.capacity if i < current_boxes else Color("5a2f80")
+		crate_style.set_border_width_all(1)
+		crate.add_theme_stylebox_override("panel", crate_style)
 		crate.add_to_group("shop_cargo_box")
 		boxes.add_child(crate)
 
@@ -2742,8 +2789,6 @@ func shop_select(key: String, bring_into_view: bool = false) -> void:
 		var c: VBoxContainer = upgrade_cards[id]
 		if is_instance_valid(c):
 			c.get_parent().add_theme_stylebox_override("panel", shop_card_style(id, id == key))
-			var progress: ProgressBar = c.get_meta("progress_bar")
-			progress.visible = id == key
 	if bring_into_view: shop_focus_card.call_deferred(key)
 
 func shop_focus_card(key: String) -> void:
