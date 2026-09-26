@@ -2,6 +2,8 @@
 
 Pornește **[STEAL EVERYTHING.exe](builds/windows/STEAL%20EVERYTHING.exe)** pentru testare rapidă cu resetare la fiecare lansare. Pentru a testa amanetul offline și salvarea între sesiuni, folosește **[STEAL EVERYTHING Persistent.exe](builds/windows/STEAL%20EVERYTHING%20Persistent.exe)**. Cele două variante au profiluri de salvare separate.
 
+**HOME V3:** ecranul Home refăcut după machetă: logo-ul furnizat între Daily Wheel și Daily Gift, personajul pe soclu cu neon violet într-un garaj 3D construit în joc (rafturi cu Lucky Block-uri, cutie de scule, anvelope, ușă de garaj, lampă caldă) cu color grading propriu, PLAY galben, UPGRADES · GARAGE · LOCKER, Lucky Meter. [Detalii și capturi](new-game-project/HOME_V3.md).
+
 **JOBS V3:** meniul Jobs refăcut după macheta de referință, cu fonturile Bungee (titluri, numere, PLAY) și Lilita One (etichete): pastile cash/diamante, bară de capitol cu puncte, hero cu colțuri rotunjite și Lucky Block, NEXT TARGET, statistici, PLAY galben între două Lucky Block-uri, Rush Hour, VAN SPACE segmentat, loadout, obiective și navigație cu iconițe. [Detalii și capturi](new-game-project/JOBS_V3.md).
 
 **LUCKY LOOP V1:** fiecare run umple **LUCKY METER** (bară pe Home și Results); la 100 primești un Lucky Block garantat, fiecare block plătește Lucky Tokens, iar **LUCKY SHOP** vinde recompense permanente (skin-uri de block, efecte de load/cash/escape, Lucky Suit/Van, upgrade tokens, diamante). Blocul din run are glow, sting și marker; reveal-ul are PLAY NOW. Jobs pune ținta, recompensa și PLAY în față; Upgrades are mai puțin text; pickup/load au squash și kick de cameră. Fără text generat de AI în imagini. [Detalii](new-game-project/LUCKY_LOOP_V1.md).

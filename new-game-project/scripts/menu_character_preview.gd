@@ -81,15 +81,15 @@ func _ready() -> void:
 	env.background_mode = Environment.BG_COLOR
 	env.background_color = Color("1b0828") if presentation == "home" else Color.TRANSPARENT
 	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	env.ambient_light_color = Color("c9cedf") if presentation == "home" else Color("e5f0ff")
-	env.ambient_light_energy = 0.50
+	env.ambient_light_color = Color("b9a3d6") if presentation == "home" else Color("e5f0ff")
+	env.ambient_light_energy = 0.72 if presentation == "home" else 0.50
 	environment.environment = env
 	viewport.add_child(environment)
 	var key = DirectionalLight3D.new()
 	key.name = "StreetLampKey"
 	key.rotation_degrees = Vector3(-55,-35,0) if presentation == "home" else Vector3(-38,-25,0)
 	key.light_color = Color("fff2dd") if presentation == "home" else Color("fff4e5")
-	key.light_energy = 0.85 if presentation == "home" else 0.9
+	key.light_energy = 0.95 if presentation == "home" else 0.9
 	key.shadow_enabled = presentation == "home"
 	if presentation == "home":
 		key.light_cull_mask = 1
@@ -124,27 +124,20 @@ func _ready() -> void:
 	viewport.add_child(stage)
 	var stage_radius = 1.60 if presentation == "home" else 1.0
 	var stage_x = 0.18 if presentation == "home" else -0.35
-	var stage_base = Models.cylinder(stage,stage_radius,0.16,Vector3(stage_x,-0.10,0.38),Color("500782"))
-	var stage_top = Models.cylinder(stage,stage_radius - 0.06,0.025,Vector3(stage_x,-0.01,0.38),Color("60089e"))
+	var stage_base = Models.cylinder(stage,stage_radius,0.16,Vector3(stage_x,-0.10,0.38),Color("1c0c2c") if presentation == "home" else Color("500782"))
+	var stage_top = Models.cylinder(stage,stage_radius - 0.06,0.025,Vector3(stage_x,-0.01,0.38),Color("26113a") if presentation == "home" else Color("60089e"))
 	if presentation == "home":
-		(stage_base.mesh as CylinderMesh).radial_segments = 8
-		(stage_top.mesh as CylinderMesh).radial_segments = 8
-		var stage_edge := Models.cylinder(stage, stage_radius - 0.025, 0.014, Vector3(stage_x, -0.028, 0.38), Color("ae58ea"))
-		(stage_edge.mesh as CylinderMesh).radial_segments = 8
+		(stage_base.mesh as CylinderMesh).radial_segments = 48
+		(stage_top.mesh as CylinderMesh).radial_segments = 48
+		var stage_edge := Models.cylinder(stage, stage_radius - 0.03, 0.012, Vector3(stage_x, -0.026, 0.38), Color("8b3ad9"))
+		(stage_edge.mesh as CylinderMesh).radial_segments = 48
 		var edge_material := stage_edge.material_override as StandardMaterial3D
 		edge_material.emission_enabled = true
 		edge_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-		edge_material.emission = Color("8b30cb")
-		edge_material.emission_energy_multiplier = 0.8
+		edge_material.emission = Color("7d2cc9")
+		edge_material.emission_energy_multiplier = 0.7
 	Models.set_toon_profile(stage_base, ToonMaterial.Profile.GROUND)
 	Models.set_toon_profile(stage_top, ToonMaterial.Profile.GROUND)
-	if presentation == "home":
-		var van_shadow := Models.cylinder(stage, 1.0, 0.006, Vector3(0.43, -0.205, -1.12), Color("13071ca0"))
-		van_shadow.scale = Vector3(1.38, 1.0, 0.65)
-		var van_shadow_material := van_shadow.material_override as StandardMaterial3D
-		van_shadow_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-		van_shadow_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-		Models.set_toon_profile(van_shadow, ToonMaterial.Profile.GROUND)
 	actor = Models.thief()
 	actor.position = Vector3(0.12 if presentation == "home" else -0.35,0,0.40)
 	if presentation == "home": actor.scale = Vector3.ONE * 1.20
@@ -161,17 +154,12 @@ func _ready() -> void:
 	van.setup(1)
 	Models.set_toon_profile(van.model, ToonMaterial.Profile.CHARACTER)
 	van.model.position = Vector3(0.54,0,-1.12) if presentation == "home" else Vector3(1.05,0,-0.8)
-	if presentation == "home": van.model.position.y = -0.20
+	if presentation == "home": van.model.visible = false
 	van.model.scale = Vector3.ONE * (0.42 if presentation == "home" else 0.52)
 	van.zone.hide()
 	for child in van.get_children():
 		if child is Label3D: child.hide()
 	if presentation == "home":
-		var fridge = Models.loot("fridge")
-		stage.add_child(fridge)
-		fridge.position = Vector3(-1.02,0,-0.35)
-		fridge.scale = Vector3.ONE * 0.52
-		fridge.rotation.y = 0.2
 		home_set = HomeShowcaseSet.new()
 		viewport.add_child(home_set)
 		home_set.build(stage)

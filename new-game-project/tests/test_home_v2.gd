@@ -49,7 +49,7 @@ func test() -> void:
 	check(live_viewport.find_child("HomeShowcaseSet", true, false) is HomeShowcaseSet and live_viewport.find_child("PlatformMotes", true, false) is MultiMeshInstance3D, "Home has its own 3D garage and batched rising platform particles")
 	check(live_viewport.find_children("PlatformUplight*", "MeshInstance3D", true, false).size() == 2, "Two visible floor projectors frame the thief")
 	check(find_button(game.ui.menu, "PLAY") != null and game.ui.menu.find_child("HomeSettings", true, false) is Button, "Home keeps a clear Play action and small Settings access")
-	check(find_button(game.ui.menu, "UPGRADES") != null and find_button(game.ui.menu, "COLLECTION") != null and find_button(game.ui.menu, "COSMETICS") != null, "New profile shows the available secondary destinations")
+	check(find_button(game.ui.menu, "UPGRADES") != null and find_button(game.ui.menu, "COLLECTION") != null and find_button(game.ui.menu, "LOCKER") != null, "New profile shows the available secondary destinations")
 	game.ui.home(game.store)
 	check(find_button(game.ui.menu, "COLLECTION") != null, "Trophy Collection remains available")
 	check(find_button(game.ui.menu, "PLAY").custom_minimum_size.y > find_button(game.ui.menu, "UPGRADES").custom_minimum_size.y, "Play remains larger than the three Home shortcuts")
@@ -69,7 +69,7 @@ func test() -> void:
 	await create_timer(0.12).timeout
 	var target_panel := game.ui.menu.find_child("HomeTargetPanel", true, false) as Control
 	check(target_panel != null and target_panel.get_global_rect().end.y <= root.get_visible_rect().size.y, "Play, shortcuts and target remain visible on compact portrait")
-	check(find_button(game.ui.menu, "COSMETICS").get_global_rect().end.y < target_panel.get_global_rect().position.y, "Compact layout keeps the target below all shortcuts")
+	check(find_button(game.ui.menu, "LOCKER").get_global_rect().end.y < target_panel.get_global_rect().position.y, "Compact layout keeps the target below all shortcuts")
 	find_button(game.ui.menu, "UPGRADE ›").pressed.emit()
 	await process_frame
 	check(game.screen == "shop", "Upgrade target opens the dedicated shop")

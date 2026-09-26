@@ -82,10 +82,10 @@ func test() -> void:
 		check(play.get_global_rect().end.y <= game.ui.root.size.y and game.ui.menu.size.x <= game.ui.root.size.x + 1, "Home PLAY fits portrait " + str(dimensions))
 	root.size = Vector2i(450,800)
 	await process_frame
-	# Home's own button is "COSMETICS" (it used to say "COLLECTION" before the
+	# Home's own button is "LOCKER" (it used to say "COLLECTION" before the
 	# nav-bar COLLECTION->trophies routing fix; that label now belongs to the
 	# persistent nav bar's real Trophy Collection tab, tested further below).
-	press_button("COSMETICS")
+	press_button("LOCKER")
 	await process_frame
 	hero = preview()
 	check(game.screen == "cosmetics" and hero != null and hero.presentation == "collection", "Collection has a dedicated visible live preview")
@@ -207,7 +207,7 @@ func test() -> void:
 	# --- COLLECTION/COSMETICS navigation fix + trophy notification regression ---
 	game = new_game()
 	await process_frame
-	press_button("COSMETICS")
+	press_button("LOCKER")
 	await process_frame
 	check(game.screen == "cosmetics", "COSMETICS still opens the cosmetics screen separately (B)")
 	press_button("COLLECTION")

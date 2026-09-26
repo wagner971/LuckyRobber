@@ -27,7 +27,7 @@ func run_test() -> void:
 	for dimensions in [Vector2i(360,640),Vector2i(360,800),Vector2i(450,800)]:
 		root.size=dimensions
 		game.ui.set_safe_area_override(Vector4(0,48,0,32))
-		for entry in [["UPGRADES","shop"],["GARAGE","garage"],["COSMETICS","cosmetics"]]:
+		for entry in [["UPGRADES","shop"],["GARAGE","garage"],["LOCKER","cosmetics"]]:
 			game.open_menu("home")
 			await settle()
 			var b:=find_icon_button(game.ui.menu,entry[0])
