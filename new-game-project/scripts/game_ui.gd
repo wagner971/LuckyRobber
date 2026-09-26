@@ -98,6 +98,8 @@ var vehicle_wallet: Label
 var vehicle_status: Label
 var vehicle_buy: Button
 var heavy_font: FontVariation
+var display_font: Font # Bungee: titles, numbers, PLAY.
+var body_font: Font # Lilita One: labels and copy.
 var menu_wallet_label: Label
 var menu_diamond_label: Label
 var home_gift_button: Button
@@ -143,6 +145,7 @@ const JOB_ACCENTS = {
 	"pyramid": Color("eeb65b"), "castle": Color("e88c9f"), "pirate_ship": Color("a757de"), "vikings": Color("d0a4ee"), "english_pub": Color("e6c28a"), "prehistoric": Color("abc974")
 }
 const JOB_HERO_SHADER = preload("res://assets/shaders/jobs_hero.gdshader")
+const JOB_COVER_SHADER = preload("res://assets/shaders/jobs_cover.gdshader")
 const JOB_BLUEPRINT_SHADER = preload("res://assets/shaders/jobs_blueprint.gdshader")
 const ALARM_VIGNETTE_SHADER = preload("res://assets/shaders/alarm_vignette.gdshader")
 const SCENE_POLISH_SHADER = preload("res://assets/shaders/scene_polish.gdshader")
@@ -184,6 +187,8 @@ func _ready() -> void:
 	heavy_font = FontVariation.new()
 	heavy_font.base_font = ThemeDB.fallback_font
 	heavy_font.variation_embolden = 1.15
+	display_font = load("res://assets/fonts/Bungee-Regular.ttf") if ResourceLoader.exists("res://assets/fonts/Bungee-Regular.ttf") else heavy_font
+	body_font = load("res://assets/fonts/LilitaOne-Regular.ttf") if ResourceLoader.exists("res://assets/fonts/LilitaOne-Regular.ttf") else heavy_font
 	build_hud()
 	motion = ScreenMotion.new()
 	add_child(motion)
@@ -978,11 +983,11 @@ func scroll_body(parent: VBoxContainer) -> VBoxContainer:
 	return body
 
 func navigation(parent: VBoxContainer, selected: String, height: int = 68, store: SaveStore = null) -> void:
-	height = maxi(height, 96)
-	var links = row(parent, 7)
+	height = maxi(height, 100)
+	var links = row(parent, 8)
 	links.add_to_group("jobs_navigation")
 	var last_tab := ["GARAGE", "garage", "garage"]
-	for entry in [["HOME", "home", "house"], ["JOBS", "locations", "target"], ["UPGRADES", "shop", "wrench"], last_tab]:
+	for entry in [["HOME", "home", "home"], ["JOBS", "locations", "jobs"], ["UPGRADES", "shop", "upgrades"], last_tab]:
 		var active: bool = entry[1] == selected or (entry[1] == "garage" and selected in ["collection","trophies"])
 		var tab = button(links, "", func(): action_requested.emit(entry[1]), height)
 		tab.tooltip_text = entry[0]
@@ -990,34 +995,39 @@ func navigation(parent: VBoxContainer, selected: String, height: int = 68, store
 		tab.clip_text = true
 		tab.disabled = entry[1] == ""
 		tab.add_to_group("jobs_nav_tab")
-		tab.add_theme_font_size_override("font_size", 20)
-		tab.add_theme_color_override("font_color", Color("240837") if active else PAPER)
-		var style = panel(Color("16f5ad") if active else Color("7308bd"), 16 if height >= 90 else 13)
-		style.border_color = Color("b8ffe9") if active else Color("9239d0")
-		style.set_border_width_all(2 if active else 1)
-		style.content_margin_top = 3
-		style.content_margin_bottom = 2
-		style.content_margin_left = 1
-		style.content_margin_right = 1
+		var style = jobs_style(Color("6b2bb4") if active else Color("3a1160"), Color("b57cff") if active else Color("5f339c"), 18, 0, 5)
+		if active:
+			style.shadow_color = Color("b070ff", 0.35)
+			style.shadow_size = 7
+			style.shadow_offset = Vector2.ZERO
 		tab.add_theme_stylebox_override("normal", style)
 		for state in ["hover", "pressed"]:
 			var touch_style = style.duplicate()
 			touch_style.bg_color = style.bg_color.lightened(0.06) if state == "hover" else style.bg_color.darkened(0.12)
 			tab.add_theme_stylebox_override(state, touch_style)
-			tab.add_theme_color_override("font_" + state + "_color", Color("240837") if active else PAPER)
 		var icon = TextureRect.new()
 		icon.add_to_group("jobs_nav_icon")
-		icon.texture = MenuArt.texture({"house":"home", "target":"jobs", "wrench":"upgrades", "garage":"garage"}[entry[2]])
+		icon.texture = MenuArt.texture(entry[2])
 		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		icon.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-		icon.offset_left = 12
-		icon.offset_right = -12
-		icon.offset_top = 5
-		icon.offset_bottom = -5
+		icon.offset_left = 18
+		icon.offset_right = -18
+		icon.offset_top = 8
+		icon.offset_bottom = -34
 		icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		tab.add_child(icon)
+		var caption = jobs_label(tab, entry[0], 17, PAPER, false, 3)
+		caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		caption.clip_text = true
+		caption.anchor_right = 1.0
+		caption.anchor_top = 1.0
+		caption.anchor_bottom = 1.0
+		caption.offset_left = 2
+		caption.offset_right = -2
+		caption.offset_top = -32
+		caption.offset_bottom = -7
 		if entry[1] == "shop" and store != null:
 			for key in Balance.UPGRADE_KEYS:
 				var level: int = int(store.data.upgrades[key])
@@ -1035,6 +1045,108 @@ func navigation(parent: VBoxContainer, selected: String, height: int = 68, store
 					dot.add_theme_color_override("font_color", HudStyle.RED)
 					tab.add_child(dot)
 					break
+
+# Jobs page building blocks: Bungee for display, Lilita One for copy.
+func jobs_label(parent: Node, value: String, size: int, color: Color = PAPER, display: bool = false, outline: int = 0) -> Label:
+	var label = text(parent, value, size, color)
+	label.add_theme_font_override("font", display_font if display else body_font)
+	label.autowrap_mode = TextServer.AUTOWRAP_OFF
+	if outline > 0:
+		label.add_theme_color_override("font_outline_color", Color("1c0630"))
+		label.add_theme_constant_override("outline_size", outline)
+	return label
+
+func jobs_style(fill: Color, edge: Color, radius: int = 18, margin: int = 10, bottom: int = 4) -> StyleBoxFlat:
+	var style = menu_style(fill, edge, radius)
+	style.set_content_margin_all(margin)
+	style.set_border_width_all(2)
+	style.border_width_bottom = bottom
+	style.shadow_color = Color("12041f", 0.45)
+	style.shadow_size = 3
+	style.shadow_offset = Vector2(0, 3)
+	return style
+
+func jobs_icon(parent: Node, path: String, size: float) -> TextureRect:
+	var icon = TextureRect.new()
+	icon.texture = load(path)
+	icon.custom_minimum_size = Vector2(size, size)
+	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	icon.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	parent.add_child(icon)
+	return icon
+
+func jobs_lucky_block(parent: Node, size: float) -> TextureRect:
+	var block = jobs_icon(parent, "res://assets/ui/lucky_block.png", size)
+	block.add_to_group("jobs_lucky_block")
+	block.pivot_offset = Vector2(size, size) * 0.5
+	var bob = block.create_tween().set_loops()
+	bob.tween_property(block, "scale", Vector2(1.04, 1.04), 1.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	bob.tween_property(block, "scale", Vector2.ONE, 1.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	return block
+
+func jobs_sparkles(host: Control, count: int, seed_value: int, area: Rect2 = Rect2(0.02, 0.02, 0.96, 0.96)) -> void:
+	var rng = RandomNumberGenerator.new()
+	rng.seed = seed_value
+	for i in range(count):
+		var spark = ColorRect.new()
+		spark.color = [Color("ff5ce1"), Color("c88cff"), Color("ffd84a"), Color("9d4dff")][i % 4]
+		var side = rng.randf_range(6, 13)
+		var fx = area.position.x + rng.randf() * area.size.x
+		var fy = area.position.y + rng.randf() * area.size.y
+		spark.anchor_left = fx
+		spark.anchor_right = fx
+		spark.anchor_top = fy
+		spark.anchor_bottom = fy
+		spark.offset_left = -side * 0.5
+		spark.offset_right = side * 0.5
+		spark.offset_top = -side * 0.5
+		spark.offset_bottom = side * 0.5
+		spark.pivot_offset = Vector2(side, side) * 0.5
+		spark.rotation = rng.randf_range(0.0, PI * 0.5)
+		spark.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		host.add_child(spark)
+		var twinkle = spark.create_tween().set_loops()
+		twinkle.tween_property(spark, "modulate:a", 0.25, rng.randf_range(0.6, 1.3)).set_trans(Tween.TRANS_SINE)
+		twinkle.tween_property(spark, "modulate:a", 1.0, rng.randf_range(0.6, 1.3)).set_trans(Tween.TRANS_SINE)
+
+func jobs_block_stage(parent: Node, size: float, seed_value: int) -> Control:
+	var stage = Control.new()
+	stage.custom_minimum_size = Vector2(size, size * 0.92)
+	stage.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	parent.add_child(stage)
+	jobs_sparkles(stage, 8, seed_value)
+	var block = jobs_lucky_block(stage, size * 0.9)
+	block.position = Vector2(size * 0.05, size * 0.06)
+	block.size = Vector2(size * 0.9, size * 0.9 * 445.0 / 512.0)
+	return stage
+
+func jobs_currency_pill(parent: Node, icon_path: String, value: String, color: Color, plus_color: Color, plus_action: String) -> Label:
+	var shell = PanelContainer.new()
+	shell.add_theme_stylebox_override("panel", jobs_style(Color("3a0f60"), Color("8b42d4"), 22, 5, 4))
+	shell.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	shell.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	parent.add_child(shell)
+	var line = row(shell, 6)
+	jobs_icon(line, icon_path, 46)
+	var label = jobs_label(line, value, 30, color, true, 3)
+	label.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	label.clip_text = true
+	var plus = button(line, "+", func(): action_requested.emit(plus_action), 40)
+	plus.size_flags_horizontal = Control.SIZE_SHRINK_END
+	plus.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	plus.custom_minimum_size = Vector2(40, 40)
+	plus.tooltip_text = "EARN MORE"
+	plus.add_theme_font_override("font", display_font)
+	plus.add_theme_font_size_override("font_size", 24)
+	for state in ["font_color", "font_hover_color", "font_pressed_color"]: plus.add_theme_color_override(state, Color.WHITE)
+	plus.add_theme_stylebox_override("normal", jobs_style(plus_color, plus_color.lightened(0.4), 12, 0, 3))
+	plus.add_theme_stylebox_override("hover", jobs_style(plus_color.lightened(0.08), plus_color.lightened(0.4), 12, 0, 3))
+	plus.add_theme_stylebox_override("pressed", jobs_style(plus_color.darkened(0.2), plus_color, 12, 0, 3))
+	return label
 
 func add_preview(parent: VBoxContainer, store: SaveStore, kind: String, height: float) -> MenuCharacterPreview:
 	var preview = MenuCharacterPreview.new()
@@ -1373,69 +1485,91 @@ func locations(store: SaveStore) -> void:
 	var entry_count := chapter_two_start + 1 if not store.unlocked("pyramid") else Balance.LOCATION_ORDER.size()
 	jobs_index = clampi(jobs_index, 0, entry_count - 1)
 	var frame = base_menu()
-	frame.add_theme_constant_override("separation", 8)
-	var blueprint = ColorRect.new()
-	var blueprint_material = ShaderMaterial.new()
-	blueprint_material.shader = JOB_BLUEPRINT_SHADER
-	blueprint.material = blueprint_material
-	blueprint.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	blueprint.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	menu.add_child(blueprint)
-	menu.move_child(blueprint, 1)
-	var header = row(frame, 8)
-	var wallet_shell = PanelContainer.new()
-	wallet_shell.custom_minimum_size = Vector2(160, 64)
-	var wallet_style = menu_style(Color("590792"), Color("b346ff"), 21)
-	wallet_style.set_content_margin_all(6)
-	wallet_shell.add_theme_stylebox_override("panel", wallet_style)
-	header.add_child(wallet_shell)
-	var wallet_line = row(wallet_shell, 7)
-	var cash_icon = TextureRect.new()
-	cash_icon.texture = load("res://assets/hud/cash.png")
-	cash_icon.custom_minimum_size = Vector2(52, 52)
-	cash_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	cash_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	wallet_line.add_child(cash_icon)
-	var wallet = headline(wallet_line, "$" + cash_text(store.data.wallet), 38, HudStyle.MONEY)
-	wallet.autowrap_mode = TextServer.AUTOWRAP_OFF
-	wallet.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	frame.add_theme_constant_override("separation", 10)
+	# Faint lucky blocks drift in the top corner of the page background.
+	var decor = Control.new()
+	decor.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	decor.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	menu.add_child(decor)
+	menu.move_child(decor, 1)
+	for spot in [[0.80, 0.03, 96, 0.14], [0.94, 0.02, 60, 0.10]]:
+		var ghost = jobs_icon(decor, "res://assets/ui/lucky_block.png", spot[2])
+		ghost.anchor_left = spot[0]
+		ghost.anchor_right = spot[0]
+		ghost.anchor_top = spot[1]
+		ghost.anchor_bottom = spot[1]
+		ghost.offset_left = -spot[2] * 0.5
+		ghost.offset_right = spot[2] * 0.5
+		ghost.offset_top = -spot[2] * 0.5
+		ghost.offset_bottom = spot[2] * 0.5
+		ghost.modulate = Color(1, 1, 1, spot[3])
+	# Header: cash and diamonds as pills with an earn button, settings gear.
+	var header = row(frame, 10)
+	var wallet = jobs_currency_pill(header, "res://assets/hud/cash.png", "$" + cash_text(store.data.wallet), HudStyle.MONEY, Color("1fb85a"), "daily_wheel")
 	menu_wallet_label = wallet
-	add_diamond_balance(wallet_line,store.data.diamonds,34,46)
 	jobs_count_wallet(wallet, store.data.wallet)
-	var header_space = Control.new()
-	header_space.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	header.add_child(header_space)
-	var settings = blue_button(header, "", func(): action_requested.emit("settings"), 64)
+	menu_diamond_label = jobs_currency_pill(header, "res://assets/ui/diamond.png", str(store.data.diamonds), Color("8fd6ff"), Color("2f6fe8"), "lucky_shop")
+	var settings = button(header, "", func(): action_requested.emit("settings"), 62)
 	settings.size_flags_horizontal = Control.SIZE_SHRINK_END
-	settings.custom_minimum_size.x = 68
-	settings.add_theme_stylebox_override("normal", menu_style(Color("7b09cb"), Color("b54bff"), 20))
-	var gear = TextureRect.new()
-	gear.texture = load("res://assets/ui/settings.svg")
-	gear.custom_minimum_size = Vector2(47, 47)
-	gear.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	gear.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	gear.set_anchors_preset(Control.PRESET_CENTER)
-	gear.position = Vector2(-23.5, -23.5)
-	gear.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	settings.add_child(gear)
+	settings.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	settings.custom_minimum_size = Vector2(66, 62)
+	settings.tooltip_text = "SETTINGS"
+	settings.add_theme_stylebox_override("normal", jobs_style(Color("4a1679"), Color("8b42d4"), 18, 0, 4))
+	settings.add_theme_stylebox_override("hover", jobs_style(Color("5a1e90"), Color("a457ee"), 18, 0, 4))
+	settings.add_theme_stylebox_override("pressed", jobs_style(Color("3a1160"), Color("8b42d4"), 18, 0, 4))
+	var gear = jobs_icon(settings, "res://assets/ui/settings.svg", 44)
+	gear.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+	gear.offset_left = -22
+	gear.offset_right = 22
+	gear.offset_top = -23
+	gear.offset_bottom = 21
 	var index := jobs_index
 	var location: String = Balance.LOCATION_ORDER[index]
-	var chapter = row(frame, 14)
-	var chapter_number = headline(chapter, "CHAPTER %d" % [1 if index < chapter_two_start else 2], 24, MINT)
-	chapter_number.autowrap_mode = TextServer.AUTOWRAP_OFF
+	# Chapter bar: name plate, heist type, page dots.
+	var chapter_bar = PanelContainer.new()
+	chapter_bar.add_theme_stylebox_override("panel", jobs_style(Color("3b1160"), Color("7a36bf"), 18, 6, 4))
+	frame.add_child(chapter_bar)
+	var chapter = row(chapter_bar, 12)
+	var chapter_plate = PanelContainer.new()
+	var plate_style = jobs_style(Color("5c1f97"), Color("a052f0"), 14, 4, 3)
+	plate_style.content_margin_left = 12
+	plate_style.content_margin_right = 12
+	chapter_plate.add_theme_stylebox_override("panel", plate_style)
+	chapter.add_child(chapter_plate)
+	var chapter_number = jobs_label(chapter_plate, "CHAPTER %d" % [1 if index < chapter_two_start else 2], 30, PAPER, true, 5)
 	chapter_number.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	var chapter_divider = text(chapter, "│", 24, Color("c89fe4"))
-	chapter_divider.autowrap_mode = TextServer.AUTOWRAP_OFF
+	var chapter_divider = jobs_label(chapter, "|", 26, Color("a97fd0"))
 	chapter_divider.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	var chapter_name = headline(chapter, "NORMAL HEISTS" if index < chapter_two_start else "BEYOND THE ORDINARY", 23, Color("d6b7ec"))
-	chapter_name.autowrap_mode = TextServer.AUTOWRAP_OFF
+	var chapter_name = jobs_label(chapter, "NORMAL HEISTS" if index < chapter_two_start else "BEYOND THE ORDINARY", 23, Color("d9b8f5"))
 	chapter_name.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	chapter_name.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	chapter_name.clip_text = true
 	var chapter_start := 0 if index < chapter_two_start else chapter_two_start
 	var chapter_end := mini(entry_count, chapter_two_start) if index < chapter_two_start else entry_count
-	var selector = column(frame, 5)
+	var dots = row(chapter, 8)
+	dots.alignment = BoxContainer.ALIGNMENT_CENTER
+	dots.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	for i in range(chapter_start, chapter_end):
+		var dot = Button.new()
+		dot.add_to_group("jobs_page_dot")
+		dot.set_meta("location_index", i)
+		dot.set_meta("active", i == index)
+		dot.custom_minimum_size = Vector2(18, 18)
+		dot.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		dot.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		var dot_style = panel(HudStyle.MONEY if i == index else Color("5a4a6e"), 4)
+		dot_style.set_content_margin_all(0)
+		for state in ["normal", "hover", "pressed", "focus"]: dot.add_theme_stylebox_override(state, dot_style)
+		dot.pressed.connect(func(): job_select(store, i))
+		dots.add_child(dot)
+		dot.pivot_offset = Vector2(9, 9)
+		if i == index:
+			dot.scale = Vector2.ONE * 0.72
+			dot.create_tween().tween_property(dot, "scale", Vector2.ONE, 0.22).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	var selector = column(frame, 6)
 	if not store.data.lucky_pending.is_empty() and store.data.lucky_pending.seen:
 		var effect_id: String = store.data.lucky_pending.id
-		var next_effect = text(selector,"NEXT RUN · "+LuckyEffects.CATALOG[effect_id][0],18,MINT if LuckyEffects.positive(effect_id) else HudStyle.SPECIAL)
+		var next_effect = jobs_label(selector, "NEXT RUN · " + LuckyEffects.CATALOG[effect_id][0], 18, MINT if LuckyEffects.positive(effect_id) else HudStyle.SPECIAL)
 		next_effect.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		next_effect.tooltip_text = LuckyEffects.CATALOG[effect_id][1]
 	selector.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -1447,68 +1581,38 @@ func locations(store: SaveStore) -> void:
 	card_panel.add_theme_stylebox_override("panel", jobs_card_style(not store.unlocked(location)))
 	selector.add_child(card_panel)
 	jobs_current_card = card_panel
-	var content = column(card_panel, 12)
-	var special_offer: bool = store.data.special_pending and store.data.special_location_id == location
-	var final_ready: bool = (location == "apartment" and Progression.final_job_unlocked(store.data) and not store.data.apartment_final_job_completed) or (location == "museum" and Progression.museum_final_job_unlocked(store.data) and not store.data.museum_final_job_completed)
+	var content = column(card_panel, 10)
 	# The hero expands into the remaining height. A percentage minimum could
 	# push fixed actions below the safe area on a short phone with extra offers.
-	var preview_height := 185.0
-	jobs_hero(content, store, location, not store.unlocked(location), preview_height)
+	jobs_hero(content, store, location, not store.unlocked(location), 200.0)
 	if not store.unlocked(location):
 		if location == "pyramid":
 			jobs_chapter_lock(content, store)
 		else:
 			var previous: String = Balance.LOCATION_ORDER[index-1]
-			var return_to_job = blue_button(content, "PLAY " + Balance.LOCATIONS[previous].name, func(): job_select(store, index - 1), 62)
-			return_to_job.add_theme_font_size_override("font_size", 22)
+			var return_to_job = jobs_secondary_button(row(content, 0), "PLAY " + Balance.LOCATIONS[previous].name, func(): job_select(store, index - 1))
 			return_to_job.add_to_group("jobs_locked_return")
 	else:
 		jobs_playable_content(content, store, location)
-	var pager = row(selector, 14)
-	pager.alignment = BoxContainer.ALIGNMENT_CENTER
-	var dots = row(pager, 14)
-	dots.alignment = BoxContainer.ALIGNMENT_CENTER
-	dots.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	for i in range(chapter_start, chapter_end):
-		var dot = Button.new()
-		dot.add_to_group("jobs_page_dot")
-		dot.set_meta("location_index", i)
-		dot.set_meta("active", i == index)
-		dot.custom_minimum_size = Vector2(22, 22)
-		dot.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		dot.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-		var dot_style = panel(MINT if i == index else Color("836499"), 20)
-		dot_style.set_content_margin_all(0)
-		for state in ["normal", "hover", "pressed", "focus"]: dot.add_theme_stylebox_override(state, dot_style)
-		dot.pressed.connect(func(): job_select(store, i))
-		dots.add_child(dot)
-		dot.pivot_offset = Vector2(11, 11)
-		if i == index:
-			dot.scale = Vector2.ONE * 0.72
-			dot.create_tween().tween_property(dot, "scale", Vector2.ONE, 0.22).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-		else:
-			dot.scale = Vector2.ONE * 0.88
-	if store.last_error != "": text(frame, store.last_error, 16, Color("ffac94"))
+	if store.last_error != "": jobs_label(frame, store.last_error, 16, Color("ffac94"))
 	jobs_navigation(frame, store)
 
 func jobs_chapter_lock(content: VBoxContainer, store: SaveStore) -> void:
 	var lock_screen = PanelContainer.new()
 	lock_screen.add_to_group("jobs_chapter_lock_screen")
 	lock_screen.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	var style = menu_style(Color("2f1044"), HudStyle.FINAL.darkened(0.16), 19)
-	style.set_content_margin_all(15)
-	lock_screen.add_theme_stylebox_override("panel", style)
+	lock_screen.add_theme_stylebox_override("panel", jobs_style(Color("2f1044"), HudStyle.FINAL.darkened(0.16), 19, 15, 5))
 	content.add_child(lock_screen)
 	var body = column(lock_screen, 7)
-	var title = headline(body, "CHAPTER 2 LOCKED", 28, HudStyle.FINAL, true)
-	title.autowrap_mode = TextServer.AUTOWRAP_OFF
-	var requirement = headline(body, "COMPLETE MUSEUM TO UNLOCK THIS CHAPTER", 21, PAPER, true)
+	var title = jobs_label(body, "CHAPTER 2 LOCKED", 28, HudStyle.FINAL, true, 4)
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var requirement = jobs_label(body, "COMPLETE MUSEUM TO UNLOCK THIS CHAPTER", 21, PAPER)
 	requirement.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	var detail = text(body, "Finish the Museum Final Job", 17, MUTED)
+	requirement.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var detail = jobs_label(body, "Finish the Museum Final Job", 17, MUTED)
 	detail.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var visit = blue_button(body, "GO TO MUSEUM", func(): job_select(store, Balance.LOCATION_ORDER.find("museum")), 55)
+	var visit = jobs_secondary_button(row(body, 0), "GO TO MUSEUM", func(): job_select(store, Balance.LOCATION_ORDER.find("museum")))
 	visit.add_to_group("jobs_chapter_lock_action")
-	visit.add_theme_font_size_override("font_size", 23)
 
 func jobs_hero(content: VBoxContainer, store: SaveStore, location: String, locked: bool, minimum_height: float) -> void:
 	var hero = Control.new()
@@ -1525,34 +1629,49 @@ func jobs_hero(content: VBoxContainer, store: SaveStore, location: String, locke
 	image.texture = source
 	image.add_to_group("jobs_hero_image")
 	image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	image.stretch_mode = TextureRect.STRETCH_SCALE
+	image.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	image.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	image.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var material = ShaderMaterial.new()
-	material.shader = JOB_HERO_SHADER
-	material.set_shader_parameter("accent_color", JOB_ACCENTS[location])
+	material.shader = JOB_COVER_SHADER
 	material.set_shader_parameter("locked", 1.0 if locked else 0.0)
-	if locked: image.material = material
+	material.set_shader_parameter("radius", 26.0)
+	image.material = material
 	hero.add_child(image)
+	var fit = func():
+		var texture_size: Vector2 = source.get_size()
+		var scale_xy := Vector2(hero.size.x / maxf(texture_size.x, 1.0), hero.size.y / maxf(texture_size.y, 1.0))
+		var cover: float = maxf(scale_xy.x, scale_xy.y)
+		material.set_shader_parameter("cover_scale", scale_xy / maxf(cover, 0.0001))
+		material.set_shader_parameter("rect_size", hero.size)
+	hero.resized.connect(fit)
+	fit.call()
 	var hero_edge = PanelContainer.new()
-	var edge_style = panel(Color.TRANSPARENT, 18)
+	var edge_style = panel(Color.TRANSPARENT, 26)
 	edge_style.set_content_margin_all(0)
-	edge_style.border_color = Color("ab4dec", 0.95)
-	edge_style.set_border_width_all(2)
+	edge_style.border_color = Color("8e45d6")
+	edge_style.set_border_width_all(3)
 	hero_edge.add_theme_stylebox_override("panel", edge_style)
 	hero_edge.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	hero_edge.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	hero.add_child(hero_edge)
 	if locked:
-		var lock_icon = TextureRect.new()
-		lock_icon.texture = load("res://assets/hud/lock.svg")
-		lock_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		lock_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		lock_icon.custom_minimum_size = Vector2(66, 66)
+		var lock_icon = jobs_icon(hero, "res://assets/hud/lock.svg", 66)
 		lock_icon.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 		lock_icon.position = Vector2(-33, -35)
-		lock_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		hero.add_child(lock_icon)
+	else:
+		jobs_sparkles(hero, 7, 41, Rect2(0.72, 0.42, 0.26, 0.5))
+		var block = jobs_lucky_block(hero, 132)
+		block.anchor_left = 1.0
+		block.anchor_right = 1.0
+		block.anchor_top = 1.0
+		block.anchor_bottom = 1.0
+		block.offset_left = -144
+		block.offset_right = -12
+		block.offset_top = -126
+		block.offset_bottom = -8
+		block.pivot_offset = Vector2(66, 59)
 	if location == "laboratory" and store.data.duplication.unlocked:
 		var access = blue_button(hero, "IDLE LAB", func(): action_requested.emit("duplication"), 45)
 		access.anchor_left = 1.0
@@ -1561,18 +1680,21 @@ func jobs_hero(content: VBoxContainer, store: SaveStore, location: String, locke
 		access.offset_right = -13
 		access.offset_top = 12
 		access.offset_bottom = 57
+		access.add_theme_font_override("font", body_font)
 		access.add_theme_font_size_override("font_size", 19)
-	var name = headline(hero, Balance.LOCATIONS[location].name, 45, MUTED if locked else PAPER)
+	var name = jobs_label(hero, Balance.LOCATIONS[location].name, 44 if str(Balance.LOCATIONS[location].name).length() <= 12 else 34, MUTED if locked else PAPER, true, 7)
+	name.add_theme_color_override("font_shadow_color", Color("1a0529"))
+	name.add_theme_constant_override("shadow_offset_y", 4)
 	name.anchor_left = 0
 	name.anchor_right = 1
 	name.anchor_top = 1
 	name.anchor_bottom = 1
 	name.offset_left = 20
-	name.offset_right = -16
-	name.offset_top = -64
-	name.offset_bottom = -8
-	name.autowrap_mode = TextServer.AUTOWRAP_OFF
-	name.add_theme_constant_override("outline_size", 8)
+	name.offset_right = -150
+	name.offset_top = -70
+	name.offset_bottom = -12
+	name.clip_text = true
+	name.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
 
 func jobs_card_style(locked: bool) -> StyleBoxFlat:
 	var style = panel(Color.TRANSPARENT, 0)
@@ -1592,59 +1714,71 @@ func jobs_playable_content(content: VBoxContainer, store: SaveStore, location: S
 	if not target_info.is_empty():
 		var target_panel = PanelContainer.new()
 		target_panel.add_to_group("jobs_target_panel")
-		var target_style = panel(Color("4c1274"), 12)
-		target_style.set_content_margin_all(8)
-		target_style.border_color = JOB_ACCENTS[location].darkened(0.36)
-		target_style.border_width_left = 3
-		target_panel.add_theme_stylebox_override("panel", target_style)
+		target_panel.add_theme_stylebox_override("panel", jobs_style(Color("4a1a78"), Color("8646d3"), 18, 10, 5))
 		content.add_child(target_panel)
-		var target_line = row(target_panel, 10)
-		var target_icon = TextureRect.new()
-		target_icon.texture = load("res://assets/ui/jobs/icons/" + str(target_info.icon) + ".svg")
-		target_icon.custom_minimum_size = Vector2(48, 48)
-		target_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		target_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		target_line.add_child(target_icon)
+		var target_line = row(target_panel, 12)
+		var icon_shell = PanelContainer.new()
+		icon_shell.add_theme_stylebox_override("panel", jobs_style(Color("331052"), Color("6b3aa8"), 14, 7, 2))
+		icon_shell.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		target_line.add_child(icon_shell)
+		jobs_icon(icon_shell, "res://assets/ui/jobs/icons/" + str(target_info.icon) + ".svg", 50)
 		var target_copy = column(target_line, 0)
-		text(target_copy, "NEXT TARGET", 14, HudStyle.INFO)
-		var target_title = headline(target_copy, str(target_info.title), 21, PAPER)
-		target_title.autowrap_mode = TextServer.AUTOWRAP_OFF
-		text(target_copy, str(target_info.hint), 15, MUTED)
-	var reward_line = text(content, "$%s LOOT  ·  %d ITEMS  ·  %ds" % [cash_text(totals.value), config.items.size(), config.duration], 17, HudStyle.GOLD)
-	reward_line.name = "JobsRewardLine"
-	reward_line.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		target_copy.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		target_copy.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		jobs_label(target_copy, "NEXT TARGET", 18, Color("c9a6ec"))
+		var target_title = jobs_label(target_copy, str(target_info.title), 30 if str(target_info.title).length() <= 18 else 24, PAPER, true, 4)
+		target_title.clip_text = true
+		var needs_upgrade: bool = target_info.has("upgrade_key")
+		jobs_label(target_copy, str(target_info.hint), 20, Color("e39bff") if needs_upgrade else MINT)
+		var chevron = jobs_label(target_line, ">", 40, PAPER, true, 3)
+		chevron.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		if needs_upgrade:
+			target_panel.mouse_filter = Control.MOUSE_FILTER_STOP
+			target_panel.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+			target_panel.tooltip_text = "TAP TO UPGRADE"
+			target_panel.gui_input.connect(func(event: InputEvent):
+				if (event is InputEventScreenTouch and not event.pressed) or (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed):
+					shop_selected_key = str(target_info.upgrade_key)
+					action_requested.emit("shop"))
+	var stats = row(content, 12)
+	stats.name = "JobsRewardLine"
+	stats.alignment = BoxContainer.ALIGNMENT_CENTER
+	jobs_stat(stats, "res://assets/hud/cash.png", "$%s" % cash_text(totals.value), "LOOT")
+	jobs_stat_divider(stats)
+	jobs_stat(stats, "res://assets/hud/box.png", str(config.items.size()), "ITEMS")
+	jobs_stat_divider(stats)
+	jobs_stat(stats, "res://assets/hud/clock.png", "%ds" % config.duration, "")
 	var final_playable: bool = final_ready and capacity >= config.expected_cargo
 	var play_callback: Callable = func(): start_requested.emit(location, "normal")
 	if final_playable: play_callback = func(): action_requested.emit(final_action)
-	var play = button(content, "PLAY FINAL JOB  ▶" if final_playable else "PLAY  ▶", play_callback, 86)
-	play.add_theme_font_size_override("font_size", 37 if final_playable else 37)
+	var play_row = row(content, 4)
+	jobs_block_stage(play_row, 112, 7)
+	var play = button(play_row, "PLAY FINAL JOB  ▶" if final_playable else "PLAY  ▶", play_callback, 100)
+	play.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	play.add_theme_font_override("font", display_font)
+	play.add_theme_font_size_override("font_size", 30 if final_playable else 48)
+	play.add_theme_color_override("font_shadow_color", Color("2a0a4a", 0.45))
+	play.add_theme_constant_override("shadow_offset_y", 3)
 	for state in ["normal", "hover", "pressed"]:
 		play.add_theme_stylebox_override(state, jobs_primary_button_style(final_playable, state))
-		play.add_theme_color_override("font_color" if state == "normal" else "font_" + state + "_color", INK)
+		play.add_theme_color_override("font_color" if state == "normal" else "font_" + state + "_color", PAPER if final_playable else Color("4a1386"))
 	jobs_pulse(play)
 	jobs_shine(play)
-	var secondary = row(content, 8)
+	jobs_block_stage(play_row, 112, 13)
+	var secondary = column(content, 6)
 	if final_playable:
 		jobs_secondary_button(secondary, "PLAY NORMAL", func(): start_requested.emit(location, "normal"))
 	if special_offer:
 		var special: Dictionary = SpecialJobs.definition(store.data.special_type)
-		jobs_secondary_button(secondary, "⚡ %s · %ds · +40%%" % [special.display_name, int(special.time_override)], func(): action_requested.emit("play_special"), HudStyle.SPECIAL)
+		jobs_secondary_button(secondary, "⚡ %s · %ds · +40%%" % [special.display_name, int(special.time_override)], func(): action_requested.emit("play_special"), HudStyle.MONEY)
 	if (location == "apartment" and store.data.apartment_final_job_completed) or (location == "museum" and store.data.museum_final_job_completed):
 		jobs_secondary_button(secondary, "REPLAY FINAL JOB", func(): action_requested.emit(final_action), HudStyle.FINAL)
 	if Progression.campaign_cleared(store.data) and Balance.CONTRACTS.has(location + ".rush"):
 		jobs_secondary_button(secondary, "CONTRACTS", func(): contracts_page(store, location))
-	if secondary.get_child_count() > 2:
-		# Keep the long special offer on its own row; three minimum-width buttons
-		# otherwise push the entire page beyond the portrait viewport.
-		var offer = secondary.get_child(0)
-		secondary.remove_child(offer)
-		var offer_row = row(content, 8)
-		content.move_child(offer_row, secondary.get_index())
-		offer_row.add_child(offer)
 	if secondary.get_child_count() == 0: secondary.queue_free()
 	jobs_van_capacity(content, capacity, int(totals.cargo))
 	jobs_powerup_requirements(content, store, location)
-	var objectives_heading = headline(content, "OBJECTIVES", 17, Color("caadde"))
+	var objectives_heading = jobs_label(content, "OBJECTIVES", 20, Color("c9a6ec"))
 	objectives_heading.custom_minimum_size.y = 24
 	var objectives = row(content, 8)
 	var signature_name := str(Balance.ITEMS[config.special].display_name).to_upper()
@@ -1655,21 +1789,43 @@ func jobs_playable_content(content: VBoxContainer, store: SaveStore, location: S
 		var done: bool = store.data.objectives[location][Balance.OBJECTIVE_IDS[i]]
 		jobs_objective(objectives, str(icon_paths[i]), str(short_names[i]), done, i == 2 and focus_full_clear, capacity, int(totals.cargo), location in ["apartment", "museum"], Progression.powerups_ready(store.data, location))
 
-func jobs_secondary_button(parent: HBoxContainer, label: String, callback: Callable, color: Color = PAPER) -> Button:
-	var chip = blue_button(parent, label, callback, 54)
+func jobs_stat(parent: Node, icon_path: String, value: String, caption: String) -> void:
+	var cell = row(parent, 7)
+	cell.add_to_group("jobs_stat_card")
+	cell.alignment = BoxContainer.ALIGNMENT_CENTER
+	cell.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	var icon = jobs_icon(cell, icon_path, 36)
+	icon.add_to_group("jobs_stat_icon")
+	jobs_label(cell, value, 26, HudStyle.MONEY, true, 3)
+	if caption != "": jobs_label(cell, caption, 22, HudStyle.MONEY)
+
+func jobs_stat_divider(parent: Node) -> void:
+	var divider = jobs_label(parent, "|", 26, Color("8a63ad"))
+	divider.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+
+func jobs_secondary_button(parent: Node, label: String, callback: Callable, color: Color = PAPER) -> Button:
+	var chip = button(parent, label, callback, 60)
 	chip.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	chip.add_theme_font_size_override("font_size", 24)
-	chip.add_theme_color_override("font_color", color)
-	var chip_style = menu_style(Color("501877") if color == PAPER else color.darkened(0.69), Color("9640d1") if color == PAPER else color, 17)
-	chip_style.border_width_bottom = 4
-	chip.add_theme_stylebox_override("normal", chip_style)
+	chip.add_theme_font_override("font", body_font)
+	chip.add_theme_font_size_override("font_size", 25)
+	for state in ["font_color", "font_hover_color", "font_pressed_color"]: chip.add_theme_color_override(state, color)
+	chip.add_theme_stylebox_override("normal", jobs_style(Color("3f1466"), Color("8a44d6"), 16, 8, 4))
+	chip.add_theme_stylebox_override("hover", jobs_style(Color("4d1a7c"), Color("a45cf0"), 16, 8, 4))
+	chip.add_theme_stylebox_override("pressed", jobs_style(Color("33104f"), Color("8a44d6"), 16, 8, 4))
+	var chevron = jobs_label(chip, ">", 30, PAPER, true, 2)
+	chevron.set_anchors_and_offsets_preset(Control.PRESET_CENTER_RIGHT)
+	chevron.offset_left = -40
+	chevron.offset_right = -12
+	chevron.offset_top = -20
+	chevron.offset_bottom = 20
+	chevron.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	return chip
 
 func jobs_powerup_requirements(parent: VBoxContainer, store: SaveStore, location: String) -> void:
-	var block = column(parent, 3)
+	var block = column(parent, 4)
 	var missing := Progression.missing_loadout(store.data, location)
 	var done := Balance.UPGRADE_KEYS.size() - missing.size()
-	text(block, "LOADOUT %d/%d · TAP TO UPGRADE" % [done, Balance.UPGRADE_KEYS.size()] if not missing.is_empty() else "LOADOUT COMPLETE · READY TO CLEAR", 13, MUTED if not missing.is_empty() else MINT)
+	jobs_label(block, "LOADOUT %d/%d · TAP TO UPGRADE" % [done, Balance.UPGRADE_KEYS.size()] if not missing.is_empty() else "LOADOUT COMPLETE · READY TO CLEAR", 16, Color("c9a6ec") if not missing.is_empty() else MINT)
 	var short_names := {"grip": "PICKUP", "carry": "CARRY", "capacity": "VAN", "noise": "NOISE", "strength": "STR"}
 	var line = row(block, 8)
 	# One row keeps the card height stable; the next three missing stats are enough to act on.
@@ -1679,12 +1835,20 @@ func jobs_powerup_requirements(parent: VBoxContainer, store: SaveStore, location
 		var ready = current >= required
 		var label = "%s %d/%d  %s" % [short_names[key],mini(current,required),required,"✓" if ready else "›"]
 		if missing.is_empty(): label = "LOADOUT %d/%d  ✓" % [done, Balance.UPGRADE_KEYS.size()]
-		var chip = blue_button(line, label, func():
+		var chip = button(line, label, func():
 			shop_selected_key = key
-			action_requested.emit("shop"), 42)
+			action_requested.emit("shop"), 60)
 		chip.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		chip.add_theme_font_size_override("font_size", 18 if missing.size() < 3 else 15)
-		chip.add_theme_color_override("font_color", MINT if ready else HudStyle.FINAL)
+		chip.icon = load("res://assets/ui/menu_violet/powerups/%s.png" % key)
+		chip.expand_icon = true
+		chip.add_theme_constant_override("icon_max_width", 34)
+		chip.add_theme_constant_override("h_separation", 6)
+		chip.add_theme_font_override("font", body_font)
+		chip.add_theme_font_size_override("font_size", 21 if missing.size() < 3 else 18)
+		for state in ["font_color", "font_hover_color", "font_pressed_color"]: chip.add_theme_color_override(state, MINT if ready else HudStyle.MONEY)
+		chip.add_theme_stylebox_override("normal", jobs_style(Color("3f1466"), Color("8a44d6"), 14, 4, 4))
+		chip.add_theme_stylebox_override("hover", jobs_style(Color("4d1a7c"), Color("a45cf0"), 14, 4, 4))
+		chip.add_theme_stylebox_override("pressed", jobs_style(Color("33104f"), Color("8a44d6"), 14, 4, 4))
 		chip.tooltip_text = "Required to clear %s and advance" % Balance.LOCATIONS[location].name
 		chip.add_to_group("jobs_powerup_requirement")
 		chip.set_meta("upgrade_key",key)
@@ -1693,78 +1857,75 @@ func jobs_objective(parent: HBoxContainer, icon_name: String, label: String, don
 	var slot = PanelContainer.new()
 	slot.add_to_group("jobs_objective_slot")
 	slot.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	slot.custom_minimum_size.y = 122
-	var slot_style = panel(Color("034b42") if done else (Color("49372c") if focus else Color("3d1758")), 13)
-	slot_style.set_content_margin_all(0)
-	slot_style.border_color = HudStyle.FINAL if focus else (HudStyle.PLAY if done else Color("8b6ba2", 0.62))
-	slot_style.set_border_width_all(3 if focus or done else 2)
-	slot_style.shadow_color = Color("200732", 0.4)
-	slot_style.shadow_size = 3
+	slot.custom_minimum_size.y = 118
+	var slot_style = jobs_style(Color("034b42") if done else (Color("4d2a20") if focus else Color("3b1160")), HudStyle.PLAY if done else (HudStyle.FINAL if focus else Color("7a3fc0")), 16, 0, 4)
 	slot.add_theme_stylebox_override("panel", slot_style)
 	parent.add_child(slot)
 	var item = Control.new()
-	item.custom_minimum_size.y = 122
+	item.custom_minimum_size.y = 118
 	slot.add_child(item)
-	var icon = TextureRect.new()
+	var icon = jobs_icon(item, "res://assets/ui/jobs/icons/" + icon_name + ".svg", 54)
 	icon.add_to_group("jobs_objective_icon")
-	icon.texture = load("res://assets/ui/jobs/icons/" + icon_name + ".svg")
-	icon.custom_minimum_size = Vector2(60, 60)
-	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	icon.position = Vector2(10, 6)
-	item.add_child(icon)
-	var status = headline(item, "✓" if done else ("−" if focus else "○"), 40, HudStyle.PLAY if done else (HudStyle.FINAL if focus else MUTED))
-	status.add_theme_constant_override("outline_size", 1)
-	status.set_anchors_preset(Control.PRESET_TOP_RIGHT)
-	status.position = Vector2(-38, 3)
-	status.custom_minimum_size.x = 30
+	icon.position = Vector2(12, 32)
+	var ring = Panel.new()
+	ring.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var ring_style = panel(HudStyle.PLAY if done else Color.TRANSPARENT, 14)
+	ring_style.set_content_margin_all(0)
+	ring_style.border_color = HudStyle.PLAY if done else (HudStyle.FINAL if focus else Color("b9a2d0"))
+	ring_style.set_border_width_all(3)
+	ring.add_theme_stylebox_override("panel", ring_style)
+	ring.anchor_left = 1.0
+	ring.anchor_right = 1.0
+	ring.offset_left = -38
+	ring.offset_right = -10
+	ring.offset_top = 10
+	ring.offset_bottom = 38
+	item.add_child(ring)
+	var status = jobs_label(ring, "✓" if done else ("−" if focus else ""), 20, INK if done else HudStyle.FINAL)
+	status.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	status.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var caption = headline(item, label, 18 if label.length() > 12 else 21, HudStyle.FINAL if focus else (HudStyle.MONEY if label.begins_with("$") else PAPER), true)
-	caption.autowrap_mode = TextServer.AUTOWRAP_OFF
-	caption.clip_text = true
+	status.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	var has_footer: bool = done or focus
+	var caption = jobs_label(item, label, 19 if label.length() > 12 else 22, HudStyle.FINAL if focus else (HudStyle.MONEY if label.begins_with("$") else PAPER), false, 2)
+	caption.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	caption.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	caption.anchor_right = 1.0
-	caption.offset_left = 3
-	caption.offset_right = -3
-	caption.offset_top = 63
-	caption.offset_bottom = 91
+	caption.offset_left = 74
+	caption.offset_right = -10
+	caption.offset_top = 14 if has_footer else 22
+	caption.offset_bottom = 88 if has_footer else 96
 	if done:
-		var claimed = headline(item, "CLAIMED", 17, MINT, true)
+		var claimed = jobs_label(item, "CLAIMED", 16, MINT)
+		claimed.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		claimed.anchor_right = 1.0
 		claimed.offset_top = 92
-		claimed.offset_bottom = 119
+		claimed.offset_bottom = 116
 	elif focus and capacity < required:
-		var lock_hint = text(item, "🔒 VAN: %d/%d" % [capacity, required], 14, HudStyle.FINAL)
+		var lock_hint = jobs_label(item, "🔒 VAN: %d/%d" % [capacity, required], 14, HudStyle.FINAL)
 		lock_hint.add_to_group("jobs_van_lock_hint")
 		lock_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		lock_hint.anchor_right = 1.0
 		lock_hint.offset_top = 94
-		lock_hint.offset_bottom = 119
+		lock_hint.offset_bottom = 116
 	elif focus:
-		var ready = headline(item, ("FINAL JOB READY" if has_final_job else "READY TO CLEAR") if powerups_ready else "UPGRADE LOADOUT", 16, HudStyle.FINAL)
+		var ready = jobs_label(item, ("FINAL JOB READY" if has_final_job else "READY TO CLEAR") if powerups_ready else "UPGRADE LOADOUT", 15, HudStyle.FINAL)
 		ready.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		ready.anchor_right = 1.0
 		ready.offset_top = 92
-		ready.offset_bottom = 119
+		ready.offset_bottom = 116
 
 func jobs_location_target(store: SaveStore, location: String) -> Dictionary:
 	var config: Dictionary = Balance.LOCATIONS[location]
 	if not store.data.objectives[location].signature:
 		var loot: Dictionary = Balance.ITEMS[config.special]
-		return {"title": "STEAL THE " + str(loot.display_name), "hint": "STR %d REQUIRED" % loot.required_strength if store.data.upgrades.strength < loot.required_strength else "Bring to van", "icon": str(config.special)}
+		if store.data.upgrades.strength < loot.required_strength:
+			return {"title": "STEAL THE " + str(loot.display_name), "hint": "STR %d REQUIRED" % loot.required_strength, "icon": str(config.special), "upgrade_key": "strength"}
+		return {"title": "STEAL THE " + str(loot.display_name), "hint": "Bring to van", "icon": str(config.special)}
 	if not store.data.objectives[location].cash:
 		return {"title": "BANK $%s" % cash_text(config.threshold), "hint": "Collect more loot", "icon": "cash"}
 	if location == "museum" and not store.data.museum_final_job_completed:
 		return {"title": "STEAL TIME MACHINE", "hint": "Final Job", "icon": "time_machine"}
 	return {}
-
-func jobs_play_button_style() -> StyleBoxFlat:
-	var style = panel(Color("28dcaa"), 15)
-	style.set_content_margin_all(6)
-	style.border_color = Color("0b8269")
-	style.border_width_bottom = 4
-	style.shadow_color = Color("27dbae66")
-	style.shadow_size = 5
-	return style
 
 func jobs_pulse(control: Control) -> void:
 	control.resized.connect(func(): control.pivot_offset = control.size * 0.5)
@@ -1772,52 +1933,32 @@ func jobs_pulse(control: Control) -> void:
 	tween.tween_property(control, "scale", Vector2(1.012, 1.035), 0.85).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(control, "scale", Vector2.ONE, 0.85).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
-func jobs_fact(parent: Node, icon_path: String, value: String, caption: String) -> void:
-	var shell = PanelContainer.new()
-	shell.add_to_group("jobs_stat_card")
-	shell.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	shell.custom_minimum_size.y = 79
-	var style = menu_style(Color("390b59"), Color("8a34c5"), 14)
-	style.set_content_margin_all(4)
-	style.border_width_bottom = 3
-	shell.add_theme_stylebox_override("panel", style)
-	parent.add_child(shell)
-	var fact = column(shell, 0)
-	fact.alignment = BoxContainer.ALIGNMENT_CENTER
-	var fact_top = row(fact, 7)
-	fact_top.alignment = BoxContainer.ALIGNMENT_CENTER
-	var icon = TextureRect.new()
-	icon.add_to_group("jobs_stat_icon")
-	icon.texture = load(icon_path)
-	icon.custom_minimum_size = Vector2(46, 46)
-	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	fact_top.add_child(icon)
-	var label = headline(fact_top, value, 31, HudStyle.MONEY if caption == "LOOT" else PAPER)
-	label.autowrap_mode = TextServer.AUTOWRAP_OFF
-	var description = headline(fact, caption, 16, Color("c189e8"), true)
-	description.custom_minimum_size.y = 21
-
 func jobs_van_capacity(parent: VBoxContainer, capacity: int, required: int) -> void:
-	var block = column(parent, 4)
+	var block = row(parent, 8)
 	block.add_to_group("jobs_capacity_block")
-	var caption = row(block, 9)
-	for part in [["VAN SPACE", PAPER], ["%d / %d" % [capacity, required], HudStyle.FINAL if capacity < required else MINT], ["CARGO", PAPER]]:
-		var label = headline(caption, str(part[0]), 18, part[1])
-		label.autowrap_mode = TextServer.AUTOWRAP_OFF
-	var bar = ProgressBar.new()
-	bar.add_to_group("jobs_capacity_bar")
-	bar.custom_minimum_size.y = 14
-	bar.max_value = maxi(required, 1)
-	bar.value = mini(capacity, required)
-	bar.show_percentage = false
-	var track = panel(Color("442758"), 5)
-	track.set_content_margin_all(0)
-	var fill = panel(HudStyle.FINAL if capacity < required else MINT, 5)
-	fill.set_content_margin_all(0)
-	bar.add_theme_stylebox_override("background", track)
-	bar.add_theme_stylebox_override("fill", fill)
-	block.add_child(bar)
+	var short: bool = capacity < required
+	jobs_icon(block, "res://assets/ui/menu_violet/powerups/capacity.png", 44)
+	jobs_label(block, "VAN SPACE", 21, PAPER, true, 3).size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	jobs_label(block, "%d / %d" % [capacity, required], 22, HudStyle.FINAL if short else HudStyle.MONEY, true, 3).size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	jobs_label(block, "CARGO", 21, PAPER, true, 3).size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	var segments = row(block, 4)
+	segments.add_to_group("jobs_capacity_bar")
+	segments.set_meta("capacity", capacity)
+	segments.set_meta("required", required)
+	segments.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	segments.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	var filled := roundi(8.0 * float(mini(capacity, required)) / float(maxi(required, 1)))
+	if capacity > 0 and filled == 0: filled = 1
+	for i in range(8):
+		var segment = Panel.new()
+		segment.custom_minimum_size = Vector2(0, 24)
+		segment.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		var segment_style = panel((HudStyle.FINAL if short else HudStyle.MONEY) if i < filled else Color("3a1a55"), 5)
+		segment_style.set_content_margin_all(0)
+		segment_style.border_color = Color("5a2f80")
+		segment_style.set_border_width_all(1)
+		segment.add_theme_stylebox_override("panel", segment_style)
+		segments.add_child(segment)
 
 func jobs_shine(control: Button) -> void:
 	control.clip_contents = true
@@ -1838,13 +1979,13 @@ func jobs_shine(control: Button) -> void:
 	sweep.tween_property(flash, "position:x", 600.0, 0.65).from(-60.0).set_trans(Tween.TRANS_SINE)
 
 func jobs_primary_button_style(final_job: bool, state: String = "normal") -> StyleBoxFlat:
-	var base: Color = HudStyle.FINAL if final_job else HudStyle.PLAY
-	if state == "hover": base = base.lightened(0.11)
-	elif state == "pressed": base = base.darkened(0.13)
-	var style = menu_style(base, base.lightened(0.30), 22)
-	style.border_width_bottom = 7
-	style.shadow_color = Color("a74d1b", 0.55) if final_job else Color("159d77", 0.50)
-	style.shadow_size = 5
+	var base: Color = HudStyle.FINAL if final_job else Color("ffcf19")
+	if state == "hover": base = base.lightened(0.08)
+	elif state == "pressed": base = base.darkened(0.10)
+	var style = jobs_style(base, Color("c2711a") if final_job else Color("e09a00"), 24, 6, 8)
+	style.shadow_color = Color("ff951b", 0.35) if final_job else Color("ffcf19", 0.35)
+	style.shadow_size = 8
+	style.shadow_offset = Vector2(0, 0)
 	return style
 
 func jobs_count_wallet(label: Label, amount: int) -> void:
