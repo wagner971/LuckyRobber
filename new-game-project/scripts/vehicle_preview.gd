@@ -9,7 +9,7 @@ var suspended := false
 var clock := 0.0
 var accumulated := 0.0
 
-func setup(style: String, level: int = 1, animate: bool = false) -> void:
+func setup(style: String, level: int = 1, animate: bool = false, accent: Color = Color(0, 0, 0, 0)) -> void:
 	var vivid := ShaderMaterial.new()
 	vivid.shader = preload("res://assets/shaders/vivid_preview.gdshader")
 	material = vivid
@@ -41,7 +41,8 @@ func setup(style: String, level: int = 1, animate: bool = false) -> void:
 	van.label.hide()
 	van.model.position = Vector3.ZERO
 	van.set_vehicle(style)
-	Models.cylinder(stage,2.65,0.14,Vector3(0,-0.01,0),Color("174257"))
+	var disc := Models.cylinder(stage,2.65,0.14,Vector3(0,-0.01,0),Color("174257") if accent.a == 0.0 else accent.darkened(0.45))
+	(disc.mesh as CylinderMesh).radial_segments = 40
 	var light := DirectionalLight3D.new()
 	light.rotation_degrees = Vector3(-42,-38,0)
 	light.light_color = Color("fff0d3")
@@ -50,7 +51,7 @@ func setup(style: String, level: int = 1, animate: bool = false) -> void:
 	stage.add_child(light)
 	var rim := DirectionalLight3D.new()
 	rim.rotation_degrees = Vector3(-30,145,0)
-	rim.light_color = Color("70ceef")
+	rim.light_color = Color("70ceef") if accent.a == 0.0 else accent
 	rim.light_energy = 0.5
 	stage.add_child(rim)
 	camera = Camera3D.new()

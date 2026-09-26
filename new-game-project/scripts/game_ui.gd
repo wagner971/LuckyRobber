@@ -2392,16 +2392,80 @@ func locker_build(store: SaveStore) -> void:
 	if store.last_error != "": jobs_label(cosmetics_list, store.last_error, 18, Color("ffac94"))
 
 # Cards take their frame, glow and button colour from the look's rarity.
-func locker_card_style(rarity: String, glow: bool = true) -> StyleBoxFlat:
+func locker_card_style(rarity: String, glow: bool = true, radius: int = 18) -> StyleBoxFlat:
 	var color: Color = LockerCollection.RARITY_COLORS[rarity]
-	var style = jobs_style(Color("22083a").lerp(color, 0.16), color, 18, 8, 4)
+	var style = StyleBoxFlat.new()
+	style.bg_color = Color("0c0e1f")
+	style.set_corner_radius_all(radius)
+	style.set_content_margin_all(0)
+	style.border_color = color
 	style.set_border_width_all(2)
-	style.border_width_bottom = 4
 	if glow:
-		style.shadow_color = Color(color, 0.32)
-		style.shadow_size = 8
+		style.shadow_color = Color(color, 0.55)
+		style.shadow_size = 14
 		style.shadow_offset = Vector2.ZERO
 	return style
+
+# A rarity card: dark plate, neon frame and glow, a vertical wash of the rarity
+# colour rising from the bottom, then the content with its own margin.
+func locker_card_shell(parent: Node, rarity: String, glow: bool = true, radius: int = 18, margin: int = 8) -> Dictionary:
+	var color: Color = LockerCollection.RARITY_COLORS[rarity]
+	var shell = PanelContainer.new()
+	shell.add_theme_stylebox_override("panel", locker_card_style(rarity, glow, radius))
+	parent.add_child(shell)
+	var wash = TextureRect.new()
+	var gradient := Gradient.new()
+	gradient.offsets = PackedFloat32Array([0.0, 0.42, 1.0])
+	gradient.colors = PackedColorArray([Color("0c0e1f"), Color("0c0e1f").lerp(color, 0.10), Color("0c0e1f").lerp(color, 0.48)])
+	var texture := GradientTexture2D.new()
+	texture.width = 8
+	texture.height = 128
+	texture.gradient = gradient
+	texture.fill_from = Vector2(0.5, 0.0)
+	texture.fill_to = Vector2(0.5, 1.0)
+	wash.texture = texture
+	wash.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	wash.stretch_mode = TextureRect.STRETCH_SCALE
+	wash.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var wash_material := ShaderMaterial.new()
+	wash_material.shader = JOB_COVER_SHADER
+	wash_material.set_shader_parameter("radius", float(radius - 2))
+	wash.material = wash_material
+	var fit = func():
+		wash_material.set_shader_parameter("rect_size", wash.size)
+		wash_material.set_shader_parameter("cover_scale", Vector2.ONE)
+	wash.resized.connect(fit)
+	shell.add_child(wash)
+	var inset = MarginContainer.new()
+	for side in ["left", "top", "right", "bottom"]: inset.add_theme_constant_override("margin_" + side, margin)
+	shell.add_child(inset)
+	var body = column(inset, 4)
+	return {"shell": shell, "body": body}
+
+# A soft spotlight pool in the rarity colour behind a live preview.
+func locker_spotlight(host: Control, rarity: String) -> void:
+	var color: Color = LockerCollection.RARITY_COLORS[rarity]
+	var pool = TextureRect.new()
+	var gradient := Gradient.new()
+	gradient.offsets = PackedFloat32Array([0.0, 0.45, 1.0])
+	gradient.colors = PackedColorArray([Color(color, 0.55), Color(color, 0.16), Color(color, 0.0)])
+	var texture := GradientTexture2D.new()
+	texture.width = 128
+	texture.height = 128
+	texture.gradient = gradient
+	texture.fill = GradientTexture2D.FILL_RADIAL
+	texture.fill_from = Vector2(0.5, 0.5)
+	texture.fill_to = Vector2(1.0, 0.5)
+	pool.texture = texture
+	pool.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	pool.stretch_mode = TextureRect.STRETCH_SCALE
+	pool.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	pool.anchor_left = 0.0
+	pool.anchor_right = 1.0
+	pool.anchor_top = 0.35
+	pool.anchor_bottom = 1.15
+	host.add_child(pool)
+	host.move_child(pool, 0)
 
 func locker_rarity_badge(parent: Node, rarity: String, size: int = 12) -> PanelContainer:
 	var color: Color = LockerCollection.RARITY_COLORS[rarity]
@@ -2421,12 +2485,21 @@ func locker_rarity_badge(parent: Node, rarity: String, size: int = 12) -> PanelC
 
 func locker_tint_button(action: Button, rarity: String) -> void:
 	var color: Color = LockerCollection.RARITY_COLORS[rarity]
-	var ink: Color = Color("14202a") if LockerCollection.RARITY_DARK_TEXT[rarity] else PAPER
-	for state in ["font_color", "font_hover_color", "font_pressed_color"]: action.add_theme_color_override(state, ink)
-	action.add_theme_stylebox_override("normal", jobs_style(color.darkened(0.12), color.lightened(0.35), 16, 4, 5))
-	action.add_theme_stylebox_override("hover", jobs_style(color, color.lightened(0.45), 16, 4, 5))
-	action.add_theme_stylebox_override("pressed", jobs_style(color.darkened(0.3), color, 16, 4, 5))
-	action.add_theme_stylebox_override("disabled", jobs_style(Color("3c204f"), Color("5a3a73"), 16, 4, 5))
+	for state in ["font_color", "font_hover_color", "font_pressed_color"]: action.add_theme_color_override(state, PAPER)
+	action.add_theme_color_override("font_outline_color", color.darkened(0.7))
+	action.add_theme_constant_override("outline_size", 3)
+	for state in [["normal", 0.62, 0.45], ["hover", 0.5, 0.6], ["pressed", 0.72, 0.3]]:
+		var style = StyleBoxFlat.new()
+		style.bg_color = color.darkened(state[1])
+		style.set_corner_radius_all(14)
+		style.set_content_margin_all(4)
+		style.border_color = color
+		style.set_border_width_all(2)
+		style.shadow_color = Color(color, state[2])
+		style.shadow_size = 8
+		style.shadow_offset = Vector2.ZERO
+		action.add_theme_stylebox_override(state[0], style)
+	action.add_theme_stylebox_override("disabled", jobs_style(Color("1a1c30"), Color("3c3f5e"), 14, 4, 4))
 
 func locker_divider(parent: VBoxContainer, title: String) -> void:
 	var line = row(parent, 12)
@@ -2478,17 +2551,16 @@ func locker_offer_card(parent: HBoxContainer, store: SaveStore, id: String) -> v
 	var owned: bool = id in store.data.cosmetics.owned
 	var wearing := LockerCollection.equipped(id, store.data)
 	var rarity := LockerCollection.rarity(id)
-	var card_shell = PanelContainer.new()
+	var parts := locker_card_shell(parent, rarity)
+	var card_shell: PanelContainer = parts.shell
 	card_shell.name = "TodayShopCard_" + id
 	card_shell.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	card_shell.add_theme_stylebox_override("panel", locker_card_style(rarity))
-	parent.add_child(card_shell)
-	var body = column(card_shell, 4)
+	var body: VBoxContainer = parts.body
 	var name = jobs_label(body, str(config.name), 18, PAPER, true, 3)
 	name.clip_text = true
-	jobs_label(body, LockerCollection.kind_label(id), 13, Color("c9a6ec")).clip_text = true
+	jobs_label(body, LockerCollection.kind_label(id), 13, LockerCollection.RARITY_COLORS[rarity].lightened(0.45)).clip_text = true
 	locker_rarity_badge(body, rarity)
-	locker_preview(body, store, id, 118)
+	locker_preview(body, store, id, 118, rarity)
 	var price_line = row(body, 6)
 	price_line.alignment = BoxContainer.ALIGNMENT_CENTER
 	var gem_price := int(config.get("gem_price", 0))
@@ -2501,7 +2573,7 @@ func locker_offer_card(parent: HBoxContainer, store: SaveStore, id: String) -> v
 		jobs_icon(price_line, "res://assets/hud/cash.png", 28)
 		jobs_label(price_line, "$" + cash_text(Balance.cosmetic_price(id)), 20, HudStyle.MONEY, true, 2)
 	var is_vehicle: bool = config.has("vehicle_style")
-	var label := "VIEW" if is_vehicle else ("EQUIPPED" if wearing else ("EQUIP" if owned else "BUY"))
+	var label := "VIEW  ›" if is_vehicle else ("EQUIPPED" if wearing else ("EQUIP" if owned else "BUY"))
 	var action = button(body, label, func():
 		if is_vehicle: action_requested.emit("vehicle_preview:" + id)
 		else: cosmetic_requested.emit(id, "equip" if owned else "buy")
@@ -2519,20 +2591,32 @@ func locker_offer_card(parent: HBoxContainer, store: SaveStore, id: String) -> v
 	action.disabled = (wearing and not is_vehicle) or (buy_now and (store.data.diamonds < gem_price if gem_price > 0 else store.data.wallet < Balance.cosmetic_price(id)))
 
 # A live look: the van shell for vehicles, the thief wearing the suit or set otherwise.
-func locker_preview(parent: Node, store: SaveStore, id: String, height: float) -> Control:
+func locker_preview(parent: Node, store: SaveStore, id: String, height: float, rarity: String = "COMMON") -> Control:
 	var config: Dictionary = Balance.COSMETICS.get(id, {})
+	var accent: Color = LockerCollection.RARITY_COLORS[rarity]
+	var stage = Control.new()
+	stage.custom_minimum_size = Vector2(0, height)
+	stage.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	stage.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	stage.clip_contents = true
+	parent.add_child(stage)
+	locker_spotlight(stage, rarity)
 	if str(config.get("slot", "")) == "van" or id == LockerCollection.ORIGINAL_VAN or (id == "" and locker_tab == "vehicles"):
 		var preview := VehiclePreview.new()
-		preview.custom_minimum_size = Vector2(0, height)
-		preview.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		parent.add_child(preview)
-		preview.setup(str(config.get("vehicle_style", "")), int(store.data.upgrades.capacity))
+		preview.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		stage.add_child(preview)
+		preview.setup(str(config.get("vehicle_style", "")), int(store.data.upgrades.capacity), false, accent)
 		preview.suspend(not menu_previews_active)
 		if not config.has("vehicle_style") and id in Balance.COSMETICS:
 			Models.tint_palette(preview.van.model, [Color("ffbd59"), Color("ffe1a4")], Color(str(config.color)))
 		return preview
-	var thief = add_preview(parent, store, "collection", height)
+	var thief = MenuCharacterPreview.new()
+	thief.configure(store, "collection", height)
+	stage.add_child(thief)
+	thief.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	thief.suspend(not menu_previews_active)
 	thief.show_van(false)
+	thief.set_accent(accent)
 	if id != "": thief.preview_cosmetic(id)
 	return thief
 
@@ -2541,15 +2625,12 @@ func locker_equipped_row(parent: VBoxContainer, store: SaveStore) -> void:
 	for tab in ["skins", "vehicles"]:
 		var worn := LockerCollection.worn(tab, store.data)
 		var rarity := LockerCollection.rarity(worn)
-		var shell = PanelContainer.new()
+		var parts := locker_card_shell(line, rarity, true, 22, 12)
+		var shell: PanelContainer = parts.shell
 		shell.name = "EquippedSkinPanel" if tab == "skins" else "EquippedVehiclePanel"
 		shell.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		var shell_style = locker_card_style(rarity)
-		shell_style.set_corner_radius_all(22)
-		shell_style.set_content_margin_all(12)
-		shell.add_theme_stylebox_override("panel", shell_style)
-		line.add_child(shell)
-		var body = column(shell, 6)
+		var body: VBoxContainer = parts.body
+		body.add_theme_constant_override("separation", 6)
 		jobs_label(body, "THIEF SKIN" if tab == "skins" else "GETAWAY VEHICLE", 15, Color("c9a6ec"))
 		var name_line = row(body, 8)
 		var name = jobs_label(name_line, LockerCollection.display_name(worn), 24 if LockerCollection.display_name(worn).length() <= 12 else 19, PAPER, true, 3)
@@ -2562,9 +2643,9 @@ func locker_equipped_row(parent: VBoxContainer, store: SaveStore) -> void:
 		body.add_child(badge)
 		var badge_text = jobs_label(badge, "EQUIPPED", 14, HudStyle.MONEY)
 		badge_text.name = "EquippedBadge"
-		var preview = locker_preview(body, store, worn if worn in Balance.COSMETICS else (LockerCollection.ORIGINAL_VAN if tab == "vehicles" else ""), 200)
+		var preview = locker_preview(body, store, worn if worn in Balance.COSMETICS else (LockerCollection.ORIGINAL_VAN if tab == "vehicles" else ""), 200, rarity)
 		if tab == "skins" and preview is MenuCharacterPreview: preview.name = "EquippedThiefPreview"
-		var customize = button(body, "CUSTOMIZE", func():
+		var customize = button(body, "CUSTOMIZE  ›", func():
 			locker_tab = tab
 			refresh_cosmetics(store)
 			locker_focus_collection.call_deferred()
@@ -2621,20 +2702,24 @@ func locker_grid(parent: VBoxContainer, store: SaveStore) -> void:
 		var id: String = slots[index]
 		var owned: bool = id != "" and LockerCollection.owned(id, store.data)
 		var wearing: bool = owned and LockerCollection.equipped(id, store.data)
-		var slot = PanelContainer.new()
+		var slot: PanelContainer
+		var body: VBoxContainer
+		if owned:
+			var parts := locker_card_shell(grid, LockerCollection.rarity(id), wearing, 18, 8)
+			slot = parts.shell
+			body = parts.body
+			if wearing: (slot.get_theme_stylebox("panel") as StyleBoxFlat).set_border_width_all(3)
+		else:
+			slot = PanelContainer.new()
+			slot.add_theme_stylebox_override("panel", jobs_style(Color("22083a"), Color("4d2a6e"), 18, 8, 4))
+			grid.add_child(slot)
+			body = column(slot, 4)
 		slot.name = "LockerSlot_%d" % (index + 1)
 		slot.add_to_group("locker_slot")
 		slot.set_meta("cosmetic_id", id)
 		slot.set_meta("owned", owned)
 		slot.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		slot.custom_minimum_size.y = 214
-		if owned:
-			var slot_style = locker_card_style(LockerCollection.rarity(id), wearing)
-			if wearing: slot_style.set_border_width_all(3)
-			slot.add_theme_stylebox_override("panel", slot_style)
-		else: slot.add_theme_stylebox_override("panel", jobs_style(Color("22083a"), Color("4d2a6e"), 18, 8, 4))
-		grid.add_child(slot)
-		var body = column(slot, 4)
 		body.alignment = BoxContainer.ALIGNMENT_CENTER
 		if not owned:
 			var mystery = PanelContainer.new()
@@ -2649,13 +2734,15 @@ func locker_grid(parent: VBoxContainer, store: SaveStore) -> void:
 			hint.clip_text = true
 			continue
 		var art_shell = PanelContainer.new()
-		art_shell.add_theme_stylebox_override("panel", jobs_style(Color("3a1160"), Color("6b3aa8"), 14, 0, 2))
+		art_shell.add_theme_stylebox_override("panel", jobs_style(Color("0c0e1f", 0.75), LockerCollection.RARITY_COLORS[LockerCollection.rarity(id)].darkened(0.4), 14, 0, 2))
 		art_shell.custom_minimum_size = Vector2(0, 108)
 		body.add_child(art_shell)
 		var art_stage = Control.new()
 		art_stage.custom_minimum_size = Vector2(0, 108)
 		art_stage.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		art_stage.clip_contents = true
 		art_shell.add_child(art_stage)
+		locker_spotlight(art_stage, LockerCollection.rarity(id))
 		var art = jobs_icon(art_stage, "res://assets/ui/menu_violet/cosmetics.png" if locker_tab == "skins" else "res://assets/ui/menu_violet/powerups/capacity.png", 84)
 		art.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 		art.offset_left = -42

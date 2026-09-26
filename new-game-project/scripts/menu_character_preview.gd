@@ -25,6 +25,8 @@ var home_frame := Rect2()
 var garage: GarageDecor
 var garage_preview_id := ""
 var appearance_override: Dictionary = {} # Locker: show one look instead of the saved outfit.
+var stage_base: MeshInstance3D
+var stage_top: MeshInstance3D
 
 func configure(profile: SaveStore, kind: String, height: float) -> void:
 	store = profile
@@ -125,8 +127,8 @@ func _ready() -> void:
 	viewport.add_child(stage)
 	var stage_radius = 1.60 if presentation == "home" else 1.0
 	var stage_x = 0.18 if presentation == "home" else -0.35
-	var stage_base = Models.cylinder(stage,stage_radius,0.16,Vector3(stage_x,-0.10,0.38),Color("1c0c2c") if presentation == "home" else Color("500782"))
-	var stage_top = Models.cylinder(stage,stage_radius - 0.06,0.025,Vector3(stage_x,-0.01,0.38),Color("26113a") if presentation == "home" else Color("60089e"))
+	stage_base = Models.cylinder(stage,stage_radius,0.16,Vector3(stage_x,-0.10,0.38),Color("1c0c2c") if presentation == "home" else Color("500782"))
+	stage_top = Models.cylinder(stage,stage_radius - 0.06,0.025,Vector3(stage_x,-0.01,0.38),Color("26113a") if presentation == "home" else Color("60089e"))
 	if presentation == "home":
 		(stage_base.mesh as CylinderMesh).radial_segments = 48
 		(stage_top.mesh as CylinderMesh).radial_segments = 48
@@ -235,6 +237,11 @@ func preview_cosmetic(id: String) -> void:
 	if id in Balance.COSMETICS: wearing[Balance.COSMETICS[id].slot] = id
 	appearance_override = wearing
 	refresh_appearance()
+
+func set_accent(color: Color) -> void:
+	if is_instance_valid(stage_base): (stage_base.material_override as StandardMaterial3D).albedo_color = color.darkened(0.55)
+	if is_instance_valid(stage_top): (stage_top.material_override as StandardMaterial3D).albedo_color = color.darkened(0.35)
+	if viewport != null: viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 
 func show_van(visible_van: bool) -> void:
 	if is_instance_valid(van): van.model.visible = visible_van
