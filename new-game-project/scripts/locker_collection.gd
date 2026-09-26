@@ -6,7 +6,9 @@ extends RefCounted
 const SLOT_COUNT := 30
 const ORIGINAL_SUIT := "original_suit"
 const ORIGINAL_VAN := "original_van"
-const RARITY_COLORS := {"COMMON": Color("8f8aa3"), "RARE": Color("3f8cff"), "EPIC": Color("a34dff"), "LEGENDARY": Color("ffb800")}
+const RARITY_COLORS := {"COMMON": Color("9a93ad"), "UNCOMMON": Color("35e07a"), "RARE": Color("38c8ff"), "EPIC": Color("b45cff"), "LEGENDARY": Color("ff9a1f")}
+# Bright tiers read best with dark lettering on their buttons.
+const RARITY_DARK_TEXT := {"COMMON": false, "UNCOMMON": true, "RARE": true, "EPIC": false, "LEGENDARY": true}
 
 static func slots(tab: String) -> Array[String]:
 	var ids: Array[String] = [ORIGINAL_SUIT if tab == "skins" else ORIGINAL_VAN]
@@ -46,9 +48,10 @@ static func rarity(id: String) -> String:
 	if config.reward in ["contracts", "trophies"]: return "LEGENDARY"
 	if config.reward == "lucky" or int(config.get("gem_price", 0)) > 0: return "RARE"
 	var price := int(config.get("price", 0))
-	if price <= 8000: return "COMMON"
-	if price <= 25000: return "RARE"
-	if price <= 80000: return "EPIC"
+	if price <= 5000: return "COMMON"
+	if price <= 10000: return "UNCOMMON"
+	if price <= 30000: return "RARE"
+	if price <= 100000: return "EPIC"
 	return "LEGENDARY"
 
 static func tint(id: String) -> Color:

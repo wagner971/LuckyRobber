@@ -2391,6 +2391,43 @@ func locker_build(store: SaveStore) -> void:
 	locker_grid(cosmetics_list, store)
 	if store.last_error != "": jobs_label(cosmetics_list, store.last_error, 18, Color("ffac94"))
 
+# Cards take their frame, glow and button colour from the look's rarity.
+func locker_card_style(rarity: String, glow: bool = true) -> StyleBoxFlat:
+	var color: Color = LockerCollection.RARITY_COLORS[rarity]
+	var style = jobs_style(Color("22083a").lerp(color, 0.16), color, 18, 8, 4)
+	style.set_border_width_all(2)
+	style.border_width_bottom = 4
+	if glow:
+		style.shadow_color = Color(color, 0.32)
+		style.shadow_size = 8
+		style.shadow_offset = Vector2.ZERO
+	return style
+
+func locker_rarity_badge(parent: Node, rarity: String, size: int = 12) -> PanelContainer:
+	var color: Color = LockerCollection.RARITY_COLORS[rarity]
+	var badge = PanelContainer.new()
+	badge.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+	badge.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	var badge_style = panel(color.darkened(0.6), 10)
+	badge_style.set_content_margin_all(2)
+	badge_style.content_margin_left = 10
+	badge_style.content_margin_right = 10
+	badge_style.border_color = color
+	badge_style.set_border_width_all(1)
+	badge.add_theme_stylebox_override("panel", badge_style)
+	parent.add_child(badge)
+	jobs_label(badge, rarity, size, color.lightened(0.35))
+	return badge
+
+func locker_tint_button(action: Button, rarity: String) -> void:
+	var color: Color = LockerCollection.RARITY_COLORS[rarity]
+	var ink: Color = Color("14202a") if LockerCollection.RARITY_DARK_TEXT[rarity] else PAPER
+	for state in ["font_color", "font_hover_color", "font_pressed_color"]: action.add_theme_color_override(state, ink)
+	action.add_theme_stylebox_override("normal", jobs_style(color.darkened(0.12), color.lightened(0.35), 16, 4, 5))
+	action.add_theme_stylebox_override("hover", jobs_style(color, color.lightened(0.45), 16, 4, 5))
+	action.add_theme_stylebox_override("pressed", jobs_style(color.darkened(0.3), color, 16, 4, 5))
+	action.add_theme_stylebox_override("disabled", jobs_style(Color("3c204f"), Color("5a3a73"), 16, 4, 5))
+
 func locker_divider(parent: VBoxContainer, title: String) -> void:
 	var line = row(parent, 12)
 	line.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -2440,15 +2477,17 @@ func locker_offer_card(parent: HBoxContainer, store: SaveStore, id: String) -> v
 	var config: Dictionary = Balance.COSMETICS[id]
 	var owned: bool = id in store.data.cosmetics.owned
 	var wearing := LockerCollection.equipped(id, store.data)
+	var rarity := LockerCollection.rarity(id)
 	var card_shell = PanelContainer.new()
 	card_shell.name = "TodayShopCard_" + id
 	card_shell.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	card_shell.add_theme_stylebox_override("panel", jobs_style(Color("3a1160"), Color("6b3aa8"), 18, 8, 4))
+	card_shell.add_theme_stylebox_override("panel", locker_card_style(rarity))
 	parent.add_child(card_shell)
 	var body = column(card_shell, 4)
 	var name = jobs_label(body, str(config.name), 18, PAPER, true, 3)
 	name.clip_text = true
 	jobs_label(body, LockerCollection.kind_label(id), 13, Color("c9a6ec")).clip_text = true
+	locker_rarity_badge(body, rarity)
 	locker_preview(body, store, id, 118)
 	var price_line = row(body, 6)
 	price_line.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -2470,11 +2509,13 @@ func locker_offer_card(parent: HBoxContainer, store: SaveStore, id: String) -> v
 	action.add_theme_font_override("font", body_font)
 	action.add_theme_font_size_override("font_size", 22)
 	var buy_now: bool = label == "BUY"
-	for state in ["font_color", "font_hover_color", "font_pressed_color"]: action.add_theme_color_override(state, Color("2a0a4a") if buy_now else PAPER)
-	action.add_theme_stylebox_override("normal", jobs_style(HudStyle.MONEY if buy_now else Color("8b3cf0"), Color("ffe680") if buy_now else Color("c48bff"), 16, 4, 5))
-	action.add_theme_stylebox_override("hover", jobs_style((HudStyle.MONEY if buy_now else Color("8b3cf0")).lightened(0.1), Color("ffe680") if buy_now else Color("c48bff"), 16, 4, 5))
-	action.add_theme_stylebox_override("pressed", jobs_style((HudStyle.MONEY if buy_now else Color("8b3cf0")).darkened(0.15), Color("ffe680") if buy_now else Color("c48bff"), 16, 4, 5))
-	action.add_theme_stylebox_override("disabled", jobs_style(Color("3c204f"), Color("5a3a73"), 16, 4, 5))
+	if buy_now:
+		for state in ["font_color", "font_hover_color", "font_pressed_color"]: action.add_theme_color_override(state, Color("2a0a4a"))
+		action.add_theme_stylebox_override("normal", jobs_style(HudStyle.MONEY, Color("ffe680"), 16, 4, 5))
+		action.add_theme_stylebox_override("hover", jobs_style(HudStyle.MONEY.lightened(0.1), Color("ffe680"), 16, 4, 5))
+		action.add_theme_stylebox_override("pressed", jobs_style(HudStyle.MONEY.darkened(0.15), Color("ffe680"), 16, 4, 5))
+		action.add_theme_stylebox_override("disabled", jobs_style(Color("3c204f"), Color("5a3a73"), 16, 4, 5))
+	else: locker_tint_button(action, rarity)
 	action.disabled = (wearing and not is_vehicle) or (buy_now and (store.data.diamonds < gem_price if gem_price > 0 else store.data.wallet < int(config.price)))
 
 # A live look: the van shell for vehicles, the thief wearing the suit or set otherwise.
@@ -2499,15 +2540,22 @@ func locker_equipped_row(parent: VBoxContainer, store: SaveStore) -> void:
 	var line = row(parent, 10)
 	for tab in ["skins", "vehicles"]:
 		var worn := LockerCollection.worn(tab, store.data)
+		var rarity := LockerCollection.rarity(worn)
 		var shell = PanelContainer.new()
 		shell.name = "EquippedSkinPanel" if tab == "skins" else "EquippedVehiclePanel"
 		shell.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		shell.add_theme_stylebox_override("panel", jobs_style(Color("2d0b47"), Color("8a44d6"), 22, 12, 5))
+		var shell_style = locker_card_style(rarity)
+		shell_style.set_corner_radius_all(22)
+		shell_style.set_content_margin_all(12)
+		shell.add_theme_stylebox_override("panel", shell_style)
 		line.add_child(shell)
 		var body = column(shell, 6)
 		jobs_label(body, "THIEF SKIN" if tab == "skins" else "GETAWAY VEHICLE", 15, Color("c9a6ec"))
-		var name = jobs_label(body, LockerCollection.display_name(worn), 24 if LockerCollection.display_name(worn).length() <= 12 else 19, PAPER, true, 3)
+		var name_line = row(body, 8)
+		var name = jobs_label(name_line, LockerCollection.display_name(worn), 24 if LockerCollection.display_name(worn).length() <= 12 else 19, PAPER, true, 3)
 		name.clip_text = true
+		name.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		locker_rarity_badge(name_line, rarity)
 		var badge = PanelContainer.new()
 		badge.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
 		badge.add_theme_stylebox_override("panel", jobs_style(Color("2a0a4a"), HudStyle.MONEY, 12, 3, 2))
@@ -2529,10 +2577,7 @@ func locker_equipped_row(parent: VBoxContainer, store: SaveStore) -> void:
 		customize.alignment = HORIZONTAL_ALIGNMENT_CENTER
 		customize.add_theme_font_override("font", body_font)
 		customize.add_theme_font_size_override("font_size", 22)
-		for state in ["font_color", "font_hover_color", "font_pressed_color"]: customize.add_theme_color_override(state, PAPER)
-		customize.add_theme_stylebox_override("normal", jobs_style(Color("8b3cf0"), Color("c48bff"), 16, 4, 5))
-		customize.add_theme_stylebox_override("hover", jobs_style(Color("9d4dff"), Color("d6a8ff"), 16, 4, 5))
-		customize.add_theme_stylebox_override("pressed", jobs_style(Color("6f2ac4"), Color("c48bff"), 16, 4, 5))
+		locker_tint_button(customize, rarity)
 
 func locker_focus_collection() -> void:
 	await get_tree().process_frame
@@ -2583,7 +2628,11 @@ func locker_grid(parent: VBoxContainer, store: SaveStore) -> void:
 		slot.set_meta("owned", owned)
 		slot.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		slot.custom_minimum_size.y = 214
-		slot.add_theme_stylebox_override("panel", jobs_style(Color("2d0b47") if owned else Color("22083a"), HudStyle.MONEY if wearing else (Color("8a44d6") if owned else Color("4d2a6e")), 18, 8, 4))
+		if owned:
+			var slot_style = locker_card_style(LockerCollection.rarity(id), wearing)
+			if wearing: slot_style.set_border_width_all(3)
+			slot.add_theme_stylebox_override("panel", slot_style)
+		else: slot.add_theme_stylebox_override("panel", jobs_style(Color("22083a"), Color("4d2a6e"), 18, 8, 4))
 		grid.add_child(slot)
 		var body = column(slot, 4)
 		body.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -2634,17 +2683,7 @@ func locker_grid(parent: VBoxContainer, store: SaveStore) -> void:
 		name.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		name.clip_text = true
 		var rarity := LockerCollection.rarity(id)
-		var badge = PanelContainer.new()
-		badge.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-		var badge_style = panel(LockerCollection.RARITY_COLORS[rarity].darkened(0.55), 10)
-		badge_style.set_content_margin_all(2)
-		badge_style.content_margin_left = 10
-		badge_style.content_margin_right = 10
-		badge_style.border_color = LockerCollection.RARITY_COLORS[rarity]
-		badge_style.set_border_width_all(1)
-		badge.add_theme_stylebox_override("panel", badge_style)
-		body.add_child(badge)
-		jobs_label(badge, rarity, 11, LockerCollection.RARITY_COLORS[rarity].lightened(0.3))
+		locker_rarity_badge(body, rarity, 11).size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		var equip = button(body, "EQUIPPED" if wearing else "EQUIP", func():
 			if id == LockerCollection.ORIGINAL_SUIT: cosmetic_requested.emit("", "reset_suit")
 			elif id == LockerCollection.ORIGINAL_VAN: cosmetic_requested.emit("", "reset_van")
@@ -2655,9 +2694,7 @@ func locker_grid(parent: VBoxContainer, store: SaveStore) -> void:
 		equip.add_theme_font_size_override("font_size", 17)
 		for state in ["font_color", "font_hover_color", "font_pressed_color"]: equip.add_theme_color_override(state, Color("2a0a4a") if wearing else PAPER)
 		equip.add_theme_color_override("font_disabled_color", Color("2a0a4a"))
-		equip.add_theme_stylebox_override("normal", jobs_style(Color("8b3cf0"), Color("c48bff"), 12, 2, 4))
-		equip.add_theme_stylebox_override("hover", jobs_style(Color("9d4dff"), Color("d6a8ff"), 12, 2, 4))
-		equip.add_theme_stylebox_override("pressed", jobs_style(Color("6f2ac4"), Color("c48bff"), 12, 2, 4))
+		locker_tint_button(equip, rarity)
 		equip.add_theme_stylebox_override("disabled", jobs_style(HudStyle.MONEY, Color("ffe680"), 12, 2, 4))
 
 func garage_page(store: SaveStore) -> void:
